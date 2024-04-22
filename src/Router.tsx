@@ -9,11 +9,15 @@ import Empty from "./pages/Empty";
 import Topnav from "./pages/Topnav";
 import Sidenav from "./pages/Sidenav";
 import Forms from "./pages/Forms";
-import Tables from "./pages/Tables";
+import Houses from "./pages/Houses";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Widgets from "./pages/Widgets";
 import Components from "./pages/Components";
+import ZDatabaseEntry from "./pages/ZDatabaseEntry";
+import Mapwork from "./pages/Mapwork";
+import Settings from "./pages/Settings";
+
 
 // createBrowserRouter
 export const router = createHashRouter([
@@ -22,40 +26,24 @@ export const router = createHashRouter([
         element: <Applayout />,
         children: [
             {
+                path: "mapwork",
+                element: <Mapwork />,
+            },
+            {
+                path: "houses",
+                element: <Houses />,
+            },
+            {
+                path: "database",
+                element: <ZDatabaseEntry />,
+            },
+            {
+                path: "settings",
+                element: <Settings />,
+            }, 
+            {
                 path: "",
                 element: <Dashboard />,
-            },
-            {
-                path: "layout/topnav",
-                element: <Topnav />,
-            },
-            {
-                path: "forms",
-                element: <Forms />,
-            },
-            {
-                path: "table",
-                element: <Tables />,
-            },
-            {
-                path: "widgets",
-                element: <Widgets />,
-            },
-            {
-                path: "components",
-                element: <Components />,
-            },
-            {
-                path: "auth/login",
-                element: <Login />,
-            },
-            {
-                path: "auth/register",
-                element: <Register />,
-            },
-            {
-                path: "empty",
-                element: <Empty />,
             },
         ],
     },

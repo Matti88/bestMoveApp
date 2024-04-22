@@ -11,7 +11,7 @@ interface AppConfig {
 }
 
 export const appConfig: AppConfig = {
-    name: "Shadcn Sample",
+    name: "bestMove",
     github: {
         title: "Shadcn Sample",
         url: "https://github.com/hayyi2/shadcn-sample",
