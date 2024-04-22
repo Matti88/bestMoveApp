@@ -36,37 +36,7 @@ export default function Settings() {
                     <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
                         <Card>
                             <CardHeader>
-                                <CardTitle>Simple Form</CardTitle>
-                            </CardHeader>
-                            <CardContent>
-                                <FormField
-                                    control={form.control}
-                                    name="username"
-                                    render={({ field }) => (
-                                        <FormItem>
-                                            <FormLabel>Username</FormLabel>
-                                            <FormControl>
-                                                <Input placeholder="username" {...field} />
-                                            </FormControl>
-                                            <FormDescription>
-                                                This is your public display name.
-                                            </FormDescription>
-                                            <FormMessage />
-                                        </FormItem>
-                                    )}
-                                />
-                            </CardContent>
-                            <CardFooter>
-                                <Button type="submit">Submit</Button>
-                            </CardFooter>
-                        </Card>
-                    </form>
-                </Form>
-                <Form {...form}>
-                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-                        <Card>
-                            <CardHeader>
-                                <CardTitle>Horizontal Form</CardTitle>
+                                <CardTitle>Add your GeoAPIfy Key</CardTitle>
                             </CardHeader>
                             <CardContent>
                                 <FormField
@@ -75,14 +45,14 @@ export default function Settings() {
                                     render={({ field }) => (
                                         <FormItem className="space-y-0 grid gap-2 md:gap-4 md:grid-cols-4">
                                             <div className="md:py-1">
-                                                <FormLabel >Username</FormLabel>
+                                                <FormLabel >Secret Key</FormLabel>
                                             </div>
                                             <div className="md:col-span-3 space-y-2">
                                                 <FormControl>
-                                                    <Input placeholder="username" {...field} />
+                                                    <Input placeholder="abcd-123-abcd..." {...field} />
                                                 </FormControl>
                                                 <FormDescription>
-                                                    This is your public display name.
+                                                    Insert here your key to access to the GeoApify functionalities
                                                 </FormDescription>
                                                 <FormMessage />
                                             </div>
@@ -91,7 +61,7 @@ export default function Settings() {
                                 />
                             </CardContent>
                             <CardFooter className="justify-end">
-                                <Button type="submit">Submit</Button>
+                                <Button type="submit">Updae</Button>
                             </CardFooter>
                         </Card>
                     </form>

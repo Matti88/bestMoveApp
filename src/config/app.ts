@@ -13,11 +13,11 @@ interface AppConfig {
 export const appConfig: AppConfig = {
     name: "bestMove",
     github: {
-        title: "Shadcn Sample",
-        url: "https://github.com/hayyi2/shadcn-sample",
+        title: "bestmove",
+        url: "https://github.com/Matti88/BestMove_Maps",
     },
     author: {
-        name: "hayyi",
-        url: "https://github.com/hayyi2/",
+        name: "matti88",
+        url: "https://github.com/Matti88",
     }
 }
