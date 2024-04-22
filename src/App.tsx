@@ -1,14 +1,11 @@
+import { RouterProvider } from "react-router-dom";
+import { ThemeProvider } from "./contexts/ThemeContext";
+import { router } from "./Router";
 
-import  Home  from "@/components/workingPages/Home";
-import "./App.css";
-
-function App() {
-
-  return (
-    <div className="container">
-      <Home/>
-    </div>
-  );
+export default function App() {
+    return (
+        <ThemeProvider>
+            <RouterProvider router={router} />
+        </ThemeProvider>
+    )
 }
-
-export default App;
