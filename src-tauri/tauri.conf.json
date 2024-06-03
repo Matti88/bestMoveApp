@@ -4,15 +4,19 @@
     "beforeBuildCommand": "npm run build",
     "beforeDevCommand": "npm run dev",
     "devPath": "http://localhost:5173",
-    "distDir": "../build"
+    "distDir": "../dist"
   },
   "package": {
     "productName": "react-shadcn-starter-tauri",
     "version": "0.1.0"
   },
   "tauri": {
+    
     "allowlist": {
-      "all": false
+      "fs": {
+        "all": true,
+        "scope": ["$APPDATA/**", "$APP/**"]
+      }
     },
     "bundle": {
       "active": true,

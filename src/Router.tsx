@@ -5,6 +5,7 @@ import Houses from "./pages/Houses";
 import ZDatabaseEntry from "./pages/ZDatabaseEntry";
 import Mapwork from "./pages/Mapwork";
 import Settings from "./pages/Settings";
+import Generic from "./pages/Generic";
 
 
 // createBrowserRouter
@@ -15,6 +16,10 @@ export const router = createHashRouter([
         children: [
             {
                 path: "mapwork",
+                element: <Mapwork />,
+            },
+            {
+                path: "/",
                 element: <Mapwork />,
             },
             {
@@ -29,6 +34,11 @@ export const router = createHashRouter([
                 path: "settings",
                 element: <Settings />,
             },
+            {
+                path: "generic",
+                element: <Generic />,
+            },
+
         ],
     }
 ])

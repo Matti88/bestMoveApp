@@ -32,6 +32,12 @@ export const mainMenu: NavItemWithChildren[] = [
         title: 'Settings',
         to: '/settings',
     },
+    {
+        title: 'Generic',
+        to: '/generic',
+    },
+
+    
     // {
     //     title: 'Layouts',
     //     items: [
