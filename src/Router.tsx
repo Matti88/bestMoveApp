@@ -38,7 +38,10 @@ export const router = createHashRouter([
                 path: "generic",
                 element: <Generic />,
             },
-
+            {
+                path: "database/:id",
+                element: <ZDatabaseEntry />,
+            },
         ],
     }
 ])

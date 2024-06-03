@@ -1,9 +1,27 @@
-import { SVGProps } from "react";
+import { SVGProps, useEffect } from "react";
 import { JSX } from "react/jsx-runtime";
 import { NavLink, useLocation } from "react-router-dom";
 import { Input } from "@/components/ui/input";
+import { useParams } from "react-router-dom";
+import { getHouseById } from '../database'
 
-export default function ZDatabseEntry() {
+export default  function ZDatabseEntry() {
+
+  const { id } = useParams();
+  const houseId = Number(id); // Convert the id to a number
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const house = await getHouseById(houseId);
+      // Do something with the fetched house
+      console.log(house);
+    };
+
+
+    fetchData();
+  }, [houseId]);
+
+
   return (
     <>
       <div className="container mx-auto py-8 px-4 md:px-6">
