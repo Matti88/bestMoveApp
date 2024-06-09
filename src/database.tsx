@@ -53,7 +53,7 @@ export const addHouse = async (house: House) => {
   await tx.done;
 };
 
-export const updateHouse = async (house: House) => {
+export const updateHouse = async (house: ReadHouse) => {
   const db = await initDB();
   const tx = db.transaction(STORE_NAME, 'readwrite');
   await tx.store.put(house);

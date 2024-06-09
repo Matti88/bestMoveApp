@@ -3,7 +3,8 @@ import { DropdownMenuTrigger, DropdownMenuLabel, DropdownMenuSeparator, Dropdown
 import { TableHead, TableRow, TableHeader, TableCell, TableBody, Table } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 import { SVGProps, useEffect, useState } from "react"
-import { removeHouse} from '../../database';
+import { getHouseById} from '../../database';
+import { Link } from 'react-router-dom';
 
 /**
  * Renders a table row with product information.
@@ -58,7 +59,9 @@ export const TableRow2 = ({
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
             <DropdownMenuLabel>Actions</DropdownMenuLabel>
-            <DropdownMenuItem onClick={() => removeHouse(id)}>Edit</DropdownMenuItem>
+            <Link to={`/database/${id}`}><DropdownMenuItem>
+              Edit
+            </DropdownMenuItem></Link>
             <DropdownMenuItem>Delete</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>

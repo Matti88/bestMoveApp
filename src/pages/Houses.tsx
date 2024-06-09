@@ -7,18 +7,19 @@ import { TableHead, TableRow, TableHeader, TableCell, TableBody, Table } from "@
 import { SVGProps, useEffect, useState } from "react"
 import { JSX } from "react/jsx-runtime"
 import { PageHeader, PageHeaderHeading } from "@/components/page-header";
-import { getAllHouses, House , addHouse} from '../database';
+import { getAllHouses, House , addHouse, ReadHouse} from '../database';
 import {TableRow2} from "@/components/ui/tablerow";
 import {  Link } from 'react-router-dom';
 
 export default function Houses() {
 
-  const [houses, setHouses] = useState<House[]>([]);
+  const [houses, setHouses] = useState<ReadHouse[]>([]);
    
 
   useEffect(() => {
     const fetchHouses = async () => {
-      const housesFromDB: House[] = await getAllHouses();
+      const housesFromDB: ReadHouse[] = await getAllHouses();
+      console.log(housesFromDB);
       setHouses(housesFromDB);
     };
     fetchHouses();
@@ -99,7 +100,7 @@ export default function Houses() {
                 </TableHeader>
                 <TableBody>
                   {houses.map((house) => (
-                    <TableRow2 key={house.address} image={house.image_url} title={house.title}  price={house.price} address={house.address}  date={house.date} id={house.price}/>
+                    <TableRow2 key={house.id} image={house.image_url} title={house.title}  price={house.price} address={house.address}  date={house.date} id={house.id}/>
                   ))}
                 </TableBody>
               </Table>

@@ -1,26 +1,86 @@
-import { SVGProps, useEffect } from "react";
+import { SVGProps, useEffect, useState } from "react";
 import { JSX } from "react/jsx-runtime";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button"
 import { useParams } from "react-router-dom";
-import { getHouseById } from '../database'
+import { getHouseById, House, updateHouse, removeHouse, ReadHouse, addHouse } from '../database'
 
-export default  function ZDatabseEntry() {
+//TODO: add a button to add a new house to the database, make it available whenever a houseId is null
+
+export default function Database() {
 
   const { id } = useParams();
   const houseId = Number(id); // Convert the id to a number
 
+  const [house, setHouse] = useState<House | null>(null);
+  const [title, setTitle] = useState<string>("");
+  const [address, setAddress] = useState<string>("");
+  const [price, setPrice] = useState<number>(0);
+  const [longitude, setLongitude] = useState<number>(0);
+  const [latitude, setLatitude] = useState<number>(0);
+
+
   useEffect(() => {
     const fetchData = async () => {
-      const house = await getHouseById(houseId);
-      // Do something with the fetched house
-      console.log(house);
+      if (Number.isInteger(houseId)) {
+        const house_ = await getHouseById(houseId);
+        // Do something with the fetched house
+        setHouse(house_);
+        setTitle(house_?.title ?? "");
+        setAddress(house_?.address ?? "");
+        setPrice(house_?.price ?? 0);
+        setLongitude(house_?.longitude ?? 0);
+        setLatitude(house_?.latitude ?? 0);
+      } else {
+        console.log("New house Entry");
+      }
     };
 
 
     fetchData();
   }, [houseId]);
 
+
+
+  const handleSubmit = async ( ) => {
+    //e.preventDefault();  
+    const updatedHouse: ReadHouse = {
+      id: houseId,
+      title,
+      address,
+      price,
+      longitude,
+      latitude,
+      image_url: house?.image_url ?? "",
+      date: new Date().toISOString().split('T')[0],
+    };
+    await updateHouse(updatedHouse);
+    window.location.href = "/#/houses";
+  };
+
+  const handleDelete = async () => {
+    if (house) {
+      await removeHouse(houseId)
+      window.location.href = "/#/houses"
+    }
+  }
+
+
+  const createNewHouse = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const newHouse: House = {
+      address,
+      price,
+      image_url: "https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      longitude,
+      latitude,
+      title,
+      date: new Date().toISOString().split('T')[0],
+    };
+    await addHouse(newHouse);
+    window.location.href = "/#/houses";
+  };
 
   return (
     <>
@@ -31,7 +91,7 @@ export default  function ZDatabseEntry() {
           </NavLink>
           <h1 className="text-3xl font-bold ml-auto">Database Entry</h1>
         </div>
-        <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="space-y-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 dark:text-gray-300" htmlFor="title">
@@ -42,6 +102,8 @@ export default  function ZDatabseEntry() {
                 id="title"
                 placeholder="Enter title"
                 type="text"
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
               />
             </div>
             <div>
@@ -53,6 +115,8 @@ export default  function ZDatabseEntry() {
                 id="address"
                 placeholder="Enter address"
                 type="text"
+                value={address}
+                onChange={(e) => setAddress(e.target.value)}
               />
             </div>
             <div>
@@ -64,6 +128,8 @@ export default  function ZDatabseEntry() {
                 id="price"
                 placeholder="Enter price"
                 type="number"
+                value={price}
+                onChange={(e) => setPrice(Number(e.target.value))}
               />
             </div>
           </div>
@@ -77,6 +143,8 @@ export default  function ZDatabseEntry() {
                 id="longitude"
                 placeholder="Enter longitude"
                 type="number"
+                value={longitude}
+                onChange={(e) => setLongitude(Number(e.target.value))}
               />
             </div>
             <div>
@@ -88,34 +156,20 @@ export default  function ZDatabseEntry() {
                 id="latitude"
                 placeholder="Enter latitude"
                 type="number"
+                value={latitude}
+                onChange={(e) => setLatitude(Number(e.target.value))}
               />
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
-                Drag & Drop File Upload
+                Uploaded file thumbnail
               </label>
-              <div className="mt-1 flex justify-center rounded-md border-2 border-dashed border-gray-300 px-6 pt-5 pb-6">
-                <div className="space-y-1 text-center">
-                  <UploadCloudIcon className="mx-auto h-12 w-12 text-gray-400" />
-                  <div className="flex text-sm text-gray-600">
-                    <label
-                      className="relative cursor-pointer rounded-md bg-white font-medium text-primary focus-within:outline-none focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-2 hover:text-primary-dark"
-                      htmlFor="file-upload"
-                    >
-                      <span>Upload a file</span>
-                      <Input className="sr-only" id="file-upload" type="file" />
-                    </label>
-                    <p className="pl-1">or drag and drop</p>
-                  </div>
-                  <p className="text-xs text-gray-500">PNG, JPG, GIF up to 10MB</p>
-                </div>
-              </div>
               <div className="mt-4">
                 <img
                   alt="Uploaded file thumbnail"
                   className="rounded-md"
                   height="200"
-                  src="/placeholder.svg"
+                  src={house?.image_url ?? ""}
                   style={{
                     aspectRatio: "300/200",
                     objectFit: "cover",
@@ -125,11 +179,42 @@ export default  function ZDatabseEntry() {
               </div>
             </div>
           </div>
+
+          {(Number.isInteger(houseId)) ?
+
+            <div className="flex items-center justify-end mt-4">
+              <Button
+                type="submit"
+                onClick={ handleSubmit}
+              >
+                Save Changes
+              </Button>
+
+              <Button
+                type="button"
+                className="ml-2 inline-flex items-center justify-center px-4 py-2 border border-transparent text-white font-medium rounded-md bg-destructive shadow-sm hover:bg-destructive-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-destructive sm:text-sm"
+                onClick={handleDelete}
+              >
+                Delete Record
+              </Button>
+            </div>
+            :
+            <div className="flex items-center justify-end mt-4">
+              <Button
+                type="submit"
+                onClick={createNewHouse}
+              >
+                Create New House
+              </Button>
+            </div>
+          }
+
         </form>
       </div>
     </>
   )
 }
+
 
 function ArrowLeftIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
   return (
@@ -172,3 +257,4 @@ function UploadCloudIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement
     </svg>
   )
 }
+
