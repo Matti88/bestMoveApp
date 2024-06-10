@@ -45,6 +45,8 @@ import {
 import { PageHeader, PageHeaderHeading } from "@/components/page-header";
 import { PoisLeft } from "@/components/pois-left";
 import { FiltersRight } from "@/components/filters-right";
+import MapComponent  from "@/components/ui/mapComponent";
+
 
 export default function Mapwork() {
   return (
@@ -52,14 +54,18 @@ export default function Mapwork() {
           <PageHeader>
               <PageHeaderHeading>Mapwork</PageHeaderHeading>
           </PageHeader>
-          <div className="grid grid-cols-1 md:grid-cols-6 gap-6">
-              <div className="md:col-span-3 flex justify-center">
+          <div className="grid grid-cols-5 md:grid-cols-6 gap-6">
+              <div className="md:col-span-1 flex justify-center">
                   <PoisLeft />
               </div>
-              <div className="md:col-span-3 flex justify-center">
+              <div className="md:col-span-4 flex justify-center">
+              <MapComponent/>
+              </div>
+              <div className="md:col-span-1 flex justify-center">
                   <FiltersRight />
               </div>
           </div>
+
       </>
   )
 }

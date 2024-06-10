@@ -28,4 +28,3 @@ tauri = { version = "1.6.7", features = [ "fs-all"] }
 # # DO NOT REMOVE!!
 # custom-protocol = [ "tauri/custom-protocol" ]
  
- 
