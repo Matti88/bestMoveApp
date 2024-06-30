@@ -120,5 +120,5 @@ const prepopulateDB = async () => {
   }
 };
 
-prepopulateDB();
+// prepopulateDB();
 

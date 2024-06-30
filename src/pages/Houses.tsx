@@ -7,14 +7,17 @@ import { TableHead, TableRow, TableHeader, TableCell, TableBody, Table } from "@
 import { SVGProps, useEffect, useState } from "react"
 import { JSX } from "react/jsx-runtime"
 import { PageHeader, PageHeaderHeading } from "@/components/page-header";
-import { getAllHouses, House , addHouse, ReadHouse} from '../database';
-import {TableRow2} from "@/components/ui/tablerow";
-import {  Link } from 'react-router-dom';
+import { getAllHouses, House, addHouse, ReadHouse } from '../database';
+import { TableRow2 } from "@/components/ui/tablerow";
+import { Link } from 'react-router-dom';
+
+import FileUploader  from '@/components/ui/fileUploader';
+        
+
 
 export default function Houses() {
 
-  const [houses, setHouses] = useState<ReadHouse[]>([]);
-   
+  const [houses, setHouses] = useState<ReadHouse[]>([]); 
 
   useEffect(() => {
     const fetchHouses = async () => {
@@ -23,98 +26,89 @@ export default function Houses() {
       setHouses(housesFromDB);
     };
     fetchHouses();
+
+
+
   }, []);
 
   return (
     <>
-      <PageHeader>
-        <PageHeaderHeading>Houses</PageHeaderHeading>
-      </PageHeader>
-      <Tabs defaultValue="all">
-        <div className="flex items-center">
-          <TabsList>
-            <TabsTrigger value="all">All</TabsTrigger>
-            <TabsTrigger value="active">Active</TabsTrigger>
-            <TabsTrigger value="draft">Draft</TabsTrigger>
-            <TabsTrigger className="hidden sm:flex" value="archived">
-              Archived
-            </TabsTrigger>
-          </TabsList>
-          <div className="relative ml-auto flex-1 md:grow-0">
-            <SearchIcon className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-            <Input
-              className="w-full rounded-lg bg-background pl-8 md:w-[200px] lg:w-[336px]"
-              placeholder="Search..."
-              type="search"
-            />
-          </div>
-          <div className="ml-auto flex items-center gap-2">
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button className="h-8 gap-1" size="sm" variant="outline">
-                  <ListFilterIcon className="h-3.5 w-3.5" />
-                  <span className="sr-only sm:not-sr-only sm:whitespace-nowrap">Filter</span>
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
-                <DropdownMenuLabel>Filter by</DropdownMenuLabel>
-                <DropdownMenuSeparator />
-                <DropdownMenuCheckboxItem checked>Active</DropdownMenuCheckboxItem>
-                <DropdownMenuCheckboxItem>Draft</DropdownMenuCheckboxItem>
-                <DropdownMenuCheckboxItem>Archived</DropdownMenuCheckboxItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-            <Button className="h-8 gap-1" size="sm" variant="outline">
-              <FileIcon className="h-3.5 w-3.5" />
-              <span className="sr-only sm:not-sr-only sm:whitespace-nowrap">Export</span>
-            </Button>
-            <Link  to="/database">
-              <Button className="h-8 gap-1" size="sm" >
-                <PlusCircleIcon className="h-3.5 w-3.5" />
-                <span className="sr-only sm:not-sr-only sm:whitespace-nowrap">Add Product</span>
+    <div className="flex flex-col items-center mt-10 gap-10">
+      <Card className="w-full mx-auto   px-10">
+        <CardHeader>
+          <CardTitle>Upload a File</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <FileUploader />
+        </CardContent>
+      </Card>
+
+      <div className="w-full">
+        <Tabs defaultValue="all">
+          <div className="flex items-center gap-20">
+            <div className="ml-auto flex items-center gap-20">
+              <Button className="h-8 gap-1" size="sm" variant="outline">
+                <FileIcon className="h-3.5 w-3.5" />
+                <span className="sr-only sm:not-sr-only sm:whitespace-nowrap">Export</span>
               </Button>
-            </Link>
+              <Link to="/database">
+                <Button className="h-8 gap-1" size="sm">
+                  <PlusCircleIcon className="h-3.5 w-3.5" />
+                  <span className="sr-only sm:not-sr-only sm:whitespace-nowrap">Add Product</span>
+                </Button>
+              </Link>
+            </div>
           </div>
-        </div>
-        <TabsContent value="all">
-          <Card x-chunk="dashboard-06-chunk-0">
-            <CardHeader>
-              <CardTitle>Houses</CardTitle>
-              <CardDescription>Manage your houses and view their details.</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <Table>
-                <TableHeader>
-                  <TableRow>
-                    <TableHead className="hidden w-[100px] sm:table-cell">
-                      <span className="sr-only">Image</span>
-                    </TableHead>
-                    <TableHead>Title</TableHead>
-                    <TableHead>Price</TableHead>
-                    <TableHead className="hidden md:table-cell">Address</TableHead>
-                    <TableHead >Date</TableHead>
-                    <TableHead>
-                      <span className="sr-only">Actions</span>
-                    </TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  {houses.map((house) => (
-                    <TableRow2 key={house.id} image={house.image_url} title={house.title}  price={house.price} address={house.address}  date={house.date} id={house.id}/>
-                  ))}
-                </TableBody>
-              </Table>
-            </CardContent>
-            <CardFooter>
-              <div className="text-xs text-muted-foreground">
-                Showing
-                <strong>1-10</strong> of <strong>{houses.length}</strong>
-                houses
-              </div>
-            </CardFooter>
-          </Card>
-        </TabsContent>
-      </Tabs>
+          <TabsContent value="all">
+            <Card x-chunk="dashboard-06-chunk-0">
+              <CardHeader>
+                <CardTitle>Houses</CardTitle>
+                <CardDescription>Manage your houses and view their details.</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Table>
+                  <TableHeader>
+                    <TableRow>
+                      <TableHead className="hidden w-[100px] sm:table-cell">
+                        <span className="sr-only">Image</span>
+                      </TableHead>
+                      <TableHead>Title</TableHead>
+                      <TableHead>Price</TableHead>
+                      <TableHead className="hidden md:table-cell">Address</TableHead>
+                      <TableHead>Date</TableHead>
+                      <TableHead>
+                        <span className="sr-only">Actions</span>
+                      </TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    {houses.map((house) => (
+                      <TableRow key={house.id}>
+                        <td className="hidden sm:table-cell">
+                          <img src={house.image_url} alt={house.title} className="w-10 h-10 object-cover" />
+                        </td>
+                        <td>{house.title}</td>
+                        <td>{house.price}</td>
+                        <td className="hidden md:table-cell">{house.address}</td>
+                        <td>{house.date}</td>
+                        <td>
+                          <button className="text-blue-500 hover:underline">Edit</button>
+                        </td>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              </CardContent>
+              <CardFooter>
+                <div className="text-xs text-muted-foreground">
+                  Showing <strong>1-10</strong> of <strong>{houses.length}</strong> houses
+                </div>
+              </CardFooter>
+            </Card>
+          </TabsContent>
+        </Tabs>
+      </div>
+    </div>
     </>
   )
 }

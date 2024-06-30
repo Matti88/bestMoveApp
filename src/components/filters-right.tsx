@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -12,6 +11,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
+import HouseList  from "@/components/ui/HouseList";
  
  
 export  function FiltersRight() {
@@ -46,6 +46,7 @@ export  function FiltersRight() {
             <SheetFooter>
               <SheetClose asChild>
                 <Button type="submit">Save changes</Button>
+                <HouseList></HouseList>
               </SheetClose>
             </SheetFooter>
           </SheetContent>

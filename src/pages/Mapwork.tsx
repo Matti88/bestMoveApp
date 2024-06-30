@@ -50,22 +50,23 @@ import MapComponent  from "@/components/ui/mapComponent";
 
 export default function Mapwork() {
   return (
-      <>
-          <PageHeader>
-              <PageHeaderHeading>Mapwork</PageHeaderHeading>
-          </PageHeader>
-          <div className="grid grid-cols-5 md:grid-cols-6 gap-6">
-              <div className="md:col-span-1 flex justify-center">
-                  <PoisLeft />
-              </div>
-              <div className="md:col-span-4 flex justify-center">
-              <MapComponent/>
-              </div>
-              <div className="md:col-span-1 flex justify-center">
-                  <FiltersRight />
-              </div>
+    <>
+      <PageHeader>
+        <PageHeaderHeading>Mapwork</PageHeaderHeading>
+      </PageHeader>
+      <div className="grid grid-cols-5 md:grid-cols-6 gap-6 h-screen">
+        <div className="md:col-span-1 flex justify-center">
+          <PoisLeft />
+        </div>
+        <div className="md:col-span-4 flex justify-center">
+          <div className="w-full h-full">
+            <MapComponent />
           </div>
-
-      </>
+        </div>
+        <div className="md:col-span-1 flex justify-center">
+          <FiltersRight />
+        </div>
+      </div>
+    </>
   )
 }

@@ -91,6 +91,7 @@ export default function Database() {
           </NavLink>
           <h1 className="text-3xl font-bold ml-auto">Database Entry</h1>
         </div>
+
         <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="space-y-4">
             <div>

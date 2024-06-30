@@ -23,21 +23,19 @@ export const mainMenu: NavItemWithChildren[] = [
     {
         title: 'Houses',
         to: '/houses',
-    },
-    {
-        title: 'Database',
-        to: '/database',
-    },
-    {
-        title: 'Settings',
-        to: '/settings',
-    },
-    {
-        title: 'Generic',
-        to: '/generic',
-    },
-
-    
+    }
+    // {
+    //     title: 'Database',
+    //     to: '/database',
+    // },
+    // {
+    //     title: 'Settings',
+    //     to: '/settings',
+    // },
+    // {
+    //     title: 'Generic',
+    //     to: '/generic',
+    // },    
     // {
     //     title: 'Layouts',
     //     items: [
