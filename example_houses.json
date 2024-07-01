@@ -1,0 +1,4 @@
+type '{ type: string; properties: { cluster: boolean; houseId: number; }; geometry: { type: string; coordinates: number[]; }; }[]' is not assignable to parameter of type 'PointFeature<AnyProps>[]'.
+Type '{ type: string; properties: { cluster: boolean; houseId: number; }; geometry: { type: string; coordinates: number[]; }; }' is not assignable to type 'PointFeature<AnyProps>'.
+    Types of property 'type' are incompatible.
+      Type 'string' is not assignable to type '"Feature"'.ts(2345)

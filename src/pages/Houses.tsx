@@ -1,36 +1,26 @@
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { DropdownMenuTrigger, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuItem, DropdownMenuContent, DropdownMenu, DropdownMenuCheckboxItem } from "@/components/ui/dropdown-menu"
-import { TabsTrigger, TabsList, TabsContent, Tabs } from "@/components/ui/tabs"
+//import { Input } from "@/components/ui/input"
+//import { DropdownMenuTrigger, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuItem, DropdownMenuContent, DropdownMenu, DropdownMenuCheckboxItem } from "@/components/ui/dropdown-menu"
 import { CardTitle, CardDescription, CardHeader, CardContent, CardFooter, Card } from "@/components/ui/card"
 import { TableHead, TableRow, TableHeader, TableCell, TableBody, Table } from "@/components/ui/table"
 import { SVGProps, useEffect, useState } from "react"
 import { JSX } from "react/jsx-runtime"
 import { PageHeader, PageHeaderHeading } from "@/components/page-header";
-import { getAllHouses, House, addHouse, ReadHouse } from '../database';
+//import { getAllHouses, House, addHouse, ReadHouse } from '../database';
 import { TableRow2 } from "@/components/ui/tablerow";
 import { Link } from 'react-router-dom';
+import houselistingStore from '@/store/houselistingStore';
 
 import FileUploader  from '@/components/ui/fileUploader';
-        
 
+
+import { TabsTrigger, TabsList, TabsContent, Tabs } from "@/components/ui/tabs"
 
 export default function Houses() {
 
-  const [houses, setHouses] = useState<ReadHouse[]>([]); 
-
-  useEffect(() => {
-    const fetchHouses = async () => {
-      const housesFromDB: ReadHouse[] = await getAllHouses();
-      console.log(housesFromDB);
-      setHouses(housesFromDB);
-    };
-    fetchHouses();
-
-
-
-  }, []);
-
+  //const [houses, setHouses] = useState([]); 
+  const houses = houselistingStore((state) => state.houseListings);
+  
   return (
     <>
     <div className="flex flex-col items-center mt-10 gap-10">
@@ -74,26 +64,28 @@ export default function Houses() {
                       </TableHead>
                       <TableHead>Title</TableHead>
                       <TableHead>Price</TableHead>
+                      <TableHead>Area</TableHead>
                       <TableHead className="hidden md:table-cell">Address</TableHead>
-                      <TableHead>Date</TableHead>
-                      <TableHead>
+                      {/* <TableHead>Date</TableHead> */}
+                      {/* <TableHead>
                         <span className="sr-only">Actions</span>
-                      </TableHead>
+                      </TableHead> */}
                     </TableRow>
                   </TableHeader>
                   <TableBody>
                     {houses.map((house) => (
                       <TableRow key={house.id}>
                         <td className="hidden sm:table-cell">
-                          <img src={house.image_url} alt={house.title} className="w-10 h-10 object-cover" />
+                          <img src={house.image} alt={house.title} className="w-10 h-10 object-cover" />
                         </td>
                         <td>{house.title}</td>
                         <td>{house.price}</td>
+                        <td>{house.sqm}</td>
                         <td className="hidden md:table-cell">{house.address}</td>
-                        <td>{house.date}</td>
-                        <td>
+                        {/* <td>{house.date}</td> */}
+                        {/* <td>
                           <button className="text-blue-500 hover:underline">Edit</button>
-                        </td>
+                        </td> */}
                       </TableRow>
                     ))}
                   </TableBody>

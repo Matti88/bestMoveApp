@@ -12,10 +12,9 @@ import MapGL, {
 import 'mapbox-gl/dist/mapbox-gl.css';
 import Pin from '@/components/ui/Pin';
 import PinInfo from '@/components/ui/PinInfo';
-import { HouseListing } from '@/store/houselistingStore';
-import houselistingStore, { FeatureCollection } from '@/store/houselistingStore';
+import houselistingStore , { HouseListing }from '@/store/houselistingStore';
 import {userSearchStore} from '@/store/user-search'
-
+  
 
 
 const MapComponent = () => {
@@ -23,12 +22,13 @@ const MapComponent = () => {
   const [selectedMarker, setSelectedMarker] = useState<HouseListing | null>(null);
   const [isochrones, setIsochrones] = useState<React.ReactNode[]>([]);
   const [isochronesPins, setisochronesPins] = useState<React.ReactNode[]>([]);
-
+  
+  const houses = houselistingStore((state) => state.houseListings);
 
   useEffect(() => {
-    const unsub1 = houselistingStore.subscribe((state, prevState) => {
-      const newHouseMarkers = state.houseListings.map((house, index) => (
-        <div key={`house-marker-${index}`}>
+
+      houses.map((house, index) => (
+        <div key={`house-marker-${house.id}`}>
           <Marker
             longitude={house.lon}
             latitude={house.lat}
@@ -38,10 +38,9 @@ const MapComponent = () => {
           </Marker>
         </div>
       ));
-      setHouseMarkers(newHouseMarkers);
-    });
 
-      
+    
+
     const unsub2 = userSearchStore.subscribe((state, prevState) => {
       const newIsochrones = state.pois.map((poi) => (
         <Source
@@ -80,7 +79,7 @@ const MapComponent = () => {
 
     // Return a cleanup function that unsubscribes from both stores
     return () => {
-      unsub1();
+//      unsub1();
       unsub2();
     };
   }, []); // Empty dependency array to run the effect only once on mount
@@ -117,11 +116,11 @@ const MapComponent = () => {
           onClose={() => setSelectedMarker(null)}
         >
           <PinInfo
-            thumbnail_image={selectedMarker.thumbnail_image}
+            thumbnail_image={selectedMarker.image}
             title={selectedMarker.title}
-            insertionpage={selectedMarker.insertionpage}
-            price_num={selectedMarker.price_num}
-            sqm_num={selectedMarker.sqm_num}
+            // insertionpage={selectedMarker.insertionpage}
+            // price_num={selectedMarker.price_num}
+            // sqm_num={selectedMarker.sqm_num}
             onClose={() => setSelectedMarker(null)}
           />
         </Popup>

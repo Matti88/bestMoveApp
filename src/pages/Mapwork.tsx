@@ -1,72 +1,28 @@
-import {
-  Bird,
-  Book,
-  Bot,
-  Code2,
-  CornerDownLeft,
-  LifeBuoy,
-  Mic,
-  Paperclip,
-  Rabbit,
-  Settings,
-  Settings2,
-  Share,
-  // SquareTerminal,
-  // SquareUser,
-  Triangle,
-  Turtle,
-} from "lucide-react"
-
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import {
-  Drawer,
-  DrawerContent,
-  DrawerDescription,
-  DrawerHeader,
-  DrawerTitle,
-  DrawerTrigger,
-} from "@/components/ui/drawer"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select"
-import { Textarea } from "@/components/ui/textarea"
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/components/ui/tooltip"
+import { Card } from "@/components/ui/card"
 import { PageHeader, PageHeaderHeading } from "@/components/page-header";
 import { PoisLeft } from "@/components/pois-left";
 import { FiltersRight } from "@/components/filters-right";
-import MapComponent  from "@/components/ui/mapComponent";
+import MapComponent from "@/components/ui/MapComponent";
 
 
 export default function Mapwork() {
   return (
     <>
-      <PageHeader>
-        <PageHeaderHeading>Mapwork</PageHeaderHeading>
-      </PageHeader>
-      <div className="grid grid-cols-5 md:grid-cols-6 gap-6 h-screen">
-        <div className="md:col-span-1 flex justify-center">
-          <PoisLeft />
+      <div className="flex flex-col items-center mt-10 mb-10 gap-10 md:col-span-8">
+        <Card className="w-full mx-auto  gap-10 px-10">
+        <div className="flex-col">
+            <PoisLeft />
+            <FiltersRight />
         </div>
+        </Card>
+      </div>
+      
         <div className="md:col-span-4 flex justify-center">
           <div className="w-full h-full">
             <MapComponent />
           </div>
         </div>
-        <div className="md:col-span-1 flex justify-center">
-          <FiltersRight />
-        </div>
-      </div>
+
     </>
   )
 }

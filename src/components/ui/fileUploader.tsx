@@ -1,11 +1,15 @@
 import React, { useCallback } from 'react';
 import * as XLSX from 'xlsx';
+import houselistingStore from '@/store/houselistingStore';
+
 interface DragEvent extends React.DragEvent<HTMLDivElement> {
     customDataTransfer: { files: FileList };
 }
 
 
 const FileInput: React.FC = () => {
+    const addHouseListings = houselistingStore((state) => state.addHouseListings); // Get the addHouseListings method from the store
+
     const handleDrop = useCallback((event: DragEvent) => {
         event.preventDefault();
         const file = event.customDataTransfer.files[0];
@@ -22,9 +26,30 @@ const FileInput: React.FC = () => {
             const workbook = XLSX.read(data, { type: 'array' });
             const sheetName = workbook.SheetNames[0];
             const worksheet = workbook.Sheets[sheetName];
-            const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
-            console.log(jsonData);
-            // Handle the Excel data (e.g., parse it using a library)
+            const jsonData = XLSX.utils.sheet_to_json(worksheet) as Array<{
+                title: string;
+                image: string;
+                lon: number;
+                lat: number;
+                address: string;
+                price: number;
+                sqm: number;
+            }>;
+
+            const filteredData = jsonData
+                .filter(item => item.title && item.image && item.lon && item.lat && item.address && item.price && item.sqm)
+                .map(item => ({
+                    title: item.title,
+                    image: item.image,
+                    lon: item.lon,
+                    lat: item.lat,
+                    address: item.address,
+                    price: item.price,
+                    sqm: item.sqm,
+                }));
+
+            addHouseListings(filteredData); 
+
         };
         reader.readAsArrayBuffer(file);
     }, []);

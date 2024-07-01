@@ -2,7 +2,7 @@ import { createHashRouter } from "react-router-dom";
 
 import { Applayout } from "./components/layouts/AppLayout";
 import Houses from "./pages/Houses"; 
-import Database from "./pages/Database";
+//import Database from "./pages/Database";
 import Mapwork from "./pages/Mapwork";
 import Settings from "./pages/Settings";
 import Generic from "./pages/Generic";
@@ -26,10 +26,10 @@ export const router = createHashRouter([
                 path: "houses",
                 element: <Houses />,
             },
-            {
-                path: "database",
-                element: <Database />,
-            },
+            // {
+            //     path: "database",
+            //     element: <Database />,
+            // },
             {
                 path: "settings",
                 element: <Settings />,
@@ -38,10 +38,10 @@ export const router = createHashRouter([
                 path: "generic",
                 element: <Generic />,
             },
-            {
-                path: "database/:id",
-                element: <Database />,
-            },
+            // {
+            //     path: "database/:id",
+            //     element: <Database />,
+            // },
         ],
     }
 ])

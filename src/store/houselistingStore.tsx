@@ -1,46 +1,47 @@
-// file from the benvenutiavienna-test 
-
 import { create } from 'zustand';
 
-export interface HouseListing {
-  address?: string;
-  agency?: string;
-  title: string;
-  collection_date?: string;
-  insertionpage?: string;
-  lat: number;
-  lon: number;
-  otherinfo?: string;
-  otherinfo_2?: string;
-  price?: string;
-  price_num?: number;
-  sqm?: string;
-  sqm_num?: number;
-  image?: string;
-}
-
-
-export interface HousesInStore {
-  houseListings: HouseListing[];
-  updateHouseListings: (newListings: HouseListing[]) => void;
-}
-
-
-const houselistingStore = create<HousesInStore>((set) => ({
-  houseListings: [],
-  updateHouseListings: (newListings) => set({ houseListings: newListings }),
-}));
-
-
-
-export default houselistingStore;
-
-
-///ne interface
 interface Coordinates {
   lat: number;
   lon: number;
 }
+
+export interface HouseListing {
+  id: number; 
+  title: string;
+  image: string;
+  lon: number;
+  lat: number;
+  address: string;
+  price: number;
+  sqm: number;
+}
+
+export interface HousesInStore {
+  houseListings: HouseListing[];
+  updateHouseListings: (newListings: HouseListing[]) => void;
+  addHouseListing: (newListing: Omit<HouseListing, 'id'>) => void;
+  addHouseListings: (newListings: Omit<HouseListing, 'id'>[]) => void;
+}
+
+let nextId = 1;
+
+export const houselistingStore = create<HousesInStore>((set) => ({
+  houseListings: [],
+  updateHouseListings: (newListings) => set({ houseListings: newListings }),
+  addHouseListing: (newListing) =>
+    set((state) => ({
+      houseListings: [...state.houseListings, { ...newListing, id: nextId++ }],
+    })),
+  addHouseListings: (newListings) =>
+    set((state) => ({
+      houseListings: [
+        ...state.houseListings,
+        ...newListings.map((listing) => ({ ...listing, id: nextId++ })),
+      ],
+    })),
+}));
+
+export default houselistingStore;
 
 interface Properties {
   lat: number;

@@ -3,7 +3,7 @@ import { DropdownMenuTrigger, DropdownMenuLabel, DropdownMenuSeparator, Dropdown
 import { TableHead, TableRow, TableHeader, TableCell, TableBody, Table } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 import { SVGProps, useEffect, useState } from "react"
-import { getHouseById} from '../../database';
+//import { getHouseById} from '../../database';
 import { Link } from 'react-router-dom';
 
 /**
@@ -57,13 +57,13 @@ export const TableRow2 = ({
               <span className="sr-only">Toggle menu</span>
             </Button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
+          {/* <DropdownMenuContent align="end">
             <DropdownMenuLabel>Actions</DropdownMenuLabel>
             <Link to={`/database/${id}`}><DropdownMenuItem>
               Edit
             </DropdownMenuItem></Link>
             <DropdownMenuItem>Delete</DropdownMenuItem>
-          </DropdownMenuContent>
+          </DropdownMenuContent> */}
         </DropdownMenu>
       </TableCell>
     </TableRow>
