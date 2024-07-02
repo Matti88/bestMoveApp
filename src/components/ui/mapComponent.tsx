@@ -16,14 +16,17 @@ import PinInfo from '@/components/ui/PinInfo';
 import houselistingStore, { HouseListing } from '@/store/houselistingStore';
 import { userSearchStore } from '@/store/user-search';
 import Supercluster from 'supercluster';
+import { ViewState } from 'react-map-gl';
+import { BBox, GeoJsonProperties, Point } from 'geojson';
 
 const MapComponent = () => {
-  const [viewport, setViewport] = useState({
-    latitude: 48.2121268,
-    longitude: 16.3671307,
+  const [viewport, setViewport] = useState<ViewState>({
+    longitude:48.2121268 ,
+    latitude: 16.3671307,
     zoom: 13,
-    width: '100%',
-    height: '100%'
+    bearing: 0,
+    pitch: 0,
+    padding: { top: 0, bottom: 0, left: 0, right: 0 },
   });
 
   const [selectedMarker, setSelectedMarker] = useState<HouseListing | null>(null);
@@ -37,9 +40,9 @@ const MapComponent = () => {
       maxZoom: 16,
     });
 
-    const points: Array<Supercluster.PointFeature<P>> = houses.map((house) => ({
+    const points: Array<Supercluster.PointFeature<Point>> = houses.map((house) => ({
       type: 'Feature',
-      properties: { cluster: false, houseId: house.id },
+      properties: { type: 'Point', coordinates: [house.lon, house.lat], cluster: false, houseId: house.id },
       geometry: {
         type: 'Point',
         coordinates: [house.lon, house.lat]
@@ -51,7 +54,7 @@ const MapComponent = () => {
   }, [houses]);
 
   const clusters = useMemo(() => {
-    const bounds: GeoJSON.BBox = [
+    const bounds: BBox = [
       viewport.longitude - 360 / (Math.pow(2, viewport.zoom + 1)),
       viewport.latitude - 180 / (Math.pow(2, viewport.zoom)),
       viewport.longitude + 360 / (Math.pow(2, viewport.zoom + 1)),
@@ -88,7 +91,7 @@ const MapComponent = () => {
             }}
             onClick={() => {
               const expansionZoom = Math.min(
-                superclusterIndex.getClusterExpansionZoom(cluster.id),
+                superclusterIndex.getClusterExpansionZoom(typeof cluster.id === 'string' ? parseInt(cluster.id, 10) : (cluster.id ?? 0)),
                 20
               );
               setViewport({
@@ -170,7 +173,7 @@ const MapComponent = () => {
   return (
     <MapGL
       {...viewport}
-      onViewportChange={(newViewport) => setViewport(newViewport)}
+      onMove={(evt) => setViewport(evt.viewState)}
       style={{ width: '100%', height: 750 }}
       mapStyle="mapbox://styles/matteinko/clp6ab2bd00ir01qt5uaedfjf"
       mapboxAccessToken={TOKEN}
