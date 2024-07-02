@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import MapGL, {
   Marker,
   NavigationControl,
@@ -10,38 +10,118 @@ import MapGL, {
   Popup
 } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
+import supercluster from 'supercluster';
 import Pin from '@/components/ui/Pin';
 import PinInfo from '@/components/ui/PinInfo';
-import houselistingStore , { HouseListing }from '@/store/houselistingStore';
-import {userSearchStore} from '@/store/user-search'
-  
-
+import houselistingStore, { HouseListing } from '@/store/houselistingStore';
+import { userSearchStore } from '@/store/user-search';
+import Supercluster from 'supercluster';
 
 const MapComponent = () => {
-  const [houseMarkers, setHouseMarkers] = useState<React.ReactNode[]>([]);
+  const [viewport, setViewport] = useState({
+    latitude: 48.2121268,
+    longitude: 16.3671307,
+    zoom: 13,
+    width: '100%',
+    height: '100%'
+  });
+
   const [selectedMarker, setSelectedMarker] = useState<HouseListing | null>(null);
   const [isochrones, setIsochrones] = useState<React.ReactNode[]>([]);
-  const [isochronesPins, setisochronesPins] = useState<React.ReactNode[]>([]);
-  
+  const [isochronesPins, setIsochronesPins] = useState<React.ReactNode[]>([]);
   const houses = houselistingStore((state) => state.houseListings);
 
-  useEffect(() => {
+  const superclusterIndex = useMemo(() => {
+    const index = new supercluster({
+      radius: 40,
+      maxZoom: 16,
+    });
 
-      houses.map((house, index) => (
-        <div key={`house-marker-${house.id}`}>
-          <Marker
-            longitude={house.lon}
-            latitude={house.lat}
-            anchor="bottom"
-            onClick={() => setSelectedMarker(house)}
+    const points: Array<Supercluster.PointFeature<P>> = houses.map((house) => ({
+      type: 'Feature',
+      properties: { cluster: false, houseId: house.id },
+      geometry: {
+        type: 'Point',
+        coordinates: [house.lon, house.lat]
+      }
+    }));
+
+    index.load(points);
+    return index;
+  }, [houses]);
+
+  const clusters = useMemo(() => {
+    const bounds: GeoJSON.BBox = [
+      viewport.longitude - 360 / (Math.pow(2, viewport.zoom + 1)),
+      viewport.latitude - 180 / (Math.pow(2, viewport.zoom)),
+      viewport.longitude + 360 / (Math.pow(2, viewport.zoom + 1)),
+      viewport.latitude + 180 / (Math.pow(2, viewport.zoom))
+    ];
+
+    return superclusterIndex.getClusters(bounds, Math.floor(viewport.zoom));
+  }, [superclusterIndex, viewport]);
+
+  const houseMarkers = clusters.map((cluster) => {
+    const [longitude, latitude] = cluster.geometry.coordinates;
+    const { cluster: isCluster, point_count: pointCount } = cluster.properties;
+
+    if (isCluster) {
+      return (
+        <Marker
+          key={`cluster-${cluster.id}`}
+          longitude={longitude}
+          latitude={latitude}
+          anchor="bottom"
+        >
+          <div
+            style={{
+              width: `${10 + (pointCount / houses.length) * 20}px`,
+              height: `${10 + (pointCount / houses.length) * 20}px`,
+              backgroundColor: 'rgba(0, 0, 255, 0.5)',
+              borderRadius: '50%',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              color: 'white',
+              fontSize: '12px',
+              cursor: 'pointer'
+            }}
+            onClick={() => {
+              const expansionZoom = Math.min(
+                superclusterIndex.getClusterExpansionZoom(cluster.id),
+                20
+              );
+              setViewport({
+                ...viewport,
+                latitude,
+                longitude,
+                zoom: expansionZoom
+              });
+            }}
           >
-          </Marker>
-        </div>
-      ));
+            {pointCount}
+          </div>
+        </Marker>
+      );
+    }
 
-    
+    const house = houses.find((h) => h.id === cluster.properties.houseId);
 
-    const unsub2 = userSearchStore.subscribe((state, prevState) => {
+    return (
+      <Marker
+        key={`house-marker-${house?.id}`}
+        longitude={longitude}
+        latitude={latitude}
+        anchor="bottom"
+        onClick={() => setSelectedMarker(house || null)}
+      >
+        <Pin size={30} />
+      </Marker>
+    );
+  });
+
+  useEffect(() => {
+    const unsub2 = userSearchStore.subscribe((state) => {
       const newIsochrones = state.pois.map((poi) => (
         <Source
           key={`isochrone-source-${poi.id}`}
@@ -64,7 +144,7 @@ const MapComponent = () => {
 
       const newIsochronesPins = state.pois.map((poi) => (
         <Marker
-          key={`house-marker-${poi.id}`}
+          key={`poi-marker-${poi.id}`}
           longitude={poi.lon}
           latitude={poi.lat}
           anchor="bottom"
@@ -74,28 +154,23 @@ const MapComponent = () => {
       ));
 
       setIsochrones(newIsochrones);
-      setisochronesPins(newIsochronesPins);
+      setIsochronesPins(newIsochronesPins);
     });
 
-    // Return a cleanup function that unsubscribes from both stores
+    // Return a cleanup function that unsubscribes from the store
     return () => {
-//      unsub1();
       unsub2();
     };
-  }, []); // Empty dependency array to run the effect only once on mount
+  }, []);
 
   // token
   const TOKEN = "pk.eyJ1IjoibWF0dGVpbmtvIiwiYSI6ImNsNWphN2hzZjAzem8zY3FvdTd2Y3E1ZXcifQ.aEd1ITI4TdSRLO7gnfxcBg";
-
   const colorpalette = ['#AA573C', '#7B3D4F', '#0491E5', '#4862C5', '#3DF6D6'];
 
   return (
     <MapGL
-      initialViewState={{
-        latitude: 48.2121268,
-        longitude: 16.3671307,
-        zoom: 13,
-      }}
+      {...viewport}
+      onViewportChange={(newViewport) => setViewport(newViewport)}
       style={{ width: '100%', height: 750 }}
       mapStyle="mapbox://styles/matteinko/clp6ab2bd00ir01qt5uaedfjf"
       mapboxAccessToken={TOKEN}
