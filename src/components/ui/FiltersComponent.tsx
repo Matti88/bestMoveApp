@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 //import  houselistingStore, {FeatureCollection} from '@/store/houselistingStore';
-import {userSearchStore, ActiveFilters} from '@/store/user-search'
+import {userSearchStore, ActiveFilters, POI} from '@/store/user-search'
 import ChipWithCheckbox from '@/components/ui/ChipArray';
 //import supabase from '@/utils/supabase/client'
 
@@ -118,6 +118,12 @@ function getPois(): POI[] {
           },
         ],
       },
+      address: '',
+      lon: 0,
+      lat: 0,
+      modeOfTransportation: '',
+      timeRange: 0,
+      title: ''
     },
   ];
 }
