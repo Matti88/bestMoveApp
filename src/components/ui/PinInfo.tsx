@@ -4,8 +4,8 @@ interface PinInfoProps {
   thumbnail_image: string;
   title: string;
   // insertionpage: string;
-  // price_num: number;
-  // sqm_num: number;
+  price_num: number;
+  sqm_num: number;
   onClose: () => void; // New prop for the close function
 }
 
@@ -13,8 +13,8 @@ const PinInfo: React.FC<PinInfoProps> = ({
   thumbnail_image,
   title,
   // insertionpage,
-  // price_num,
-  // sqm_num,
+  price_num,
+  sqm_num,
    onClose // New prop for the close function
 }) => {
   return (
@@ -27,8 +27,8 @@ const PinInfo: React.FC<PinInfoProps> = ({
           <div className="text-lg font-semibold mb-2">Title: {title}</div>
 
           <img className="mb-4" width={240} src={thumbnail_image} alt={`${title} Image`} />
-          {/* <div className="mb-2">Price: {price_num}</div>
-          <div>&#x33A1;: {sqm_num}</div> */}
+          <div className="mb-2">Price: {price_num}</div>
+          <div>&#x33A1;: {sqm_num}</div>
         {/* </a> */}
       </div>
     </div>

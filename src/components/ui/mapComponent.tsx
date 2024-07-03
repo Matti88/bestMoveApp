@@ -19,6 +19,7 @@ import Supercluster from 'supercluster';
 import { ViewState } from 'react-map-gl';
 import { BBox, GeoJsonProperties, Point } from 'geojson';
 
+
 const MapComponent = () => {
   const [viewport, setViewport] = useState<ViewState>({
     latitude: 48.2121268 ,
@@ -30,9 +31,10 @@ const MapComponent = () => {
   });
 
   const [selectedMarker, setSelectedMarker] = useState<HouseListing | null>(null);
-  const [isochrones, setIsochrones] = useState<React.ReactNode[]>([]);
-  const [isochronesPins, setIsochronesPins] = useState<React.ReactNode[]>([]);
-  const houses = houselistingStore((state) => state.houseListings);
+  // const [isochrones, setIsochrones] = useState<React.ReactNode[]>([]);
+  // const [isochronesPins, setIsochronesPins] = useState<React.ReactNode[]>([]);
+  const houses = houselistingStore((state) => state.houseListings); 
+  const pois = userSearchStore((state) => state.pois);
   
   const superclusterIndex = useMemo(() => {
     const index = new supercluster({
@@ -127,52 +129,47 @@ const MapComponent = () => {
     );
   });
 
-  useEffect(() => {
-    const unsub2 = userSearchStore.subscribe((state) => {
-      const newIsochrones = state.pois.map((poi) => (
-        <Source
-          key={`isochrone-source-${poi.id}`}
-          id={`multipolygon-${poi.id}`}
-          type="geojson"
-          data={poi.isochrone}
-        >
-          <Layer
-            key={`isochrone-layer-${poi.id}`}
-            id={`multipolygon-layer-${poi.id}`}
-            type="fill"
-            source={`multipolygon-${poi.id}`}
-            paint={{
-              'fill-color': colorpalette[poi.id],
-              'fill-opacity': 0.3,
-            }}
-          />
-        </Source>
-      ));
+  const colorpalette = ['#AA573C', '#7B3D4F', '#0491E5', '#4862C5', '#3DF6D6'];
 
-      const newIsochronesPins = state.pois.map((poi) => (
-        <Marker
-          key={`poi-marker-${poi.id}`}
-          longitude={poi.lon}
-          latitude={poi.lat}
-          anchor="bottom"
-        >
-          <Pin size={30} />
-        </Marker>
-      ));
+  const isochrones = useMemo(() => {
+    return pois.map((poi) => (
+      <Source
+        key={`isochrone-source-${poi.id}`}
+        id={`multipolygon-${poi.id}`}
+        type="geojson"
+        data={poi.isochrone}
+      >
+        <Layer
+          key={`isochrone-layer-${poi.id}`}
+          id={`multipolygon-layer-${poi.id}`}
+          type="fill"
+          source={`multipolygon-${poi.id}`}
+          paint={{
+            'fill-color': colorpalette[poi.id],
+            'fill-opacity': 0.3,
+          }}
+        />
+      </Source>
+    ));
+  }, [pois]);
 
-      setIsochrones(newIsochrones);
-      setIsochronesPins(newIsochronesPins);
-    });
+  const isochronesPins = useMemo(() => {
+    return pois.map((poi) => (
+      <Marker
+        key={`poi-marker-${poi.id}`}
+        longitude={poi.lon}
+        latitude={poi.lat}
+        anchor="bottom"
+      >
+        <Pin size={30} />
+      </Marker>
+    ));
+  }, [pois]);
 
-    // Return a cleanup function that unsubscribes from the store
-    return () => {
-      unsub2();
-    };
-  }, []);
 
   // token
   const TOKEN = "pk.eyJ1IjoibWF0dGVpbmtvIiwiYSI6ImNsNWphN2hzZjAzem8zY3FvdTd2Y3E1ZXcifQ.aEd1ITI4TdSRLO7gnfxcBg";
-  const colorpalette = ['#AA573C', '#7B3D4F', '#0491E5', '#4862C5', '#3DF6D6'];
+  
 
   return (
     <MapGL
@@ -201,8 +198,8 @@ const MapComponent = () => {
             thumbnail_image={selectedMarker.image}
             title={selectedMarker.title}
             // insertionpage={selectedMarker.insertionpage}
-            // price_num={selectedMarker.price_num}
-            // sqm_num={selectedMarker.sqm_num}
+            price_num={selectedMarker.price}
+            sqm_num={selectedMarker.sqm}
             onClose={() => setSelectedMarker(null)}
           />
         </Popup>

@@ -12,11 +12,11 @@ import { houselistingStore, FeatureCollection } from '@/store/houselistingStore'
 const FiltersComponent: React.FC = () => {
 
   const activeFilters = userSearchStore((state) => state.activeFilters);
+  const list_selectionPoi = activeFilters.selectedPoiIds;
   const updateHouseListings = houselistingStore((state) => state.updateHouseListings);
   const updateActiveFilters = userSearchStore((state) => state.updateActiveFilters);
   const toggleSelectedPoi = userSearchStore((state) => state.toggleSelectedPoi);
   const pois = userSearchStore((state) => state.pois);
-
   const { houseListings } = houselistingStore.getState();
 
   async function triggerNewSearch() {
@@ -51,7 +51,7 @@ const FiltersComponent: React.FC = () => {
         const isochrone = pois.find(actualPoi => poiUsedForFilter.id === actualPoi.id)?.isochrone;
         if (isochrone) {
           filteredData.map(house => {
-            if (house.displayed )
+            if (house.displayed ) // only check if house displayed property is still true - this is evealuated by  the previous passage
               {
                 house.displayed  = checkHouseInReachableArea(house.lon, house.lat, isochrone.features[0].geometry.coordinates)}
               }
@@ -68,9 +68,6 @@ const FiltersComponent: React.FC = () => {
       }
     }
   }
-
-
-
 
 
   function checkHouseInReachableArea(
@@ -124,8 +121,6 @@ const FiltersComponent: React.FC = () => {
   }
   
 
-
-
   function checkPropertiesAndSelection(obj: ActiveFilters): boolean {
     // Check if any of the specified properties is not null
     const propertyCheck = Object.values(obj).some(prop => prop !== null);
@@ -137,7 +132,7 @@ const FiltersComponent: React.FC = () => {
     return propertyCheck || selectionCheck;
   }
 
-  const list_selectionPoi = activeFilters.selectedPoiIds
+  
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = event.target;
