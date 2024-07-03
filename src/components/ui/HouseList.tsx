@@ -5,18 +5,18 @@ interface HouseListProps {
   listings: {
     title: string;
     address: string; 
-    agency: string; 
-    collection_date: string; 
-    insertionpage: string; 
+    agency?: string; 
+    collection_date?: string; 
+    insertionpage?: string; 
     lat: number;
     lon: number;
-    otherinfo: string; 
-    otherinfo_2: string; 
+    otherinfo?: string; 
+    otherinfo_2?: string; 
     price: string; 
-    price_num: number;
+    price_num?: number;
     sqm: string; 
-    sqm_num: number;
-    thumbnail_image: string; 
+    sqm_num?: number;
+    image: string; 
   }[];
 }
 
@@ -29,10 +29,10 @@ const HouseList: React.FC<HouseListProps> = ({ listings }) => {
         {listings.map((listing, index) => (
           <HouseListing
             key={index}
-            imageUrl={listing.thumbnail_image}
+            image={listing.image}
             title={listing.title}
-            price={listing.price_num}
-            squareMeters={listing.sqm_num}
+            price={listing.price}
+            sqm={listing.sqm}
             listingUrl={listing.insertionpage}
           />
         ))}

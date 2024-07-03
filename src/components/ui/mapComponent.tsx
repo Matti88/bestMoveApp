@@ -21,8 +21,8 @@ import { BBox, GeoJsonProperties, Point } from 'geojson';
 
 const MapComponent = () => {
   const [viewport, setViewport] = useState<ViewState>({
-    longitude:48.2121268 ,
-    latitude: 16.3671307,
+    latitude: 48.2121268 ,
+    longitude: 16.3671307,
     zoom: 13,
     bearing: 0,
     pitch: 0,
@@ -36,8 +36,10 @@ const MapComponent = () => {
 
   const superclusterIndex = useMemo(() => {
     const index = new supercluster({
-      radius: 40,
+      radius: 100,
+      minZoom: 0,
       maxZoom: 16,
+      nodeSize: 256
     });
 
     const points: Array<Supercluster.PointFeature<Point>> = houses.map((house) => ({
@@ -78,15 +80,15 @@ const MapComponent = () => {
         >
           <div
             style={{
-              width: `${10 + (pointCount / houses.length) * 20}px`,
-              height: `${10 + (pointCount / houses.length) * 20}px`,
-              backgroundColor: 'rgba(0, 0, 255, 0.5)',
+              width: `${50 + (pointCount / houses.length) }px`,
+              height: `${50 + (pointCount / houses.length) }px`,
+              backgroundColor: 'blue',
               borderRadius: '50%',
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
               color: 'white',
-              fontSize: '12px',
+              fontSize: '40px',
               cursor: 'pointer'
             }}
             onClick={() => {

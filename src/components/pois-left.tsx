@@ -12,7 +12,8 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
-
+import FormComponent from "@/components/ui/FormComponent"
+import POIList from "@/components/ui/POIList"
  
 export  function PoisLeft() {
   return (
@@ -24,24 +25,14 @@ export  function PoisLeft() {
           </SheetTrigger>
           <SheetContent side='left'>
             <SheetHeader>
-              <SheetTitle>Edit profile</SheetTitle>
+              <SheetTitle>Point Of Interest</SheetTitle>
               <SheetDescription>
-                Make changes to your profile here. Click save when you're done.
+                Add and remove points of interest 
               </SheetDescription>
             </SheetHeader>
             <div className="grid gap-4 py-4">
-              <div className="grid grid-cols-4 items-center gap-4">
-                <Label htmlFor="name" className="text-right">
-                  Name
-                </Label>
-                <Input id="name" value="Pedro Duarte" className="col-span-3" />
-              </div>
-              <div className="grid grid-cols-4 items-center gap-4">
-                <Label htmlFor="username" className="text-right">
-                  Username
-                </Label>
-                <Input id="username" value="@peduarte" className="col-span-3" />
-              </div>
+              <FormComponent></FormComponent>
+              <POIList></POIList>
             </div>
             <SheetFooter>
               <SheetClose asChild>

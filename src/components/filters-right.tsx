@@ -11,47 +11,53 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
-import HouseList  from "@/components/ui/HouseList";
- 
- 
-export  function FiltersRight() {
+import HouseListing from "@/components/ui/HouseListing";
+import houselistingStore from '@/store/houselistingStore';
+import FiltersComponent from '@/components/ui/FiltersComponent'
+
+
+export function FiltersRight() {
+
+  const houses = houselistingStore((state) => state.houseListings);
+
   return (
+    <>
     <div className="grid grid-cols-2 gap-2">
- 
-        <Sheet key='right'>
-          <SheetTrigger asChild>
-            <Button variant="outline">Filter - Listings</Button>
-          </SheetTrigger>
-          <SheetContent side='right'>
-            <SheetHeader>
-              <SheetTitle>Edit profile</SheetTitle>
-              <SheetDescription>
-                Make changes to your profile here. Click save when you're done.
-              </SheetDescription>
-            </SheetHeader>
-            <div className="grid gap-4 py-4">
-              <div className="grid grid-cols-4 items-center gap-4">
-                <Label htmlFor="name" className="text-right">
-                  Name
-                </Label>
-                <Input id="name" value="Pedro Duarte" className="col-span-3" />
+      <Sheet key='right'>
+        <SheetTrigger asChild>
+          <Button variant="outline">Filters</Button>
+        </SheetTrigger>
+        <SheetContent side='right'>
+          <SheetHeader>
+            <SheetTitle>Filters</SheetTitle>
+            <SheetDescription>
+              Apply filters for your search
+            </SheetDescription>
+          </SheetHeader>
+
+          {/* <FiltersComponent></FiltersComponent> TO REACTIVATE LATER*/} 
+
+          <div className={`shadow-md p-4 mb-4 max-w-md mx-auto overflow-y-auto bg-white rounded bg-gray-800 text-black`}>
+                <h2 className="border-b pb-2">House Listings</h2>
+                <div className="overflow-y-auto">
+                  {houses.map((listing, index) => (
+                    <HouseListing
+                      key={index}
+                      image={listing.image}
+                      title={listing.title}
+                      price={listing.price}
+                      sqm={listing.sqm}
+                      listingUrl={listing.image}
+                    />
+                  ))}
+                </div>
               </div>
-              <div className="grid grid-cols-4 items-center gap-4">
-                <Label htmlFor="username" className="text-right">
-                  Username
-                </Label>
-                <Input id="username" value="@peduarte" className="col-span-3" />
-              </div>
-            </div>
-            <SheetFooter>
-              <SheetClose asChild>
-                <Button type="submit">Save changes</Button>
-                <HouseList></HouseList>
-              </SheetClose>
-            </SheetFooter>
-          </SheetContent>
-        </Sheet>
+          <SheetFooter>
+          </SheetFooter>
+        </SheetContent>
+      </Sheet>
     </div>
+    </>
   )
 }
 
