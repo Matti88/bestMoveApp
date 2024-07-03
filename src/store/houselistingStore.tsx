@@ -1,5 +1,9 @@
 import { create } from 'zustand';
 
+
+import { persist, createJSONStorage } from 'zustand/middleware'
+
+
 interface Coordinates {
   lat: number;
   lon: number;
@@ -14,6 +18,7 @@ export interface HouseListing {
   address: string;
   price: number;
   sqm: number;
+  displayed: boolean;
 }
 
 export interface HousesInStore {
@@ -21,25 +26,31 @@ export interface HousesInStore {
   updateHouseListings: (newListings: HouseListing[]) => void;
   addHouseListing: (newListing: Omit<HouseListing, 'id'>) => void;
   addHouseListings: (newListings: Omit<HouseListing, 'id'>[]) => void;
+  
 }
 
 let nextId = 1;
 
-export const houselistingStore = create<HousesInStore>((set) => ({
-  houseListings: [],
-  updateHouseListings: (newListings) => set({ houseListings: newListings }),
-  addHouseListing: (newListing) =>
-    set((state) => ({
-      houseListings: [...state.houseListings, { ...newListing, id: nextId++ }],
-    })),
-  addHouseListings: (newListings) =>
-    set((state) => ({
-      houseListings: [
-        ...state.houseListings,
-        ...newListings.map((listing) => ({ ...listing, id: nextId++ })),
-      ],
-    })),
-}));
+export const houselistingStore = create<HousesInStore>()(
+
+  persist(  
+
+    (set) => ({
+      houseListings: [],
+      updateHouseListings: (newListings) => set({ houseListings: newListings }),
+      addHouseListing: (newListing) =>
+        set((state) => ({
+          houseListings: [...state.houseListings, { ...newListing, id: nextId++, displayed: true }],
+        })),
+      addHouseListings: (newListings) =>
+        set((state) => ({
+          houseListings: [
+            ...state.houseListings,
+            ...newListings.map((listing) => ({ ...listing, id: nextId++, displayed: true })),
+          ],
+        }))
+    }) , { name: "houses-db", storage: createJSONStorage(() => localStorage) })
+);
 
 export default houselistingStore;
 

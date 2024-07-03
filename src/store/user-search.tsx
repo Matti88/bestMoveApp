@@ -50,6 +50,7 @@ export interface userSearch {
   deletePOI: (poiId: number) => void;
   toggleSelectedPoi: (poiId: number) => void;
   reset: () => void;
+
 }
 
 export const userSearchStore = create<userSearch>()(
@@ -118,7 +119,9 @@ export const userSearchStore = create<userSearch>()(
         };
       }),
 
-    }), { name: "user-search", storage: createJSONStorage(() => localStorage) })
+    }), 
+    
+    { name: "user-search", storage: createJSONStorage(() => localStorage) })
 )
   ;
 

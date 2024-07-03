@@ -33,7 +33,7 @@ const MapComponent = () => {
   const [isochrones, setIsochrones] = useState<React.ReactNode[]>([]);
   const [isochronesPins, setIsochronesPins] = useState<React.ReactNode[]>([]);
   const houses = houselistingStore((state) => state.houseListings);
-
+  
   const superclusterIndex = useMemo(() => {
     const index = new supercluster({
       radius: 100,
@@ -42,14 +42,16 @@ const MapComponent = () => {
       nodeSize: 256
     });
 
-    const points: Array<Supercluster.PointFeature<Point>> = houses.map((house) => ({
-      type: 'Feature',
-      properties: { type: 'Point', coordinates: [house.lon, house.lat], cluster: false, houseId: house.id },
-      geometry: {
-        type: 'Point',
-        coordinates: [house.lon, house.lat]
-      }
-    }));
+    const points: Array<Supercluster.PointFeature<Point>> = houses
+      .filter(house => house.displayed) // Filter out houses that are not displayed
+      .map((house) => ({
+        type: 'Feature',
+        properties: { type: 'Point', coordinates: [house.lon, house.lat], cluster: false, houseId: house.id },
+        geometry: {
+          type: 'Point',
+          coordinates: [house.lon, house.lat]
+        }
+      }));
 
     index.load(points);
     return index;

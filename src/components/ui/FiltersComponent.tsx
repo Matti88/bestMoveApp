@@ -1,132 +1,76 @@
 'use client';
 import React from 'react';
 //import  houselistingStore, {FeatureCollection} from '@/store/houselistingStore';
-import {userSearchStore, ActiveFilters, POI} from '@/store/user-search'
+import { userSearchStore, ActiveFilters, POI } from '@/store/user-search'
 import ChipWithCheckbox from '@/components/ui/ChipArray';
 //import supabase from '@/utils/supabase/client'
 
-import { houselistingStore, HouseListing, FeatureCollection } from '@/store/houselistingStore';
+import { houselistingStore, FeatureCollection } from '@/store/houselistingStore';
+
 
 
 const FiltersComponent: React.FC = () => {
- 
 
-  const { activeFilters, pois, toggleSelectedPoi, updateActiveFilters } = userSearchStore()
+  const activeFilters = userSearchStore((state) => state.activeFilters);
+  const updateHouseListings = houselistingStore((state) => state.updateHouseListings);
+  const updateActiveFilters = userSearchStore((state) => state.updateActiveFilters);
+  const toggleSelectedPoi = userSearchStore((state) => state.toggleSelectedPoi);
+  const pois = userSearchStore((state) => state.pois);
 
+  const { houseListings } = houselistingStore.getState();
 
+  async function triggerNewSearch() {
+    if (checkPropertiesAndSelection(activeFilters)) {
+      try {
+        let filteredData = houseListings.map(house => {
 
+          // setting the displayed value to true
+          let displayed = true;
 
-async function triggerNewSearch() {
-  const { houseListings } = houselistingStore.getState(); // Access house listings from the Zustand store
-  const activeFilters = getActiveFilters(); // Assume this is a function to get the active filters
-  const pois = getPois(); // Assume this is a function to get the POIs
+          // testing if a minumum squared meter exists and if the house is too small set the display value to false
+          if (activeFilters.minSqm! && house.sqm <= activeFilters.minSqm!) {
+            displayed = false;
+          }
 
-  if (checkPropertiesAndSelection(activeFilters)) {
-    try {
-      // Filter the house listings based on active filters
-      let filteredData = houseListings;
+          // testing if maximum price exists and if the house is too expensive
+          if (activeFilters.maxPrice! && house.price >= activeFilters.maxPrice!) {
+            displayed = false;
+          }
 
-      // Apply filters for price and sqm
-      if (activeFilters.minSqm) {
-        filteredData = filteredData.filter(house => house.sqm >= activeFilters.minSqm);
-      }
-      if (activeFilters.maxPrice) {
-        filteredData = filteredData.filter(house => house.price <= activeFilters.maxPrice);
-      }
+          house.displayed = displayed
+          return house
+        }
+      
+      )
 
-      // Filter based on POI selection
+      // use all the active POIs to make a selection if the houses are within the polygons of the POIs
       const selectionCheck = activeFilters.selectedPoiIds.filter(poi => poi.isChecked);
-      selectionCheck.forEach(poiUsedForFilter => {
-        const minMaxSquare = pois.find(actualPoi => poiUsedForFilter.id === actualPoi.id)?.minmaxSquare;
-        if (minMaxSquare) {
-          filteredData = filteredData.filter(house =>
-            house.lat <= minMaxSquare.lat.max &&
-            house.lat >= minMaxSquare.lat.min &&
-            house.lon <= minMaxSquare.lon.max &&
-            house.lon >= minMaxSquare.lon.min
-          );
-        }
-      });
 
-      // Further filter the data based on raytracing
+      // Filter pois with raytracing
       selectionCheck.forEach(poiUsedForFilter => {
-        //const isochrone = pois.find(actualPoi => poiUsedForFilter.id === actualPoi.id)?.isochrone;
-        const isochrone: FeatureCollection = pois.filter(actualPoi => !( poiUsedForFilter.id !== actualPoi.id) )[0].isochrone
+        const isochrone = pois.find(actualPoi => poiUsedForFilter.id === actualPoi.id)?.isochrone;
         if (isochrone) {
-          filteredData = filteredData.filter(house =>
-            checkHouseInReachableArea(house.lon, house.lat, isochrone.features[0].geometry.coordinates)
+          filteredData.map(house => {
+            if (house.displayed )
+              {
+                house.displayed  = checkHouseInReachableArea(house.lon, house.lat, isochrone.features[0].geometry.coordinates)}
+              }
           );
         }
       });
 
-      // Update the Zustand store with the filtered data
-      houselistingStore.setState(state => ({
-        ...state,
-        houseListings: filteredData,
-      }));
-    } catch (error) {
-      console.error('Error updating houses:', error);
+
+
+        await updateHouseListings(filteredData);
+      } catch (error) {
+        console.error('Error updating houses:', error);
+
+      }
     }
   }
-}
 
-// Helper function to get active filters (assumed)
-function getActiveFilters() {
-  // This should return the current active filters
-  return {
-    minSqm: 50,
-    maxSqm: 3000,
-    minPrice: 0,
-    maxPrice: 500000,
-    selectedPoiIds: [
-      { id: 1, isChecked: true, text: 'Poi 1' },
-      { id: 2, isChecked: false, text: 'Poi 2' }
-    ]
-  };
-}
 
-// Helper function to get POIs (assumed)
-function getPois(): POI[] {
-  // This should return the current POIs with their isochrones and minmaxSquares
-  return [
-    {
-      id: 1,
-      minmaxSquare: {
-        lat: { min: 16.0, max: 17.0 },
-        lon: { min: 48.0, max: 49.0 }
-      },
-      isochrone: {
-        features: [
-          {
-            geometry: {
-              type: "MultiPolygon",
-              coordinates: [
-                [
-                  [
-                    [48.1, 16.1],
-                    [48.2, 16.2],
-                    [48.3, 16.3],
-                  ],
-                  [
-                    [48.1, 16.1],
-                    [48.2, 16.2],
-                    [48.3, 16.3],
-                  ],
-                ],
-              ],
-            },
-          },
-        ],
-      },
-      address: '',
-      lon: 0,
-      lat: 0,
-      modeOfTransportation: '',
-      timeRange: 0,
-      title: ''
-    },
-  ];
-}
+
 
 
   function checkHouseInReachableArea(
@@ -145,6 +89,7 @@ function getPois(): POI[] {
     }
     return false;
   }
+
 
   function rayTracingMethod(x: number, y: number, poly: number[][]): boolean {
     const n = poly.length;
@@ -178,29 +123,28 @@ function getPois(): POI[] {
     return inside;
   }
   
- 
+
+
+
   function checkPropertiesAndSelection(obj: ActiveFilters): boolean {
     // Check if any of the specified properties is not null
     const propertyCheck = Object.values(obj).some(prop => prop !== null);
-  
+
     // Check if any object in selectedPoiIds has isChecked set to true
     const selectionCheck = obj.selectedPoiIds.some(poi => poi.isChecked);
-  
+
     // Return true if any of the conditions is true
     return propertyCheck || selectionCheck;
   }
 
-
-  const list_selectionPoi =  activeFilters.selectedPoiIds
+  const list_selectionPoi = activeFilters.selectedPoiIds
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = event.target;
-    
+
     // Use updateActiveFilters to update the state
     updateActiveFilters({ [name]: value });
   };
- 
-     
 
   return (
     <div className={`bg-white rounded shadow p-4 bg-gray-800 text-black`}>
@@ -224,17 +168,17 @@ function getPois(): POI[] {
       <div className="flex mb-4">
         <div className="mr-4">
           <label className="block mb-2">Max Price:</label>
-          <input type="number" placeholder="Max Price" name="maxPrice" className="w-full p-2 border border-gray-300 rounded"  onChange={handleChange}/>
+          <input type="number" placeholder="Max Price" name="maxPrice" className="w-full p-2 border border-gray-300 rounded" onChange={handleChange} />
         </div>
 
         <div>
-        <label className="block mb-2">Min Sq. Meters:</label>
-          <input type="number" placeholder="Min Sq. Meters" name="minSqm" className="w-full p-2 border border-gray-300 rounded"  onChange={handleChange}/>
+          <label className="block mb-2">Min Sq. Meters:</label>
+          <input type="number" placeholder="Min Sq. Meters" name="minSqm" className="w-full p-2 border border-gray-300 rounded" onChange={handleChange} />
         </div>
       </div>
       <div className="flex mb-4">
-        <br/>
-        <button  onClick={triggerNewSearch} className="bg-blue-500 text-white px-4 py-2 rounded">
+        <br />
+        <button onClick={triggerNewSearch} className="bg-blue-500 text-white px-4 py-2 rounded">
           Search
         </button>
       </div>
@@ -242,7 +186,10 @@ function getPois(): POI[] {
       {/* Add more filters as needed */}
     </div>
   );
- }
+};
+
+
+
 
 export default FiltersComponent;
 
@@ -252,64 +199,3 @@ export default FiltersComponent;
 
 
 
-  // async function triggerNewSearch() {
-
-  //   if (checkPropertiesAndSelection(activeFilters!)){
-
-  //     try {
-
-  //       let query = supabase
-  //         .from('clean_insertions')
-  //         .select('*')
-          
-  //       // making the filter for prices
-  //       if (activeFilters.minSqm) {query = query.gte('sqm_num',activeFilters.minSqm)}
-  //       if (activeFilters.maxPrice) {query = query.lte('price_num', activeFilters.maxPrice)}
-
-  //       // loop for filtering on pois
-  //       const selectionCheck = activeFilters.selectedPoiIds.filter(poi => poi.isChecked === true);
-  //       selectionCheck?.forEach(poiUsedForFilter => {
-
-  //       // Filtering by POI squares 
-
-  //       const minMaxSquare = pois.filter(actualPoi => poiUsedForFilter.id == actualPoi.id )[0].minmaxSquare
-
-  //         query = query.lte('lat', minMaxSquare?.lat.max)
-  //         query = query.gte('lat', minMaxSquare?.lat.min)
-  //         query = query.lte('lon', minMaxSquare?.lon.max)
-  //         query = query.gte('lon', minMaxSquare?.lon.min)
-  //       });
-
-  //       // Launching the query
-  //       const { data, error } = await query.limit(1000);
-        
-  //       if (error) {
-  //         console.error('Error fetching data from clean_insertions table:', error);
-  //         return;
-  //       }
-
-  //       let fetchedData = data ; // Assign fetched data to the variable
-
-  //       // running the raytracing filtering on every poi graph
-  //       selectionCheck?.forEach(poiUsedForFilter => { 
-  //         const isochrone: FeatureCollection = pois.filter(actualPoi => !( poiUsedForFilter.id !== actualPoi.id) )[0].isochrone
-  //         fetchedData  = fetchedData.filter((HouseListing) => checkHouseInReachableArea(  
-  //                             HouseListing.lon
-  //                           , HouseListing.lat
-  //                           , isochrone.features[0].geometry.coordinates
-  //               )
-  //             )
-  //           }
-  //         )
-
-
-  //         houselistingStore.setState((state) => ({
-  //         ...state,
-  //         houseListings: fetchedData,
-  //       }));
-  //     } 
-  //     catch (error) {
-  //       console.error('Error updating houses:', error);
-  //     }
-  //   }
-  // }

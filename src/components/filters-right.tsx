@@ -35,7 +35,7 @@ export function FiltersRight() {
             </SheetDescription>
           </SheetHeader>
 
-          {/* <FiltersComponent></FiltersComponent> TO REACTIVATE LATER*/} 
+          <FiltersComponent></FiltersComponent> 
 
           <div className={`shadow-md p-4 mb-4 max-w-md mx-auto overflow-y-auto bg-white rounded bg-gray-800 text-black`}>
                 <h2 className="border-b pb-2">House Listings</h2>
