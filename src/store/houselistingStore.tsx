@@ -26,7 +26,7 @@ export interface HousesInStore {
   updateHouseListings: (newListings: HouseListing[]) => void;
   addHouseListing: (newListing: Omit<HouseListing, 'id'>) => void;
   addHouseListings: (newListings: Omit<HouseListing, 'id'>[]) => void;
-  
+  removeHouseListigs: () => void;
 }
 
 let nextId = 1;
@@ -48,7 +48,8 @@ export const houselistingStore = create<HousesInStore>()(
             ...state.houseListings,
             ...newListings.map((listing) => ({ ...listing, id: nextId++, displayed: true })),
           ],
-        }))
+        })),
+      removeHouseListigs: () => set(() => ({ houseListings: [] })),
     }) , { name: "houses-db", storage: createJSONStorage(() => localStorage) })
 );
 

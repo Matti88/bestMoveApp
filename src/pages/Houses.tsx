@@ -1,21 +1,19 @@
-import { SetStateAction, useState } from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { CardTitle, CardDescription, CardHeader, CardContent, CardFooter, Card } from "@/components/ui/card";
 import { TableHead, TableRow, TableHeader, TableBody, Table } from "@/components/ui/table";
 import { SVGProps } from "react";
-import { Link } from 'react-router-dom';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Pagination, PaginationContent, PaginationItem, PaginationPrevious, PaginationLink, PaginationNext } from "@/components/ui/pagination";
 import houselistingStore from '@/store/houselistingStore';
 import FileUploader from '@/components/ui/fileUploader';
-import { TabsContent, Tabs } from "@/components/ui/tabs";
-import { Pagination, PaginationContent, PaginationItem, PaginationPrevious, PaginationLink, PaginationEllipsis, PaginationNext } from "@/components/ui/pagination";
-import { set } from "react-hook-form";
 
 type direction = 'next' | 'previous' | 'middle';
 
-// TODO: make the pagination work like: <PaginationPrevious> component to go back one page, and <PaginationNext> component to go forward one page and the the middle 3 page numbers are slice value of 3 of the total number of pages 
 
 export default function Houses() {
   const houses = houselistingStore((state) => state.houseListings);
+  const updateHouseListings = houselistingStore((state) => state.updateHouseListings);
   const [currentPage, setCurrentPage] = useState(1);
   const [middlePages, setMiddlePages] = useState<number[]>([1, 2, 3]);
   const itemsPerPage = 10;
@@ -30,24 +28,24 @@ export default function Houses() {
   const handlePageChange = (pageNumber: number, dir: direction) => {
 
     setCurrentPage((prevPageNumber) => {
-    
+
       let newPageNumber = prevPageNumber;
-    
+
       if (dir === 'previous' || dir === 'next') {
         if (dir === 'next') {
 
           newPageNumber = Math.min(totalPages, pageNumber + 1)
-          setMiddlePages([newPageNumber - 1, newPageNumber , newPageNumber + 1]);
+          setMiddlePages([newPageNumber - 1, newPageNumber, newPageNumber + 1]);
 
         } else if (dir === 'previous') {
 
           newPageNumber = Math.max(1, pageNumber - 1)
           setMiddlePages([newPageNumber, newPageNumber + 1, newPageNumber + 2]);
         }
-        
+
         return newPageNumber;
       }
-      else{
+      else {
         newPageNumber = pageNumber
         return newPageNumber;
       }
@@ -67,23 +65,25 @@ export default function Houses() {
             <FileUploader />
           </CardContent>
         </Card>
-
+        <div className="flex items-center gap-20">
+          <div className="ml-auto flex items-center gap-20">
+            <Button className="h-8 gap-1" size="sm" variant="outline">
+              <FileIcon className="h-3.5 w-3.5" />
+              <span className="sr-only sm:not-sr-only sm:whitespace-nowrap">Export</span>
+            </Button>
+            <Button className="h-8 gap-1" size="sm" variant="outline" onClick={() => updateHouseListings([])}>
+              <FileIcon className="h-3.5 w-3.5" />
+              <span className="sr-only sm:not-sr-only sm:whitespace-nowrap">Reset Houses</span>
+            </Button>
+          </div>
+        </div>
         <div className="w-full">
-          <Tabs defaultValue="all">
-            <div className="flex items-center gap-20">
-              <div className="ml-auto flex items-center gap-20">
-                <Button className="h-8 gap-1" size="sm" variant="outline">
-                  <FileIcon className="h-3.5 w-3.5" />
-                  <span className="sr-only sm:not-sr-only sm:whitespace-nowrap">Export</span>
-                </Button>
-                <Link to="/database">
-                  <Button className="h-8 gap-1" size="sm">
-                    <PlusCircleIcon className="h-3.5 w-3.5" />
-                    <span className="sr-only sm:not-sr-only sm:whitespace-nowrap">Add Product</span>
-                  </Button>
-                </Link>
-              </div>
-            </div>
+          <Tabs defaultValue="all" >
+            <TabsList>
+              <TabsTrigger value="all">All houses</TabsTrigger>
+              <TabsTrigger value="filtered">Filtered Houses</TabsTrigger>            
+            </TabsList>
+            <TabsContent value="filtered">All houses that are filtered according to your search.</TabsContent>
             <TabsContent value="all">
               <Card x-chunk="dashboard-06-chunk-0">
                 <CardHeader>
@@ -122,7 +122,7 @@ export default function Houses() {
                       <PaginationContent>
                         <PaginationItem>
                           <PaginationPrevious
-                            onClick={() => handlePageChange(currentPage , 'previous')}
+                            onClick={() => handlePageChange(currentPage, 'previous')}
                           />
                         </PaginationItem>
                         {middlePages.map((index) => (
@@ -138,7 +138,7 @@ export default function Houses() {
 
                         <PaginationItem>
                           <PaginationNext
-                            onClick={() => handlePageChange( currentPage, 'next')}
+                            onClick={() => handlePageChange(currentPage, 'next')}
                           />
                         </PaginationItem>
                       </PaginationContent>
