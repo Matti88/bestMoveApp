@@ -13,6 +13,7 @@ type direction = 'next' | 'previous' | 'middle';
 
 export default function Houses() {
   const houses = houselistingStore((state) => state.houseListings);
+  const filteredhouses = houselistingStore((state) => state.houseListings.filter(house => house.displayed));
   const updateHouseListings = houselistingStore((state) => state.updateHouseListings);
   const [currentPage, setCurrentPage] = useState(1);
   const [middlePages, setMiddlePages] = useState<number[]>([1, 2, 3]);
@@ -25,7 +26,36 @@ export default function Houses() {
   const displayedHouses = houses.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
 
 
-  const handlePageChange = (pageNumber: number, dir: direction) => {
+    // Calculate houses to display on the current page
+  const displayedHousesFiltered = filteredhouses.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
+
+
+  function checkAndSelectElements(amountOfHouses: number, paginationArray: number[]) {
+    let range;
+    
+    if (amountOfHouses >= 0 && amountOfHouses <= 10) {
+      range = 1;
+    } else if (amountOfHouses >= 11 && amountOfHouses <= 20) {
+      range = 2;
+    } else if (amountOfHouses > 20) {
+      range = 3;
+    } else {
+      throw new Error("Number is out of valid range.");
+    }
+    
+    switch (range) {
+      case 1:
+        return paginationArray.slice(0, 1);  // until first element
+      case 2:
+        return paginationArray.slice(0, 2);  // until second element
+      case 3:
+        return paginationArray.slice(0, 3);  // until third element
+      default:
+        return [];
+    }
+  }
+
+  const handlePageChange = (pageNumber: number, dir: direction, housesCount : number) => {
 
     setCurrentPage((prevPageNumber) => {
 
@@ -35,12 +65,12 @@ export default function Houses() {
         if (dir === 'next') {
 
           newPageNumber = Math.min(totalPages, pageNumber + 1)
-          setMiddlePages([newPageNumber - 1, newPageNumber, newPageNumber + 1]);
+          setMiddlePages(checkAndSelectElements(housesCount, [newPageNumber - 1, newPageNumber, newPageNumber + 1]));
 
         } else if (dir === 'previous') {
 
           newPageNumber = Math.max(1, pageNumber - 1)
-          setMiddlePages([newPageNumber, newPageNumber + 1, newPageNumber + 2]);
+          setMiddlePages(checkAndSelectElements(housesCount,[newPageNumber, newPageNumber + 1, newPageNumber + 2]) );
         }
 
         return newPageNumber;
@@ -83,7 +113,7 @@ export default function Houses() {
               <TabsTrigger value="all">All houses</TabsTrigger>
               <TabsTrigger value="filtered">Filtered Houses</TabsTrigger>            
             </TabsList>
-            <TabsContent value="filtered">All houses that are filtered according to your search.</TabsContent>
+
             <TabsContent value="all">
               <Card x-chunk="dashboard-06-chunk-0">
                 <CardHeader>
@@ -122,23 +152,23 @@ export default function Houses() {
                       <PaginationContent>
                         <PaginationItem>
                           <PaginationPrevious
-                            onClick={() => handlePageChange(currentPage, 'previous')}
+                            onClick={() => handlePageChange(currentPage, 'previous', houses.length)}
                           />
                         </PaginationItem>
                         {middlePages.map((index) => (
                           <PaginationItem key={index}>
                             <PaginationLink
-                              onClick={() => handlePageChange(index + 1, 'middle')}
+                              onClick={() => handlePageChange(index + 1, 'middle', houses.length)}
                               isActive={currentPage === index + 1}
                             >
-                              {index + 1}
+                              {index}
                             </PaginationLink>
                           </PaginationItem>
                         ))}
 
                         <PaginationItem>
                           <PaginationNext
-                            onClick={() => handlePageChange(currentPage, 'next')}
+                            onClick={() => handlePageChange(currentPage, 'next', houses.length)}
                           />
                         </PaginationItem>
                       </PaginationContent>
@@ -148,6 +178,74 @@ export default function Houses() {
                 <CardFooter>
                   <div className="text-xs text-muted-foreground">
                     Showing <strong>{(currentPage - 1) * itemsPerPage + 1}</strong> to <strong>{Math.min(currentPage * itemsPerPage, houses.length)}</strong> of <strong>{houses.length}</strong> houses
+                  </div>
+                </CardFooter>
+              </Card>
+            </TabsContent>
+            <TabsContent value="filtered">
+              <Card x-chunk="dashboard-06-chunk-0">
+                <CardHeader>
+                  <CardTitle>Houses</CardTitle>
+                  <CardDescription>Manage your houses and view their details.</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Table>
+                    <TableHeader>
+                      <TableRow>
+                        <TableHead className="hidden w-[100px] sm:table-cell">
+                          <span className="sr-only">Image</span>
+                        </TableHead>
+                        <TableHead>Title</TableHead>
+                        <TableHead>Price</TableHead>
+                        <TableHead>Area</TableHead>
+                        <TableHead className="hidden md:table-cell">Address</TableHead>
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                      {displayedHousesFiltered.map((house) => (
+                        <TableRow key={house.id}>
+                          <td className="hidden sm:table-cell">
+                            <img src={house.image} alt={house.title} className="w-10 h-10 object-cover" />
+                          </td>
+                          <td>{house.title}</td>
+                          <td>{house.price}</td>
+                          <td>{house.sqm}</td>
+                          <td className="hidden md:table-cell">{house.address}</td>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                  <div className="px-6 py-4 border-t">
+                    <Pagination>
+                      <PaginationContent>
+                        <PaginationItem>
+                          <PaginationPrevious
+                            onClick={() => handlePageChange(currentPage, 'previous', displayedHousesFiltered.length)}
+                          />
+                        </PaginationItem>
+                        {middlePages.map((index) => (
+                          <PaginationItem key={index}>
+                            <PaginationLink
+                              onClick={() => handlePageChange(index + 1, 'middle', displayedHousesFiltered.length)}
+                              isActive={currentPage === index + 1}
+                            >
+                              {index}
+                            </PaginationLink>
+                          </PaginationItem>
+                        ))}
+
+                        <PaginationItem>
+                          <PaginationNext
+                            onClick={() => handlePageChange(currentPage, 'next', displayedHousesFiltered.length)}
+                          />
+                        </PaginationItem>
+                      </PaginationContent>
+                    </Pagination>
+                  </div>
+                </CardContent>
+                <CardFooter>
+                  <div className="text-xs text-muted-foreground">
+                    Showing <strong>{(currentPage - 1) * itemsPerPage + 1}</strong> to <strong>{Math.min(currentPage * itemsPerPage, displayedHousesFiltered.length)}</strong> of <strong>{displayedHousesFiltered.length}</strong> filtered houses
                   </div>
                 </CardFooter>
               </Card>

@@ -31,14 +31,12 @@ const MapComponent = () => {
   });
 
   const [selectedMarker, setSelectedMarker] = useState<HouseListing | null>(null);
-  // const [isochrones, setIsochrones] = useState<React.ReactNode[]>([]);
-  // const [isochronesPins, setIsochronesPins] = useState<React.ReactNode[]>([]);
   const houses = houselistingStore((state) => state.houseListings); 
   const pois = userSearchStore((state) => state.pois);
   
   const superclusterIndex = useMemo(() => {
     const index = new supercluster({
-      radius: 60,
+      radius: 90,
       minZoom: 0,
       maxZoom: 16,
       nodeSize: 256
@@ -161,7 +159,7 @@ const MapComponent = () => {
         latitude={poi.lat}
         anchor="bottom"
       >
-        <Pin size={30} />
+        <Pin size={80} color = '#00FFC5' />
       </Marker>
     ));
   }, [pois]);

@@ -1,18 +1,15 @@
 'use client';
 import React from 'react';
-//import  houselistingStore, {FeatureCollection} from '@/store/houselistingStore';
 import { userSearchStore, ActiveFilters, POI } from '@/store/user-search'
 import ChipWithCheckbox from '@/components/ui/ChipArray';
-//import supabase from '@/utils/supabase/client'
-
-import { houselistingStore, FeatureCollection } from '@/store/houselistingStore';
-
-
+import { houselistingStore } from '@/store/houselistingStore';
 
 const FiltersComponent: React.FC = () => {
 
   const activeFilters = userSearchStore((state) => state.activeFilters);
   const list_selectionPoi = activeFilters.selectedPoiIds;
+  const maximumPrice = activeFilters.maxPrice;
+  const minimumSqm = activeFilters.minSqm;
   const updateHouseListings = houselistingStore((state) => state.updateHouseListings);
   const updateActiveFilters = userSearchStore((state) => state.updateActiveFilters);
   const toggleSelectedPoi = userSearchStore((state) => state.toggleSelectedPoi);
@@ -28,12 +25,12 @@ const FiltersComponent: React.FC = () => {
           let displayed = true;
 
           // testing if a minumum squared meter exists and if the house is too small set the display value to false
-          if (activeFilters.minSqm! && house.sqm <= activeFilters.minSqm!) {
+          if (minimumSqm! && house.sqm <= minimumSqm!) {
             displayed = false;
           }
 
           // testing if maximum price exists and if the house is too expensive
-          if (activeFilters.maxPrice! && house.price >= activeFilters.maxPrice!) {
+          if (maximumPrice! && house.price >= maximumPrice!) {
             displayed = false;
           }
 
@@ -75,6 +72,7 @@ const FiltersComponent: React.FC = () => {
     latitude: number,
     list_of_shapes: number[][][][]
   ): boolean {
+
 
 
     for (const basicPolygons of list_of_shapes) {
@@ -132,7 +130,6 @@ const FiltersComponent: React.FC = () => {
     return propertyCheck || selectionCheck;
   }
 
-  
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = event.target;
@@ -163,12 +160,12 @@ const FiltersComponent: React.FC = () => {
       <div className="flex mb-4">
         <div className="mr-4">
           <label className="block mb-2">Max Price:</label>
-          <input type="number" placeholder="Max Price" name="maxPrice" className="w-full p-2 border border-gray-300 rounded" onChange={handleChange} />
+          <input type="number" placeholder="Max Price" name="maxPrice" className="w-full p-2 border border-gray-300 rounded" onChange={handleChange} value={maximumPrice || ''} />
         </div>
 
         <div>
           <label className="block mb-2">Min Sq. Meters:</label>
-          <input type="number" placeholder="Min Sq. Meters" name="minSqm" className="w-full p-2 border border-gray-300 rounded" onChange={handleChange} />
+          <input type="number" placeholder="Min Sq. Meters" name="minSqm" className="w-full p-2 border border-gray-300 rounded" onChange={handleChange} value={minimumSqm || ''} />
         </div>
       </div>
       <div className="flex mb-4">
@@ -187,10 +184,4 @@ const FiltersComponent: React.FC = () => {
 
 
 export default FiltersComponent;
-
-
-
-
-
-
 

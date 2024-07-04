@@ -1,6 +1,4 @@
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
 import {
   Sheet,
   SheetClose,
@@ -23,7 +21,7 @@ export function FiltersRight() {
   return (
     <>
     <div className="grid grid-cols-2 gap-2">
-      <Sheet key='right'>
+      <Sheet key='right' >
         <SheetTrigger asChild>
           <Button variant="outline">Filters</Button>
         </SheetTrigger>
