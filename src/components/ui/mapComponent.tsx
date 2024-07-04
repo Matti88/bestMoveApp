@@ -38,7 +38,7 @@ const MapComponent = () => {
   
   const superclusterIndex = useMemo(() => {
     const index = new supercluster({
-      radius: 100,
+      radius: 60,
       minZoom: 0,
       maxZoom: 16,
       nodeSize: 256
