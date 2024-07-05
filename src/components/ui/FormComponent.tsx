@@ -1,11 +1,13 @@
+// redo this form according to what is taught on this videohttps://www.youtube.com/watch?v=oGq9o2BxlaI&t=50s
+
+
 import React, { useState } from 'react';
 import { fetchGeoapifyData, fetchGeoapifyIsochrones } from '@/store/utilityFuncts';
 import {userSearchStore, POI} from '@/store/user-search'
 
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/shadcn/card"
 import { Label } from "@/components/ui/shadcn/label"
-import { Input } from "@/components/ui/shadcn/input"
-import { Textarea } from "@/components/ui/shadcn/textarea"
+import { Input } from "@/components/ui/shadcn/input" 
 import { Button } from "@/components/ui/shadcn/button"
 
 const FormComponent: React.FC = ({ /* pass necessary props */ }) => {
@@ -116,10 +118,16 @@ const FormComponent: React.FC = ({ /* pass necessary props */ }) => {
           <Label htmlFor="name">POI Title</Label>
           <Input name="title" type='text' onChange={handleChange} placeholder="Enter title" />
         </div>
+
+
         <div className="space-y-2">
           <Label htmlFor="location">Address</Label>
           <Input name="location"  type="text" placeholder="Write here POI's address" onChange={handleChange} />
         </div>
+
+
+        <div className="grid grid-cols-2 gap-4">
+        
         <div className="space-y-2">
           <Label htmlFor="time">Time</Label>
           <select name="time" onChange={handleChange} className="w-full p-2 border border-gray-300 rounded">
@@ -130,8 +138,9 @@ const FormComponent: React.FC = ({ /* pass necessary props */ }) => {
             ))}
           </select>
         </div>
+        
         <div className="space-y-2">          
-          <label htmlFor="transportationMode">Transportation Mode:</label>
+          <Label htmlFor="transportationMode">Trans Mode</Label>
           <select name="transportationMode" onChange={handleChange} className="w-full p-2 border border-gray-300 rounded">
             <option value="walk">Walk</option>
             <option value="transit">Transit</option>
@@ -139,6 +148,10 @@ const FormComponent: React.FC = ({ /* pass necessary props */ }) => {
             <option value="bicycle">Bicycle</option>
           </select>
         </div>
+
+        </div>
+
+
       </CardContent>        
       <CardFooter>
         <Button type='submit' className="w-full">Submit</Button>
