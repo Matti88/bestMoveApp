@@ -121,7 +121,7 @@ const MapComponent = () => {
         anchor="bottom"
         onClick={() => setSelectedMarker(house || null)}
       >
-        <Pin size={30} />
+        <Pin size={40} />
       </Marker>
     );
   });
@@ -158,7 +158,7 @@ const MapComponent = () => {
         latitude={poi.lat}
         anchor="bottom"
       >
-        <Pin size={60} color = '#008080' />
+        <Pin size={70} color = '#008080' />
       </Marker>
     ));
   }, [pois]);
@@ -172,7 +172,7 @@ const MapComponent = () => {
     <MapGL
       {...viewport}
       onMove={(evt) => setViewport(evt.viewState)}
-      style={{ width: '100%', height: 750 }}
+      style={{ width: '100%', height: '80vh' }}
       mapStyle="mapbox://styles/matteinko/clp6ab2bd00ir01qt5uaedfjf"
       mapboxAccessToken={TOKEN}
     >

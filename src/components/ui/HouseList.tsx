@@ -12,9 +12,9 @@ interface HouseListProps {
     lon: number;
     otherinfo?: string; 
     otherinfo_2?: string; 
-    price: string; 
+    price: number; 
     price_num?: number;
-    sqm: string; 
+    sqm: number; 
     sqm_num?: number;
     image: string; 
   }[];

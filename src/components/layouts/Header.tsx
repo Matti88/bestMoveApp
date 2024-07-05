@@ -12,7 +12,7 @@ import {
     DropdownMenuLabel,
     DropdownMenuSeparator,
     DropdownMenuTrigger
-} from "@/components/ui/dropdown-menu";
+} from "@/components/ui/shadcn/dropdown-menu";
 import { Avatar, AvatarFallback } from "@/components/ui/shadcn/avatar";
 import { mainMenu } from "@/config/menu";
 import { ChevronDownIcon, ViewVerticalIcon } from "@radix-ui/react-icons";
@@ -22,17 +22,17 @@ import { Accordion } from "@radix-ui/react-accordion";
 import { AccordionContent, AccordionItem, AccordionTrigger } from "../ui/shadcn/accordion";
 
 export function Header() {
-    const [open, setOpen] = useState(false)
+    const [open, setOpen] = useState(false);
     const location = useLocation();
 
     return (
         <header className="supports-backdrop-blur:bg-background/60 sticky top-0 z-50 w-full border-b bg-background/90 backdrop-blur">
-            <div className="container px-4 md:px-8 flex h-14 items-center">
-                <div className="mr-4 hidden md:flex">
-                    <NavLink to="/mapwork" className="mr-6 flex items-center space-x-2">
+            <div className="container px-2 md:px-2 flex h-14 items-center justify-between">
+                <div className="flex items-center space-x-4">
+                    <NavLink to="/mapwork" className="flex items-center space-x-2">
                         <Logo />
                     </NavLink>
-                    <nav className="flex items-center space-x-6 text-sm font-medium">
+                    <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
                         {mainMenu.map((menu, index) =>
                             menu.items !== undefined ? (
                                 <DropdownMenu key={index}>
@@ -78,9 +78,9 @@ export function Header() {
                             )
                         )}
                     </nav>
-
                 </div>
-                {/* mobile */}
+
+                {/* Mobile */}
                 <Sheet open={open} onOpenChange={setOpen}>
                     <SheetTrigger asChild>
                         <Button
@@ -98,8 +98,15 @@ export function Header() {
                             <Logo />
                         </NavLink>
                         <ScrollArea className="my-4 h-[calc(100vh-8rem)] pb-8 pl-8">
-                            <Accordion type="single" collapsible className="w-full" 
-                                defaultValue={"item-" + mainMenu.findIndex(item => item.items !== undefined ? item.items.filter(subitem => subitem.to !== undefined).map(subitem => subitem.to).includes(location.pathname) : false)}>
+                            <Accordion
+                                type="single"
+                                collapsible
+                                className="w-full"
+                                defaultValue={"item-" + mainMenu.findIndex(item =>
+                                    item.items !== undefined
+                                        ? item.items.filter(subitem => subitem.to !== undefined).map(subitem => subitem.to).includes(location.pathname)
+                                        : false
+                                )}>
                                 <div className="flex flex-col space-y-3">
                                     {mainMenu.map((menu, index) =>
                                         menu.items !== undefined ? (
@@ -160,54 +167,50 @@ export function Header() {
                     <Icons.logo className="h-6 w-6" />
                     <span className="font-bold inline-block">{appConfig.name}</span>
                 </a>
-                {/* right */}
-                <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
-                    <div className="w-full flex-1 md:w-auto md:flex-none">
-                        {/* <CommandMenu /> */}
-                    </div>
-                    <nav className="flex items-center space-x-2">
-                        <a
-                            href={appConfig.github.url}
-                            title={appConfig.github.title}
-                            target="_blank"
-                            rel="noreferrer">
-                            <div
-                                className={cn(
-                                    buttonVariants({
-                                        variant: "ghost",
-                                    }),
-                                    "w-9 px-0"
-                                )}>
-                                <Icons.gitHub className="h-4 w-4" />
-                                <span className="sr-only">GitHub</span>
-                            </div>
-                        </a>
-                        <DropdownMenu>
-                            <DropdownMenuTrigger asChild>
-                                <Button
-                                    variant='ghost'
-                                    className='relative h-8 w-8 rounded-full'>
-                                    <Avatar className='h-8 w-8'>
-                                        <AvatarFallback>SC</AvatarFallback>
-                                    </Avatar>
-                                </Button>
-                            </DropdownMenuTrigger>
-                            <DropdownMenuContent className='w-56' align='end' forceMount>
-                                <DropdownMenuLabel className='font-normal'>
-                                    <div className='flex flex-col space-y-1'>
-                                        <p className='text-sm font-medium leading-none'>shadcn</p>
-                                        <p className='text-xs leading-none text-muted-foreground'>
-                                            m@example.com
-                                        </p>
-                                    </div>
-                                </DropdownMenuLabel>
-                                <DropdownMenuSeparator />
-                                <DropdownMenuItem>Log out</DropdownMenuItem>
-                            </DropdownMenuContent>
-                        </DropdownMenu>
-                    </nav>
+
+                {/* Right Items */}
+                <div className="flex items-center space-x-2">
+                    <a
+                        href={appConfig.github.url}
+                        title={appConfig.github.title}
+                        target="_blank"
+                        rel="noreferrer">
+                        <div
+                            className={cn(
+                                buttonVariants({
+                                    variant: "ghost",
+                                }),
+                                "w-9 px-0"
+                            )}>
+                            <Icons.gitHub className="h-4 w-4" />
+                            <span className="sr-only">GitHub</span>
+                        </div>
+                    </a>
+                    <DropdownMenu>
+                        <DropdownMenuTrigger asChild>
+                            <Button
+                                variant='ghost'
+                                className='relative h-8 w-8 rounded-full'>
+                                <Avatar className='h-8 w-8'>
+                                    <AvatarFallback>SC</AvatarFallback>
+                                </Avatar>
+                            </Button>
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent className='w-56' align='end' forceMount>
+                            <DropdownMenuLabel className='font-normal'>
+                                <div className='flex flex-col space-y-1'>
+                                    <p className='text-sm font-medium leading-none'>shadcn</p>
+                                    <p className='text-xs leading-none text-muted-foreground'>
+                                        m@example.com
+                                    </p>
+                                </div>
+                            </DropdownMenuLabel>
+                            <DropdownMenuSeparator />
+                            <DropdownMenuItem>Log out</DropdownMenuItem>
+                        </DropdownMenuContent>
+                    </DropdownMenu>
                 </div>
             </div>
         </header>
-    )
+    );
 }

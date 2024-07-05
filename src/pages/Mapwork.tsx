@@ -1,29 +1,39 @@
-import { Card } from "@/components/ui/card"
-import { PageHeader, PageHeaderHeading } from "@/components/page-header";
-import { PoisLeft } from "@/components/pois-left";
-import { FiltersRight } from "@/components/filters-right";
-import MapComponent from "@/components/ui/mapComponent";
-
+import MapComponent from "@/components/ui/MapComponent";
+import FiltersComponent from '@/components/ui/FiltersComponent';
+import HouseListing from "@/components/ui/HouseListing";
+import houselistingStore from '@/store/houselistingStore';
+import FormComponent from "@/components/ui/FormComponent";
+import POIList from "@/components/ui/POIList";
 
 export default function Mapwork() {
+  const houses = houselistingStore((state) => state.houseListings);
+
   return (
     <>
-<div className="flex flex-col items-center mt-10 mb-10 gap-20 md:col-span-12">
-  
-    <div className="flex flex-row gap-4"> {/* Changed flex-col to flex-row and added gap */}
-      <PoisLeft />
-      <FiltersRight />
-    </div>
-  
-</div>
-
-      
-        <div className="md:col-span-4 flex justify-center">
-          <div className="w-full h-full">
-            <MapComponent />
-          </div>
+      <div className="relative w-full h-screen">
+        <div className="absolute inset-0 z-0">
+          <MapComponent />
         </div>
-
+        <div className="absolute top-10 left-20 z-10 p-4 rounded  max-w-xs">
+          <FormComponent />
+          <br/>
+          <POIList />
+        </div>
+        <div className="absolute top-10 right-20 z-10 p-4 rounded max-w-md h-[80vh] overflow-y-auto">
+          <FiltersComponent />
+          <br/>
+          {houses.filter((house) => house.displayed).map((listing, index) => (
+            <HouseListing
+              key={index}
+              image={listing.image}
+              title={listing.title}
+              price={listing.price}
+              sqm={listing.sqm}
+              listingUrl={listing.image}
+            />
+          ))}
+        </div>
+      </div>
     </>
-  )
+  );
 }

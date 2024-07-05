@@ -1,8 +1,30 @@
 import { create } from 'zustand';
+import { persist, createJSONStorage } from 'zustand/middleware';
+import FileSaver from 'file-saver';
+
+import * as XLSX from "xlsx";
 
 
-import { persist, createJSONStorage } from 'zustand/middleware'
+const fileType =
+  "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8";
+// Desired file extesion
+const fileExtension = ".xlsx";
 
+
+export const exportToSpreadsheet = (data: HouseListing[]) => {
+  const dataArray: any[][] = data.map((house) => [house.id, house.title, house.image, house.lon, house.lat, house.address, house.price, house.sqm]); // Extract the necessary properties from HouseListing
+  
+  const workSheet = XLSX.utils.aoa_to_sheet(dataArray);
+  // Generate a Work Book containing the above sheet.
+  const workBook = {
+    Sheets: { data: workSheet, cols: [] },
+    SheetNames: ["data"],
+  };
+  // Exporting the file with the desired name and extension.
+  const excelBuffer = XLSX.write(workBook, { bookType: "xlsx", type: "array" });
+  const fileData = new Blob([excelBuffer], { type: fileType });
+  FileSaver.saveAs(fileData, "search_results" + fileExtension);
+};
 
 interface Coordinates {
   lat: number;
@@ -27,6 +49,7 @@ export interface HousesInStore {
   addHouseListing: (newListing: Omit<HouseListing, 'id'>) => void;
   addHouseListings: (newListings: Omit<HouseListing, 'id'>[]) => void;
   removeHouseListigs: () => void;
+  exportToSpreadsheet: (data: HouseListing[]) => void;
 }
 
 let nextId = 1;
@@ -50,6 +73,7 @@ export const houselistingStore = create<HousesInStore>()(
           ],
         })),
       removeHouseListigs: () => set(() => ({ houseListings: [] })),
+      exportToSpreadsheet,
     }) , { name: "houses-db", storage: createJSONStorage(() => localStorage) })
 );
 
@@ -85,7 +109,7 @@ export interface FeatureCollection {
   // Add the union type with 'undefined'
   properties: {
     id: string
-  }
+  } | undefined;
 }
 
 

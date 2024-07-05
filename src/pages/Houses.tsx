@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/shadcn/button";
-import { CardTitle, CardDescription, CardHeader, CardContent, CardFooter, Card } from "@/components/ui/card";
+import { CardTitle, CardDescription, CardHeader, CardContent, CardFooter, Card } from "@/components/ui/shadcn/card";
 import { TableHead, TableRow, TableHeader, TableBody, Table } from "@/components/ui/shadcn/table";
 import { SVGProps } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/shadcn/tabs"
-import { Pagination, PaginationContent, PaginationItem, PaginationPrevious, PaginationLink, PaginationNext } from "@/components/ui/pagination";
+import { Pagination, PaginationContent, PaginationItem, PaginationPrevious, PaginationLink, PaginationNext } from "@/components/ui/shadcn/pagination";
 import houselistingStore from '@/store/houselistingStore';
-import FileUploader from '@/components/ui/fileUploader';
+import FileUploader from '@/components/ui/FileUploader';
 
 type direction = 'next' | 'previous' | 'middle';
 
@@ -15,6 +15,7 @@ export default function Houses() {
   const houses = houselistingStore((state) => state.houseListings);
   const filteredhouses = houselistingStore((state) => state.houseListings.filter(house => house.displayed));
   const updateHouseListings = houselistingStore((state) => state.updateHouseListings);
+  const exportToSpreadsheet = houselistingStore((state) => state.exportToSpreadsheet);
   const [currentPage, setCurrentPage] = useState(1);
   const [middlePages, setMiddlePages] = useState<number[]>([1, 2, 3]);
   const itemsPerPage = 10;
@@ -85,7 +86,9 @@ export default function Houses() {
   };
 
   return (
-    <>
+<>
+<div className="container mx-50 ">  <div className="items-center mt-10 gap-10">
+    
       <div className="flex flex-col items-center mt-10 gap-10">
         <Card className="w-full mx-auto px-10">
           <CardHeader>
@@ -99,7 +102,7 @@ export default function Houses() {
           <div className="ml-auto flex items-center gap-20">
             <Button className="h-8 gap-1" size="sm" variant="outline">
               <FileIcon className="h-3.5 w-3.5" />
-              <span className="sr-only sm:not-sr-only sm:whitespace-nowrap">Export</span>
+              <span className="sr-only sm:not-sr-only sm:whitespace-nowrap" onClick={() => exportToSpreadsheet(houses.filter((house) => house.displayed))}>Export</span>
             </Button>
             <Button className="h-8 gap-1" size="sm" variant="outline" onClick={() => updateHouseListings([])}>
               <FileIcon className="h-3.5 w-3.5" />
@@ -253,6 +256,8 @@ export default function Houses() {
           </Tabs>
         </div>
       </div>
+    
+    </div></div>
     </>
   );
 }
