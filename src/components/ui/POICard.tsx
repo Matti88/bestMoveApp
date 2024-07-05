@@ -1,5 +1,9 @@
-'use client';
 import React from 'react';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/shadcn/card"
+import { Label } from "@/components/ui/shadcn/label"
+import { Input } from "@/components/ui/shadcn/input"
+import { Textarea } from "@/components/ui/shadcn/textarea"
+import { Button } from "@/components/ui/shadcn/button"
 
 interface POICardProps {
   address: string;
@@ -12,20 +16,34 @@ interface POICardProps {
 const POICard: React.FC<POICardProps> = ({ address, modeOfTransportation, timeRange, title, onDelete }) => {
 
   return (
-    <div className={`bg-white rounded shadow p-4 mb-4 bg-gray-800 text-black`}>
+    <Card className="w-full max-w-md">
       <div className="flex justify-between items-center mb-2">
-        <h3 className="text-xl font-semibold ">{title}</h3>
-        <button
-          className="text-red-500 hover:text-red-700"
+      <CardHeader>
+        <CardTitle>POI Name: {title}</CardTitle>
+      </CardHeader>        
+      </div>
+      <CardContent className="space-y-2">
+        <div className="space-y-2">
+          <Label >Address</Label>
+          <p className="text-gray-600 mb-2">{address}</p>
+        </div>
+        <div className="space-y-1">
+          <Label>Mode of Transportation</Label>
+          <p className="text-gray-600 mb-2">{modeOfTransportation}</p>
+        </div>
+        <div className="space-y-1">
+          <Label>Time Range:</Label>
+          <p className="text-gray-600 mb-2">{timeRange}</p>
+        </div>
+      </CardContent>
+      <CardFooter>
+      <Button
           onClick={onDelete}
         >
           Delete
-        </button>
-      </div>
-      <p className="text-gray-600 mb-2">{address}</p>
-      <p className="text-gray-600 mb-2">Mode of Transportation: {modeOfTransportation}</p>
-      <p className="text-gray-600 mb-2">Time Range: {timeRange}</p>
-    </div>
+        </Button>
+      </CardFooter>
+    </Card>
   );
 };
 
