@@ -154,7 +154,7 @@ const FormComponent: React.FC = ({ /* pass necessary props */ }) => {
 
       </CardContent>        
       <CardFooter>
-        <Button type='submit' className="w-full">Submit</Button>
+        <Button type='submit' className="w-full">Add Poi</Button>
       </CardFooter>
     </form>
     </Card>
