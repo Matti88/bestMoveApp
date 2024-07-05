@@ -3,6 +3,7 @@ import FiltersComponent from '@/components/ui/FiltersComponent';
 import HouseListing from "@/components/ui/HouseListing";
 import houselistingStore from '@/store/houselistingStore';
 import FormComponent from "@/components/ui/FormComponent";
+import PoiForm from "@/components/ui/PoiForm";
 import POIList from "@/components/ui/POIList";
 
 export default function Mapwork() {
@@ -16,6 +17,8 @@ export default function Mapwork() {
         </div>
         <div className="absolute top-10 left-20 z-10 p-4 rounded  max-w-xs">
           <FormComponent />
+          {/* <br/>
+          <PoiForm /> */}
           <br/>
           <POIList />
         </div>

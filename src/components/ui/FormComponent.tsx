@@ -2,6 +2,11 @@ import React, { useState } from 'react';
 import { fetchGeoapifyData, fetchGeoapifyIsochrones } from '@/store/utilityFuncts';
 import {userSearchStore, POI} from '@/store/user-search'
 
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/shadcn/card"
+import { Label } from "@/components/ui/shadcn/label"
+import { Input } from "@/components/ui/shadcn/input"
+import { Textarea } from "@/components/ui/shadcn/textarea"
+import { Button } from "@/components/ui/shadcn/button"
 
 const FormComponent: React.FC = ({ /* pass necessary props */ }) => {
 
@@ -61,7 +66,12 @@ const FormComponent: React.FC = ({ /* pass necessary props */ }) => {
   }
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    
+
     event.preventDefault();
+
+    console.log(formData);
+
     const indirizzi = await fetchGeoapifyData(formData.location);
     const lat = indirizzi.results[0].lat
     const lon = indirizzi.results[0].lon
@@ -86,7 +96,7 @@ const FormComponent: React.FC = ({ /* pass necessary props */ }) => {
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = event.target;
-
+    
     setFormData((prevFormData) => ({
       ...prevFormData,
       [name]: value,
@@ -94,28 +104,24 @@ const FormComponent: React.FC = ({ /* pass necessary props */ }) => {
   };
 
   return (
-
-    <form className={`bg-white rounded shadow p-8 max-w-md mx-auto bg-gray-800 text-black`} onSubmit={handleSubmit}>
-      <h2 className="border-b-2 border-gray-300 pb-2 mb-6 text-xl font-semibold">Add Point of Interest</h2>
-
-      <div className="flex mb-4">
-        {/* Title Input */}
-        <div className="w-full mr-4">
-          <label className="block mb-2">Title:</label>
-          <input name="title" type="text" onChange={handleChange} placeholder="Enter title" className="w-full p-2 border border-gray-300 rounded" />
+    <Card className="w-full max-w-md">
+      <CardHeader>
+        <CardTitle>Add Point of Interest Isochrone</CardTitle>
+        <CardDescription>Fill out the form below and generate isochrones around your Point of Interest.</CardDescription>
+      </CardHeader>
+    
+      <form onSubmit={handleSubmit}>
+      <CardContent className="space-y-4">
+        <div className="space-y-2">
+          <Label htmlFor="name">POI Title</Label>
+          <Input name="title" type='text' onChange={handleChange} placeholder="Enter title" />
         </div>
-
-        {/* Autosuggest Input (Placeholder - implement as needed) */}
-        <div className="w-full">
-          <label className="block mb-2">Location:</label>
-          <input name="location" type="text" onChange={handleChange} placeholder="Start typing for suggestions" className="w-full p-2 border border-gray-300 rounded" />
+        <div className="space-y-2">
+          <Label htmlFor="location">Address</Label>
+          <Input name="location"  type="text" placeholder="Write here POI's address" onChange={handleChange} />
         </div>
-      </div>
-
-      <div className="flex mb-4">
-        {/* Time in Minutes Dropdown */}
-        <div className="w-full mr-4">
-          <label className="block mb-2">Time:</label>
+        <div className="space-y-2">
+          <Label htmlFor="time">Time</Label>
           <select name="time" onChange={handleChange} className="w-full p-2 border border-gray-300 rounded">
             {[5, 10, 15, 20, 25, 30, 45, 60, 70, 80, 90, 120].map((minutes) => (
               <option key={minutes} value={minutes}>
@@ -124,10 +130,8 @@ const FormComponent: React.FC = ({ /* pass necessary props */ }) => {
             ))}
           </select>
         </div>
-
-        {/* Modes of Transportation Dropdown */}
-        <div className="w-full" >
-          <label className="block mb-2">Transportation Mode:</label>
+        <div className="space-y-2">          
+          <label htmlFor="transportationMode">Transportation Mode:</label>
           <select name="transportationMode" onChange={handleChange} className="w-full p-2 border border-gray-300 rounded">
             <option value="walk">Walk</option>
             <option value="transit">Transit</option>
@@ -135,11 +139,13 @@ const FormComponent: React.FC = ({ /* pass necessary props */ }) => {
             <option value="bicycle">Bicycle</option>
           </select>
         </div>
-      </div>
-      <button type="submit" className="bg-green-500 text-white px-4 py-2 rounded">
-        Submit
-      </button>
+      </CardContent>        
+      <CardFooter>
+        <Button type='submit' className="w-full">Submit</Button>
+      </CardFooter>
     </form>
+    </Card>
+
   );
 };
 
