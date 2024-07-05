@@ -1,7 +1,7 @@
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/shadcn/button"
 import { DropdownMenuTrigger, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuItem, DropdownMenuContent, DropdownMenu, DropdownMenuCheckboxItem } from "@/components/ui/dropdown-menu";
-import { TableHead, TableRow, TableHeader, TableCell, TableBody, Table } from "@/components/ui/table";
-import { Badge } from "@/components/ui/badge";
+import { TableHead, TableRow, TableHeader, TableCell, TableBody, Table } from "@/components/ui/shadcn/table";
+import { Badge } from "@/components/ui/shadcn/badge";
 import { SVGProps, useEffect, useState } from "react"
 //import { getHouseById} from '../../database';
 import { Link } from 'react-router-dom';

@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/shadcn/button";
 import { CardTitle, CardDescription, CardHeader, CardContent, CardFooter, Card } from "@/components/ui/card";
-import { TableHead, TableRow, TableHeader, TableBody, Table } from "@/components/ui/table";
+import { TableHead, TableRow, TableHeader, TableBody, Table } from "@/components/ui/shadcn/table";
 import { SVGProps } from "react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/shadcn/tabs"
 import { Pagination, PaginationContent, PaginationItem, PaginationPrevious, PaginationLink, PaginationNext } from "@/components/ui/pagination";
 import houselistingStore from '@/store/houselistingStore';
 import FileUploader from '@/components/ui/fileUploader';

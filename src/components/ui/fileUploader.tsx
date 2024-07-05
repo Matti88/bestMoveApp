@@ -8,7 +8,8 @@ interface DragEvent extends React.DragEvent<HTMLDivElement> {
 
 
 const FileInput: React.FC = () => {
-    const addHouseListings = houselistingStore((state) => state.addHouseListings); // Get the addHouseListings method from the store
+
+    const addHouseListings = houselistingStore((state) => state.addHouseListings); 
 
     const handleDrop = useCallback((event: DragEvent) => {
         event.preventDefault();

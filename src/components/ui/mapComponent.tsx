@@ -24,7 +24,7 @@ const MapComponent = () => {
   const [viewport, setViewport] = useState<ViewState>({
     latitude: 48.2121268 ,
     longitude: 16.3671307,
-    zoom: 13,
+    zoom: 14,
     bearing: 0,
     pitch: 0,
     padding: { top: 0, bottom: 0, left: 0, right: 0 },
@@ -36,9 +36,8 @@ const MapComponent = () => {
   
   const superclusterIndex = useMemo(() => {
     const index = new supercluster({
-      radius: 90,
-      minZoom: 0,
-      maxZoom: 16,
+      radius: 100,
+      minZoom: 13,
       nodeSize: 256
     });
 
@@ -159,7 +158,7 @@ const MapComponent = () => {
         latitude={poi.lat}
         anchor="bottom"
       >
-        <Pin size={80} color = '#00FFC5' />
+        <Pin size={60} color = '#008080' />
       </Marker>
     ));
   }, [pois]);

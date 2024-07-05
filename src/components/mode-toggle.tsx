@@ -1,6 +1,6 @@
 import { MoonIcon, SunIcon } from "@radix-ui/react-icons"
 
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/shadcn/button"
 import {
     DropdownMenu,
     DropdownMenuContent,

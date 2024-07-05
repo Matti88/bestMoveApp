@@ -4,11 +4,11 @@ import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { Accordion } from "@radix-ui/react-accordion";
 import { sideMenu } from "@/config/menu";
-import { AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
-import { Button, buttonVariants } from "../ui/button";
-import { Label } from "../ui/label";
+import { AccordionContent, AccordionItem, AccordionTrigger } from "../ui/shadcn/accordion";
+import { Button, buttonVariants } from "../ui/shadcn/button";
+import { Label } from "../ui/shadcn/label";
 import { cn } from "@/lib/utils";
-import { Separator } from "../ui/separator";
+import { Separator } from "../ui/shadcn/separator";
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 
 export function SideLayout() {

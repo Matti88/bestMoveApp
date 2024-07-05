@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/shadcn/button"
 import {
   Sheet,
   SheetClose,
@@ -8,7 +8,7 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "@/components/ui/sheet"
+} from "@/components/ui/shadcn/sheet"
 import HouseListing from "@/components/ui/HouseListing";
 import houselistingStore from '@/store/houselistingStore';
 import FiltersComponent from '@/components/ui/FiltersComponent'

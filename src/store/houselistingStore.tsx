@@ -18,7 +18,7 @@ export interface HouseListing {
   address: string;
   price: number;
   sqm: number;
-  displayed: boolean;
+  displayed?: boolean;
 }
 
 export interface HousesInStore {
