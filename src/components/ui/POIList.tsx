@@ -13,6 +13,7 @@ const POIList: React.FC = () => {
     <div className="overflow-y-auto">
       {pois.length > 0 ? (
         pois.map((poi) => (
+          <div className="mb-4">
           <POICard
             key={poi.id}
             address={poi.address}
@@ -21,6 +22,7 @@ const POIList: React.FC = () => {
             title={poi.title}
             onDelete={() => deletePOI(poi.id)}
           />
+          </div>
         ))
       ) : (
         <p>No points of interest available.</p>

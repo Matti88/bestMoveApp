@@ -15,7 +15,7 @@ export default function Mapwork() {
         <div className="absolute inset-0 z-0">
           <MapComponent />
         </div>
-        <div className="absolute top-10 left-20 z-10 p-4 rounded  max-w-xs">
+        <div className="absolute top-10 left-20 z-10 p-4 rounded max-w-md h-[80vh] overflow-y-auto">
           <FormComponent />
           {/* <br/>
           <PoiForm /> */}
@@ -26,6 +26,7 @@ export default function Mapwork() {
           <FiltersComponent />
           <br/>
           {houses.filter((house) => house.displayed).map((listing, index) => (
+            
             <HouseListing
               key={index}
               image={listing.image}
@@ -34,6 +35,7 @@ export default function Mapwork() {
               sqm={listing.sqm}
               listingUrl={listing.image}
             />
+            
           ))}
         </div>
       </div>
