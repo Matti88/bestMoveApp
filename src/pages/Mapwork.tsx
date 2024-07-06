@@ -15,14 +15,14 @@ export default function Mapwork() {
         <div className="absolute inset-0 z-0">
           <MapComponent />
         </div>
-        <div className="absolute top-10 left-20 z-10 p-4 rounded max-w-md h-[80vh] overflow-y-hidden">
+        <div className="absolute top-10 left-20 z-10 p-4 rounded max-w-md h-[80vh] overflow-y-auto">
           <FormComponent />
           {/* <br/>
           <PoiForm /> */}
           <br/>
           <POIList />
         </div>
-        <div className="absolute top-10 right-20 z-10 p-4 rounded max-w-md h-[80vh] overflow-y-hidden">
+        <div className="absolute top-10 right-20 z-10 p-4 rounded max-w-md h-[80vh] overflow-y-auto">
           <FiltersComponent />
           <br/>
           {houses.filter((house) => house.displayed).map((listing, index) => (

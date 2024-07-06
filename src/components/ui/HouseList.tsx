@@ -23,9 +23,9 @@ interface HouseListProps {
 const HouseList: React.FC<HouseListProps> = ({ listings }) => {  
 
   return (
-    <div className={`shadow-md p-4 mb-4 max-w-md mx-auto overflow-y-hidden bg-white rounded bg-gray-800 text-black`}>
+    <div className={`shadow-md p-4 mb-4 max-w-md mx-auto overflow-y-auto bg-white rounded bg-gray-800 text-black`}>
       <h2 className="border-b pb-2">House Listings</h2>
-      <div className="overflow-y-hidden">
+      <div className="overflow-y-auto">
         {listings.map((listing, index) => (
           <HouseListing
             key={index}
