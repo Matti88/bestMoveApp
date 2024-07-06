@@ -1,32 +1,33 @@
 import React from 'react';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/shadcn/card";
+import { Button } from "@/components/ui/shadcn/button";
+import { X } from 'lucide-react';
 
 interface PinInfoProps {
   thumbnail_image: string;
   title: string;
   price_num: number;
   sqm_num: number;
-  onClose: () => void; // New prop for the close function
+  onClose: () => void;
 }
 
-const PinInfo: React.FC<PinInfoProps> = ({
-  thumbnail_image,
-  title,
-  // insertionpage,
-  price_num,
-  sqm_num,
-   onClose // New prop for the close function
-}) => {
+const PinInfo: React.FC<PinInfoProps> = ({ thumbnail_image, title, price_num, sqm_num, onClose }) => {
   return (
-    <div className="bg-white rounded-lg p-4 shadow-md max-w-md">
-      <div className='text-black'>
-          <div className="text-lg font-semibold mb-2">Title: {title}</div>
-          <img className="mb-4" width={240} src={thumbnail_image} alt={`${title} Image`} />
-          <div className="mb-2">Price: {price_num}</div>
-          <div>&#x33A1;: {sqm_num}</div>
-        {/* </a> */}
-      </div>
-    </div>
+    <Card className="w-full max-w-md relative">
+      <Button className="absolute top-2 right-2" variant="ghost" size="icon" onClick={onClose}>
+        <X />
+      </Button>
+      <CardHeader>
+        <CardTitle>{title}</CardTitle>
+      </CardHeader>
+      <CardContent className="p-4 pt-0">
+        <img className="mb-4 rounded" width={240} src={thumbnail_image} alt={`${title} Image`} />
+        <div className="text-lg font-semibold mb-2">Price: {price_num}</div>
+        <div className="text-lg font-semibold">&#x33A1;: {sqm_num}</div>
+      </CardContent>
+    </Card>
   );
-}
+};
 
 export default PinInfo;
+
