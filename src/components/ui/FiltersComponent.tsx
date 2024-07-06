@@ -154,11 +154,12 @@ const FiltersComponent: React.FC = () => {
       <form onSubmit={triggerNewSearch}>
         <CardContent className="space-y-4">
           <div className="grid grid-cols-1">
+          <label className="block mb-2">POI Isochrones:</label>
             {/* Chips with checkboxes */}
             <div className="flex mb-4">
-              <div className="mr-4">
-                <label className="block mb-2">POI Isochrones:</label>
+                <br/>
                 {list_selectionPoi?.map((chip) => (
+                  <div className='mr-1'>
                   <ChipWithCheckbox
                     key={chip.id}
                     id={chip.id}
@@ -166,8 +167,9 @@ const FiltersComponent: React.FC = () => {
                     isChecked={chip.isChecked}
                     onToggle={() => toggleSelectedPoi(chip.id)}
                   />
+                  </div>
                 ))}
-              </div>
+
             </div>
           </div>
           <div className="grid grid-cols-2 gap-4">
