@@ -72,7 +72,6 @@ const FormComponent: React.FC = ({ /* pass necessary props */ }) => {
 
     event.preventDefault();
 
-    console.log(formData);
 
     const indirizzi = await fetchGeoapifyData(formData.location);
     const lat = indirizzi.results[0].lat
