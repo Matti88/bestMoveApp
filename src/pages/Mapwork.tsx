@@ -3,7 +3,6 @@ import FiltersComponent from '@/components/ui/FiltersComponent';
 import HouseListing from "@/components/ui/HouseListing";
 import houselistingStore from '@/store/houselistingStore';
 import FormComponent from "@/components/ui/FormComponent";
-import PoiForm from "@/components/ui/PoiForm";
 import POIList from "@/components/ui/POIList";
 
 export default function Mapwork() {
@@ -15,14 +14,12 @@ export default function Mapwork() {
         <div className="absolute inset-0 z-0">
           <MapComponent />
         </div>
-        <div className="absolute top-10 left-20 z-10 p-4 rounded max-w-md h-[80vh] overflow-y-auto">
+        <div className="absolute top-10 left-10 z-10 p-2 rounded max-w-md h-[80vh] w-[20vw] overflow-y-auto scaled-container">
           <FormComponent />
-          {/* <br/>
-          <PoiForm /> */}
           <br/>
           <POIList />
         </div>
-        <div className="absolute top-10 right-20 z-10 p-4 rounded max-w-md h-[80vh] overflow-y-auto">
+        <div className="absolute top-10 right-10 z-10 p-2 rounded max-w-md h-[80vh] w-[20vw] overflow-y-auto scaled-container">
           <FiltersComponent />
           <br/>
           {houses.filter((house) => house.displayed).map((listing, index) => (

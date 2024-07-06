@@ -14,17 +14,14 @@ interface HouseListingProps {
 const HouseListing: React.FC<HouseListingProps> = ({ image, title, price, sqm, listingUrl }) => {
 
   return (
-    <a href={listingUrl} target="_blank" rel="noopener noreferrer" className="no-underline">
+    <a href={"https://willhaben.at/" + listingUrl} target="_blank" rel="noopener noreferrer" className="no-underline">
       <Card className="w-full max-w-md p-4 mb-4">
-        <div className="flex flex-row">
-          <div className="basis-1/4">
-            <div className="w-20 h-20 ">
-              <img src={image} alt={title} className="w-full h-full object-cover border rounded" />
-            </div>
+        <div className="flex flex-row items-center">
+          <div className="flex-shrink-0 w-20 h-20">
+            <img src={image} alt={title} className="w-full h-full object-cover border rounded" />
           </div>
-          <div className="basis-3/4">
-            <CardContent className="flex-1 p-4">
-              
+          <div className="flex-1 pl-4">
+            <CardContent className="p-0">
               <CardTitle>{title}</CardTitle>
               <div className="text-base">
                 <Label>Price: {price.toLocaleString()}</Label>
@@ -35,8 +32,7 @@ const HouseListing: React.FC<HouseListingProps> = ({ image, title, price, sqm, l
           </div>
         </div>
       </Card>
-    </a>
-  );
+    </a>  );
 };
 
 export default HouseListing;

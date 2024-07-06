@@ -8,12 +8,14 @@ import { Pagination, PaginationContent, PaginationItem, PaginationPrevious, Pagi
 import houselistingStore from '@/store/houselistingStore';
 import FileUploader from '@/components/ui/FileUploader';
 
+
 type direction = 'next' | 'previous' | 'middle';
 
 
 export default function Houses() {
   const houses = houselistingStore((state) => state.houseListings);
   const filteredhouses = houselistingStore((state) => state.houseListings.filter(house => house.displayed));
+  const exampleHouseListing = houselistingStore((state) => state.exampleHouseListing);
   const updateHouseListings = houselistingStore((state) => state.updateHouseListings);
   const exportToSpreadsheet = houselistingStore((state) => state.exportToSpreadsheet);
   const [currentPage, setCurrentPage] = useState(1);
@@ -27,13 +29,13 @@ export default function Houses() {
   const displayedHouses = houses.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
 
 
-    // Calculate houses to display on the current page
+  // Calculate houses to display on the current page
   const displayedHousesFiltered = filteredhouses.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
 
 
   function checkAndSelectElements(amountOfHouses: number, paginationArray: number[]) {
     let range;
-    
+
     if (amountOfHouses >= 0 && amountOfHouses <= 10) {
       range = 1;
     } else if (amountOfHouses >= 11 && amountOfHouses <= 20) {
@@ -43,7 +45,7 @@ export default function Houses() {
     } else {
       throw new Error("Number is out of valid range.");
     }
-    
+
     switch (range) {
       case 1:
         return paginationArray.slice(0, 1);  // until first element
@@ -56,7 +58,7 @@ export default function Houses() {
     }
   }
 
-  const handlePageChange = (pageNumber: number, dir: direction, housesCount : number) => {
+  const handlePageChange = (pageNumber: number, dir: direction, housesCount: number) => {
 
     setCurrentPage((prevPageNumber) => {
 
@@ -71,7 +73,7 @@ export default function Houses() {
         } else if (dir === 'previous') {
 
           newPageNumber = Math.max(1, pageNumber - 1)
-          setMiddlePages(checkAndSelectElements(housesCount,[newPageNumber, newPageNumber + 1, newPageNumber + 2]) );
+          setMiddlePages(checkAndSelectElements(housesCount, [newPageNumber, newPageNumber + 1, newPageNumber + 2]));
         }
 
         return newPageNumber;
@@ -86,178 +88,198 @@ export default function Houses() {
   };
 
   return (
-<>
-<div className="container mx-50 ">  <div className="items-center mt-10 gap-10">
-    
-      <div className="flex flex-col items-center mt-10 gap-10">
-        <Card className="w-full mx-auto px-10">
-          <CardHeader>
-            <CardTitle>Upload a File</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <FileUploader />
-          </CardContent>
-        </Card>
-        <div className="flex items-center gap-20">
-          <div className="ml-auto flex items-center gap-20">
-            <Button className="h-8 gap-1" size="sm" variant="outline">
-              <FileIcon className="h-3.5 w-3.5" />
-              <span className="sr-only sm:not-sr-only sm:whitespace-nowrap" onClick={() => exportToSpreadsheet(houses.filter((house) => house.displayed))}>Export</span>
-            </Button>
-            <Button className="h-8 gap-1" size="sm" variant="outline" onClick={() => updateHouseListings([])}>
-              <FileIcon className="h-3.5 w-3.5" />
-              <span className="sr-only sm:not-sr-only sm:whitespace-nowrap">Reset Houses</span>
-            </Button>
+    <>
+      <div className="container mx-50 ">  <div className="items-center mt-10 gap-10">
+        <div className="flex flex-col items-center mt-10 gap-10">
+
+          <Card className="w-full mx-auto px-10">
+
+            <CardHeader>
+              <CardTitle>Upload a File</CardTitle>
+            </CardHeader>
+
+            <CardContent>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-rows-2 grid-flow-col gap-4">
+                  <p>Upload here the dataset of the houses in an excel file. Make sure to follow the proper formatting. In case you have any doubt download the example file from this section</p>
+                  <Button className="h-8 gap-1" size="sm" variant="outline">
+                    <FileIcon className="h-3.5 w-3.5" />
+                    <span className="sr-only sm:not-sr-only sm:whitespace-nowrap" onClick={() => exportToSpreadsheet(exampleHouseListing, "TemplateHouses")}>Template File for Houses</span>
+                  </Button>
+                </div>
+                <FileUploader />
+              </div>
+            </CardContent>
+
+          </Card>
+
+          <div className="w-full">
+
+            <Tabs defaultValue="all" >
+
+              <div className="grid grid-cols-2 gap-4">
+
+                <div className="justify-self-start">
+                  <TabsList>
+                    <TabsTrigger value="all">All houses</TabsTrigger>
+                    <TabsTrigger value="filtered">Filtered Houses</TabsTrigger>
+                  </TabsList>
+                </div>
+                <div className="flex items-center gap-20">
+                  <div className="ml-auto flex items-center gap-20">
+                    <Button className="h-8 gap-1" size="sm" variant="outline">
+                      <ArrowUpIcon className="h-3.5 w-3.5" />
+                      <span className="sr-only sm:not-sr-only sm:whitespace-nowrap" onClick={() => exportToSpreadsheet(houses.filter((house) => house.displayed), "Search_Export")}>Export results of filtered houses</span>
+                    </Button>
+                    <Button className="h-8 gap-1" size="sm" variant="outline" onClick={() => updateHouseListings([])}>
+                      <ResetIcon className="h-3.5 w-3.5" />
+                      <span className="sr-only sm:not-sr-only sm:whitespace-nowrap">Reset Houses</span>
+                    </Button>
+                  </div>
+                </div>
+
+              </div>
+              <TabsContent value="all">
+                <Card x-chunk="dashboard-06-chunk-0">
+                  <CardHeader>
+                    <CardTitle>Houses</CardTitle>
+                    <CardDescription>Manage your houses and view their details.</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <Table>
+                      <TableHeader>
+                        <TableRow>
+                          <TableHead className="hidden w-[100px] sm:table-cell">
+                            <span className="sr-only">Image</span>
+                          </TableHead>
+                          <TableHead>Title</TableHead>
+                          <TableHead>Price</TableHead>
+                          <TableHead>Area</TableHead>
+                          <TableHead className="hidden md:table-cell">Address</TableHead>
+                        </TableRow>
+                      </TableHeader>
+                      <TableBody>
+                        {displayedHouses.map((house) => (
+                          <TableRow key={house.id}>
+                            <td className="hidden sm:table-cell">
+                              <img src={house.image} alt={house.title} className="w-10 h-10 object-cover" />
+                            </td>
+                            <td>{house.title}</td>
+                            <td>{house.price}</td>
+                            <td>{house.sqm}</td>
+                            <td className="hidden md:table-cell">{house.address}</td>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                    <div className="px-6 py-4 border-t">
+                      <Pagination>
+                        <PaginationContent>
+                          <PaginationItem>
+                            <PaginationPrevious
+                              onClick={() => handlePageChange(currentPage, 'previous', houses.length)}
+                            />
+                          </PaginationItem>
+                          {middlePages.map((index) => (
+                            <PaginationItem key={index}>
+                              <PaginationLink
+                                onClick={() => handlePageChange(index + 1, 'middle', houses.length)}
+                                isActive={currentPage === index + 1}
+                              >
+                                {index}
+                              </PaginationLink>
+                            </PaginationItem>
+                          ))}
+
+                          <PaginationItem>
+                            <PaginationNext
+                              onClick={() => handlePageChange(currentPage, 'next', houses.length)}
+                            />
+                          </PaginationItem>
+                        </PaginationContent>
+                      </Pagination>
+                    </div>
+                  </CardContent>
+                  <CardFooter>
+                    <div className="text-xs text-muted-foreground">
+                      Showing <strong>{(currentPage - 1) * itemsPerPage + 1}</strong> to <strong>{Math.min(currentPage * itemsPerPage, houses.length)}</strong> of <strong>{houses.length}</strong> houses
+                    </div>
+                  </CardFooter>
+                </Card>
+              </TabsContent>
+              <TabsContent value="filtered">
+                <Card x-chunk="dashboard-06-chunk-0">
+                  <CardHeader>
+                    <CardTitle>Houses</CardTitle>
+                    <CardDescription>Manage your houses and view their details.</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <Table>
+                      <TableHeader>
+                        <TableRow>
+                          <TableHead className="hidden w-[100px] sm:table-cell">
+                            <span className="sr-only">Image</span>
+                          </TableHead>
+                          <TableHead>Title</TableHead>
+                          <TableHead>Price</TableHead>
+                          <TableHead>Area</TableHead>
+                          <TableHead className="hidden md:table-cell">Address</TableHead>
+                        </TableRow>
+                      </TableHeader>
+                      <TableBody>
+                        {displayedHousesFiltered.map((house) => (
+                          <TableRow key={house.id}>
+                            <td className="hidden sm:table-cell">
+                              <img src={house.image} alt={house.title} className="w-10 h-10 object-cover" />
+                            </td>
+                            <td>{house.title}</td>
+                            <td>{house.price}</td>
+                            <td>{house.sqm}</td>
+                            <td className="hidden md:table-cell">{house.address}</td>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                    <div className="px-6 py-4 border-t">
+                      <Pagination>
+                        <PaginationContent>
+                          <PaginationItem>
+                            <PaginationPrevious
+                              onClick={() => handlePageChange(currentPage, 'previous', displayedHousesFiltered.length)}
+                            />
+                          </PaginationItem>
+                          {middlePages.map((index) => (
+                            <PaginationItem key={index}>
+                              <PaginationLink
+                                onClick={() => handlePageChange(index + 1, 'middle', displayedHousesFiltered.length)}
+                                isActive={currentPage === index + 1}
+                              >
+                                {index}
+                              </PaginationLink>
+                            </PaginationItem>
+                          ))}
+
+                          <PaginationItem>
+                            <PaginationNext
+                              onClick={() => handlePageChange(currentPage, 'next', displayedHousesFiltered.length)}
+                            />
+                          </PaginationItem>
+                        </PaginationContent>
+                      </Pagination>
+                    </div>
+                  </CardContent>
+                  <CardFooter>
+                    <div className="text-xs text-muted-foreground">
+                      Showing <strong>{(currentPage - 1) * itemsPerPage + 1}</strong> to <strong>{Math.min(currentPage * itemsPerPage, displayedHousesFiltered.length)}</strong> of <strong>{displayedHousesFiltered.length}</strong> filtered houses
+                    </div>
+                  </CardFooter>
+                </Card>
+              </TabsContent>
+            </Tabs>
           </div>
         </div>
-        <div className="w-full">
-          <Tabs defaultValue="all" >
-            <TabsList>
-              <TabsTrigger value="all">All houses</TabsTrigger>
-              <TabsTrigger value="filtered">Filtered Houses</TabsTrigger>            
-            </TabsList>
 
-            <TabsContent value="all">
-              <Card x-chunk="dashboard-06-chunk-0">
-                <CardHeader>
-                  <CardTitle>Houses</CardTitle>
-                  <CardDescription>Manage your houses and view their details.</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <Table>
-                    <TableHeader>
-                      <TableRow>
-                        <TableHead className="hidden w-[100px] sm:table-cell">
-                          <span className="sr-only">Image</span>
-                        </TableHead>
-                        <TableHead>Title</TableHead>
-                        <TableHead>Price</TableHead>
-                        <TableHead>Area</TableHead>
-                        <TableHead className="hidden md:table-cell">Address</TableHead>
-                      </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                      {displayedHouses.map((house) => (
-                        <TableRow key={house.id}>
-                          <td className="hidden sm:table-cell">
-                            <img src={house.image} alt={house.title} className="w-10 h-10 object-cover" />
-                          </td>
-                          <td>{house.title}</td>
-                          <td>{house.price}</td>
-                          <td>{house.sqm}</td>
-                          <td className="hidden md:table-cell">{house.address}</td>
-                        </TableRow>
-                      ))}
-                    </TableBody>
-                  </Table>
-                  <div className="px-6 py-4 border-t">
-                    <Pagination>
-                      <PaginationContent>
-                        <PaginationItem>
-                          <PaginationPrevious
-                            onClick={() => handlePageChange(currentPage, 'previous', houses.length)}
-                          />
-                        </PaginationItem>
-                        {middlePages.map((index) => (
-                          <PaginationItem key={index}>
-                            <PaginationLink
-                              onClick={() => handlePageChange(index + 1, 'middle', houses.length)}
-                              isActive={currentPage === index + 1}
-                            >
-                              {index}
-                            </PaginationLink>
-                          </PaginationItem>
-                        ))}
-
-                        <PaginationItem>
-                          <PaginationNext
-                            onClick={() => handlePageChange(currentPage, 'next', houses.length)}
-                          />
-                        </PaginationItem>
-                      </PaginationContent>
-                    </Pagination>
-                  </div>
-                </CardContent>
-                <CardFooter>
-                  <div className="text-xs text-muted-foreground">
-                    Showing <strong>{(currentPage - 1) * itemsPerPage + 1}</strong> to <strong>{Math.min(currentPage * itemsPerPage, houses.length)}</strong> of <strong>{houses.length}</strong> houses
-                  </div>
-                </CardFooter>
-              </Card>
-            </TabsContent>
-            <TabsContent value="filtered">
-              <Card x-chunk="dashboard-06-chunk-0">
-                <CardHeader>
-                  <CardTitle>Houses</CardTitle>
-                  <CardDescription>Manage your houses and view their details.</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <Table>
-                    <TableHeader>
-                      <TableRow>
-                        <TableHead className="hidden w-[100px] sm:table-cell">
-                          <span className="sr-only">Image</span>
-                        </TableHead>
-                        <TableHead>Title</TableHead>
-                        <TableHead>Price</TableHead>
-                        <TableHead>Area</TableHead>
-                        <TableHead className="hidden md:table-cell">Address</TableHead>
-                      </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                      {displayedHousesFiltered.map((house) => (
-                        <TableRow key={house.id}>
-                          <td className="hidden sm:table-cell">
-                            <img src={house.image} alt={house.title} className="w-10 h-10 object-cover" />
-                          </td>
-                          <td>{house.title}</td>
-                          <td>{house.price}</td>
-                          <td>{house.sqm}</td>
-                          <td className="hidden md:table-cell">{house.address}</td>
-                        </TableRow>
-                      ))}
-                    </TableBody>
-                  </Table>
-                  <div className="px-6 py-4 border-t">
-                    <Pagination>
-                      <PaginationContent>
-                        <PaginationItem>
-                          <PaginationPrevious
-                            onClick={() => handlePageChange(currentPage, 'previous', displayedHousesFiltered.length)}
-                          />
-                        </PaginationItem>
-                        {middlePages.map((index) => (
-                          <PaginationItem key={index}>
-                            <PaginationLink
-                              onClick={() => handlePageChange(index + 1, 'middle', displayedHousesFiltered.length)}
-                              isActive={currentPage === index + 1}
-                            >
-                              {index}
-                            </PaginationLink>
-                          </PaginationItem>
-                        ))}
-
-                        <PaginationItem>
-                          <PaginationNext
-                            onClick={() => handlePageChange(currentPage, 'next', displayedHousesFiltered.length)}
-                          />
-                        </PaginationItem>
-                      </PaginationContent>
-                    </Pagination>
-                  </div>
-                </CardContent>
-                <CardFooter>
-                  <div className="text-xs text-muted-foreground">
-                    Showing <strong>{(currentPage - 1) * itemsPerPage + 1}</strong> to <strong>{Math.min(currentPage * itemsPerPage, displayedHousesFiltered.length)}</strong> of <strong>{displayedHousesFiltered.length}</strong> filtered houses
-                  </div>
-                </CardFooter>
-              </Card>
-            </TabsContent>
-          </Tabs>
-        </div>
-      </div>
-    
-    </div></div>
+      </div></div>
     </>
   );
 }
@@ -282,7 +304,7 @@ function FileIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
   );
 }
 
-function PlusCircleIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
+function ArrowUpIcon(props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -297,8 +319,28 @@ function PlusCircleIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>
       strokeLinejoin="round"
     >
       <circle cx="12" cy="12" r="10" />
-      <path d="M8 12h8" />
-      <path d="M12 8v8" />
+      <path d="M12 16v-8" />
+      <path d="M8 12l4-4 4 4" />
+    </svg>
+  );
+}
+
+
+function ResetIcon(props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" 
+    height="21" 
+    viewBox="0 0 21 21" 
+    width="21">
+      <g fill="none" 
+      fill-rule="evenodd" 
+      stroke="#2a2e3b" 
+      stroke-linecap="round" 
+      stroke-linejoin="round" 
+      transform="matrix(-1 0 0 1 20 2)">
+        <path d="m5.5 1.5c-2.4138473 1.37729434-4 4.02194088-4 7 0 4.418278 3.581722 8 8 8s8-3.581722 8-8-3.581722-8-8-8" />
+        <path d="m5.5 1.5v5h-5" transform="matrix(1 0 0 -1 0 8)" />
+      </g>
     </svg>
   );
 }

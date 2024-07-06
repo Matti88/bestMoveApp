@@ -172,13 +172,13 @@ const MapComponent = () => {
     <MapGL
       {...viewport}
       onMove={(evt) => setViewport(evt.viewState)}
-      style={{ width: '100%', height: '90vh' }}
+      style={{ width: '100%', height: '85vh' }}
       mapStyle="mapbox://styles/matteinko/clp6ab2bd00ir01qt5uaedfjf"
       mapboxAccessToken={TOKEN}
     >
-      <GeolocateControl position="top-left" />
+      {/* <GeolocateControl position="top-left" />
       <FullscreenControl position="top-left" />
-      <NavigationControl position="top-left" />
+      <NavigationControl position="top-left" /> */}
       <ScaleControl />
       {houseMarkers}
       {isochrones}

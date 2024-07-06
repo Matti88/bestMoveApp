@@ -11,21 +11,66 @@ const fileType =
 const fileExtension = ".xlsx";
 
 
-export const exportToSpreadsheet = (data: HouseListing[]) => {
-  const dataArray: any[][] = data.map((house) => [house.id, house.title, house.image, house.lon, house.lat, house.address, house.price, house.sqm]); // Extract the necessary properties from HouseListing
-  
-  const workSheet = XLSX.utils.aoa_to_sheet(dataArray);
-  // Generate a Work Book containing the above sheet.
-  const workBook = {
-    Sheets: { data: workSheet, cols: [] },
-    SheetNames: ["data"],
-  };
-  // Exporting the file with the desired name and extension.
-  const excelBuffer = XLSX.write(workBook, { bookType: "xlsx", type: "array" });
-  const fileData = new Blob([excelBuffer], { type: fileType });
-  FileSaver.saveAs(fileData, "search_results" + fileExtension);
-};
+const houseListingsExample : HouseListing[] = [
+      {
+        "title": "1100 Wien, 10. Bezirk, Favoriten, Arsenalstraße 8",
+        "image": "https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg",
+        "lon": 11.412562,
+        "lat": 53.630614,
+        "address": "1100 Wien, 10. Bezirk, Favoriten, Arsenalstraße 8",
+        "price": 1800,
+        "sqm": 57,
+        "id": 1,
+        "displayed": false
+      },
+      {
+        "title": "1100 Wien, 10. Bezirk, Favoriten, Arsenalstraße 8",
+        "image": "https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg",
+        "lon": 13.638059,
+        "lat": 47.09458,
+        "address": "1100 Wien, 10. Bezirk, Favoriten, Arsenalstraße 8",
+        "price": 1710,
+        "sqm": 47,
+        "id": 2,
+        "displayed": false
+      },
+      {
+        "title": "1100 Wien, 10. Bezirk, Favoriten, Davidgasse",
+        "image": "https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg",
+        "lon": 16.25329,
+        "lat": 48.199215,
+        "address": "1100 Wien, 10. Bezirk, Favoriten, Davidgasse",
+        "price": 1080,
+        "sqm": 79,
+        "id": 3,
+        "displayed": false
+      }]
 
+
+      export const exportToSpreadsheet = (data: HouseListing[], fileName: string) => {
+        // Define the headers
+        const headers = ["ID", "Title", "Image", "Longitude", "Latitude", "Address", "Price", "Square Meters"];
+        
+        // Map data to an array of arrays, including headers as the first row
+        const dataArray: any[][] = [
+          headers,
+          ...data.map((house) => [house.id, house.title, house.image, house.lon, house.lat, house.address, house.price, house.sqm])
+        ]; 
+        
+        // Convert array of arrays to worksheet
+        const workSheet = XLSX.utils.aoa_to_sheet(dataArray);
+        
+        // Generate a Work Book containing the above sheet
+        const workBook = {
+          Sheets: { data: workSheet },
+          SheetNames: ["data"],
+        };
+        
+        // Exporting the file with the desired name and extension
+        const excelBuffer = XLSX.write(workBook, { bookType: "xlsx", type: "array" });
+        const fileData = new Blob([excelBuffer], { type: fileType });
+        FileSaver.saveAs(fileData, fileName + fileExtension);
+      };
 interface Coordinates {
   lat: number;
   lon: number;
@@ -45,11 +90,12 @@ export interface HouseListing {
 
 export interface HousesInStore {
   houseListings: HouseListing[];
+  exampleHouseListing: HouseListing[];
   updateHouseListings: (newListings: HouseListing[]) => void;
   addHouseListing: (newListing: Omit<HouseListing, 'id'>) => void;
   addHouseListings: (newListings: Omit<HouseListing, 'id'>[]) => void;
   removeHouseListigs: () => void;
-  exportToSpreadsheet: (data: HouseListing[]) => void;
+  exportToSpreadsheet: (data: HouseListing[], fileName: string) => void;
 }
 
 let nextId = 1;
@@ -60,6 +106,7 @@ export const houselistingStore = create<HousesInStore>()(
 
     (set) => ({
       houseListings: [],
+      exampleHouseListing: houseListingsExample,
       updateHouseListings: (newListings) => set({ houseListings: newListings }),
       addHouseListing: (newListing) =>
         set((state) => ({

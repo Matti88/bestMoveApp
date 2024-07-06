@@ -18,7 +18,8 @@ const POICard: React.FC<POICardProps> = ({ address, modeOfTransportation, timeRa
   return (
     <Card className="w-full max-w-md">
       <div className="flex justify-between items-center mb-2">
-      <CardHeader>
+      <CardHeader className='p-5
+      '>
         <CardTitle>POI Name: {title}</CardTitle>
       </CardHeader>        
       </div>
@@ -27,17 +28,19 @@ const POICard: React.FC<POICardProps> = ({ address, modeOfTransportation, timeRa
           <Label >Address</Label>
           <p className="text-gray-600 mb-2">{address}</p>
         </div>
+        <div className="grid grid-cols-2 gap-4">
         <div className="space-y-1">
           <Label>Mode of Transportation</Label>
           <p className="text-gray-600 mb-2">{modeOfTransportation}</p>
         </div>
         <div className="space-y-1">
           <Label>Time Range:</Label>
-          <p className="text-gray-600 mb-2">{timeRange}</p>
+          <p className="text-gray-600 mb-2">{timeRange} min</p>
+        </div>
         </div>
       </CardContent>
-      <CardFooter>
-      <Button
+      <CardFooter className='grid place-content-end'>
+      <Button  
           onClick={onDelete}
         >
           Delete
