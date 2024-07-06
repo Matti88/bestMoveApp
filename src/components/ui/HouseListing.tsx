@@ -1,5 +1,7 @@
-import React, {useEffect} from 'react';
-
+import React from 'react';
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/shadcn/card";
+//import { Button } from "@/components/ui/shadcn/button";
+import { Label } from "@/components/ui/shadcn/label";
 
 interface HouseListingProps {
   image: string;
@@ -12,20 +14,19 @@ interface HouseListingProps {
 const HouseListing: React.FC<HouseListingProps> = ({ image, title, price, sqm, listingUrl }) => {
 
   return (
-    <a href={"https://willhaben.at/" + listingUrl} target="_blank" rel="noopener noreferrer" >
-      <div className="flex items-center shadow-md rounded p-4 mb-4 overflow-hidden bg-white">
-        <div className="w-20 h-20 overflow-hidden">
-          <img src={image} alt={title} className="w-full h-full object-cover" />
-        </div>
-        <div className="flex-1 p-4">
-          <h3>{title}</h3>
-          <p>
-            Price:{price.toLocaleString()} 
-            <br/>
-            &#x33A1;: {sqm}
+    <a href={listingUrl} target="_blank" rel="noopener noreferrer" className="no-underline">
+      <Card className="flex items-center shadow-md  p-2 mb-2 bg-white ">
+      <div className="w-20 h-20 ">
+            <img src={image} alt={title} className="w-full h-full object-cover border rounded" />
+          </div>
+        <CardContent className="flex-1 p-4">
+          <CardTitle className="text-sx">{title}</CardTitle>
+          <p className="text-sm">
+            <Label className="block">Price: {price.toLocaleString()}</Label>
+            <Label className="block">&#x33A1;: {sqm}</Label>
           </p>
-        </div>
-      </div>
+        </CardContent>
+      </Card>
     </a>
   );
 };
