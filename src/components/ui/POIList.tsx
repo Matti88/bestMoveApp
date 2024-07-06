@@ -10,7 +10,7 @@ const POIList: React.FC = () => {
  
   return (
     <div>
-    <div className="overflow-y-auto">
+    <div className="overflow-y-hidden">
       {pois.length > 0 ? (
         pois.map((poi) => (
           <div className="mb-4">
