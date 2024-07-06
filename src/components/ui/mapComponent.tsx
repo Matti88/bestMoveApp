@@ -172,7 +172,7 @@ const MapComponent = () => {
     <MapGL
       {...viewport}
       onMove={(evt) => setViewport(evt.viewState)}
-      style={{ width: '100%', height: '80vh' }}
+      style={{ width: '100%', height: '90vh' }}
       mapStyle="mapbox://styles/matteinko/clp6ab2bd00ir01qt5uaedfjf"
       mapboxAccessToken={TOKEN}
     >

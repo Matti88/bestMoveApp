@@ -11,7 +11,7 @@ export default function Mapwork() {
 
   return (
     <>
-      <div className="relative w-full h-screen">
+      <div className="relative w-full h-full">
         <div className="absolute inset-0 z-0">
           <MapComponent />
         </div>

@@ -8,24 +8,32 @@ interface HouseListingProps {
   title: string;
   price: number;
   sqm: number;
-  listingUrl?: string; 
+  listingUrl?: string;
 }
 
 const HouseListing: React.FC<HouseListingProps> = ({ image, title, price, sqm, listingUrl }) => {
 
   return (
     <a href={listingUrl} target="_blank" rel="noopener noreferrer" className="no-underline">
-      <Card className="flex items-center shadow-md  p-2 mb-2 bg-white ">
-      <div className="w-20 h-20 ">
-            <img src={image} alt={title} className="w-full h-full object-cover border rounded" />
+      <Card className="w-full max-w-md p-4 mb-4">
+        <div className="flex flex-row">
+          <div className="basis-1/4">
+            <div className="w-20 h-20 ">
+              <img src={image} alt={title} className="w-full h-full object-cover border rounded" />
+            </div>
           </div>
-        <CardContent className="flex-1 p-4">
-          <CardTitle className="text-sx">{title}</CardTitle>
-          <p className="text-sm">
-            <Label className="block">Price: {price.toLocaleString()}</Label>
-            <Label className="block">&#x33A1;: {sqm}</Label>
-          </p>
-        </CardContent>
+          <div className="basis-3/4">
+            <CardContent className="flex-1 p-4">
+              
+              <CardTitle>{title}</CardTitle>
+              <div className="text-base">
+                <Label>Price: {price.toLocaleString()}</Label>
+                <br/>
+                <Label>&#x33A1;: {sqm}</Label>
+              </div>
+            </CardContent>
+          </div>
+        </div>
       </Card>
     </a>
   );
