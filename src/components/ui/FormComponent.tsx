@@ -1,20 +1,20 @@
-// redo this form according to what is taught on this videohttps://www.youtube.com/watch?v=oGq9o2BxlaI&t=50s
-
-
 import React, { useState } from 'react';
 import { fetchGeoapifyData, fetchGeoapifyIsochrones } from '@/store/utilityFuncts';
-import {userSearchStore, POI} from '@/store/user-search'
+import { userSearchStore, POI } from '@/store/user-search';
 
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/shadcn/card"
-import { Label } from "@/components/ui/shadcn/label"
-import { Input } from "@/components/ui/shadcn/input" 
-import { Button } from "@/components/ui/shadcn/button"
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/shadcn/card";
+import { Label } from "@/components/ui/shadcn/label";
+import { Input } from "@/components/ui/shadcn/input"; 
+import { Button } from "@/components/ui/shadcn/button";
+import { 
+  Select,
+  SelectTrigger,
+  SelectContent,
+  SelectItem
+} from "@/components/ui/shadcn/select";
 
-const FormComponent: React.FC = ({ /* pass necessary props */ }) => {
-
-
-  const {  pois, addPOI } = userSearchStore()
-
+const FormComponent: React.FC = () => {
+  const { pois, addPOI } = userSearchStore();
 
   const [formData, setFormData] = useState({
     title: '',
@@ -32,29 +32,28 @@ const FormComponent: React.FC = ({ /* pass necessary props */ }) => {
           poi.timeRange === newPOI.timeRange &&
           poi.modeOfTransportation === newPOI.modeOfTransportation)
     );
-  }
+  };
 
- async function extractBoundingBox(multipolygon: any) {
+  async function extractBoundingBox(multipolygon: any) {
     let minLatitude = 90;
     let maxLatitude = -90;
     let minLongitude = 180;
     let maxLongitude = -180;
 
-  
     for (const polygon of multipolygon.features[0].geometry.coordinates) {
       for (const ring of polygon) {
         for (const point of ring) {
           const [longitude, latitude] = point;
-  
+
           minLatitude = Math.min(minLatitude, latitude);
           maxLatitude = Math.max(maxLatitude, latitude);
-  
+
           minLongitude = Math.min(minLongitude, longitude);
           maxLongitude = Math.max(maxLongitude, longitude);
         }
       }
     }
-  
+
     return {
       lon: {
         min: minLongitude,
@@ -68,17 +67,15 @@ const FormComponent: React.FC = ({ /* pass necessary props */ }) => {
   }
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    
-
     event.preventDefault();
 
-
     const indirizzi = await fetchGeoapifyData(formData.location);
-    const lat = indirizzi.results[0].lat
-    const lon = indirizzi.results[0].lon
-    const address_formatted = indirizzi.results[0].formatted
-    const isochrone = await fetchGeoapifyIsochrones(lat, lon, formData.transportationMode, formData.time * 60)
-    const squaredCoordinates = await extractBoundingBox(isochrone)
+    const lat = indirizzi.results[0].lat;
+    const lon = indirizzi.results[0].lon;
+    const address_formatted = indirizzi.results[0].formatted;
+    const isochrone = await fetchGeoapifyIsochrones(lat, lon, formData.transportationMode, formData.time * 60);
+    const squaredCoordinates = await extractBoundingBox(isochrone);
+
     const newPoiObject: POI = {
       id: 0,
       address: address_formatted,
@@ -88,16 +85,18 @@ const FormComponent: React.FC = ({ /* pass necessary props */ }) => {
       timeRange: formData.time,
       isochrone: isochrone,
       title: formData.title,
-      minmaxSquare: squaredCoordinates
-      
+      minmaxSquare: squaredCoordinates,
+    };
+
+    if (!isDuplicatePOI(newPoiObject)) {
+      addPOI(newPoiObject);
+    } else {
+      console.log("same POI present");
     }
-    !(isDuplicatePOI(newPoiObject))? addPOI(newPoiObject) : console.log("same POI present") 
-    
   };
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = event.target;
-    
     setFormData((prevFormData) => ({
       ...prevFormData,
       [name]: value,
@@ -112,56 +111,51 @@ const FormComponent: React.FC = ({ /* pass necessary props */ }) => {
       </CardHeader>
     
       <form onSubmit={handleSubmit}>
-      <CardContent className="space-y-4">
-        <div className="space-y-2">
-          <Label htmlFor="name">POI Title</Label>
-          <Input name="title" type='text' onChange={handleChange} placeholder="Enter title" />
-        </div>
+        <CardContent className="space-y-4">
+          <div className="space-y-2">
+            <Label htmlFor="name">POI Title</Label>
+            <Input name="title" type='text' onChange={handleChange} placeholder="Enter title" />
+          </div>
 
+          <div className="space-y-2">
+            <Label htmlFor="location">Address</Label>
+            <Input name="location" type="text" placeholder="Write here POI's address" onChange={handleChange} />
+          </div>
 
-        <div className="space-y-2">
-          <Label htmlFor="location">Address</Label>
-          <Input name="location"  type="text" placeholder="Write here POI's address" onChange={handleChange} />
-        </div>
+          <div className="grid grid-cols-2 gap-4">
+            <div className="space-y-2">
+              <Label htmlFor="time">Time</Label>
+              <Select name="time" onValueChange={(value) => setFormData({ ...formData, time: Number(value) })}>
+                <SelectTrigger>{formData.time} minutes</SelectTrigger>
+                <SelectContent>
+                  {[5, 10, 15, 20, 25, 30, 45, 60, 70, 80, 90, 120].map((minutes) => (
+                    <SelectItem key={minutes} value={minutes.toString()}>{minutes} minutes</SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
 
+            <div className="space-y-2">
+              <Label htmlFor="transportationMode">Trans Mode</Label>
+              <Select name="transportationMode" onValueChange={(value) => setFormData({ ...formData, transportationMode: value })}>
+                <SelectTrigger>{formData.transportationMode}</SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="walk">Walk</SelectItem>
+                  <SelectItem value="transit">Transit</SelectItem>
+                  <SelectItem value="drive">Car</SelectItem>
+                  <SelectItem value="bicycle">Bicycle</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+          </div>
+        </CardContent>
 
-        <div className="grid grid-cols-2 gap-4">
-        
-        <div className="space-y-2">
-          <Label htmlFor="time">Time</Label>
-          <select name="time" onChange={handleChange} className="w-full p-2 border border-gray-300 rounded">
-            {[5, 10, 15, 20, 25, 30, 45, 60, 70, 80, 90, 120].map((minutes) => (
-              <option key={minutes} value={minutes}>
-                {minutes} minutes
-              </option>
-            ))}
-          </select>
-        </div>
-        
-        <div className="space-y-2">          
-          <Label htmlFor="transportationMode">Trans Mode</Label>
-          <select name="transportationMode" onChange={handleChange} className="w-full p-2 border border-gray-300 rounded">
-            <option value="walk">Walk</option>
-            <option value="transit">Transit</option>
-            <option value="drive">Car</option>
-            <option value="bicycle">Bicycle</option>
-          </select>
-        </div>
-
-        </div>
-
-
-      </CardContent>        
-      <CardFooter>
-        <Button type='submit' className="w-full">Add Poi</Button>
-      </CardFooter>
-    </form>
+        <CardFooter>
+          <Button type='submit' className="w-full">Add Poi</Button>
+        </CardFooter>
+      </form>
     </Card>
-
   );
 };
 
 export default FormComponent;
-
-
-
