@@ -4,6 +4,7 @@ import MapGL, {
   ScaleControl,
   Source,
   Layer,
+  Map,
   Popup
 } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
