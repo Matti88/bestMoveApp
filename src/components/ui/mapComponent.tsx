@@ -5,17 +5,16 @@ import MapGL, {
   Source,
   Layer,
   Map,
-  Popup
+  Popup,
+  ViewState
 } from 'react-map-gl';
-import 'mapbox-gl/dist/mapbox-gl.css';
 import supercluster from 'supercluster';
 import Pin from '@/components/ui/Pin';
 import PinInfo from '@/components/ui/PinInfo';
 import houselistingStore, { HouseListing } from '@/store/houselistingStore';
 import { userSearchStore } from '@/store/user-search';
 import Supercluster from 'supercluster';
-import { ViewState } from 'react-map-gl';
-import { BBox, GeoJsonProperties, Point } from 'geojson';
+import { BBox, Point } from 'geojson';
 
 
 const MapComponent : React.FC = () => {
@@ -171,7 +170,7 @@ const MapComponent : React.FC = () => {
       {...viewport}
       onMove={(evt) => setViewport(evt.viewState)}
       style={{ width: '100%', height: '85vh' }}
-      mapStyle="mapbox://styles/matteinko/clp6ab2bd00ir01qt5uaedfjf"
+       mapStyle="mapbox://styles/mapbox/streets-v9"
       mapboxAccessToken={TOKEN}
     >
       {/* <GeolocateControl position="top-left" />

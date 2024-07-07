@@ -1,15 +1,19 @@
 import path from "path"
 import react from "@vitejs/plugin-react"
 import { defineConfig } from "vite"
+import commonjs from '@rollup/plugin-commonjs';
 
-const basenameProd = '/shadcn-sample'
+
+
+
+const basenameProd = '/best-move'
 
 export default defineConfig(({ command }) => {
   const isProd = command === 'build'
 
   return {
     base: isProd ? basenameProd : '',
-    plugins: [react()],
+    plugins: [react(), commonjs()],
     resolve: {
       alias: {
         "@": path.resolve(__dirname, "./src"),
@@ -18,7 +22,16 @@ export default defineConfig(({ command }) => {
     build: {
       commonjsOptions: {
         include: [/mapbox-gl/, /node_modules/]
+      },
+      rollupOptions: {
+        external: ['mapbox-gl'],
+        output: {
+          globals: {
+            'mapbox-gl': 'mapboxgl'
+          }
+        }
       }
+  
     },
     define: {
       global: {
