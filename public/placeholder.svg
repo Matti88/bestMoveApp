@@ -1,16 +1,9 @@
 <svg viewBox="0 0 24 24">
- <rect x="2" y="2" width="20" height="20" rx="7" >
-
-<rect width="323" height="323" rx="46" fill="#E8F369"/>
-<circle cx="52" cy="110" r="40" fill="#6967DE"/>
-<circle cx="52" cy="110" r="40" fill="#6967DE"/>
-<circle cx="52" cy="110" r="40" fill="#6967DE"/>
-<circle cx="53" cy="213" r="39" fill="#6967DE"/>
-<circle cx="53" cy="213" r="39" fill="#6967DE"/>
-<circle cx="53" cy="213" r="39" fill="#6967DE"/>
-<rect x="170.85" y="51" width="56" height="213" rx="21" transform="rotate(20 170.85 51)" fill="#6967DE"/>
-<rect x="262.85" y="51" width="56" height="213" rx="21" transform="rotate(20 262.85 51)" fill="#6967DE"/>
-
-
- </rect>
+    <rect x="2" y="2" width="20" height="20" rx="7">
+        <rect width="323" height="323" rx="46" fill="#E8F369"/>
+        <circle cx="52" cy="110" r="40" fill="#6967DE"/>
+        <circle cx="53" cy="213" r="39" fill="#6967DE"/>
+        <rect x="170.85" y="51" width="56" height="213" rx="21" transform="rotate(20 170.85 51)" fill="#6967DE"/>
+        <rect x="262.85" y="51" width="56" height="213" rx="21" transform="rotate(20 262.85 51)" fill="#6967DE"/>
+    </rect>
 </svg>
