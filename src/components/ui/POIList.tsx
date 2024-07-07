@@ -1,4 +1,3 @@
-'use client';
 import React from 'react';
 import POICard from '@/components/ui/POICard'
 import {userSearchStore} from '@/store/user-search'

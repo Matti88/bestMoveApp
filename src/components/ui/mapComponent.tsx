@@ -1,10 +1,7 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import MapGL, {
   Marker,
-  NavigationControl,
-  FullscreenControl,
   ScaleControl,
-  GeolocateControl,
   Source,
   Layer,
   Popup
