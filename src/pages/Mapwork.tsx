@@ -1,4 +1,4 @@
-import MapComponent from '@/components/ui/MapComponent';
+import MapComponent from '@/components/ui/MapComponent2';
 import FiltersComponent from '@/components/ui/FiltersComponent';
 import HouseListing from "@/components/ui/HouseListing";
 import houselistingStore from '@/store/houselistingStore';
