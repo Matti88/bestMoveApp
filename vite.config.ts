@@ -15,6 +15,11 @@ export default defineConfig(({ command }) => {
         "@": path.resolve(__dirname, "./src"),
       },
     },
+    build: {
+      commonjsOptions: {
+        include: [/mapbox-gl/, /node_modules/]
+      }
+    },
     define: {
       global: {
         basename: isProd ? basenameProd : '',

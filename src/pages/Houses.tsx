@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Button } from "@/components/ui/shadcn/button";
 import { CardTitle, CardHeader, CardContent, Card } from "@/components/ui/shadcn/card";
 import { SVGProps } from "react";
@@ -8,7 +7,7 @@ import FileUploader from '@/components/ui/FileUploader';
 
 
 
-export default function Houses() {
+const Houses : React.FC = () => {
   const exampleHouseListing = houselistingStore((state) => state.exampleHouseListing);
   const exportToSpreadsheet = houselistingStore((state) => state.exportToSpreadsheet);
 
@@ -72,3 +71,4 @@ function FileIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
   );
 }
 
+export default Houses;

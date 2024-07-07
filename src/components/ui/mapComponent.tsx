@@ -17,7 +17,7 @@ import { ViewState } from 'react-map-gl';
 import { BBox, GeoJsonProperties, Point } from 'geojson';
 
 
-const MapComponent = () => {
+const MapComponent : React.FC = () => {
   const [viewport, setViewport] = useState<ViewState>({
     latitude: 48.2121268 ,
     longitude: 16.3671307,
