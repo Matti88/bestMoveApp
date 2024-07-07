@@ -3,13 +3,9 @@ import react from "@vitejs/plugin-react"
 import { defineConfig } from "vite"
 import commonjs from '@rollup/plugin-commonjs';
 
-const basenameProd = '/best-move'
-
-export default defineConfig(({ command }) => {
-  const isProd = command === 'build'
-
+export default defineConfig(() => {
   return {
-    base: isProd ? basenameProd : '',
+    base: './',
     plugins: [react(), commonjs()],
     resolve: {
       alias: {
@@ -18,22 +14,15 @@ export default defineConfig(({ command }) => {
     },
     build: {
       commonjsOptions: {
-        include: [/mapbox-gl/, /node_modules/]
+        include: [/node_modules/]
       },
       rollupOptions: {
-        external: ['mapbox-gl'],
         output: {
           globals: {
             'mapbox-gl': 'mapboxgl'
           }
         }
       }
-  
-    },
-    define: {
-      global: {
-        basename: isProd ? basenameProd : '',
-      },
-    },
+    }
   }
 })

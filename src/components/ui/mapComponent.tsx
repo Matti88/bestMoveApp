@@ -1,13 +1,5 @@
 import { useState, useMemo } from 'react';
-import MapGL, {
-  Marker,
-  ScaleControl,
-  Source,
-  Layer,
-  Map,
-  Popup,
-  ViewState
-} from 'react-map-gl';
+import MapGL, { Marker, ScaleControl, Source, Layer, Popup, ViewState } from 'react-map-gl';
 import supercluster from 'supercluster';
 import Pin from '@/components/ui/Pin';
 import PinInfo from '@/components/ui/PinInfo';
@@ -16,10 +8,9 @@ import { userSearchStore } from '@/store/user-search';
 import Supercluster from 'supercluster';
 import { BBox, Point } from 'geojson';
 
-
-const MapComponent : React.FC = () => {
+const MapComponent: React.FC = () => {
   const [viewport, setViewport] = useState<ViewState>({
-    latitude: 48.2121268 ,
+    latitude: 48.2121268,
     longitude: 16.3671307,
     zoom: 14,
     bearing: 0,
@@ -28,25 +19,25 @@ const MapComponent : React.FC = () => {
   });
 
   const [selectedMarker, setSelectedMarker] = useState<HouseListing | null>(null);
-  const houses = houselistingStore((state) => state.houseListings); 
+  const houses = houselistingStore((state) => state.houseListings);
   const pois = userSearchStore((state) => state.pois);
-  
+
   const superclusterIndex = useMemo(() => {
     const index = new supercluster({
       radius: 100,
       minZoom: 13,
-      nodeSize: 256
+      nodeSize: 256,
     });
 
     const points: Array<Supercluster.PointFeature<Point>> = houses
-      .filter(house => house.displayed) // Filter out houses that are not displayed
+      .filter((house) => house.displayed)
       .map((house) => ({
         type: 'Feature',
         properties: { type: 'Point', coordinates: [house.lon, house.lat], cluster: false, houseId: house.id },
         geometry: {
           type: 'Point',
-          coordinates: [house.lon, house.lat]
-        }
+          coordinates: [house.lon, house.lat],
+        },
       }));
 
     index.load(points);
@@ -55,10 +46,10 @@ const MapComponent : React.FC = () => {
 
   const clusters = useMemo(() => {
     const bounds: BBox = [
-      viewport.longitude - 360 / (Math.pow(2, viewport.zoom + 1)),
-      viewport.latitude - 180 / (Math.pow(2, viewport.zoom)),
-      viewport.longitude + 360 / (Math.pow(2, viewport.zoom + 1)),
-      viewport.latitude + 180 / (Math.pow(2, viewport.zoom))
+      viewport.longitude - 360 / Math.pow(2, viewport.zoom + 1),
+      viewport.latitude - 180 / Math.pow(2, viewport.zoom),
+      viewport.longitude + 360 / Math.pow(2, viewport.zoom + 1),
+      viewport.latitude + 180 / Math.pow(2, viewport.zoom),
     ];
 
     return superclusterIndex.getClusters(bounds, Math.floor(viewport.zoom));
@@ -70,16 +61,11 @@ const MapComponent : React.FC = () => {
 
     if (isCluster) {
       return (
-        <Marker
-          key={`cluster-${cluster.id}`}
-          longitude={longitude}
-          latitude={latitude}
-          anchor="bottom"
-        >
+        <Marker key={`cluster-${cluster.id}`} longitude={longitude} latitude={latitude} anchor="bottom">
           <div
             style={{
-              width: `${50 + (pointCount / houses.length) }px`,
-              height: `${50 + (pointCount / houses.length) }px`,
+              width: `${50 + pointCount / houses.length}px`,
+              height: `${50 + pointCount / houses.length}px`,
               backgroundColor: 'blue',
               borderRadius: '50%',
               display: 'flex',
@@ -87,18 +73,20 @@ const MapComponent : React.FC = () => {
               alignItems: 'center',
               color: 'white',
               fontSize: '40px',
-              cursor: 'pointer'
+              cursor: 'pointer',
             }}
             onClick={() => {
               const expansionZoom = Math.min(
-                superclusterIndex.getClusterExpansionZoom(typeof cluster.id === 'string' ? parseInt(cluster.id, 10) : (cluster.id ?? 0)),
+                superclusterIndex.getClusterExpansionZoom(
+                  typeof cluster.id === 'string' ? parseInt(cluster.id, 10) : cluster.id ?? 0
+                ),
                 20
               );
               setViewport({
                 ...viewport,
                 latitude,
                 longitude,
-                zoom: expansionZoom
+                zoom: expansionZoom,
               });
             }}
           >
@@ -127,12 +115,7 @@ const MapComponent : React.FC = () => {
 
   const isochrones = useMemo(() => {
     return pois.map((poi) => (
-      <Source
-        key={`isochrone-source-${poi.id}`}
-        id={`multipolygon-${poi.id}`}
-        type="geojson"
-        data={poi.isochrone}
-      >
+      <Source key={`isochrone-source-${poi.id}`} id={`multipolygon-${poi.id}`} type="geojson" data={poi.isochrone}>
         <Layer
           key={`isochrone-layer-${poi.id}`}
           id={`multipolygon-layer-${poi.id}`}
@@ -149,33 +132,23 @@ const MapComponent : React.FC = () => {
 
   const isochronesPins = useMemo(() => {
     return pois.map((poi) => (
-      <Marker
-        key={`poi-marker-${poi.id}`}
-        longitude={poi.lon}
-        latitude={poi.lat}
-        anchor="bottom"
-      >
-        <Pin size={70} color = '#008080' />
+      <Marker key={`poi-marker-${poi.id}`} longitude={poi.lon} latitude={poi.lat} anchor="bottom">
+        <Pin size={70} color="#008080" />
       </Marker>
     ));
   }, [pois]);
 
-
   // token
   const TOKEN = import.meta.env.VITE_MAPBOX_API_KEY;
-  
 
   return (
     <MapGL
       {...viewport}
       onMove={(evt) => setViewport(evt.viewState)}
       style={{ width: '100%', height: '85vh' }}
-       mapStyle="mapbox://styles/mapbox/streets-v9"
+      mapStyle="mapbox://styles/mapbox/streets-v9"
       mapboxAccessToken={TOKEN}
     >
-      {/* <GeolocateControl position="top-left" />
-      <FullscreenControl position="top-left" />
-      <NavigationControl position="top-left" /> */}
       <ScaleControl />
       {houseMarkers}
       {isochrones}
@@ -191,7 +164,6 @@ const MapComponent : React.FC = () => {
           <PinInfo
             thumbnail_image={selectedMarker.image}
             title={selectedMarker.title}
-            // insertionpage={selectedMarker.insertionpage}
             price_num={selectedMarker.price}
             sqm_num={selectedMarker.sqm}
             onClose={() => setSelectedMarker(null)}
