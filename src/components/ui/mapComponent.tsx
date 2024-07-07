@@ -165,7 +165,7 @@ const MapComponent = () => {
 
 
   // token
-  const TOKEN = "pk.eyJ1IjoibWF0dGVpbmtvIiwiYSI6ImNsNWphN2hzZjAzem8zY3FvdTd2Y3E1ZXcifQ.aEd1ITI4TdSRLO7gnfxcBg";
+  const TOKEN = import.meta.env.VITE_MAPBOX_API_KEY;
   
 
   return (
