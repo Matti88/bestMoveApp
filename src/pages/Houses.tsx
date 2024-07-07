@@ -3,7 +3,7 @@ import { CardTitle, CardHeader, CardContent, Card } from "@/components/ui/shadcn
 import { SVGProps } from "react";
 import TabsComponent from '@/components/ui/TabsComponent'
 import houselistingStore from '@/store/houselistingStore';
-import FileInput from '@/components/ui/FileUploader';
+import FileUploader from '@/components/ui/FileUploader';
 
 
 
@@ -33,7 +33,7 @@ const Houses : React.FC = () => {
                   </Button>
                   
                 </div>
-                <FileInput />
+                <FileUploader />
               </div>
             </CardContent>
 

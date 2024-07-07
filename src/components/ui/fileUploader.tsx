@@ -7,7 +7,7 @@ interface DragEvent extends React.DragEvent<HTMLDivElement> {
 }
 
 
-const FileInput: React.FC = () => {
+const FileUploader: React.FC = () => {
 
     const uploadNewHouseListings = houselistingStore((state) => state.uploadNewHouseListings); 
 
@@ -103,5 +103,5 @@ return (
     );
 };
 
-export default FileInput;
+export default FileUploader;
 
