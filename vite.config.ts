@@ -3,9 +3,6 @@ import react from "@vitejs/plugin-react"
 import { defineConfig } from "vite"
 import commonjs from '@rollup/plugin-commonjs';
 
-
-
-
 const basenameProd = '/best-move'
 
 export default defineConfig(({ command }) => {
