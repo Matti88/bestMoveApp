@@ -91,6 +91,7 @@ export interface HouseListing {
 export interface HousesInStore {
   houseListings: HouseListing[];
   exampleHouseListing: HouseListing[];
+  updateHouseListings: (newListings: HouseListing[]) => void;
   uploadNewHouseListings: (newListings: Omit<HouseListing, 'id'>[]) => void;
   addHouseListing: (newListing: Omit<HouseListing, 'id'>) => void;
   addHouseListings: (newListings: Omit<HouseListing, 'id'>[]) => void;
@@ -106,6 +107,7 @@ export const houselistingStore = create<HousesInStore>()(
 
     (set) => ({
       houseListings: [],
+      updateHouseListings: (newListings) => set({ houseListings: newListings }),
       exampleHouseListing: houseListingsExample,
       uploadNewHouseListings: (newListings) => {
         set(() => ({
