@@ -27,10 +27,12 @@ export default function Houses() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="grid grid-rows-2 grid-flow-col gap-4">
                   <p>Upload here the dataset of the houses in an excel file. Make sure to follow the proper formatting. In case you have any doubt download the example file from this section</p>
+                  
                   <Button className="h-8 gap-1" size="sm" variant="outline">
                     <FileIcon className="h-3.5 w-3.5" />
-                    <span className="sr-only sm:not-sr-only sm:whitespace-nowrap" onClick={() => exportToSpreadsheet(exampleHouseListing, "TemplateHouses")}>Template File for Houses</span>
+                    <span className="sr-only sm:not-sr-only sm:whitespace-nowrap" onClick={() => exportToSpreadsheet(exampleHouseListing, "TemplateHouses")}> Template File for Houses</span>
                   </Button>
+                  
                 </div>
                 <FileUploader />
               </div>

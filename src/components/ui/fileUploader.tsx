@@ -9,7 +9,7 @@ interface DragEvent extends React.DragEvent<HTMLDivElement> {
 
 const FileInput: React.FC = () => {
 
-    const addHouseListings = houselistingStore((state) => state.addHouseListings); 
+    const uploadNewHouseListings = houselistingStore((state) => state.uploadNewHouseListings); 
 
     const handleDrop = useCallback((event: DragEvent) => {
         event.preventDefault();
@@ -49,7 +49,7 @@ const FileInput: React.FC = () => {
                     sqm: item.sqm,
                 }));
 
-            addHouseListings(filteredData); 
+                uploadNewHouseListings(filteredData); 
 
         };
         reader.readAsArrayBuffer(file);

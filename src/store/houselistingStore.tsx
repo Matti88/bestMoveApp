@@ -15,8 +15,8 @@ const houseListingsExample : HouseListing[] = [
       {
         "title": "1100 Wien, 10. Bezirk, Favoriten, Arsenalstraße 8",
         "image": "https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg",
-        "lon": 11.412562,
-        "lat": 53.630614,
+        "lon": 16.412562,
+        "lat": 48.630614,
         "address": "1100 Wien, 10. Bezirk, Favoriten, Arsenalstraße 8",
         "price": 1800,
         "sqm": 57,
@@ -26,8 +26,8 @@ const houseListingsExample : HouseListing[] = [
       {
         "title": "1100 Wien, 10. Bezirk, Favoriten, Arsenalstraße 8",
         "image": "https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg",
-        "lon": 13.638059,
-        "lat": 47.09458,
+        "lon": 16.638059,
+        "lat": 48.09458,
         "address": "1100 Wien, 10. Bezirk, Favoriten, Arsenalstraße 8",
         "price": 1710,
         "sqm": 47,
@@ -49,12 +49,12 @@ const houseListingsExample : HouseListing[] = [
 
       export const exportToSpreadsheet = (data: HouseListing[], fileName: string) => {
         // Define the headers
-        const headers = ["ID", "Title", "Image", "Longitude", "Latitude", "Address", "Price", "Square Meters"];
+        const headers = ["title", "image", "lon", "lat", "address", "price", "sqm"];
         
         // Map data to an array of arrays, including headers as the first row
         const dataArray: any[][] = [
           headers,
-          ...data.map((house) => [house.id, house.title, house.image, house.lon, house.lat, house.address, house.price, house.sqm])
+          ...data.map((house) => [ house.title, house.image, house.lon, house.lat, house.address, house.price, house.sqm])
         ]; 
         
         // Convert array of arrays to worksheet
@@ -91,7 +91,7 @@ export interface HouseListing {
 export interface HousesInStore {
   houseListings: HouseListing[];
   exampleHouseListing: HouseListing[];
-  updateHouseListings: (newListings: HouseListing[]) => void;
+  uploadNewHouseListings: (newListings: Omit<HouseListing, 'id'>[]) => void;
   addHouseListing: (newListing: Omit<HouseListing, 'id'>) => void;
   addHouseListings: (newListings: Omit<HouseListing, 'id'>[]) => void;
   removeHouseListigs: () => void;
@@ -107,7 +107,11 @@ export const houselistingStore = create<HousesInStore>()(
     (set) => ({
       houseListings: [],
       exampleHouseListing: houseListingsExample,
-      updateHouseListings: (newListings) => set({ houseListings: newListings }),
+      uploadNewHouseListings: (newListings) => {
+        set(() => ({
+          houseListings: newListings.map((listing) => ({ ...listing, id: nextId++, displayed: true })),
+        }));
+      }, 
       addHouseListing: (newListing) =>
         set((state) => ({
           houseListings: [...state.houseListings, { ...newListing, id: nextId++, displayed: true }],
@@ -115,7 +119,7 @@ export const houselistingStore = create<HousesInStore>()(
       addHouseListings: (newListings) =>
         set((state) => ({
           houseListings: [
-            ...state.houseListings,
+            ...state.houseListings.slice(1),
             ...newListings.map((listing) => ({ ...listing, id: nextId++, displayed: true })),
           ],
         })),
