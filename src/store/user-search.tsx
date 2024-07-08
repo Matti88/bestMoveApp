@@ -7,7 +7,7 @@ import { persist, createJSONStorage } from 'zustand/middleware'
 export interface PoiSelection {
   id: number;
   text: string;
-  isChecked: boolean
+  isChecked: boolean;
 }
 
 export interface ActiveFilters {
@@ -38,7 +38,8 @@ export interface POI {
   timeRange: number;
   isochrone: any;
   title: string;
-  minmaxSquare: cooSquares
+  minmaxSquare: cooSquares;
+  dangerZone?: boolean;
 }
 
 export interface userSearch {
@@ -49,6 +50,7 @@ export interface userSearch {
   addPOI: (newPOI: POI) => void;
   deletePOI: (poiId: number) => void;
   toggleSelectedPoi: (poiId: number) => void;
+  toggleDangerZone: (poiId: number) => void;
   reset: () => void;
 
 }
@@ -70,13 +72,13 @@ export const userSearchStore = create<userSearch>()(
       updateActiveFilters: (newFilters) => set((state) => ({ activeFilters: { ...state.activeFilters, ...newFilters } })),
       addPOI: (newPOI) => set((state) => {
         const maxId = Math.max(...state.pois.map((poi) => poi.id), 0);
-        const updatedPOIs = [...state.pois, { ...newPOI, id: maxId + 1 }];
+        const updatedPOIs = [...state.pois, { ...newPOI, id: maxId + 1, dangerZone: false }];
 
         return {
           pois: updatedPOIs,
           activeFilters: {
             ...state.activeFilters,
-            selectedPoiIds: [...state.activeFilters.selectedPoiIds, { id: maxId + 1, text: newPOI.title.slice(0, 5), isChecked: false }],
+            selectedPoiIds: [...state.activeFilters.selectedPoiIds, { id: maxId + 1, text: newPOI.title.slice(0, 5), isChecked: false, dangerZone: false }],
           },
         };
       }),
@@ -116,6 +118,16 @@ export const userSearchStore = create<userSearch>()(
             ...state.activeFilters,
             selectedPoiIds: updatedSelectedPoiIds,
           },
+        };
+      }),
+
+      toggleDangerZone: (poiId: number) => set((state) => {
+        const updatedPoiCharacteristics = state.pois.map((poi) =>
+          poi.id === poiId ? { ...poi, dangerZone: !poi.dangerZone } : poi
+        );
+
+        return {
+          pois: updatedPoiCharacteristics
         };
       }),
 

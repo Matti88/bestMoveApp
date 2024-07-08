@@ -159,7 +159,7 @@ const FiltersComponent: React.FC = () => {
             <div className="flex mb-4">
                 <br/>
                 {list_selectionPoi?.map((chip) => (
-                  <div className='mr-1'>
+                  
                   <ChipWithCheckbox
                     key={chip.id}
                     id={chip.id}
@@ -167,7 +167,7 @@ const FiltersComponent: React.FC = () => {
                     isChecked={chip.isChecked}
                     onToggle={() => toggleSelectedPoi(chip.id)}
                   />
-                  </div>
+                  
                 ))}
 
             </div>
