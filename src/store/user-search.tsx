@@ -1,8 +1,30 @@
 // file from the benvenutiavienna-test 
 
 import { create } from 'zustand';
-
+import { GeoJsonProperties, GeoJSON,MultiPolygon , Feature, Position ,FeatureCollection ,Polygon, GeoJsonObject  } from 'geojson';
 import { persist, createJSONStorage } from 'zustand/middleware'
+
+interface GeoJSONFeatureCollection {
+  type: "FeatureCollection";
+  features: GeoJSONFeature[];
+}
+
+interface GeoJSONFeature {
+  type: "Feature";
+  properties: {
+    stroke: string;
+    "stroke-width": number;
+    "stroke-opacity": number;
+    fill: string;
+    "fill-opacity": number;
+  };
+  geometry: GeoJSONMultiPolygon;
+}
+
+interface GeoJSONMultiPolygon {
+  type: "MultiPolygon";
+  coordinates: number[][][][];
+}
 
 export interface PoiSelection {
   id: number;
@@ -36,7 +58,7 @@ export interface POI {
   lat: number;
   modeOfTransportation: string;
   timeRange: number;
-  isochrone: any;
+  isochrone: GeoJSONFeatureCollection;
   title: string;
   minmaxSquare: cooSquares;
   dangerZone?: boolean;

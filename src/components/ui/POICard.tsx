@@ -50,9 +50,6 @@ const POICard: React.FC<POICardProps> = ({ address, modeOfTransportation, timeRa
         </div>
       </CardContent>
       <CardFooter className='grid grid-cols-2 place-content-between gap-4 pb-3'>
-
-
-        
           <div>
             <Switch id={customId?.toString()}
               checked={dangerZone}
