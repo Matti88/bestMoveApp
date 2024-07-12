@@ -47,30 +47,32 @@ const houseListingsExample : HouseListing[] = [
       }]
 
 
-      export const exportToSpreadsheet = (data: HouseListing[], fileName: string) => {
-        // Define the headers
-        const headers = ["title", "image", "lon", "lat", "address", "price", "sqm"];
-        
-        // Map data to an array of arrays, including headers as the first row
-        const dataArray: any[][] = [
-          headers,
-          ...data.map((house) => [ house.title, house.image, house.lon, house.lat, house.address, house.price, house.sqm])
-        ]; 
-        
-        // Convert array of arrays to worksheet
-        const workSheet = XLSX.utils.aoa_to_sheet(dataArray);
-        
-        // Generate a Work Book containing the above sheet
-        const workBook = {
-          Sheets: { data: workSheet },
-          SheetNames: ["data"],
-        };
-        
-        // Exporting the file with the desired name and extension
-        const excelBuffer = XLSX.write(workBook, { bookType: "xlsx", type: "array" });
-        const fileData = new Blob([excelBuffer], { type: fileType });
-        FileSaver.saveAs(fileData, fileName + fileExtension);
-      };
+export const exportToSpreadsheet = (data: HouseListing[], fileName: string) => {
+  // Define the headers
+  const headers = ["title", "image", "lon", "lat", "address", "price", "sqm"];
+  
+  // Map data to an array of arrays, including headers as the first row
+  const dataArray: any[][] = [
+    headers,
+    ...data.map((house) => [ house.title, house.image, house.lon, house.lat, house.address, house.price, house.sqm])
+  ]; 
+  
+  // Convert array of arrays to worksheet
+  const workSheet = XLSX.utils.aoa_to_sheet(dataArray);
+  
+  // Generate a Work Book containing the above sheet
+  const workBook = {
+    Sheets: { data: workSheet },
+    SheetNames: ["data"],
+  };
+  
+  // Exporting the file with the desired name and extension
+  const excelBuffer = XLSX.write(workBook, { bookType: "xlsx", type: "array" });
+  const fileData = new Blob([excelBuffer], { type: fileType });
+  FileSaver.saveAs(fileData, fileName + fileExtension);
+};
+
+
 interface Coordinates {
   lat: number;
   lon: number;

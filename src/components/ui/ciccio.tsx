@@ -1,20 +1,18 @@
-
 import React from 'react';
-import { userSearchStore, ActiveFilters, POI } from '@/store/user-search'
+import { userSearchStore, ActiveFilters, POI } from '@/store/user-search';
 import ChipWithCheckbox from '@/components/ui/ChipArray';
-import { houselistingStore } from '@/store/houselistingStore';
+import { FeatureCollection, houselistingStore } from '@/store/houselistingStore';
 
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/shadcn/card"
-import { Label } from "@/components/ui/shadcn/label"
-import { Input } from "@/components/ui/shadcn/input"
-import { Button } from "@/components/ui/shadcn/button"
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/shadcn/card";
+import { Label } from "@/components/ui/shadcn/label";
+import { Input } from "@/components/ui/shadcn/input";
+import { Button } from "@/components/ui/shadcn/button";
 
 import { difference, featureCollection } from '@turf/turf';
-//import { Polygon } from 'leaflet';
 import { GeoJsonProperties, GeoJSON, MultiPolygon, Feature, Position, Polygon, GeoJsonObject } from 'geojson';
+type GeoJSONGeometry = Polygon | MultiPolygon | undefined;
 
 const FiltersComponent: React.FC = () => {
-
   const activeFilters = userSearchStore((state) => state.activeFilters);
   const list_selectionPoi = activeFilters.selectedPoiIds;
   const maximumPrice = activeFilters.maxPrice;
@@ -28,107 +26,77 @@ const FiltersComponent: React.FC = () => {
   async function triggerNewSearch() {
     if (checkPropertiesAndSelection(activeFilters)) {
       try {
-        let housesFilteredbyNumericFilters = houseListings.map(house => {
-
+        let filteredData = houseListings.map(house => {
           // setting the displayed value to true
           let displayed = true;
 
-          // testing if a minumum squared meter exists and if the house is too small set the display value to false
-          if (minimumSqm! && house.sqm <= minimumSqm!) {
+          // testing if a minimum squared meter exists and if the house is too small set the display value to false
+          if (minimumSqm && house.sqm <= minimumSqm) {
             displayed = false;
           }
 
           // testing if maximum price exists and if the house is too expensive
-          if (maximumPrice! && house.price >= maximumPrice!) {
+          if (maximumPrice && house.price >= maximumPrice) {
             displayed = false;
           }
 
-          house.displayed = displayed
-          return house
-        }
-
-        )
-
-        // subet of pois that have been selected for usage
-        const selectedPois = activeFilters.selectedPoiIds.filter(poi => poi.isChecked).map(poi => poi.id);
-
-        // split the pois into danger-zones and not-danger-zones 
-        const dangerZones = pois.filter(poi => selectedPois.includes(poi.id) && poi.dangerZone === true  );
-        const notDangerZones = pois.filter(poi => selectedPois.includes(poi.id) && poi.dangerZone === false );
-
-
-        //looping on NON danger zones where the houses need to be in
-        notDangerZones.forEach((notDangerZone) => {
-          
-          // copying the isochrone of the non-danger-zone
-          let isochrone_to_be_clipped : Feature<Polygon | MultiPolygon, GeoJsonProperties> | null = notDangerZone.isochrone.features[0] ;
-
-          // loop on danger-zones to clip out all the areas to avoid from non-danger-zones
-          dangerZones.forEach(dangerZone => {
-            if (isochrone_to_be_clipped !== null) { // if the isochrone is not null then we need to clip it
-               isochrone_to_be_clipped = difference(featureCollection([isochrone_to_be_clipped, dangerZone.isochrone.features[0]]));
-              }
-          });
-
-
-          // console.log("isochrone_to_be_clipped: ", isochrone_to_be_clipped);
-          // console.log("isochrone_normal: ", notDangerZone);
-
-
-          if (isochrone_to_be_clipped) { 
-            console.log("using the clipped version");
-          // in this loop house.displayed == true only if in a isochrone that is not a danger zone but clipped out from danger zones
-          housesFilteredbyNumericFilters.map(house => {
-            if (house.displayed) // only check if house displayed property is still true - this is evealuated by  the previous passage
-            { house.displayed = checkHouseInReachableArea(house.lon, house.lat, isochrone_to_be_clipped)} }
-          );
-          }
-          else if(notDangerZone){
-            console.log("using the NON clipped version");
-            housesFilteredbyNumericFilters.map(house => {
-              if (house.displayed) 
-              { house.displayed = checkHouseInReachableArea(house.lon, house.lat, notDangerZone.isochrone.features[0].geometry.coordinates) }
-            }
-            );
-          }
-
-
+          house.displayed = displayed;
+          return house;
         });
 
-  
+        // use all the active POIs to make a selection if the houses are within the polygons of the POIs
+        const selectionCheck = activeFilters.selectedPoiIds.filter(poi => poi.isChecked);
+        
+        // split the pois into danger zone and not danger zone and calculate the difference of the first 2
+        const dangerZones = pois.filter(poi => poi.dangerZone).map(poi => poi.isochrone);
+        const notDangerZones = pois.filter(poi => !poi.dangerZone).map(poi => poi.isochrone);
+        const difference_dangerZones = difference(featureCollection([notDangerZones[0].features[0], dangerZones[0].features[0]]));
+        console.log("notDangerZones: ", notDangerZones);
+        console.log("dangerZones: ", dangerZones);
+        console.log("difference_dangerZones", difference_dangerZones)
 
-        await updateHouseListings(housesFilteredbyNumericFilters);
+
+        // Filter pois with raytracing
+        selectionCheck.forEach(poiUsedForFilter => {
+          const isochrone = pois.filter(poi => !poi.dangerZone).find(actualPoi => poiUsedForFilter.id === actualPoi.id)?.isochrone;
+          const dangerZones = pois.filter(poi => poi.dangerZone).map(poi => poi.isochrone);
+            
+          // TODO: filter out from the isochrone all the danger zones by using the difference method
+          /// This is an example difference method: difference(featureCollection([original_isochrone, dangerZone_toClip_out]));
+
+          if (isochrone) {
+            filteredData.map(house => {
+              if (house.displayed) { // only check if house displayed property is still true - this is evaluated by the previous passage
+                
+                if (dangerZones.length > 0) {
+                  
+                  dangerZones.forEach(dangerZone => {
+                    const dangerZone_toClip_out = dangerZone.features[0];
+                    const original_isochrone = isochrone.features[0];
+                    const POLYGON_where_to_search_the_house = difference(featureCollection([original_isochrone, dangerZone_toClip_out]));
+                    //house.displayed = checkHouseInReachableArea(house.lon, house.lat, POLYGON_where_to_search_the_house);
+                  });
+                } else {
+                  house.displayed = checkHouseInReachableArea(house.lon, house.lat, isochrone.features[0]);
+                }
+                
+              }
+            
+            });
+          }
+        });
+
+        await updateHouseListings(filteredData);
       } catch (error) {
         console.error('Error updating houses:', error);
-
       }
     }
   }
 
-
-  // function checkHouseInReachableArea(
-  //   longitude: number,
-  //   latitude: number,
-  //   list_of_shapes: number[][][][]
-  // ): boolean {
-
-
-
-  //   for (const basicPolygons of list_of_shapes) {
-  //     for (const basicPolygon of basicPolygons) {
-  //       if (rayTracingMethod(longitude, latitude, basicPolygon)) {
-  //         return true;
-  //       }
-  //     }
-  //   }
-  //   return false;
-  // }
-
-
   function checkHouseInReachableArea(
     longitude: number,
     latitude: number,
-    list_of_shapes: Feature<Polygon | MultiPolygon, GeoJsonProperties> | number[][][][] | null
+    list_of_shapes: Feature<Polygon | MultiPolygon, GeoJsonProperties> | number[][][] | null
   ): boolean {
     if (list_of_shapes === null) {
       return false;
@@ -165,7 +133,7 @@ const FiltersComponent: React.FC = () => {
     return shape && shape.type === "Feature" && shape.geometry && shape.geometry.type;
   }
 
-
+  
 
 
   function rayTracingMethod(x: number, y: number, poly: number[][]): boolean {
@@ -206,10 +174,10 @@ const FiltersComponent: React.FC = () => {
     const propertyCheck = Object.values(obj).some(prop => prop !== null);
 
     // Check if any object in selectedPoiIds has isChecked set to true
-    const selectedPois = obj.selectedPoiIds.some(poi => poi.isChecked);
+    const selectionCheck = obj.selectedPoiIds.some(poi => poi.isChecked);
 
     // Return true if any of the conditions is true
-    return propertyCheck || selectedPois;
+    return propertyCheck || selectionCheck;
   }
 
 
@@ -243,7 +211,7 @@ const FiltersComponent: React.FC = () => {
                     isChecked={chip.isChecked}
                     onToggle={() => toggleSelectedPoi(chip.id)}
                   />
-                  
+
                 ))}
 
             </div>
@@ -277,3 +245,4 @@ const FiltersComponent: React.FC = () => {
 
 
 export default FiltersComponent;
+
