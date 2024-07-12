@@ -211,7 +211,7 @@ const FiltersComponent: React.FC = () => {
                     isChecked={chip.isChecked}
                     onToggle={() => toggleSelectedPoi(chip.id)}
                   />
-                  
+
                 ))}
 
             </div>

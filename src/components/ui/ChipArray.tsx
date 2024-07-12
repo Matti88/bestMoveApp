@@ -10,7 +10,7 @@ interface ChipWithCheckboxProps {
 const ChipWithCheckbox: React.FC<ChipWithCheckboxProps> = ({ id, text, isChecked, onToggle }) => {
   return (
     <label
-      className={`relative inline-flex items-center select-none whitespace-nowrap rounded-lg py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none ${
+      className={`relative inline-flex ml-2 items-center select-none whitespace-nowrap rounded-lg py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none ${
         isChecked ? 'bg-green-500 text-white' : 'bg-pink-500 text-white'
       }`}
     >

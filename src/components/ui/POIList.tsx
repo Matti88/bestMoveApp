@@ -12,7 +12,7 @@ const POIList: React.FC = () => {
     <div className="overflow-y-auto">
       {pois.length > 0 ? (
         pois.map((poi) => (
-   
+          <div className="mb-4" key={poi.id}>
           <POICard
             key={poi.id}
             address={poi.address}
@@ -23,7 +23,9 @@ const POIList: React.FC = () => {
             dangerZone={poi.dangerZone}
             onDelete={() => deletePOI(poi.id)}
             onToggleDangerZone={() => toggleDangerZone(poi.id)}
+            
           />
+          </div>
         ))
       ) : (
         <p>No points of interest available.</p>
