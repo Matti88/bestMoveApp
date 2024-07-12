@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { userSearchStore, ActiveFilters, POI } from '@/store/user-search'
 import ChipWithCheckbox from '@/components/ui/ChipArray';
@@ -10,11 +9,9 @@ import { Input } from "@/components/ui/shadcn/input"
 import { Button } from "@/components/ui/shadcn/button"
 
 import { difference, featureCollection } from '@turf/turf';
-//import { Polygon } from 'leaflet';
 import { GeoJsonProperties, GeoJSON, MultiPolygon, Feature, Position, Polygon, GeoJsonObject } from 'geojson';
 
 const FiltersComponent: React.FC = () => {
-
   const activeFilters = userSearchStore((state) => state.activeFilters);
   const list_selectionPoi = activeFilters.selectedPoiIds;
   const maximumPrice = activeFilters.maxPrice;
@@ -29,134 +26,74 @@ const FiltersComponent: React.FC = () => {
     if (checkPropertiesAndSelection(activeFilters)) {
       try {
         let housesFilteredbyNumericFilters = houseListings.map(house => {
-
-          // setting the displayed value to true
           let displayed = true;
 
-          // testing if a minumum squared meter exists and if the house is too small set the display value to false
           if (minimumSqm! && house.sqm <= minimumSqm!) {
             displayed = false;
           }
 
-          // testing if maximum price exists and if the house is too expensive
           if (maximumPrice! && house.price >= maximumPrice!) {
             displayed = false;
           }
 
           house.displayed = displayed
           return house
-        }
-
-        )
-
-        // subet of pois that have been selected for usage
-        const selectedPois = activeFilters.selectedPoiIds.filter(poi => poi.isChecked).map(poi => poi.id);
-
-        // split the pois into danger-zones and not-danger-zones 
-        const dangerZones = pois.filter(poi => selectedPois.includes(poi.id) && poi.dangerZone === true  );
-        const notDangerZones = pois.filter(poi => selectedPois.includes(poi.id) && poi.dangerZone === false );
-
-
-        //looping on NON danger zones where the houses need to be in
-        notDangerZones.forEach((notDangerZone) => {
-          
-          // copying the isochrone of the non-danger-zone
-          let isochrone_to_be_clipped : Feature<Polygon | MultiPolygon, GeoJsonProperties> | null = notDangerZone.isochrone.features[0] ;
-
-          // loop on danger-zones to clip out all the areas to avoid from non-danger-zones
-          dangerZones.forEach(dangerZone => {
-            if (isochrone_to_be_clipped !== null) { // if the isochrone is not null then we need to clip it
-               isochrone_to_be_clipped = difference(featureCollection([isochrone_to_be_clipped, dangerZone.isochrone.features[0]]));
-              }
-          });
-
-
-          // console.log("isochrone_to_be_clipped: ", isochrone_to_be_clipped);
-          // console.log("isochrone_normal: ", notDangerZone);
-
-
-          if (isochrone_to_be_clipped) { 
-            console.log("using the clipped version");
-          // in this loop house.displayed == true only if in a isochrone that is not a danger zone but clipped out from danger zones
-          housesFilteredbyNumericFilters.map(house => {
-            if (house.displayed) // only check if house displayed property is still true - this is evealuated by  the previous passage
-            { house.displayed = checkHouseInReachableArea(house.lon, house.lat, isochrone_to_be_clipped)} }
-          );
-          }
-          else if(notDangerZone){
-            console.log("using the NON clipped version");
-            housesFilteredbyNumericFilters.map(house => {
-              if (house.displayed) 
-              { house.displayed = checkHouseInReachableArea(house.lon, house.lat, notDangerZone.isochrone.features[0].geometry.coordinates) }
-            }
-            );
-          }
-
-
         });
 
-  
+        const selectedPois = activeFilters.selectedPoiIds.filter(poi => poi.isChecked).map(poi => poi.id);
+        const dangerZones = pois.filter(poi => selectedPois.includes(poi.id) && poi.dangerZone === true);
+        const notDangerZones = pois.filter(poi => selectedPois.includes(poi.id) && poi.dangerZone === false);
+
+
+        console.log("this is a non danger zone", notDangerZones);
+        // for the not Danger Zones,keep all the houses that correspond to the numeric matches 
+        notDangerZones.forEach((notDangerZone) => {
+
+          housesFilteredbyNumericFilters = housesFilteredbyNumericFilters.map((house) => {
+        
+            if (house.displayed) {
+              house.displayed = checkHouseInReachableArea(house.lon, house.lat, notDangerZone.isochrone.features[0].geometry.coordinates);
+            }
+            return house;
+            
+          });          
+        
+        });
+
+       // for the     Danger Zones, remove all the houses that correspond to the numeric matches and/or to the house match 
+        dangerZones.forEach((dangerZone) => {
+          housesFilteredbyNumericFilters = housesFilteredbyNumericFilters.map(house => {
+            if (house.displayed && checkHouseInReachableArea(house.lon, house.lat, dangerZone.isochrone.features[0].geometry.coordinates)) {
+              house.displayed = false;
+            }
+            return house;
+          });          
+        });
+
 
         await updateHouseListings(housesFilteredbyNumericFilters);
       } catch (error) {
         console.error('Error updating houses:', error);
-
       }
     }
   }
 
-
-  // function checkHouseInReachableArea(
-  //   longitude: number,
-  //   latitude: number,
-  //   list_of_shapes: number[][][][]
-  // ): boolean {
-
-
-
-  //   for (const basicPolygons of list_of_shapes) {
-  //     for (const basicPolygon of basicPolygons) {
-  //       if (rayTracingMethod(longitude, latitude, basicPolygon)) {
-  //         return true;
-  //       }
-  //     }
-  //   }
-  //   return false;
-  // }
-
-
   function checkHouseInReachableArea(
     longitude: number,
     latitude: number,
-    list_of_shapes: Feature<Polygon | MultiPolygon, GeoJsonProperties> | number[][][][] | null
+    list_of_shapes:  number[][][][] 
   ): boolean {
     if (list_of_shapes === null) {
       return false;
     }
-  
-    if (isFeature(list_of_shapes)) {
-      const geometry = list_of_shapes.geometry;
-  
-      if (geometry.type === "MultiPolygon") {
-        const manyNestedPositions = geometry.coordinates;
-  
-        for (const basicPolygons of manyNestedPositions) {
-          for (const basicPolygon of basicPolygons) {
-            if (rayTracingMethod(longitude, latitude, basicPolygon)) {
-              return true;
-            }
-          }
-        }
-      } else if (geometry.type === "Polygon") {
-        const manyNestedPositions = geometry.coordinates;
-  
-        for (const basicPolygon of manyNestedPositions) {
-          if (rayTracingMethod(longitude, latitude, basicPolygon)) {
-            return true;
-          }
+    
+    for (const basicPolygons of list_of_shapes) {
+      for (const basicPolygon of basicPolygons) {
+        if (rayTracingMethod(longitude, latitude, basicPolygon)) {
+          return true;
         }
       }
-    } 
+    }
 
     return false;
   }
@@ -164,6 +101,7 @@ const FiltersComponent: React.FC = () => {
   function isFeature(shape: any): shape is Feature<Polygon | MultiPolygon, GeoJsonProperties> {
     return shape && shape.type === "Feature" && shape.geometry && shape.geometry.type;
   }
+ 
 
 
 
@@ -200,28 +138,18 @@ const FiltersComponent: React.FC = () => {
     return inside;
   }
 
-
   function checkPropertiesAndSelection(obj: ActiveFilters): boolean {
-    // Check if any of the specified properties is not null
     const propertyCheck = Object.values(obj).some(prop => prop !== null);
-
-    // Check if any object in selectedPoiIds has isChecked set to true
     const selectedPois = obj.selectedPoiIds.some(poi => poi.isChecked);
-
-    // Return true if any of the conditions is true
     return propertyCheck || selectedPois;
   }
 
-
   const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = event.target;
-
-    // Use updateActiveFilters to update the state
     updateActiveFilters({ [name]: value });
   };
 
   return (
-
     <Card className="w-full max-w-md">
       <CardHeader>
         <CardTitle>Search Filters</CardTitle>
@@ -230,40 +158,30 @@ const FiltersComponent: React.FC = () => {
       <form onSubmit={triggerNewSearch}>
         <CardContent className="space-y-4">
           <div className="grid grid-cols-1">
-          <label className="block mb-2">POI Isochrones:</label>
-            {/* Chips with checkboxes */}
+            <label className="block mb-2">POI Isochrones:</label>
             <div className="flex mb-4">
-                <br/>
-                {list_selectionPoi?.map((chip) => (
-                  
-                  <ChipWithCheckbox
-                    key={chip.id}
-                    id={chip.id}
-                    text={chip.text}
-                    isChecked={chip.isChecked}
-                    onToggle={() => toggleSelectedPoi(chip.id)}
-                  />
-                  
-                ))}
-
+              <br/>
+              {list_selectionPoi?.map((chip) => (
+                <ChipWithCheckbox
+                  key={chip.id}
+                  id={chip.id}
+                  text={chip.text}
+                  isChecked={chip.isChecked}
+                  onToggle={() => toggleSelectedPoi(chip.id)}
+                />
+              ))}
             </div>
           </div>
           <div className="grid grid-cols-2 gap-4">
-
-            {/* Maximum Price */}
             <div className="space-y-2">
               <Label htmlFor="maxPrice">Max Price</Label>
-              <Input type="number" placeholder="Max Price" name="maxPrice"  onChange={handleChange} value={maximumPrice || ''} />
+              <Input type="number" placeholder="Max Price" name="maxPrice" onChange={handleChange} value={maximumPrice || ''} />
             </div>
-
-            {/* Minimum Space */}
             <div className="space-y-2">
               <label htmlFor="minSpace">Min Space</label>
-              <Input type="number" placeholder="Min Sq. Meters" name="minSqm"  onChange={handleChange} value={minimumSqm || ''} />
+              <Input type="number" placeholder="Min Sq. Meters" name="minSqm" onChange={handleChange} value={minimumSqm || ''} />
             </div>
-
           </div>
-
         </CardContent>
         <CardFooter>
           <Button type='submit' className="w-full">Search</Button>
@@ -272,8 +190,5 @@ const FiltersComponent: React.FC = () => {
     </Card>
   );
 };
-
-
-
 
 export default FiltersComponent;
