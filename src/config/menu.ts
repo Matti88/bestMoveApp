@@ -25,7 +25,7 @@ export const mainMenu: NavItemWithChildren[] = [
         to: '/houses',
     },
     {
-        title: 'CommunityUpdated',
+        title: 'Community Databases',
         to: '/communutyupdated',
     },
 

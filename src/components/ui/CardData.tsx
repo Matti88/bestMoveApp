@@ -1,4 +1,4 @@
-import { BellIcon, CheckIcon } from "@radix-ui/react-icons"
+import { BellIcon,DownloadIcon , CheckIcon } from "@radix-ui/react-icons"
 import { Button } from "@/components/ui/shadcn/button"
 import {
   Card,
@@ -8,7 +8,11 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/shadcn/card"
- 
+import { useCallback } from "react";
+
+// Import your store or the method to update the store
+import { houselistingStore } from "@/store/houselistingStore";
+  
 type CardDataProposed =
 {   title         : string,
     description   : string,
@@ -16,6 +20,7 @@ type CardDataProposed =
     substitle2    : string,
     pathToFileURL : string,
 }
+ 
 
 const CardDataComponent : React.FC<CardDataProposed> =  ({
   title,
@@ -24,6 +29,23 @@ const CardDataComponent : React.FC<CardDataProposed> =  ({
   substitle2,
   pathToFileURL 
 }) => {
+
+   const updateHouseListings = houselistingStore((state) => state.updateHouseListings);
+
+  // Function to handle the button click
+  const handleLoadData = useCallback(async () => {
+    try {
+      const response = await fetch(pathToFileURL);
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      const data = await response.json();
+      updateHouseListings(data); // Update the store with the fetched data
+    } catch (error) {
+      console.error("Failed to load data:", error);
+    }
+  }, [pathToFileURL]);
+
   return (
     <Card className={"w-[380px]"}>
       <CardHeader>
@@ -53,8 +75,8 @@ const CardDataComponent : React.FC<CardDataProposed> =  ({
         </div>
       </CardContent>
       <CardFooter>
-        <Button className="w-full">
-          <CheckIcon className="mr-2 h-4 w-4" /> Load This Data
+        <Button className="w-full" onClick={handleLoadData}>
+          <DownloadIcon className="mr-2 h-4 w-4" /> Load Data
         </Button>
       </CardFooter>
     </Card>
