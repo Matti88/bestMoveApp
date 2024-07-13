@@ -23,7 +23,11 @@ export const mainMenu: NavItemWithChildren[] = [
     {
         title: 'Houses',
         to: '/houses',
-    }
+    },
+    {
+        title: 'CommunityUpdated',
+        to: '/communutyupdated',
+    },
 
 ]
 
