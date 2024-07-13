@@ -1,39 +1,51 @@
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/shadcn/carousel"
-import {CardData} from "@/components/ui/CardData"
+import CardDataComponent  from "@/components/ui/CardData";
+
+const cards_houses_proposed = [
+  {
+    title: "Apartments on Sale in Vienna",
+    description: "A sample of 2000 apartments in Vienna that have been proposed for sale on the platform Willhabe.at",
+    substitle1: "Prices ranging from 200K€ to 400K€",
+    substitle2: "Areas from 50m2 to 100m2",
+    pathToFileURL: "/houses.json",
+  },
+  {
+    title: "Houses on Sale in Vienna",
+    description: "A sample of 2000 houses in Vienna that have been proposed for sale on the platform Willhabe.at",
+    substitle1: "Prices ranging from 200K€ to 400K€",
+    substitle2: "Areas from 50m2 to 100m2",
+    pathToFileURL: "/houses.json",
+  },
+  {
+    title: "Apartments for Rent in Vienna",
+    description: "A sample of 2000 apartments in Vienna that have been proposed for rent on the platform Willhabe.at",
+    substitle1: "Prices ranging from 1000€ to 2000€",
+    substitle2: "Areas from 50m2 to 100m2",
+    pathToFileURL: "/houses.json",
+  },
+  {
+    title: "Houses for Rent in Vienna",
+    description: "A sample of 2000 apartments in Vienna that have been proposed for sale on the platform Willhabe.at",
+    substitle1: "Prices ranging from 1000€ to 2000€",
+    substitle2: "Areas from 50m2 to 100m2",
+    pathToFileURL: "/houses.json",
+  },
+]
 
 
 export default function CommunityUpdated() {
 
   return (
     <>
-      <div className="container mx-50 ">
-        <div className="flex flex-row mt-10">
-        <Carousel
-              opts={{
-                align: "start",
-              }}
-              className="w-full max-w-sm"
-        >
-          <CarouselContent className="-ml-2 md:-ml-4">
-            <CarouselItem className="pl-2 md:pl-4">
-              <CardData/>
-              </CarouselItem>
-            <CarouselItem className="pl-2 md:pl-4">
-              <CardData/>
-              </CarouselItem>
-            <CarouselItem className="pl-2 md:pl-4">
-              <CardData/>
-              </CarouselItem>
-          </CarouselContent>
-        </Carousel>
+      <div className="container mx-50 mt-10">
+        <div className="flex flex-wrap gap-8">
+        {cards_houses_proposed.map((dataset, index) => (
+          <div key={index} className="p-1">
+            <CardDataComponent {...dataset} />
+          </div>
+        ))}
         </div>
       </div>
     </>
+
   );
 }
