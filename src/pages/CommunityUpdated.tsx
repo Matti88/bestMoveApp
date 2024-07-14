@@ -6,7 +6,7 @@ const cards_houses_proposed = [
     description: "A sample of 2000 apartments in Vienna that have been proposed for sale on the platform Willhabe.at",
     substitle1: "Prices ranging from 200K€ to 400K€",
     substitle2: "Areas from 50m2 to 100m2",
-    pathToFileURL: "/houses.json",
+    pathToFileURL: "/apartmnt_sale.json",
   },
   {
     title: "Houses on Sale in Vienna",

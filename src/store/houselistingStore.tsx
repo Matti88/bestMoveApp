@@ -88,6 +88,8 @@ export interface HouseListing {
   price: number;
   sqm: number;
   displayed?: boolean;
+  link?: string;
+
 }
 
 export interface HousesInStore {
