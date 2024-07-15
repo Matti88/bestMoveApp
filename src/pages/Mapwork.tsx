@@ -30,7 +30,7 @@ export default function Mapwork() {
               title={listing.title}
               price={listing.price}
               sqm={listing.sqm}
-              listingUrl={listing.image}
+              listingUrl={listing.link}
             />
             
           ))}

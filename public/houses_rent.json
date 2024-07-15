@@ -9,7 +9,8 @@
         "sqm": 160.0,
         "title": "Erstbezug - schöne Doppelhaushälfte in Essling - 5 Jahre befristet",
         "price": 3990.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt, nahe Gewerbepark Stadlau",
@@ -21,19 +22,8 @@
         "sqm": 161.0,
         "title": "Erstbezug: schönes Haus nahe Rennbahnweg - befristet",
         "price": 4490.0,
-        "date": "2024-07-15"
-    },
-    {
-        "address": "1070 Wien, 07. Bezirk, Neubau",
-        "lon": 16.348388,
-        "lat": 48.198674,
-        "link": "https://www.willhaben.at/iad/immobilien/d/haus-mieten/wien/wien-1070-neubau/-bauen-sie-mit-uns-ihr-haus-mit-garten-in-der-wiener-innenstadt-nbsp-zellmann-immobilien-2062764228/",
-        "agency": "ZELLMANN IMMOBILIEN",
-        "image": "https://cache.willhaben.at/mmo/8/206/276/4228_-1766531081_hoved.jpg",
-        "sqm": 286.0,
-        "title": "\"bauen sie mit uns Ihr Haus mit Garten in der Wiener Innenstadt!\" | ZELLMANN IMMOBILIEN",
-        "price": null,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt",
@@ -45,7 +35,8 @@
         "sqm": 410.0,
         "title": "Einfamilienhaus mit großzügiger Gartenfläche in zentraler Lage",
         "price": 2750.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt",
@@ -57,7 +48,8 @@
         "sqm": 150.0,
         "title": "MÖBLIERTES EINFAMILIENHAUS in ruhiger COTTAGELAGE von STRASSHOF // FULLY FURNISHED DETACHED HOUSE in quiet COTTAGE AREA of \"STRASSHOF\"",
         "price": 2660.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt",
@@ -69,7 +61,8 @@
         "sqm": 161.0,
         "title": "++NEU++ Hochwertiges 6-Zimmer Townhouse mit Terrasse und 101m² Garten **Luftwärmepumpe**",
         "price": 3000.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt",
@@ -81,7 +74,8 @@
         "sqm": 120.0,
         "title": "Neubau: Top Doppelhaushälfte in Essling",
         "price": 2443.53,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt",
@@ -93,7 +87,8 @@
         "sqm": 243.0,
         "title": "Attraktives Mietgrundstück mit großzügigem Haus und Garten nahe Aspernstraße",
         "price": 2800.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt",
@@ -105,7 +100,8 @@
         "sqm": 123.0,
         "title": "ERSTBEZUG - 5 Zimmer - AKTION - bis 1 Monat MIETFREI !",
         "price": 2390.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt",
@@ -117,7 +113,8 @@
         "sqm": 157.0,
         "title": "++NEU++ Hochwertiges 6-Zimmer Townhouse mit Terrasse und 90m² Garten **Luftwärmepumpe**",
         "price": 3300.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt",
@@ -129,7 +126,8 @@
         "sqm": 117.0,
         "title": "Handwerker und Bastler aufgepasst - Einfamilienhaus in 1220 Wien zu vermieten!",
         "price": 2800.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt",
@@ -141,7 +139,8 @@
         "sqm": 144.0,
         "title": "Exklusives Wohnen in Toplage - Haus mit Terrasse",
         "price": 3000.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt",
@@ -153,7 +152,8 @@
         "sqm": 131.0,
         "title": "Moderne Doppelhaushälfte zur Vermietung",
         "price": 2700.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt",
@@ -165,7 +165,8 @@
         "sqm": 120.0,
         "title": "MIETANBOT liegt vor! Neubau: Top Doppelhaushälfte in Essling",
         "price": 2250.3,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt",
@@ -177,19 +178,8 @@
         "sqm": 161.0,
         "title": "+++NEU+++ Hochwertiges 6-Zimmer Townhouse mit Terrasse und 101m² Garten **Luftwärmepumpe**",
         "price": 3000.0,
-        "date": "2024-07-15"
-    },
-    {
-        "address": "1220 Wien, 22. Bezirk, Donaustadt",
-        "lon": 16.348388,
-        "lat": 48.198674,
-        "link": "https://www.willhaben.at/iad/immobilien/d/haus-mieten/wien/wien-1220-donaustadt/reihenhaus-in-aspern-zur-miete-2144665327/",
-        "agency": "Privat",
-        "image": "https://cache.willhaben.at/mmo/7/214/466/5327_-1232997013_hoved.jpg",
-        "sqm": 89.0,
-        "title": "(reserviert) Reihenhaus in Aspern zur Miete",
-        "price": null,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt",
@@ -201,7 +191,8 @@
         "sqm": 410.0,
         "title": "Großzügiges Mietwohnhaus mit Garten",
         "price": 2499.2,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt",
@@ -213,7 +204,8 @@
         "sqm": 123.0,
         "title": "ERSTBEZUG - 5 Zimmer - AKTION - bis 1 Monat MIETFREI !",
         "price": 2390.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt",
@@ -225,7 +217,8 @@
         "sqm": 160.0,
         "title": "TOPAUSGESTATTETER ERSTBEZUG - Traumhaus mit 100 m² Garten",
         "price": 3000.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt",
@@ -237,7 +230,8 @@
         "sqm": 160.0,
         "title": "Exklusiver ERSTBEZUG - TRAUMHAUS mit 6 Zimmern und Garten",
         "price": 3300.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt",
@@ -249,7 +243,8 @@
         "sqm": 102.0,
         "title": "\"Ruhig und Zentral, GARTEN - Öffis vor der Türe\"",
         "price": 1800.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt",
@@ -261,19 +256,8 @@
         "sqm": 160.0,
         "title": "\"5 ZIMMER vollmöbliert mit tollen Garten\"",
         "price": 4500.0,
-        "date": "2024-07-15"
-    },
-    {
-        "address": "1220 Wien, 22. Bezirk, Donaustadt",
-        "lon": 16.348388,
-        "lat": 48.198674,
-        "link": "https://www.willhaben.at/iad/immobilien/d/haus-mieten/wien/wien-1220-donaustadt/einfamilienhaus-in-1220-essling-zu-vermieten-1178038326/",
-        "agency": "Privat",
-        "image": "https://cache.willhaben.at/mmo/6/117/803/8326_1197337541_hoved.jpg",
-        "sqm": 130.0,
-        "title": "(reserviert) Einfamilienhaus in 1220 Essling zu vermieten",
-        "price": null,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt",
@@ -285,7 +269,8 @@
         "sqm": 243.0,
         "title": "Einfamilienhaus mit großem Potential im 22. Bezirk zu vermieten !",
         "price": 2805.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt",
@@ -297,7 +282,8 @@
         "sqm": 410.0,
         "title": "Geräumiges Einfamilienhaus mit großem Garten",
         "price": 2500.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1190 Wien, 19. Bezirk, Döbling",
@@ -309,7 +295,8 @@
         "sqm": 428.0,
         "title": "Einzigartige Architektenvilla, im Herzen von Döbling",
         "price": 15000.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1190 Wien, 19. Bezirk, Döbling",
@@ -321,7 +308,8 @@
         "sqm": 416.0,
         "title": "Luxuriöse Parkvilla mit einzigartigem Fernblick",
         "price": 16900.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1190 Wien, 19. Bezirk, Döbling",
@@ -333,7 +321,8 @@
         "sqm": 250.0,
         "title": "Luxus Villa 4 SZ in Grinzing + Garten + Pool",
         "price": 9990.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1190 Wien, 19. Bezirk, Döbling",
@@ -345,7 +334,8 @@
         "sqm": 126.0,
         "title": "Erstbezug Reihenhaus in Top Lage des 19.Bezirks",
         "price": 3199.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1190 Wien, 19. Bezirk, Döbling",
@@ -357,7 +347,8 @@
         "sqm": 263.0,
         "title": "Prachtvolle Villa in nobler Lage!",
         "price": 8277.5,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1190 Wien, 19. Bezirk, Döbling",
@@ -369,7 +360,8 @@
         "sqm": 263.0,
         "title": "Modernes Bürohaus in nobler Lage!",
         "price": 7550.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1190 Wien, 19. Bezirk, Döbling",
@@ -381,7 +373,8 @@
         "sqm": 263.0,
         "title": "Prachtvolle Villa in nobler Lage!",
         "price": 8277.5,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1190 Wien, 19. Bezirk, Döbling",
@@ -393,7 +386,8 @@
         "sqm": 320.0,
         "title": "EINFAMILIENVILLA MIT WUNDERSCHÖNEM GARTEN",
         "price": 6500.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1190 Wien, 19. Bezirk, Döbling",
@@ -405,7 +399,8 @@
         "sqm": 380.0,
         "title": "SCHÖNE EINFAMILIENVILLA MIT GARTEN",
         "price": 7810.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1190 Wien, 19. Bezirk, Döbling",
@@ -417,7 +412,8 @@
         "sqm": 100.0,
         "title": "DÖBLING: Beautiful townhouse fully furnished / Cool möbliertes Reihenhaus, 4,5 Zimmer, 2 Terrassen, Weinbergblick",
         "price": 2152.37,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1190 Wien, 19. Bezirk, Döbling",
@@ -429,7 +425,8 @@
         "sqm": 320.0,
         "title": "GROSSES, MODERNES EINFAMILIENHAUS mit Garagen",
         "price": 4939.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1190 Wien, 19. Bezirk, Döbling",
@@ -441,19 +438,8 @@
         "sqm": 430.0,
         "title": "Liebe zur Nostalgie: Historische Villa am Kahlenberg mit Blick über Wien",
         "price": 11360.0,
-        "date": "2024-07-15"
-    },
-    {
-        "address": "1190 Wien, 19. Bezirk, Döbling",
-        "lon": 16.348388,
-        "lat": 48.198674,
-        "link": "https://www.willhaben.at/iad/immobilien/d/haus-mieten/wien/wien-1190-doebling/luxerioese-villa-in-wiens-bestlage-659257761/",
-        "agency": "Avantgarde Properties GmbH",
-        "image": "https://cache.willhaben.at/mmo/1/659/257/761_30864228_hoved.jpg",
-        "sqm": 600.0,
-        "title": "luxeriöse Villa in Wiens Bestlage",
-        "price": null,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1190 Wien, 19. Bezirk, Döbling",
@@ -465,7 +451,8 @@
         "sqm": 370.0,
         "title": "Villa mit rund 1500 m² Garten und Garage",
         "price": 7810.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1190 Wien, 19. Bezirk, Döbling",
@@ -477,7 +464,8 @@
         "sqm": 368.0,
         "title": "\"Tau - the Art of Living\": eine luxuriöse Villa zur Miete im 19. Wiener Bezirk, Döbling",
         "price": 20000.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1190 Wien, 19. Bezirk, Döbling",
@@ -489,7 +477,8 @@
         "sqm": 450.0,
         "title": "Historisches Anwesen direkt am Kahlenberg!",
         "price": 11000.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1190 Wien, 19. Bezirk, Döbling",
@@ -501,7 +490,8 @@
         "sqm": 380.0,
         "title": "Südgarten",
         "price": 7930.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1190 Wien, 19. Bezirk, Döbling",
@@ -513,7 +503,8 @@
         "sqm": 400.0,
         "title": "WEIDLING - Exklusive VILLA in bester Lage!",
         "price": 5980.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1190 Wien, 19. Bezirk, Döbling",
@@ -525,7 +516,8 @@
         "sqm": 430.0,
         "title": "Idyllisch residieren in historischem Ambiente oben am Kahlenberg ! RARITÄT",
         "price": 11308.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1200 Wien, 20. Bezirk, Brigittenau",
@@ -537,7 +529,8 @@
         "sqm": 97.0,
         "title": "# SQ - TOWNHOUSE NÄHE WALLENSTEINPLATZ/AUGARTEN - 1200 WIEN - ABSOLUTE RUHELAGE - HNr. 1",
         "price": 2024.53,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1200 Wien, 20. Bezirk, Brigittenau",
@@ -549,7 +542,8 @@
         "sqm": 93.0,
         "title": "# SQ - TOWNHOUSE NÄHE WALLENSTEINPLATZ/AUGARTEN - 1200 WIEN - ABSOLUTE RUHELAGE - HNr.6",
         "price": 1926.4,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1140 Wien, 14. Bezirk, Penzing",
@@ -561,7 +555,8 @@
         "sqm": 114.0,
         "title": "++ Wohnen wie im Märchenwald * Unbedingt in Echt ansehen * Unbeschreiblich * Bilder können es nicht zeigen ++",
         "price": 2900.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1140 Wien, 14. Bezirk, Penzing",
@@ -573,7 +568,8 @@
         "sqm": 196.0,
         "title": "Moderne und gepflegte Doppelhaushälfte im Grünen mit Garage, möbliert, 196 m² WFL, Ruhelage, ab sofort",
         "price": 2300.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1140 Wien, 14. Bezirk, Penzing",
@@ -585,7 +581,8 @@
         "sqm": 125.0,
         "title": "modernes Haus am Satzberg - U4 in 16 Minuten erreichbar - neuwertig",
         "price": 2999.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1140 Wien, 14. Bezirk, Penzing",
@@ -597,7 +594,8 @@
         "sqm": 163.0,
         "title": "NEU ERRICHTETE DOPPELHAUHÄLFTE IM GRÜNSTEN TEIL VON PENZIG",
         "price": 2790.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1140 Wien, 14. Bezirk, Penzing",
@@ -609,7 +607,8 @@
         "sqm": 135.0,
         "title": "Grünoase der Ruhe - atemberaubender Fernblick",
         "price": 2850.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1140 Wien, 14. Bezirk, Penzing",
@@ -621,7 +620,8 @@
         "sqm": 125.0,
         "title": "TOP MODERNES HAUS: Provisionsfrei I wunderschöner Ausblick I Garten I 2 Terrassen I Fußbodenheizung I vollausgestattet I Stellplatz I Ruhelage",
         "price": 2999.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1140 Wien, 14. Bezirk, Penzing",
@@ -633,7 +633,8 @@
         "sqm": 124.0,
         "title": "Neuer Preis - Imposantes Traumhaus am Fuße des Satzbergs im 14. Bezirk -PROVISIONSFREI - Direkt von Bauträger",
         "price": 2999.81,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt, Spargelfeldstraße 202 Haus 3",
@@ -645,7 +646,8 @@
         "sqm": 115.0,
         "title": "MODERNE DOPPELHAUSHÄLFTE NAHE GEWERBEPARK STADLAU  ERSTBEZUG MIT HOCHWERTIGER EINBAUKÜCHE",
         "price": 2990.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1130 Wien, 13. Bezirk, Hietzing",
@@ -657,7 +659,8 @@
         "sqm": 253.0,
         "title": "Traumhaftes Einfamilienhaus mit Garten in Hietzing!",
         "price": 3704.15,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1130 Wien, 13. Bezirk, Hietzing",
@@ -669,7 +672,8 @@
         "sqm": 185.0,
         "title": "LICHTDURCHFLUTETE DOPPELHAUSHÄLFTE",
         "price": 2800.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1130 Wien, 13. Bezirk, Hietzing",
@@ -681,7 +685,8 @@
         "sqm": 298.0,
         "title": "Familienhaus mit absolutem Traumgarten in Grün-Ruhelage | ZELLMANN IMMOBILIEN",
         "price": 3490.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1130 Wien, 13. Bezirk, Hietzing",
@@ -693,7 +698,8 @@
         "sqm": 204.0,
         "title": "Traumhaftes Familienhaus in Bestlage zwischen Mauer und Hietzing | ZELLMANN IMMOBILIEN",
         "price": 3500.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1130 Wien, 13. Bezirk, Hietzing",
@@ -705,7 +711,8 @@
         "sqm": 261.0,
         "title": "TOP-LAGE IN OBER ST. VEIT - NÄHE ROTER BERG UND U4 OBER ST. VEIT - ALTBAU-VILLA MIT FLAIR",
         "price": 4622.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1130 Wien, 13. Bezirk, Hietzing",
@@ -717,7 +724,8 @@
         "sqm": 153.0,
         "title": "ruhig gelegenes Familienhaus beim Sillerplatz | ZELLMANN IMMOBILIEN",
         "price": 2800.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1130 Wien, 13. Bezirk, Hietzing",
@@ -729,7 +737,8 @@
         "sqm": 303.0,
         "title": "Elegante Villa im Herzen von Hietzing",
         "price": 5000.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1130 Wien, 13. Bezirk, Hietzing",
@@ -741,7 +750,8 @@
         "sqm": 200.0,
         "title": "Ruhig gelegenes Einfamilienhaus mit guter Verkehrsanbindung",
         "price": 3490.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1130 Wien, 13. Bezirk, Hietzing",
@@ -753,7 +763,8 @@
         "sqm": 153.0,
         "title": "Einfamilienhaus in Ruhelage",
         "price": 2800.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1130 Wien, 13. Bezirk, Hietzing",
@@ -765,7 +776,8 @@
         "sqm": 1.65,
         "title": "Herrschaftliche Villa mit Parkanlage zur alleinigen Nutzung für Ihr Projekt! Bis zu 1.650m² Nutzfläche | 3.200m² Grundstück | 11 Autoabstellplätze",
         "price": 6800.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1130 Wien, 13. Bezirk, Hietzing",
@@ -777,7 +789,8 @@
         "sqm": 243.0,
         "title": "EINFAMILIENHAUS MIT GROSSEM GARTEN IN HIETZINGER COTTAGE LAGE",
         "price": 4622.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1130 Wien, 13. Bezirk, Hietzing",
@@ -789,7 +802,8 @@
         "sqm": 234.0,
         "title": "Prachtvolle Jugendstilvilla mit Eigengarten in Hietzinger Ruhelage zur Miete",
         "price": 5224.23,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1130 Wien, 13. Bezirk, Hietzing",
@@ -801,7 +815,8 @@
         "sqm": 300.0,
         "title": "Villa mit viel Potenzial| Ideal als Gruppenpraxis | 11,5 Zimmer | 1130 Wien",
         "price": 6500.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1130 Wien, 13. Bezirk, Hietzing",
@@ -813,7 +828,8 @@
         "sqm": 300.0,
         "title": "Einfamilienhaus nähe Sillerplatz",
         "price": 3489.5,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt, Dumreichergasse 104",
@@ -825,7 +841,8 @@
         "sqm": 160.0,
         "title": "DOPPELHAUSHÄLFTE  ERSTBEZUG MIT 3 GESCHOSSEN UND DACHTERRASSE NÄHE KIRSCHENALLEE",
         "price": 3990.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt, Violaweg 47",
@@ -837,19 +854,8 @@
         "sqm": 161.0,
         "title": "ERSTBEZUG - FREISTEHENDES HAUS MIT 4 SCHLAFZIMMERN, GROSSEM GARTEN UND TERRASSE",
         "price": 4490.0,
-        "date": "2024-07-15"
-    },
-    {
-        "address": "1220 Wien, 22. Bezirk, Donaustadt, Greinzgasse 40",
-        "lon": null,
-        "lat": null,
-        "link": "https://www.willhaben.at/iad/immobilien/d/haus-mieten/wien/wien-1220-donaustadt/einzigartiges-modernes-haus-mit-exklusiver-smart-home-und-sicherheitstechnologie-1860974143/",
-        "agency": "Privat",
-        "image": "https://cache.willhaben.at/mmo/3/186/097/4143_1911281934_hoved.jpg",
-        "sqm": 136.0,
-        "title": "Einzigartiges Modernes Haus mit Exklusiver Smart Home- und Sicherheitstechnologie",
-        "price": 2300.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1230 Wien, 23. Bezirk, Liesing",
@@ -861,7 +867,8 @@
         "sqm": 225.0,
         "title": "Grosszügiges Wohnen in grüner Oase: Traumvilla mit 225m2 Wohnfläche mit Indoorpool und großem Garten | ZELLMANN IMMOBILIEN",
         "price": 3650.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1230 Wien, 23. Bezirk, Liesing",
@@ -873,7 +880,8 @@
         "sqm": 230.0,
         "title": "Verträumtes Einfamilienhaus in absoluter zentraler Ruhelage | ZELLMANN IMMOBILIEN",
         "price": 3196.19,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1230 Wien, 23. Bezirk, Liesing",
@@ -885,7 +893,8 @@
         "sqm": 150.0,
         "title": "Traumhaftes Einfamilienhaus auf 525m² Grundstück",
         "price": 2800.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1230 Wien, 23. Bezirk, Liesing",
@@ -897,7 +906,8 @@
         "sqm": 340.0,
         "title": "Moderne Einfamilienvilla mit Garten und Pool",
         "price": 4488.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1230 Wien, 23. Bezirk, Liesing",
@@ -909,19 +919,8 @@
         "sqm": 117.0,
         "title": "Traumhaftes Einfamilienhaus mit 674m2 Grundstück / Erstbezug nach Generalrenovierung",
         "price": 2475.0,
-        "date": "2024-07-15"
-    },
-    {
-        "address": "1230 Wien, 23. Bezirk, Liesing",
-        "lon": 16.287101,
-        "lat": 48.133451,
-        "link": "https://www.willhaben.at/iad/immobilien/d/haus-mieten/wien/wien-1230-liesing/thermisch-saniertes-einfamilienhaus-mit-suedgarten-in-traumlage-in-mauer-zu-vermieten-1419215287/",
-        "agency": "Privat",
-        "image": "https://cache.willhaben.at/mmo/7/141/921/5287_-1095050457_hoved.jpg",
-        "sqm": 126.0,
-        "title": "(reserviert) Thermisch saniertes Einfamilienhaus mit Südgarten in Traumlage in Mauer zu vermieten",
-        "price": null,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1230 Wien, 23. Bezirk, Liesing, Maurer Lange Gasse 127",
@@ -933,7 +932,8 @@
         "sqm": 107.0,
         "title": "Idylle pur in Mauer | Wunderschönes Reihenhaus auf 2 Etagen mit Garten & Terrasse",
         "price": 2870.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1190 Wien, 19. Bezirk, Döbling, Hameaustraße",
@@ -945,7 +945,8 @@
         "sqm": 145.0,
         "title": "Haus mit traumhaftem großen Garten in Top Lage - 4 Schlafzimmer!",
         "price": 3850.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf, Stammersdorferstrasse",
@@ -957,7 +958,8 @@
         "sqm": 650.0,
         "title": "Provisionsfreies MFH 13 Seperat begehbare Schlafzimmer Arbeiterquartier Zimmervermietung WG 30 Bette Möglich",
         "price": 5500.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf, Wienerstrasse",
@@ -969,7 +971,8 @@
         "sqm": 250.0,
         "title": "Provisionsfrei-Neubau 2017-Direkt vom Vermieter",
         "price": 2250.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf, Wienerstrasse",
@@ -981,7 +984,8 @@
         "sqm": 300.0,
         "title": "Provisionsfreies EFH gegenüber der Volksschule",
         "price": 2190.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf, Krottenhofgasse 5",
@@ -993,7 +997,8 @@
         "sqm": 220.0,
         "title": "PROVISIONSFREI-ERSTBEZUG-DE LA SALLE PRIVATSCHULE FUSSLÄUFIG ERREICHBAR",
         "price": 2090.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt, Schlachthammerstraße 7-9",
@@ -1005,7 +1010,8 @@
         "sqm": 129.0,
         "title": "Mietkauf! Geräumiges Reihenhaus mit 4,5 Zimmern, Vollunterkellerung, Garten und Dachterrasse",
         "price": 2154.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1180 Wien, 18. Bezirk, Währing, Czartoryskigasse103",
@@ -1017,7 +1023,8 @@
         "sqm": 170.0,
         "title": "Traumhaftes Einfamilienhaus am Schafberg - Einziehen und das Leben genießen!",
         "price": 4988.87,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf",
@@ -1029,7 +1036,8 @@
         "sqm": 155.0,
         "title": "Provisionsfrei: Schönes 154m² Einfamilienhaus mit Garten und Pool - Stammersdorf 1210 Wien",
         "price": 2699.99,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf",
@@ -1041,7 +1049,8 @@
         "sqm": 230.0,
         "title": "Mehrfamilienhaus zur Miete in Wien Floridsdorf",
         "price": 4300.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf",
@@ -1053,7 +1062,8 @@
         "sqm": 123.0,
         "title": "ERSTBEZUG - 5 Zimmer - AKTION - bis 1 Monat MIETFREI !",
         "price": 2390.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf",
@@ -1065,7 +1075,8 @@
         "sqm": 142.0,
         "title": "**Einfamilienhaus in Stammersdorf zu Vermieten**",
         "price": 2200.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf",
@@ -1077,7 +1088,8 @@
         "sqm": 100.0,
         "title": "Erstbezug- Stadthaus in Jedlesee mit Garagenplatz!",
         "price": 2500.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf",
@@ -1089,7 +1101,8 @@
         "sqm": 147.0,
         "title": "riesiger Garten mit eigener Garage! U1 Fußläufig erreichbar - ab sofort verfügbar - City Gate nur 3 Minuten entfernt - sonnige Ruhelage",
         "price": 2500.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf",
@@ -1101,7 +1114,8 @@
         "sqm": 100.0,
         "title": "REIHENHAUS MIT GARTEN NÄHE DONAUTURMSTRASSE",
         "price": 2190.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf",
@@ -1113,7 +1127,8 @@
         "sqm": 280.0,
         "title": "Großzügige Villa mit großen Garten und Pool - Nähe UNO-City, Siemens, VIS, Vet-Med, Kagran",
         "price": 4700.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf",
@@ -1125,7 +1140,8 @@
         "sqm": 210.0,
         "title": "MODERNES EINFAMILIENHAUS",
         "price": 3590.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf",
@@ -1137,19 +1153,8 @@
         "sqm": 120.0,
         "title": "Ruhig gelegenes Einfamilienhaus mit gepflegtem Garten, Garage und Pool",
         "price": 1950.0,
-        "date": "2024-07-15"
-    },
-    {
-        "address": "1210 Wien, 21. Bezirk, Floridsdorf",
-        "lon": 16.348388,
-        "lat": 48.198674,
-        "link": "https://www.willhaben.at/iad/immobilien/d/haus-mieten/wien/wien-1210-floridsdorf/bis-17-07-reserviert-einfamilienhaus-mit-kaufoption-auf-544m2-eigengrund-mitten-in-wien-in-absoluter-ruhelage-marchfeldkanal-1785351656/",
-        "agency": "Privat",
-        "image": "https://cache.willhaben.at/mmo/6/178/535/1656_-1373637779_hoved.jpg",
-        "sqm": 140.0,
-        "title": "(reserviert) Bis 17.07 reserviert! Einfamilienhaus mit Kaufoption auf 544m2 Eigengrund mitten in Wien in absoluter Ruhelage (Marchfeldkanal)",
-        "price": null,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf",
@@ -1161,7 +1166,8 @@
         "sqm": 194.0,
         "title": "\"Am Bruckhaufen - Ruhige Lage und 2 Terrassen!\"",
         "price": 3500.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf",
@@ -1173,7 +1179,8 @@
         "sqm": 131.0,
         "title": "Wohnen zur Miete mit Kaufoption - an der Alten Donau (Bruckhaufen nähe Uno-City)",
         "price": 3738.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf",
@@ -1185,7 +1192,8 @@
         "sqm": 122.0,
         "title": "Wohnen zur Miete mit Kaufoption - an der Alten Donau (Bruckhaufen nähe Uno-City)",
         "price": 3290.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf",
@@ -1197,7 +1205,8 @@
         "sqm": 131.0,
         "title": "Wohnen zur Miete mit Kaufoption - an der Alten Donau (Bruckhaufen nähe Uno-City)",
         "price": 3876.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf",
@@ -1209,7 +1218,8 @@
         "sqm": 122.0,
         "title": "Wohnen zur Miete mit Kaufoption - an der Alten Donau (Bruckhaufen nähe Uno-City)",
         "price": 3267.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf",
@@ -1221,7 +1231,8 @@
         "sqm": 262.0,
         "title": "*Expats welcome* - spacious house close VIS, VIC, Siemens City, VetMed, Klinik Floridsdorf & Kagran",
         "price": 4900.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1160 Wien, 16. Bezirk, Ottakring, Rohrergasse 5",
@@ -1233,19 +1244,8 @@
         "sqm": 200.0,
         "title": "Einfamilienhaus",
         "price": 2280.0,
-        "date": "2024-07-15"
-    },
-    {
-        "address": "1220 Wien, 22. Bezirk, Donaustadt, Ennemosergasse 3",
-        "lon": null,
-        "lat": null,
-        "link": "https://www.willhaben.at/iad/immobilien/d/haus-mieten/wien/wien-1220-donaustadt/einfamilienhaus-neu-erstbezug-854144061/",
-        "agency": "Privat",
-        "image": "https://cache.willhaben.at/mmo/1/854/144/061_473561065_hoved.jpg",
-        "sqm": 134.0,
-        "title": "Einfamilienhaus Neu Erstbezug",
-        "price": 2550.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1130 Wien, 13. Bezirk, Hietzing, Melchartgasse",
@@ -1257,7 +1257,8 @@
         "sqm": 223.0,
         "title": "großzügiges Einfamilienhaus || frisch renoviert || viel Platz & toller Garten || Nähe Küniglberg & Schlosspark Schönbrunn",
         "price": 2899.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1230 Wien, 23. Bezirk, Liesing, Ketzergasse",
@@ -1269,7 +1270,8 @@
         "sqm": 200.0,
         "title": "Rodaun/ Klimaanlage/ Baujahr 2016",
         "price": 3500.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1230 Wien, 23. Bezirk, Liesing, Maurer Lange Gasse 57",
@@ -1281,7 +1283,8 @@
         "sqm": 200.0,
         "title": "Doppelhaushälfte Wien Mauer: Top Wohnlage, Top Infrastruktur",
         "price": 2753.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1180 Wien, 18. Bezirk, Währing",
@@ -1293,7 +1296,8 @@
         "sqm": 326.0,
         "title": "Vollsaniertes Haus mit 4 Einheiten und Rohdachboden, Nähe Sternwartepark",
         "price": 15000.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1180 Wien, 18. Bezirk, Währing",
@@ -1305,7 +1309,8 @@
         "sqm": 470.0,
         "title": "Sehr elegante Villa in Pötzleinsdorf",
         "price": 8000.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1180 Wien, 18. Bezirk, Währing",
@@ -1317,7 +1322,8 @@
         "sqm": 259.0,
         "title": "VILLA MIT GROSSEM GARTEN BEIM TÜRKENSCHANZPARK",
         "price": 5800.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1180 Wien, 18. Bezirk, Währing",
@@ -1329,7 +1335,8 @@
         "sqm": 250.0,
         "title": "Schönes Einfamilienhaus in bester Lage Nähe Amadeus International School",
         "price": 5380.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1180 Wien, 18. Bezirk, Währing",
@@ -1341,19 +1348,8 @@
         "sqm": 470.0,
         "title": "CHARMANTE JAHRHUNDERTWENDEVILLA",
         "price": 6990.01,
-        "date": "2024-07-15"
-    },
-    {
-        "address": "1220 Wien, 22. Bezirk, Donaustadt, Schoeppelgasse 4 Haus 1",
-        "lon": null,
-        "lat": null,
-        "link": "https://www.willhaben.at/iad/immobilien/d/haus-mieten/wien/wien-1220-donaustadt/glorit-zur-miete-einzelhaus-im-erstbezug-mit-klima-und-pv-anlage-bereit-zum-einziehen-789247772/",
-        "agency": "Glorit Bausysteme GmbH",
-        "image": "https://cache.willhaben.at/mmo/2/789/247/772_1187108090_hoved.jpg",
-        "sqm": 117.0,
-        "title": "GLORIT ZUR MIETE  EINZELHAUS IM ERSTBEZUG MIT KLIMA UND PV-ANLAGE. BEREIT ZUM EINZIEHEN.",
-        "price": 2790.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1230 Wien, 23. Bezirk, Liesing, Jettmargasse",
@@ -1365,19 +1361,8 @@
         "sqm": 112.0,
         "title": "Charmantes freistehendes Reihenhaus mit sonniger Terrasse und Garten zur Miete - Ruhelage 1230 Wien",
         "price": 2480.0,
-        "date": "2024-07-15"
-    },
-    {
-        "address": "1220 Wien, 22. Bezirk, Donaustadt, Gelbsilberweg 1 Haus 2",
-        "lon": null,
-        "lat": null,
-        "link": "https://www.willhaben.at/iad/immobilien/d/haus-mieten/wien/wien-1220-donaustadt/doppelhaushaelfte-erstbezug-in-idylischer-gruenlage-am-muehlwasser-805741605/",
-        "agency": "Glorit Bausysteme GmbH",
-        "image": "https://cache.willhaben.at/mmo/5/805/741/605_-1334715044_hoved.jpg",
-        "sqm": 124.0,
-        "title": "DOPPELHAUSHÄLFTE  ERSTBEZUG IN IDYLISCHER GRÜNLAGE AM MÜHLWASSER!",
-        "price": 3490.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1130 Wien, 13. Bezirk, Hietzing, Wittgensteinstraße, Sillerplatz, Ursulinen, Napoleonwald",
@@ -1389,7 +1374,8 @@
         "sqm": 250.0,
         "title": "schönes Haus mit Garten nahe der Wittgensteinstraße / Ursulinen",
         "price": 3490.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1130 Wien, 13. Bezirk, Hietzing, Speisingerstraße",
@@ -1401,31 +1387,8 @@
         "sqm": 200.0,
         "title": "Einfamilienhaus mit Garten im 13. Bezirk",
         "price": 3490.0,
-        "date": "2024-07-15"
-    },
-    {
-        "address": "1220 Wien, 22. Bezirk, Donaustadt, Burgkmairgasse 54",
-        "lon": null,
-        "lat": null,
-        "link": "https://www.willhaben.at/iad/immobilien/d/haus-mieten/wien/wien-1220-donaustadt/glorit-zur-miete-moderne-doppelhaushaelfte-im-erstbezug-mit-tischlerkueche-1337886186/",
-        "agency": "Glorit Bausysteme GmbH",
-        "image": "https://cache.willhaben.at/mmo/6/133/788/6186_525524078_hoved.jpg",
-        "sqm": 123.0,
-        "title": "GLORIT ZUR MIETE - MODERNE DOPPELHAUSHÄLFTE IM ERSTBEZUG MIT TISCHLERKÜCHE",
-        "price": 2990.0,
-        "date": "2024-07-15"
-    },
-    {
-        "address": "1220 Wien, 22. Bezirk, Donaustadt, Arztgasse 52",
-        "lon": null,
-        "lat": null,
-        "link": "https://www.willhaben.at/iad/immobilien/d/haus-mieten/wien/wien-1220-donaustadt/glorit-haus-im-erstbezug-mit-klima-waermepumpe-und-pv-anlage-1092449892/",
-        "agency": "Glorit Bausysteme GmbH",
-        "image": "https://cache.willhaben.at/mmo/2/109/244/9892_106224623_hoved.jpg",
-        "sqm": 110.0,
-        "title": "GLORIT-HAUS IM ERSTBEZUG MIT KLIMA, WÄRMEPUMPE UND PV-ANLAGE!",
-        "price": 2790.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1130 Wien, 13. Bezirk, Hietzing, Wambachergasse",
@@ -1437,7 +1400,8 @@
         "sqm": 220.0,
         "title": "Elegante Vorstadt-Altbauvilla zur Vermietung in Grünruhelage",
         "price": 3300.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt, Eibischweg 44 | Haus 2",
@@ -1449,7 +1413,8 @@
         "sqm": 122.0,
         "title": "ERSTBEZUG: DOPPELHAUSHÄLFTE UND HOCHWERTIGER EINBAUKÜCHE NÄHE BADETEICH",
         "price": 2990.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1100 Wien, 10. Bezirk, Favoriten",
@@ -1461,7 +1426,8 @@
         "sqm": 248.0,
         "title": "Test",
         "price": 6085.92,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1100 Wien, 10. Bezirk, Favoriten",
@@ -1473,7 +1439,8 @@
         "sqm": 110.0,
         "title": "MIETHAUS IN GRÜNLAGE UND DOCH ZENTRAL",
         "price": 1397.45,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt, Machegasse 37",
@@ -1485,7 +1452,8 @@
         "sqm": 129.0,
         "title": "MIET-KAUF mit 50% Anrechnung-Doppelhaushälfte_Wien Aspern-Neubau",
         "price": 2790.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt, Machegasse 37",
@@ -1497,7 +1465,8 @@
         "sqm": 115.0,
         "title": "MIET-KAUF mit 50% Anrechnung_Eck-Reihenhaus_Neubau 2023_Erstbezug_Wien Aspern bei Lobau",
         "price": 2532.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt, Machegasse 37",
@@ -1509,7 +1478,8 @@
         "sqm": 114.0,
         "title": "NEUBAU-MIET-KAUF mit 50% Anrechnung_Wien Aspern",
         "price": 2140.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt, Pichlgasse",
@@ -1521,7 +1491,8 @@
         "sqm": 255.0,
         "title": "Familienhaus mit mehr als 250m² Wohnfläche und wunderschönem Garten",
         "price": 3700.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1230 Wien, 23. Bezirk, Liesing, Fleischhackergasse 20-22",
@@ -1533,7 +1504,8 @@
         "sqm": 125.0,
         "title": "IDYLLE ZWISCHEN WIENERWALD UND SCHÖNBRUNN - ERSTBEZUG MIT TISCHLERKÜCHE",
         "price": 3990.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt, Podlahagasse 73",
@@ -1545,7 +1517,8 @@
         "sqm": 135.0,
         "title": "DOPPELHÄUSER I PODLAHAGASSE 73 I 1220 WIEN",
         "price": 1980.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt, Unterfeldweg 12",
@@ -1557,7 +1530,8 @@
         "sqm": 114.0,
         "title": "ERSTBEZUG: REIHENHAUS MIT PV-ANLAGE UND HOCHWERTIGER EINBAUKÜCHE NÄHE BADETEICH",
         "price": 2990.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1160 Wien, 16. Bezirk, Ottakring, Demuthgasse 10",
@@ -1569,7 +1543,8 @@
         "sqm": 120.0,
         "title": "Einfamilienhaus mit großem Garten",
         "price": 2490.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1100 Wien, 10. Bezirk, Favoriten, Weizengasse 4",
@@ -1581,7 +1556,8 @@
         "sqm": 130.0,
         "title": "Traumhaus für Menschen die das Besondere schätzen",
         "price": 3500.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1130 Wien, 13. Bezirk, Hietzing, Küniglberg, Würzburggasse",
@@ -1593,7 +1569,8 @@
         "sqm": 253.0,
         "title": "schöne Altbauvilla am Küniglberg - 5 Schlafzimmer",
         "price": 3704.15,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf, Königsteingasse 2",
@@ -1605,7 +1582,8 @@
         "sqm": 126.0,
         "title": "GLORIT-HAUS ZUR MIETE-ERSTBEZUG! DOPPELHAUSHÄLFTE AM BRUCKHAUFEN NAHE ALTE DONAU",
         "price": 4190.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1140 Wien, 14. Bezirk, Penzing, Steinböckengasse",
@@ -1617,19 +1595,8 @@
         "sqm": 300.0,
         "title": "Einfamilienhaus mit traumhaften hellen Wohnbereichen, Blick ins Grüne und in absoluter Ruhelage",
         "price": 3200.0,
-        "date": "2024-07-15"
-    },
-    {
-        "address": "1220 Wien, 22. Bezirk, Donaustadt, Schlachthammerstraße 9",
-        "lon": null,
-        "lat": null,
-        "link": "https://www.willhaben.at/iad/immobilien/d/haus-mieten/wien/wien-1220-donaustadt/mietkauf-niedrigenergie-reihenhaus-mit-131m-wfl-keller-dachterrasse-garten-und-parkplatz-1065869539/",
-        "agency": "NOVUS Bauträger GmbH",
-        "image": "https://cache.willhaben.at/mmo/9/106/586/9539_1420026669_hoved.jpg",
-        "sqm": 131.0,
-        "title": "Mietkauf: Niedrigenergie-Reihenhaus mit 131m² Wfl, Keller, Dachterrasse, Garten und Parkplatz",
-        "price": 2325.31,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf, Gerasdorfer Straße",
@@ -1641,7 +1608,8 @@
         "sqm": 200.0,
         "title": "ZWEITBEZUG: Hochwertig ausgestattetes 9-Zimmer Reihenhaus mit TOP-Ausstattung",
         "price": 3000.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1230 Wien, 23. Bezirk, Liesing, Hungereckstraße 54",
@@ -1653,7 +1621,8 @@
         "sqm": 114.0,
         "title": "Mietkauf mit Mietzinsvorauszahlung: Energiesparhaus mit Keller, Garten und Garagenplatz",
         "price": 1753.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf, Lisseeweg 25 Haus 2",
@@ -1665,7 +1634,8 @@
         "sqm": 135.0,
         "title": "IDYLISCHE GRÜNLAGE AM FUßE DES BISAMBERGS - TRAUMHAFTES HAUS MIT HOCHWERTIGER AUSSTATTUNG",
         "price": 4290.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt, Korsenweg 18 Haus 1",
@@ -1677,7 +1647,8 @@
         "sqm": 146.0,
         "title": "EINZELHAUS  ERSTBEZUG MIT 3 GESCHOSSEN + KELLER IN ABSOLUTER RUHELAGE! INKL. TISCHLERKÜCHE!",
         "price": 3690.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt, Rittersporngasse 7-9",
@@ -1689,7 +1660,8 @@
         "sqm": 120.0,
         "title": "GLORIT-HAUS mit MIET-KAUF-OPTION - ERSTBEZUG! MODERNE DOPPELHAUSHÄLFTE MIT GROSSZÜGIGEM GARTEN",
         "price": 3090.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt, Erzherzog Karl Straße 42",
@@ -1701,7 +1673,8 @@
         "sqm": 200.0,
         "title": "Wg Zimmer",
         "price": 550.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf, Jedlersdorfer Straße 102",
@@ -1713,7 +1686,8 @@
         "sqm": 121.0,
         "title": "Modernes Reihenhaus in Großjedlersdorf",
         "price": 2200.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf, Jedlersdorfer Straße 102",
@@ -1725,7 +1699,8 @@
         "sqm": 123.0,
         "title": "Modernes Reihenhaus in Großjedlersdorf",
         "price": 2240.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf, Birneckergasse 50",
@@ -1737,7 +1712,8 @@
         "sqm": 114.0,
         "title": "ERSTBEZUG! GLORIT-DOPPELHAUSHÄLFTE NAHE ALTE DONAU UND DONAUPARK",
         "price": 4290.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1190 Wien, 19. Bezirk, Döbling, Klosterneuburg",
@@ -1749,7 +1725,8 @@
         "sqm": 250.0,
         "title": "Arbeiterquartier für 22 Personen Hostel Mehrbettzimmer Zentrum Baufirma Firmensitz Büros-Wohnungen Parkplätze",
         "price": 3500.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf, Schippergasse",
@@ -1761,7 +1738,8 @@
         "sqm": 122.0,
         "title": "Erstbezug: Doppelhaushälfte mit Terrassen und Garten",
         "price": 2497.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf, Kaftangasse 3",
@@ -1773,7 +1751,8 @@
         "sqm": 93.0,
         "title": "Modernster Standard - Doppelhaushälfte mit Garten, familienfreundlich",
         "price": 1699.47,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1230 Wien, 23. Bezirk, Liesing, Levasseurgasse",
@@ -1785,7 +1764,8 @@
         "sqm": 89.0,
         "title": "Wunderschönes Hofhaus mit Garten: Geräumige Etagenwohnung in der Levasseurgasse",
         "price": 1594.91,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1170 Wien, 17. Bezirk, Hernals",
@@ -1797,7 +1777,8 @@
         "sqm": 150.0,
         "title": "SCHÖNES Domizil + NEUWERTIG + POOL + FERNSICHT + SONNIG!",
         "price": 3500.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1140 Wien, 14. Bezirk, Penzing, Talgasse (3001 Mauerbach - angrenzend an Wien)",
@@ -1809,7 +1790,8 @@
         "sqm": 179.0,
         "title": "Haushälfte im Grünen mit großem Garten und Terrasse, Garage, Carport und Erdwärme",
         "price": 2415.5,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1230 Wien, 23. Bezirk, Liesing, Zetschegasse",
@@ -1821,7 +1803,8 @@
         "sqm": 265.0,
         "title": "Helles sehr ruhiges Mehrfamilienhaus teilweise möbliert mit großem Garten in zentraler Grünlage auch als Firmenunterkunft geeignet",
         "price": 2490.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1230 Wien, 23. Bezirk, Liesing, Rudolf-Waisenhorn-Gasse 67",
@@ -1833,7 +1816,8 @@
         "sqm": 200.0,
         "title": "Traumhafte Villa in Mauer!!",
         "price": 3850.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt, Duchekgasse",
@@ -1845,7 +1829,8 @@
         "sqm": 104.0,
         "title": "Haus mit Garten in Grünruhelage Lobaunähe PROVISIONSFREI",
         "price": 1352.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1230 Wien, 23. Bezirk, Liesing, Stipcakgasse 9",
@@ -1857,7 +1842,8 @@
         "sqm": 150.0,
         "title": "Einfamilienhaus mit Garten Wien",
         "price": 2500.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt, Speikweg",
@@ -1869,7 +1855,8 @@
         "sqm": 70.0,
         "title": "Haus mit großem Garten zu vermieten (bitte ab 14.7.2024 melden)",
         "price": 1300.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf, Hubertusgasse",
@@ -1881,7 +1868,8 @@
         "sqm": 145.0,
         "title": "HAUS-MIETE- Wunderschönes Doppel-Haus mit herrliche Terrasse & Garten - BRUCKHAUFEN - Nähe Donauturm - Uno-City!",
         "price": 3599.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1230 Wien, 23. Bezirk, Liesing, Kaltenleutgebner Straße 26",
@@ -1893,7 +1881,8 @@
         "sqm": 100.0,
         "title": "100 m² sanierungsbedürftiges Bestandsobjekt mit 1.650 m² Grundstücksfläche",
         "price": 1750.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1130 Wien, 13. Bezirk, Hietzing, Opitzgasse",
@@ -1905,7 +1894,8 @@
         "sqm": 235.0,
         "title": "Charmantes Einfamilienhaus mit Garten und Carport in ruhiger Wohngegend !",
         "price": 3704.03,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1130 Wien, 13. Bezirk, Hietzing, Furtwänglerplatz",
@@ -1917,7 +1907,8 @@
         "sqm": 150.0,
         "title": "Reihenhaus in Grünruhelage (4 Schlafzimmer) - befristet",
         "price": 2290.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1130 Wien, 13. Bezirk, Hietzing, Klinik Hietzing, Speisinger Straße",
@@ -1929,7 +1920,8 @@
         "sqm": 153.0,
         "title": "Doppelhaushälfte mit idyllischem Garten - 3 Schlafzimmer - befristet",
         "price": 2800.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf, Arbeitetstrandbad, Donaupark",
@@ -1941,7 +1933,8 @@
         "sqm": 115.0,
         "title": "moderne Doppelhaushälfte nahe Donaupark - 5 Jahre befristet",
         "price": 4490.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1230 Wien, 23. Bezirk, Liesing, Marktgemeindegasse",
@@ -1953,7 +1946,8 @@
         "sqm": 127.0,
         "title": "Familiengerechtes Wohnen am Rosenhügel",
         "price": 2190.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1230 Wien, 23. Bezirk, Liesing, Beethovenstraße 7",
@@ -1965,7 +1959,8 @@
         "sqm": 277.0,
         "title": "MARTHA ... Fahndung abgeschlossen",
         "price": 2900.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt, Stieglitzweg",
@@ -1977,7 +1972,8 @@
         "sqm": 90.0,
         "title": "den Traum, an der Alten Donau zu wohnen, erfüllen.",
         "price": 2290.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf, Rieglgasse",
@@ -1989,7 +1985,8 @@
         "sqm": 217.0,
         "title": "Top Lage Einfamilienhaus",
         "price": 3890.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf, Heinrich-Mitteis-Gasse 11",
@@ -2001,19 +1998,8 @@
         "sqm": 350.0,
         "title": "Möbliertes Haus (U1 Leopoldau 3min)",
         "price": 4730.0,
-        "date": "2024-07-15"
-    },
-    {
-        "address": "1180 Wien, 18. Bezirk, Währing, Hawelgasse",
-        "lon": 16.308689,
-        "lat": 48.238722,
-        "link": "https://www.willhaben.at/iad/immobilien/d/haus-mieten/wien/wien-1180-waehring/grosszuegige-einfamilienvilla-mit-garten-6-schlafzimmer-1660404475/",
-        "agency": "Gewerblicher Anbieter",
-        "image": "https://cache.willhaben.at/mmo/5/166/040/4475_-765664655_hoved.jpg",
-        "sqm": 310.0,
-        "title": "(reserviert) Großzügige Einfamilienvilla mit Garten - 6 Schlafzimmer",
-        "price": null,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt, Mickertsweg",
@@ -2025,7 +2011,8 @@
         "sqm": 13.0,
         "title": "Charmantes Zimmer in Haus direkt an der Alten Donau zu vermieten",
         "price": 690.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt, Arztgasse",
@@ -2037,18 +2024,7 @@
         "sqm": 160.0,
         "title": "Einfamilienhaus mit Pool -10 Minuten zur VIS!",
         "price": 2499.0,
-        "date": "2024-07-15"
-    },
-    {
-        "address": "1210 Wien, 21. Bezirk, Floridsdorf, Triestinggasse 67",
-        "lon": 16.4511079037,
-        "lat": 48.2783767,
-        "link": "https://www.willhaben.at/iad/immobilien/d/haus-mieten/wien/wien-1210-floridsdorf/haus-1210-leopoldau-1622872146/",
-        "agency": "Privat",
-        "image": "https://cache.willhaben.at/mmo/6/162/287/2146_1284175115_hoved.jpg",
-        "sqm": 100.0,
-        "title": "(reserviert) Haus 1210 Leopoldau",
-        "price": null,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     }
 ]

@@ -9,7 +9,8 @@
         "sqm": 47.0,
         "title": "Herzgasse - entzückender 2 Zimmer Neubau mit Garage",
         "price": 695.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1100 Wien, 10. Bezirk, Favoriten",
@@ -21,7 +22,8 @@
         "sqm": 44.0,
         "title": "Schöne 2-Zimmer-Wohnung nächst U1-Keplerplatz",
         "price": 685.86,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1100 Wien, 10. Bezirk, Favoriten",
@@ -33,7 +35,8 @@
         "sqm": 63.0,
         "title": "Wohnen beim Erlachpark!",
         "price": 765.36,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1100 Wien, 10. Bezirk, Favoriten",
@@ -45,7 +48,8 @@
         "sqm": 51.0,
         "title": "Nähe U1 Keplerplatz - 2 Zimmer mit separater Küche - Nähe Wiener Hauptbahnhof | schriftlich anfragen",
         "price": 773.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1100 Wien, 10. Bezirk, Favoriten",
@@ -57,7 +61,8 @@
         "sqm": 55.0,
         "title": "Gut geschnittene 2-Zimmer-Wohnung direkt bei der Ubahn - ab Mitte August",
         "price": 790.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1100 Wien, 10. Bezirk, Favoriten",
@@ -69,7 +74,8 @@
         "sqm": 53.0,
         "title": "Erstbezug Wohnung zur Vermietung",
         "price": 755.1,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1100 Wien, 10. Bezirk, Favoriten",
@@ -81,7 +87,8 @@
         "sqm": 50.0,
         "title": "CHARMANTE 2-ZIMMER WOHNUNG MIT BALKON/LOGGIA IN SEHR GUTER LAGE - GARAGE OPTIONAL",
         "price": 759.23,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1100 Wien, 10. Bezirk, Favoriten",
@@ -93,7 +100,8 @@
         "sqm": 50.0,
         "title": "CHARMANTE 2-ZIMMER WOHNUNG MIT BALKON/LOGGIA IN SEHR GUTER LAGE - GARAGE OPTIONAL",
         "price": 798.37,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1100 Wien, 10. Bezirk, Favoriten",
@@ -105,7 +113,8 @@
         "sqm": 45.0,
         "title": "Perfekte Stadtwohnung in Wien 1100: 45m² zum Wohlfühlen, komplett möbliert, Miete 766,75 EUR, inklusive BK, Heizung, Warmwasser und Ust.",
         "price": 706.75,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1100 Wien, 10. Bezirk, Favoriten",
@@ -117,7 +126,8 @@
         "sqm": 44.0,
         "title": "RAX2: Wunderbare Garconniere mit südseitiger Loggia in 1100 Wien zu mieten",
         "price": 715.47,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1100 Wien, 10. Bezirk, Favoriten",
@@ -129,7 +139,8 @@
         "sqm": 46.0,
         "title": "Moderne 1-Zimmer Wohnung im 10. Bezirk zu vermieten inkl. Kellerabteil und Garagen-Stellplatz",
         "price": 601.31,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1100 Wien, 10. Bezirk, Favoriten",
@@ -141,7 +152,8 @@
         "sqm": 53.0,
         "title": "Top Angebot Sozialbau",
         "price": 470.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1100 Wien, 10. Bezirk, Favoriten",
@@ -153,7 +165,8 @@
         "sqm": 47.0,
         "title": "\"Modernes Wohnen in heller Atmosphäre - mit Loggia und Garage\"",
         "price": 783.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1100 Wien, 10. Bezirk, Favoriten",
@@ -165,7 +178,8 @@
         "sqm": 44.0,
         "title": "RESERVIERT- 1 Zimmer Genossenschaftswohnung mit Loggia",
         "price": 375.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1100 Wien, 10. Bezirk, Favoriten",
@@ -177,7 +191,8 @@
         "sqm": 47.0,
         "title": "++ 2-ZI-Wohnung / nahe HBF / Einbauküche / provisionsfrei ++",
         "price": 795.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1100 Wien, 10. Bezirk, Favoriten, Angeligasse",
@@ -189,7 +204,8 @@
         "sqm": 55.0,
         "title": "Günstige, vollmöblierte und helle Genossenschaftswohnung mit 55 m2 - Nur für Sozialbaumieter und deren direkte Angehörige",
         "price": 532.49,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1100 Wien, 10. Bezirk, Favoriten, Angeligasse",
@@ -201,7 +217,8 @@
         "sqm": 63.0,
         "title": "HELLER UNBEFRISTETER SOFORTBEZUG IN DER ANGELIGASSE",
         "price": 798.99,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1100 Wien, 10. Bezirk, Favoriten, Van der Nüll Gasse",
@@ -213,7 +230,8 @@
         "sqm": 54.0,
         "title": "Studio, 2 Zi, Küche, Nähe Reumannplatz",
         "price": 790.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1100 Wien, 10. Bezirk, Favoriten, Van der Nüll Gasse",
@@ -225,7 +243,8 @@
         "sqm": 50.0,
         "title": "Balkonneubauhauptmietwohnung",
         "price": 789.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1180 Wien, 18. Bezirk, Währing",
@@ -237,7 +256,8 @@
         "sqm": 44.0,
         "title": "ab sofort: Single Hit Wohnung im Dachgeschoss // Thimiggasse // S-Bahn Gersthof",
         "price": 756.33,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1180 Wien, 18. Bezirk, Währing",
@@ -249,7 +269,8 @@
         "sqm": 49.0,
         "title": "großzügige gut perfekt aufgeteilte 2 Zimmer Wohnung im 2.OG // Nähe Johann-Nepomuk-Vogl-Platz // ab sofort",
         "price": 779.24,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1180 Wien, 18. Bezirk, Währing",
@@ -261,7 +282,8 @@
         "sqm": 53.0,
         "title": "Willkommen zu Hause! Charmante Zwei-Zimmer-Wohnung - nächst AKH!",
         "price": 794.26,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1180 Wien, 18. Bezirk, Währing",
@@ -273,7 +295,8 @@
         "sqm": 50.0,
         "title": "großzügige gut perfekt aufgeteilte 2 Zimmer Wohnung im 2.OG // Nähe Johann-Nepomuk-Vogl-Platz // ab sofort",
         "price": 786.96,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1180 Wien, 18. Bezirk, Währing",
@@ -285,7 +308,8 @@
         "sqm": 49.0,
         "title": "Ab sofort: großzügige gut aufgeteilte 2 Zimmer Wohnung in Währing (Nähe Johann-Nepomuk-Vogl-Platz)",
         "price": 752.07,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1100 Wien, 10. Bezirk, Favoriten, Rieplstraße",
@@ -297,7 +321,8 @@
         "sqm": 57.0,
         "title": "Provisionsfrei - 2 Zimmer Wohnung nahe Wiener Hauptbahnhof",
         "price": 760.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1180 Wien, 18. Bezirk, Währing, Ludwiggasse",
@@ -309,7 +334,8 @@
         "sqm": 57.0,
         "title": "helle Soutterainwohnung in Grünruhelage/ Pötzleinsdorf - befristet",
         "price": 720.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1170 Wien, 17. Bezirk, Hernals",
@@ -321,7 +347,8 @@
         "sqm": 40.0,
         "title": "290 Euro pro WOCHE: Zwischen-Mieterin gesucht. All-inclusive-Miete -Keine Provision! Wunderschönes, ruhiges, voll möbliertes und voll ausgestattetes Apartement mit 65 Zoll Samsung TV, W-LAN inkludiert",
         "price": 290.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1170 Wien, 17. Bezirk, Hernals",
@@ -333,7 +360,8 @@
         "sqm": 46.0,
         "title": "Urbanes Wohnen: Dachgeschoßwohnung mit Charme, 1 Zimmer, 780EUR Miete, 45m²",
         "price": 780.38,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1170 Wien, 17. Bezirk, Hernals",
@@ -345,7 +373,8 @@
         "sqm": 46.0,
         "title": "NEU! Große 1-Zimmer Dachgeschosswohnung mit Fernblick!",
         "price": 780.38,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1170 Wien, 17. Bezirk, Hernals",
@@ -357,7 +386,8 @@
         "sqm": 46.0,
         "title": "Heimliche 1-Zimmerwohnung mit Personenaufzug in 1170 Wien zu vermieten",
         "price": 780.38,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1170 Wien, 17. Bezirk, Hernals",
@@ -369,7 +399,8 @@
         "sqm": 45.0,
         "title": "Großzügige Singlewohnung -- OFFENER WOHNBEREICH - direkt zur UNI",
         "price": 799.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1100 Wien, 10. Bezirk, Favoriten, Gudrunstraße 19",
@@ -381,7 +412,8 @@
         "sqm": 46.0,
         "title": "Provisionsfrei: 2-Zimmer mit Einbauküche",
         "price": 769.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1140 Wien, 14. Bezirk, Penzing",
@@ -393,7 +425,8 @@
         "sqm": 45.0,
         "title": "Provisionsfrei: Unbefristeter 45m² Altbau mit 2 Zimmern und Einbauküche - 1140 Wien",
         "price": 636.64,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1140 Wien, 14. Bezirk, Penzing",
@@ -405,7 +438,8 @@
         "sqm": 41.0,
         "title": "Sanierte Wohnung im 14. Bezirk sofort verfügbar!",
         "price": 790.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1140 Wien, 14. Bezirk, Penzing",
@@ -417,7 +451,8 @@
         "sqm": 43.0,
         "title": "Linzer Straße - 2 Zimmer DG mit 14,00m2 Terrasse zu vermieten",
         "price": 751.78,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1140 Wien, 14. Bezirk, Penzing",
@@ -429,19 +464,8 @@
         "sqm": 48.0,
         "title": "Provisionsfrei von Privat 1140 Garconniere mit Loggia & Grünblick ab September 2024",
         "price": 725.0,
-        "date": "2024-07-15"
-    },
-    {
-        "address": "1140 Wien, 14. Bezirk, Penzing",
-        "lon": 16.263265,
-        "lat": 48.197096,
-        "link": "https://www.willhaben.at/iad/immobilien/d/mietwohnungen/wien/wien-1140-penzing/gemeindewohnung-1140-vormerkschein-vor-30-4-24-2128303057/",
-        "agency": "Privat",
-        "image": "https://cache.willhaben.at/mmo/7/212/830/3057_-642259522_hoved.jpg",
-        "sqm": 53.0,
-        "title": "(reserviert) Gemeindewohnung 1140 Vormerkschein vor 30.4.24",
-        "price": null,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1160 Wien, 16. Bezirk, Ottakring, Habichergasse",
@@ -453,7 +477,8 @@
         "sqm": 41.0,
         "title": "SANIERTE 2 ZIMMER 495. -",
         "price": 495.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1160 Wien, 16. Bezirk, Ottakring",
@@ -465,7 +490,8 @@
         "sqm": 43.0,
         "title": "Gemeindewohnung - VMD 30.05.2024 - 1 Zimmer - 16. Bezirk",
         "price": 415.6,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1160 Wien, 16. Bezirk, Ottakring",
@@ -477,7 +503,8 @@
         "sqm": 40.0,
         "title": "2-Zimmer-Wohnung mit Loggia - Neubauprojekt in Niedrigenergiehaus in Ottakring - zu Mieten in 1160 Wien",
         "price": 799.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1160 Wien, 16. Bezirk, Ottakring",
@@ -489,7 +516,8 @@
         "sqm": 49.0,
         "title": "Wohnen in der Römergasse!",
         "price": 762.3,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1160 Wien, 16. Bezirk, Ottakring",
@@ -501,7 +529,8 @@
         "sqm": 40.0,
         "title": "2-Zimmer mit toller offener Küche in der Römergasse!",
         "price": 799.98,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1160 Wien, 16. Bezirk, Ottakring",
@@ -513,7 +542,8 @@
         "sqm": 67.0,
         "title": "GERÄUMIGE 2 Zimmer-Wohnung + UNBEFRISTET + nahe U3 Ottakring!",
         "price": 782.16,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1160 Wien, 16. Bezirk, Ottakring",
@@ -525,7 +555,8 @@
         "sqm": 50.0,
         "title": "UNBEFRISTET! MIETE INKLUSIVE HEIZKOSTEN! 2. STOCK OHNE LIFT!",
         "price": 765.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1160 Wien, 16. Bezirk, Ottakring",
@@ -537,7 +568,8 @@
         "sqm": 40.0,
         "title": "Neu renovierte Ferienwohnung/ Appartment",
         "price": 500.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1150 Wien, 15. Bezirk, Rudolfsheim-Fünfhaus, Kriemhildplatz -",
@@ -549,7 +581,8 @@
         "sqm": 40.0,
         "title": "1 Monat mietfrei - für handwerklich Begabte lichtdurchflutete 1,5-Zimmer-Wohnung - ideal für Singles",
         "price": 495.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1100 Wien, 10. Bezirk, Favoriten, Rotenhofgasse",
@@ -561,7 +594,8 @@
         "sqm": 42.0,
         "title": "gemütliche 1 Zimmerwohnung mit Loggia | ZELLMANN IMMOBILIEN",
         "price": 643.59,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1050 Wien, 05. Bezirk, Margareten",
@@ -573,7 +607,8 @@
         "sqm": 55.0,
         "title": "Hoch oben und unbefristet",
         "price": 793.32,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1050 Wien, 05. Bezirk, Margareten",
@@ -585,7 +620,8 @@
         "sqm": 47.0,
         "title": "5.Hauslabgasse PROVISIONSFREIE, MÖBLIERTE GROSSGARCONNIERE NAHE DER WIEDNER HAUPTSTRASSE",
         "price": 690.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1050 Wien, 05. Bezirk, Margareten",
@@ -597,7 +633,8 @@
         "sqm": 50.0,
         "title": "ERSTBEZUG nach GS: Hofseitige 2-Zimmer im 3. Liftstock",
         "price": 790.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1050 Wien, 05. Bezirk, Margareten",
@@ -609,7 +646,8 @@
         "sqm": 43.0,
         "title": "Loftartige Neubauhauptmiete in Grünruhelage!!!",
         "price": 698.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1050 Wien, 05. Bezirk, Margareten",
@@ -621,19 +659,8 @@
         "sqm": 100.0,
         "title": "Großes Zimmer in 2er Frauen-WG | 1050",
         "price": 600.0,
-        "date": "2024-07-15"
-    },
-    {
-        "address": "1050 Wien, 05. Bezirk, Margareten",
-        "lon": 16.35429,
-        "lat": 48.192911,
-        "link": "https://www.willhaben.at/iad/immobilien/d/mietwohnungen/wien/wien-1050-margareten/gemeinde-wohnung-direktvergabe-2-zimmer-wohnung-1342240551/",
-        "agency": "Privat",
-        "image": "https://cache.willhaben.at/mmo/1/134/224/0551_1988221702_hoved.jpg",
-        "sqm": 54.0,
-        "title": "(reserviert) Gemeinde Wohnung / Direktvergabe 2-Zimmer Wohnung",
-        "price": null,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1230 Wien, 23. Bezirk, Liesing",
@@ -645,7 +672,8 @@
         "sqm": 50.0,
         "title": "Direktvergabe tolle 2 Zimmer Gemeindewohnung",
         "price": 490.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1230 Wien, 23. Bezirk, Liesing",
@@ -657,7 +685,8 @@
         "sqm": 40.0,
         "title": "Helle, Möblierte 2 Zimmer Wohnung mit Balkon in Liesing zu vermieten",
         "price": 800.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1230 Wien, 23. Bezirk, Liesing",
@@ -669,7 +698,8 @@
         "sqm": 79.0,
         "title": "Ruhige Genossenschaftswohnung mit Balkon + Garage in Wien 23",
         "price": 685.15,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1230 Wien, 23. Bezirk, Liesing",
@@ -681,7 +711,8 @@
         "sqm": 51.0,
         "title": "@@@Moderne Single/Pärchen Wohnung mit Loggia in 1230 Wien@@@",
         "price": 799.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1230 Wien, 23. Bezirk, Liesing",
@@ -693,7 +724,8 @@
         "sqm": 54.0,
         "title": "Gemeindewohnung Direktvergabe",
         "price": 550.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1230 Wien, 23. Bezirk, Liesing",
@@ -705,7 +737,8 @@
         "sqm": 51.0,
         "title": "2-Zimmer Gemeinde Wohnung - Direktvergabe",
         "price": 585.12,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1160 Wien, 16. Bezirk, Ottakring, Huttengasse 39-41",
@@ -717,7 +750,8 @@
         "sqm": 40.0,
         "title": "Innovation trifft Wohnkomfort - Neubauwohnungen in der Huttengasse zu mieten",
         "price": 799.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1160 Wien, 16. Bezirk, Ottakring, Huttengasse 39-41",
@@ -729,7 +763,8 @@
         "sqm": 40.0,
         "title": "Traumhafte Erstbezugswohnungen bei der U3 Kendlerstraße",
         "price": 799.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1150 Wien, 15. Bezirk, Rudolfsheim-Fünfhaus",
@@ -741,7 +776,8 @@
         "sqm": 44.0,
         "title": "Ruhelage, 2 Zimmer, neue Einbauküche. Befristet 5 Jahre",
         "price": 784.74,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf",
@@ -753,7 +789,8 @@
         "sqm": 50.0,
         "title": "Auf der Suche nach einer 2 - Zimmer Wohnung inkl. Einbauküche? Heizung & Warmwasser im Mietpreis INKLUSIVE",
         "price": 715.07,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf",
@@ -765,7 +802,8 @@
         "sqm": 45.0,
         "title": "Helle 2-Zimmer-Wohnung beim Aupark Jedlesee",
         "price": 750.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf",
@@ -777,7 +815,8 @@
         "sqm": 40.0,
         "title": "Erstbezug: 2-Zimmer-Wohnung mit Loggia/Balkon - in Grünruhelage in 1210 Wien zu mieten",
         "price": 799.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf",
@@ -789,7 +828,8 @@
         "sqm": 50.0,
         "title": "\"3 Minuten zu Fuß zur Alten Donau - mit Loggia\"",
         "price": 745.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf",
@@ -801,7 +841,8 @@
         "sqm": 53.0,
         "title": "Direktvergabe Gemeinde Wohnung!",
         "price": 570.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf",
@@ -813,7 +854,8 @@
         "sqm": 41.0,
         "title": "Gepflegte Studentenwohnungen mit Einbauküche in 1210 zu mieten",
         "price": 742.17,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf",
@@ -825,7 +867,8 @@
         "sqm": 42.0,
         "title": "Gepflegte Studentenwohnungen mit Einbauküche in 1210 zu mieten",
         "price": 726.19,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf",
@@ -837,7 +880,8 @@
         "sqm": 40.0,
         "title": "Gepflegte Studentenwohnungen mit Einbauküche in 1210 zu mieten",
         "price": 708.88,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf",
@@ -849,7 +893,8 @@
         "sqm": 47.0,
         "title": "Exklusive 2-Zimmer-Wohnung mit großzügiger Terrasse | zu günstigem Preis",
         "price": 743.39,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf",
@@ -861,7 +906,8 @@
         "sqm": 43.0,
         "title": "Idyllisches Stammersdorf: Komfortable 2-Zimmer-Wohnung mit Balkon",
         "price": 706.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf",
@@ -873,7 +919,8 @@
         "sqm": 48.0,
         "title": "Neuwertig 2 -Zimmerwohnung mit Terrasse | Koloniestraße 35 | 1210 Wien | Top 6.25 | ab 01.01.2025",
         "price": 799.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf",
@@ -885,19 +932,8 @@
         "sqm": 42.0,
         "title": "Single bzw. Pärchenhit, helle Neubau-Wohnung",
         "price": 787.41,
-        "date": "2024-07-15"
-    },
-    {
-        "address": "1210 Wien, 21. Bezirk, Floridsdorf",
-        "lon": 16.348388,
-        "lat": 48.198674,
-        "link": "https://www.willhaben.at/iad/immobilien/d/mietwohnungen/wien/wien-1210-floridsdorf/anfragen-stop-2-zimmerwohnung-perfekt-geeignet-fuer-singels-oder-paerchen-1615719463/",
-        "agency": "Privat",
-        "image": "https://cache.willhaben.at/mmo/3/161/571/9463_-366548799_hoved.jpg",
-        "sqm": 48.0,
-        "title": "(reserviert) Anfragen STOP 2 Zimmerwohnung perfekt geeignet für Singels oder Pärchen",
-        "price": null,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf",
@@ -909,7 +945,8 @@
         "sqm": 47.0,
         "title": "Exklusive 2-Zimmer-Wohnung mit großzügiger Terrasse | zu günstigem Preis",
         "price": 743.39,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf",
@@ -921,7 +958,8 @@
         "sqm": 63.0,
         "title": "3 Zimmer Wohnung (KEINE Gemeindewohnung)",
         "price": 575.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1100 Wien, 10. Bezirk, Favoriten, Rotenhofgasse 108",
@@ -933,7 +971,8 @@
         "sqm": 52.0,
         "title": "Studenten-WG in Untermiete",
         "price": 742.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1200 Wien, 20. Bezirk, Brigittenau, Pasettistraße 81-83",
@@ -945,7 +984,8 @@
         "sqm": 45.0,
         "title": "Sonnige 1-Zimmer-Wohnung mit 2 Terrassen!",
         "price": 623.04,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1150 Wien, 15. Bezirk, Rudolfsheim-Fünfhaus, Kauergasse -",
@@ -957,7 +997,8 @@
         "sqm": 51.0,
         "title": "Wunderschöne 2-Zimmer-Wohnung MIT Terrasse",
         "price": 795.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf, Leopoldauer Straße 131",
@@ -969,7 +1010,8 @@
         "sqm": 44.0,
         "title": "LEO 131 - Sonnige Neubauwohnung mit Südbalkon und Küche - 10 Minuten zu U6 und S-Bahn Floridsdorf sowie Siemensstraße Bahnhof",
         "price": 799.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt",
@@ -981,7 +1023,8 @@
         "sqm": 40.0,
         "title": "Exklusives Wohnen in Stadlau: Hochwertige Ausstattung, Balkon mit Blick ins Grüne, nahe S-Bahn Erzherzog-Karl-Straße! LUFTWÄRMEPUMPE! - JETZT ZUSCHLAGEN",
         "price": 799.04,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt",
@@ -993,7 +1036,8 @@
         "sqm": 40.0,
         "title": "Nette, unbefristete Balkon-Wohnung ab sofort! (Finanzierungsbeitrag: 18.494 EURO)",
         "price": 544.96,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt",
@@ -1005,7 +1049,8 @@
         "sqm": 41.0,
         "title": "Wohnen im Grünen zwischen dem Badeteich Hirschstetten & der Seestadt",
         "price": 749.99,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt",
@@ -1017,7 +1062,8 @@
         "sqm": 41.0,
         "title": "Helle und gut geschnittene Zwei-Zimmer Wohnung in Essling",
         "price": 683.1,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt",
@@ -1029,19 +1075,8 @@
         "sqm": 48.0,
         "title": "Neuwertige 2 Zimmerwohnung/ klimatisiert/ gute Lage im 22. Bezirk",
         "price": 780.0,
-        "date": "2024-07-15"
-    },
-    {
-        "address": "1220 Wien, 22. Bezirk, Donaustadt",
-        "lon": 16.348388,
-        "lat": 48.198674,
-        "link": "https://www.willhaben.at/iad/immobilien/d/mietwohnungen/wien/wien-1220-donaustadt/gemeindewohnung-vmd-30-06-2024-2013733767/",
-        "agency": "Privat",
-        "image": "https://cache.willhaben.at/mmo/7/201/373/3767_-721755815_hoved.jpg",
-        "sqm": 58.0,
-        "title": "(reserviert) Gemeindewohnung VMD 30.06.2024",
-        "price": null,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt",
@@ -1053,7 +1088,8 @@
         "sqm": 59.0,
         "title": "RESERVIERT! 3-Zimmer GEMEINDEWOHNUNG in Kaisermühlen",
         "price": 405.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt",
@@ -1065,19 +1101,8 @@
         "sqm": 48.0,
         "title": "Neubauwohnung 22. Bezirk Hirschstetten",
         "price": 775.0,
-        "date": "2024-07-15"
-    },
-    {
-        "address": "1220 Wien, 22. Bezirk, Donaustadt",
-        "lon": 16.348388,
-        "lat": 48.198674,
-        "link": "https://www.willhaben.at/iad/immobilien/d/mietwohnungen/wien/wien-1220-donaustadt/wunderschoene-guenstige-2-zimmer-genossenschaftswohnung-in-wien-22-bezirk-nahe-der-veterinaermedizinischen-universitaet-1854181914/",
-        "agency": "Privat",
-        "image": "https://cache.willhaben.at/mmo/4/185/418/1914_-1566772507_hoved.jpg",
-        "sqm": 60.0,
-        "title": "(reserviert) Wunderschöne, günstige 2-Zimmer-Genossenschaftswohnung in Wien, 22. Bezirk, nahe der Veterinärmedizinischen Universität",
-        "price": null,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt",
@@ -1089,19 +1114,8 @@
         "sqm": 45.0,
         "title": "Helle Wohnung mit Balkon im 22. Bezirk (reserviert)",
         "price": 790.0,
-        "date": "2024-07-15"
-    },
-    {
-        "address": "1220 Wien, 22. Bezirk, Donaustadt, Pawlikgasse 9",
-        "lon": null,
-        "lat": null,
-        "link": "https://www.willhaben.at/iad/immobilien/d/mietwohnungen/wien/wien-1220-donaustadt/sonnige-2-zimmer-mit-klimaanlage-und-terrassse-ruhelage-badeteich-hirschstetten-in-fussnaehe-1562565658/",
-        "agency": "DWK Die Wohnkompanie GmbH",
-        "image": "https://cache.willhaben.at/mmo/8/156/256/5658_-947265484_hoved.jpg",
-        "sqm": 41.0,
-        "title": "Sonnige 2 Zimmer mit Klimaanlage und Terrassse | Ruhelage | Badeteich Hirschstetten in Fußnähe",
-        "price": 799.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt, Bertha-von-Suttner-Gasse 6",
@@ -1113,7 +1127,8 @@
         "sqm": 43.0,
         "title": "2-Zimmer-Wohnung inkl Komplettküche, Balkon Außenfläche und Kellerabteil / I3-22",
         "price": 729.99,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1190 Wien, 19. Bezirk, Döbling, Barawitzkagasse 7",
@@ -1125,7 +1140,8 @@
         "sqm": 56.0,
         "title": "Grinzing! 2-Zimmer-Wohnung Barawitzkagasse 7 - Top 10 Miete ohne Garage EUR 789+Energie",
         "price": 789.8,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf, Matthäus-Jiszda-Strasse 3",
@@ -1137,7 +1153,8 @@
         "sqm": 60.0,
         "title": "3 Zimmer Gemeindewohnung mit 60m² (WOHNTICKET FÜR 3-ZIMMER und Datum bis 30.10.2023)",
         "price": 637.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1100 Wien, 10. Bezirk, Favoriten, Erlachgasse 118",
@@ -1149,7 +1166,8 @@
         "sqm": 44.0,
         "title": "1100 Wien - U1-Nähe - Uneinsehbare Neubauwohnung mit Parkblick - Provisionsfrei",
         "price": 799.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1090 Wien, 09. Bezirk, Alsergrund, Lustkandlgasse 6",
@@ -1161,19 +1179,8 @@
         "sqm": 40.0,
         "title": "1090, Lustkandlgasse/U6 Währinger Straße, ruhige Singelwohnung neu saniert unbefristet und OHNE Provision ab August zu vermieten",
         "price": 737.41,
-        "date": "2024-07-15"
-    },
-    {
-        "address": "1220 Wien, 22. Bezirk, Donaustadt, Lössweg 3/10/2",
-        "lon": null,
-        "lat": null,
-        "link": "https://www.willhaben.at/iad/immobilien/d/mietwohnungen/wien/wien-1220-donaustadt/genossenschaftswohnung-solzialbau-ag-1824780140/",
-        "agency": "Privat",
-        "image": "https://cache.willhaben.at/mmo/0/182/478/0140_492492648_hoved.jpg",
-        "sqm": 60.0,
-        "title": "Genossenschaftswohnung Solzialbau AG",
-        "price": 578.11,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt, Cassinonestraße",
@@ -1185,7 +1192,8 @@
         "sqm": 40.0,
         "title": "Charmante Wohnungen in der Nähe der Seestadt!",
         "price": 748.99,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf, Edi-Finger-Straße",
@@ -1197,7 +1205,8 @@
         "sqm": 45.0,
         "title": "Stammersdorfer Wohnparadies: Mietwohnungen mit Kaufoption",
         "price": 750.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf, Edi-Finger-Straße",
@@ -1209,7 +1218,8 @@
         "sqm": 46.0,
         "title": "Stammersdorfer Wohnträume erleben: Mietwohnungen mit Option auf zukünftigen Kauf",
         "price": 790.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf, Edi-Finger-Straße",
@@ -1221,7 +1231,8 @@
         "sqm": 46.0,
         "title": "Ihr Zuhause in Stammersdorfer Ruhelage: Mietwohnung mit Kaufoption",
         "price": 790.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf, Edi-Finger-Straße",
@@ -1233,7 +1244,8 @@
         "sqm": 48.0,
         "title": "\"Flori Flats\": Mietkauf in Floridsdorf - Idyllisches Wohnen in Heurigengegend",
         "price": 775.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf, Edi-Finger-Straße",
@@ -1245,7 +1257,8 @@
         "sqm": 49.0,
         "title": "Stammersdorfer Wohnparadies: Mietwohnungen mit Kaufoption",
         "price": 770.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf, Edi-Finger-Straße",
@@ -1257,7 +1270,8 @@
         "sqm": 46.0,
         "title": "Traumhaftes Wohnen: Gartenwohnung mit Kaufoption in idyllischer Wohngegend",
         "price": 770.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf, Edi-Finger-Straße",
@@ -1269,7 +1283,8 @@
         "sqm": 47.0,
         "title": "Mietwohnung genießen, Kaufoption nutzen: Wohnen in Stammersdorfer Naturkulisse",
         "price": 775.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf, Edi-Finger-Straße",
@@ -1281,7 +1296,8 @@
         "sqm": 44.0,
         "title": "Mietwohnung genießen, Kaufoption nutzen: Wohnen in Stammersdorfer Naturkulisse",
         "price": 720.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf, Edi-Finger-Straße",
@@ -1293,7 +1309,8 @@
         "sqm": 49.0,
         "title": "Jetzt mieten, später kaufen: Wohnen in Stammersdorfer Naturidylle",
         "price": 770.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1200 Wien, 20. Bezirk, Brigittenau, Hartlgasse 19",
@@ -1305,7 +1322,8 @@
         "sqm": 50.0,
         "title": "Helle 2-Zimmer-Wohnung!",
         "price": 732.06,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1110 Wien, 11. Bezirk, Simmering, Kölgengasse 1-3",
@@ -1317,7 +1335,8 @@
         "sqm": 45.0,
         "title": "2 Zimmer Wohnung in Grünruhelage mit Fernblick",
         "price": 539.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1110 Wien, 11. Bezirk, Simmering",
@@ -1329,7 +1348,8 @@
         "sqm": 44.0,
         "title": "44m² Wohnung mit top Anbindung zum Hauptbahnhof- sofort verfügbar!",
         "price": 706.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1110 Wien, 11. Bezirk, Simmering",
@@ -1341,7 +1361,8 @@
         "sqm": 43.0,
         "title": "Gemütliche 2-Zimmer-Wohnung mit Balkon",
         "price": 799.33,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1110 Wien, 11. Bezirk, Simmering",
@@ -1353,7 +1374,8 @@
         "sqm": 47.0,
         "title": "Für Single oder Studenten | 1-Zimmer Wohnung für nur 780,00 EUR Miete!",
         "price": 780.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1110 Wien, 11. Bezirk, Simmering",
@@ -1365,7 +1387,8 @@
         "sqm": 140.0,
         "title": "Ein helles Zimmer in 7-Zimmer-Studenten-Wohngemeinschaft mit 5 Schlafzimmern, 22 m² Terrasse für StudentInnen WG-geeignet (1 Küche, 2 Badezimmer und 2 WCs)",
         "price": 450.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1110 Wien, 11. Bezirk, Simmering",
@@ -1377,7 +1400,8 @@
         "sqm": 74.0,
         "title": "Gemeindewohnung Direktvergabe",
         "price": 757.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1110 Wien, 11. Bezirk, Simmering",
@@ -1389,7 +1413,8 @@
         "sqm": 49.0,
         "title": "DIREKTVERGABE- Gemeindewohnung, Wohnticket vor dem 31.05.2024",
         "price": 508.3,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1120 Wien, 12. Bezirk, Meidling",
@@ -1401,7 +1426,8 @@
         "sqm": 61.0,
         "title": "GENOSSENSCHAFTSWOHNUNG MIT LOGGIA 60m2",
         "price": 625.09,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1120 Wien, 12. Bezirk, Meidling",
@@ -1413,7 +1439,8 @@
         "sqm": 55.0,
         "title": "Nette 2 Zimmer Wohnung, ruhige Lage, gute Öffi-Anbindung",
         "price": 795.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1120 Wien, 12. Bezirk, Meidling",
@@ -1425,7 +1452,8 @@
         "sqm": 55.0,
         "title": "2,5-Zimmer-Wohnung in zentraler Lage",
         "price": 740.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1120 Wien, 12. Bezirk, Meidling",
@@ -1437,7 +1465,8 @@
         "sqm": 57.0,
         "title": "Wohnung",
         "price": 676.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1120 Wien, 12. Bezirk, Meidling",
@@ -1449,7 +1478,8 @@
         "sqm": 50.0,
         "title": "Gemeindewohnung zu vergeben mit VORMERKSCHEIN BIS ZUM 30.06.2024",
         "price": 474.1,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1120 Wien, 12. Bezirk, Meidling",
@@ -1461,7 +1491,8 @@
         "sqm": 55.0,
         "title": "Direktvergabe Gemeindewohnung 3 Zimmer NUR mit WOHNTICKET!",
         "price": 600.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1120 Wien, 12. Bezirk, Meidling",
@@ -1473,7 +1504,8 @@
         "sqm": 55.0,
         "title": "Laufen in Schönbrunn",
         "price": 649.85,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt, Bernoullistraße",
@@ -1485,7 +1517,8 @@
         "sqm": 58.0,
         "title": "Direktvergabe 2-Zimmer Wohnung, 1220 Wien, Nähe Donauzentrum",
         "price": 611.31,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1050 Wien, 05. Bezirk, Margareten, Johannagasse 29-35/17/2",
@@ -1497,7 +1530,8 @@
         "sqm": 43.0,
         "title": "DIREKTVERGABE MIT GÜLTIGEM VORMERKSCHEIN bis 30.4.2024IN",
         "price": 380.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1150 Wien, 15. Bezirk, Rudolfsheim-Fünfhaus, Sechshauserstrasse",
@@ -1509,7 +1543,8 @@
         "sqm": 52.0,
         "title": "Flair und Charme - Perfekte SINGLE WOHNUNG ! Unbefristet Wohnen",
         "price": 787.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1050 Wien, 05. Bezirk, Margareten, Hartmanngasse 10",
@@ -1521,7 +1556,8 @@
         "sqm": 40.0,
         "title": "Befristete 2 Zimmer Wohnung in beliebter Wohngegend",
         "price": 800.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1130 Wien, 13. Bezirk, Hietzing, Wattmanngasse",
@@ -1533,7 +1569,8 @@
         "sqm": 62.0,
         "title": "Gemeinde Wohnung Direktvergabe",
         "price": 632.24,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1140 Wien, 14. Bezirk, Penzing, Cossmanngasse 2",
@@ -1545,7 +1582,8 @@
         "sqm": 46.0,
         "title": "Direktvergabe - 2 Zimmer Gemeindewohnung",
         "price": 456.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1100 Wien, 10. Bezirk, Favoriten, Randhartingergasse 12",
@@ -1557,7 +1595,8 @@
         "sqm": 68.0,
         "title": "Möblierte WG-Zimmern zur Kurzzeitmiete (bis 6 Monate)",
         "price": 535.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt, Anton-Sattler-Gasse 115",
@@ -1569,7 +1608,8 @@
         "sqm": 53.0,
         "title": "Helle Gemeindewohnung zur Direktvergabe nahe U1",
         "price": 530.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1110 Wien, 11. Bezirk, Simmering, Am Kanal 73a",
@@ -1581,7 +1621,8 @@
         "sqm": 40.0,
         "title": "ruhige Kleinwohnung mit moderner Küche",
         "price": 630.6,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1230 Wien, 23. Bezirk, Liesing, Ketzergasse",
@@ -1593,7 +1634,8 @@
         "sqm": 47.0,
         "title": "Gemütlicher 2 Zimmer Rückzugsort unbefristet",
         "price": 730.74,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1120 Wien, 12. Bezirk, Meidling, Altmannsdorfer Straße",
@@ -1605,7 +1647,8 @@
         "sqm": 41.0,
         "title": "2 Zimmer Neubauwohnung - Nahe U6 Am Schöpfwerk",
         "price": 799.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1120 Wien, 12. Bezirk, Meidling, Altmannsdorfer Straße",
@@ -1617,7 +1660,8 @@
         "sqm": 41.0,
         "title": "Helle 2-Zimmer Wohnung in verkehrsgünstiger Lage | 1120 Wien",
         "price": 799.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1230 Wien, 23. Bezirk, Liesing, Altmannsdorfer Straße 164/8",
@@ -1629,7 +1673,8 @@
         "sqm": 58.0,
         "title": "Direktvergabe Gemeindebauwohnung (reserviert)",
         "price": 603.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1110 Wien, 11. Bezirk, Simmering, Rudolf-Simon-Gasse",
@@ -1641,7 +1686,8 @@
         "sqm": 45.0,
         "title": "Balkonwohnung mit top Grundriss!",
         "price": 716.43,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1110 Wien, 11. Bezirk, Simmering, Rudolf-Simon-Gasse",
@@ -1653,7 +1699,8 @@
         "sqm": 47.0,
         "title": "Modern Wohnen in Nähe des Flughafens!",
         "price": 799.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1120 Wien, 12. Bezirk, Meidling, Schwenkgasse",
@@ -1665,7 +1712,8 @@
         "sqm": 45.0,
         "title": "NOTFALLWOHNUNG zur kurzfristigen Nutzung! - PROVISIONSFREI - Voll ausgestattetes Appartement in guter Lage",
         "price": 59.99,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1150 Wien, 15. Bezirk, Rudolfsheim-Fünfhaus, Pouthongasse",
@@ -1677,7 +1725,8 @@
         "sqm": 42.0,
         "title": "Studenten-Hit: Schönes Single-Apartment in der Nähe der Stadthalle",
         "price": 679.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt, Bertha-von-Suttner-Gasse 10",
@@ -1689,7 +1738,8 @@
         "sqm": 44.0,
         "title": "2-Zimmer-Wohnung inkl Komplettküche, Terrassen Außenfläche und Kellerabteil / K2-52",
         "price": 769.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1130 Wien, 13. Bezirk, Hietzing",
@@ -1701,7 +1751,8 @@
         "sqm": 50.0,
         "title": "U4 & Lainzer Tiergartennähe - Single - oder Pärchenwohnung - provisionsfrei - 557 EUR Bruttomiete",
         "price": 556.28,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1130 Wien, 13. Bezirk, Hietzing",
@@ -1713,7 +1764,8 @@
         "sqm": 50.0,
         "title": "PRIVAT! Möblierte 2-Zimmerwohnung am Roten Berg",
         "price": 770.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1130 Wien, 13. Bezirk, Hietzing",
@@ -1725,7 +1777,8 @@
         "sqm": 70.0,
         "title": "13. Trauttmannsdorffgasse PROVISIONSFREIE, MÖBLIERTE 2-ZIMMER NEUBAULOGGIAMIETE BEIM TIERGARTEN IM BOTSCHAFTSVIERTEL",
         "price": 795.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1130 Wien, 13. Bezirk, Hietzing",
@@ -1737,7 +1790,8 @@
         "sqm": 60.0,
         "title": "Ruhige 2-Zimmerwohnung mit Gartenblick",
         "price": 740.39,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1110 Wien, 11. Bezirk, Simmering, LUISE-MONTAG-GASSE 1",
@@ -1749,7 +1803,8 @@
         "sqm": 50.0,
         "title": "***Gemeindewohnung***WIENER WOHNEN GÜLTIKEIT VOR 31.05.2024 für 2 Wohnräume Direktvergabe",
         "price": 515.42,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1050 Wien, 05. Bezirk, Margareten, Diehlgasse",
@@ -1761,7 +1816,8 @@
         "sqm": 42.0,
         "title": "Unbefristet - 1 Zimmer mit getrennter Küche und großen Bad in guter Lage",
         "price": 720.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1100 Wien, 10. Bezirk, Favoriten, Scheugasse 8/33",
@@ -1773,7 +1829,8 @@
         "sqm": 42.0,
         "title": "Neu renovierter Erstbezug, bezugsfertige 42m2 Wohnung von Privat",
         "price": 676.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1120 Wien, 12. Bezirk, Meidling, Hanauskagasse",
@@ -1785,7 +1842,8 @@
         "sqm": 47.0,
         "title": "Größzügiges Single-Appartement in ruhiger Wohnlage",
         "price": 725.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1190 Wien, 19. Bezirk, Döbling",
@@ -1797,7 +1855,8 @@
         "sqm": 67.0,
         "title": "67m² große 2-Zi-DG-Wohnung in Sievering",
         "price": 786.66,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1190 Wien, 19. Bezirk, Döbling",
@@ -1809,19 +1868,8 @@
         "sqm": 43.0,
         "title": "Helle, ruhige Wohnung mit großer Terrasse, 6 Min zur U-Bahn & S-Bahn, 5 Min zum Q19",
         "price": 799.3,
-        "date": "2024-07-15"
-    },
-    {
-        "address": "1190 Wien, 19. Bezirk, Döbling",
-        "lon": 16.348388,
-        "lat": 48.198674,
-        "link": "https://www.willhaben.at/iad/immobilien/d/mietwohnungen/wien/wien-1190-doebling/nachmieter-in-fuer-helle-moebliertealtbauwohnung-ab-september-2024-1170180294/",
-        "agency": "Privat",
-        "image": "https://cache.willhaben.at/mmo/4/117/018/0294_276423334_hoved.jpg",
-        "sqm": 40.0,
-        "title": "(reserviert) Nachmieter*in für helle MÖBLIERTEAltbauwohnung ab September 2024",
-        "price": null,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1100 Wien, 10. Bezirk, Favoriten, Schrankenberggasse 18-20",
@@ -1833,19 +1881,8 @@
         "sqm": 48.0,
         "title": "Entzückende voll möblierte 2-Zimmer Neubauwohnung für 3 Jahre zu mieten",
         "price": 795.0,
-        "date": "2024-07-15"
-    },
-    {
-        "address": "1100 Wien, 10. Bezirk, Favoriten, Neilreichgasse 47-51/3",
-        "lon": 16.366079,
-        "lat": 48.178292,
-        "link": "https://www.willhaben.at/iad/immobilien/d/mietwohnungen/wien/wien-1100-favoriten/genossenschaftswohnung-maisonette-2060321358/",
-        "agency": "Privat",
-        "image": "https://cache.willhaben.at/mmo/8/206/032/1358_-2026704066_hoved.jpg",
-        "sqm": 69.0,
-        "title": "(reserviert) Genossenschaftswohnung Maisonette",
-        "price": null,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1230 Wien, 23. Bezirk, Liesing, Endresstrasse 72",
@@ -1857,7 +1894,8 @@
         "sqm": 44.0,
         "title": "Wohnung PROVISIONSFREI zu vermieten",
         "price": 735.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1200 Wien, 20. Bezirk, Brigittenau, Treustraße",
@@ -1869,7 +1907,8 @@
         "sqm": 43.0,
         "title": "Helle 1-Zimmer Wohnung/ Garconnie re (2 und 5 Stufen) mit großem Balkon, sehr ruhig gelegen, oberhalb von Garagen (also kein Erdgeschoss)",
         "price": 750.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt, Bertha-von-Suttner-Gasse 10a-12a",
@@ -1881,7 +1920,8 @@
         "sqm": 41.0,
         "title": "Moderne Neubauwohnungen nahe U1 Kagraner Platz - Aufstrebendes Wohnviertel",
         "price": 789.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt, Bertha-von-Suttner-Gasse 10a-12a",
@@ -1893,7 +1933,8 @@
         "sqm": 41.0,
         "title": "Moderne Neubauwohnung mit großem Balkon nahe U1 Kagraner Platz - im neuen Wohnviertel Am Langen Felde",
         "price": 789.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1180 Wien, 18. Bezirk, Währing, Leitermayergasse 50",
@@ -1905,7 +1946,8 @@
         "sqm": 44.0,
         "title": "Gemütliche 2-Zimmer-Wohnung - schöne Lage, optimale Aufteilung, gute Verkehrsanbindung!",
         "price": 788.98,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1190 Wien, 19. Bezirk, Döbling, Görgengasse 26",
@@ -1917,7 +1959,8 @@
         "sqm": 61.0,
         "title": "Gemeindewohnung Wiener Wohnen - 2 Zimmer - Direktvergabe (Vormerkschein vor 30.06.2024 erforderlich)",
         "price": 626.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1180 Wien, 18. Bezirk, Währing, Wielemansgasse 13-23/8/8",
@@ -1929,7 +1972,8 @@
         "sqm": 45.0,
         "title": "Gemeindewohnung Direktvergabe 1180",
         "price": 450.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1100 Wien, 10. Bezirk, Favoriten, Buchengasse",
@@ -1941,7 +1985,8 @@
         "sqm": 47.0,
         "title": "Single & Pärchenhit oder Office || freundlich & gemütlich || 2 Zimmer Wohnung || 3. Liftstock",
         "price": 798.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf, Kantnergasse",
@@ -1953,7 +1998,8 @@
         "sqm": 53.0,
         "title": "Moderne 2-Zimmer Dachgeschoßwohnung in unmittelbarer Nähe zur Siemensstraße",
         "price": 749.01,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1100 Wien, 10. Bezirk, Favoriten, Quellenstraße 27",
@@ -1965,19 +2011,8 @@
         "sqm": 68.0,
         "title": "Gemeinde Wohnung mit Vormerkschein 29.02.2024",
         "price": 698.0,
-        "date": "2024-07-15"
-    },
-    {
-        "address": "1020 Wien, 02. Bezirk, Leopoldstadt, Handelskai 214A/1",
-        "lon": 16.4044563,
-        "lat": 48.226094,
-        "link": "https://www.willhaben.at/iad/immobilien/d/mietwohnungen/wien/wien-1020-leopoldstadt/1-zimmer-wohnung-direktvergabe-wienerwohnticket-vormerkschein-notwendig-1682383494/",
-        "agency": "Privat",
-        "image": "https://cache.willhaben.at/mmo/4/168/238/3494_1737289117_hoved.jpg",
-        "sqm": 40.0,
-        "title": "(reserviert) 1-Zimmer Wohnung DIREKTVERGABE - WienerWohnTicket/ Vormerkschein NOTWENDIG",
-        "price": null,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1190 Wien, 19. Bezirk, Döbling, Silbergasse",
@@ -1989,7 +2024,8 @@
         "sqm": 45.0,
         "title": "Gemeindewohnung 1190",
         "price": 477.53,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf, Kantnergasse 58",
@@ -2001,7 +2037,8 @@
         "sqm": 53.0,
         "title": "Modern Wohnen im Herzen von Floridsdorf!",
         "price": 749.24,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1100 Wien, 10. Bezirk, Favoriten, Dr.Eberle-gasse",
@@ -2013,7 +2050,8 @@
         "sqm": 51.0,
         "title": "Ablöse 5.000/ gemeinde Wohnung zwei Zimmer vormerkschein bis 30.06.2024",
         "price": 520.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1160 Wien, 16. Bezirk, Ottakring, Friedrich-Kaiser-Gasse 26",
@@ -2025,7 +2063,8 @@
         "sqm": 42.0,
         "title": "Schöne 2-Zimmer-Wohnung für Pärchen",
         "price": 594.31,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1130 Wien, 13. Bezirk, Hietzing, Firmiangasse 55",
@@ -2037,7 +2076,8 @@
         "sqm": 66.0,
         "title": "Attraktive 2-Zimmer Wohnung in Wien Hietzing",
         "price": 792.11,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1130 Wien, 13. Bezirk, Hietzing, Bergheidengasse 18-18a",
@@ -2049,7 +2089,8 @@
         "sqm": 52.0,
         "title": "Ruhig gelegene 2-Zimmer Wohnung im Grünen",
         "price": 743.97,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1190 Wien, 19. Bezirk, Döbling, Dr.-Eduard-Heinl-Gasse 7",
@@ -2061,7 +2102,8 @@
         "sqm": 41.0,
         "title": "Schöne 2-Zimmer Wohnung im 19. Bezirk",
         "price": 772.45,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1090 Wien, 09. Bezirk, Alsergrund, Liechtensteinstraße",
@@ -2073,7 +2115,8 @@
         "sqm": 56.0,
         "title": "Gemeindewohnung 56qm 2-Zimmer in bester Lage im 9. Bezirk",
         "price": 555.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1090 Wien, 09. Bezirk, Alsergrund, Liechtensteinstraße",
@@ -2085,7 +2128,8 @@
         "sqm": 41.0,
         "title": "ALSERGRUND: Sanierte 2-Zimmer Wohnung in zentraler Lage (Nähe Spittelau und Franz Josefs-Bahnhof)",
         "price": 799.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1030 Wien, 03. Bezirk, Landstraße, Paulusgasse 8",
@@ -2097,31 +2141,8 @@
         "sqm": 64.0,
         "title": "WG- Wohnung, Paulusplatz, 1030- Wien,",
         "price": 690.0,
-        "date": "2024-07-15"
-    },
-    {
-        "address": "1100 Wien, 10. Bezirk, Favoriten, Troststraße",
-        "lon": 16.35503,
-        "lat": 48.172203,
-        "link": "https://www.willhaben.at/iad/immobilien/d/mietwohnungen/wien/wien-1100-favoriten/genossenschaftswohnung-1649145972/",
-        "agency": "Privat",
-        "image": "https://cache.willhaben.at/mmo/2/164/914/5972_1059119065_hoved.jpg",
-        "sqm": 75.0,
-        "title": "(reserviert) Genossenschaftswohnung",
-        "price": null,
-        "date": "2024-07-15"
-    },
-    {
-        "address": "1210 Wien, 21. Bezirk, Floridsdorf, Bubergasse 2A",
-        "lon": 16.4507296,
-        "lat": 48.2682138,
-        "link": "https://www.willhaben.at/iad/immobilien/d/mietwohnungen/wien/wien-1210-floridsdorf/gemeindewohnung-3-zimmer-direktvergabe-1776743884/",
-        "agency": "Privat",
-        "image": "https://cache.willhaben.at/mmo/4/177/674/3884_-2000886768_hoved.jpg",
-        "sqm": 80.0,
-        "title": "(reserviert) Gemeindewohnung - 3 Zimmer - Direktvergabe",
-        "price": null,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1160 Wien, 16. Bezirk, Ottakring, Rückertgasse 10",
@@ -2133,7 +2154,8 @@
         "sqm": 40.0,
         "title": "Feine 2-Zimmer Wohnung! Gute Lage im 16.Bezirk! Jetzt Anfragen. - WOHNTRAUM",
         "price": 749.77,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt, Siebenbürgerstraße 2-12",
@@ -2145,7 +2167,8 @@
         "sqm": 59.0,
         "title": "Direktvergabe vormerkschein datum 29.2.2024",
         "price": 604.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1180 Wien, 18. Bezirk, Währing, Gersthofer Straße",
@@ -2157,7 +2180,8 @@
         "sqm": 46.0,
         "title": "Studentenwohnung in Gersthof",
         "price": 565.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1180 Wien, 18. Bezirk, Währing, Gersthofer Straße",
@@ -2169,7 +2193,8 @@
         "sqm": 68.0,
         "title": "Geschäftslokal",
         "price": 655.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt, Hirschstettnerstraße 61",
@@ -2181,7 +2206,8 @@
         "sqm": 47.0,
         "title": "Nachmieter gesucht wegen Job wechsel ins Ausland",
         "price": 749.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1170 Wien, 17. Bezirk, Hernals, Neuwaldeggerstrasse 16",
@@ -2193,7 +2219,8 @@
         "sqm": 52.0,
         "title": "Moderne Kleinwohnung in der Natur mit Pool",
         "price": 790.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1230 Wien, 23. Bezirk, Liesing, Erlaaerstraße 38",
@@ -2205,7 +2232,8 @@
         "sqm": 44.0,
         "title": "2 Zimmer-Wohnung nahe Alt Erlaa & Liesingbach",
         "price": 592.19,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1030 Wien, 03. Bezirk, Landstraße, Apostelgasse",
@@ -2217,7 +2245,8 @@
         "sqm": 50.0,
         "title": "Hauptmietwohnung",
         "price": 765.14,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1120 Wien, 12. Bezirk, Meidling, Münchenstraße 31-35",
@@ -2229,7 +2258,8 @@
         "sqm": 50.0,
         "title": "Gemeindewohnung mit 1.8.24 zu vergeben.",
         "price": 510.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1090 Wien, 09. Bezirk, Alsergrund",
@@ -2241,19 +2271,8 @@
         "sqm": 60.0,
         "title": "[Zwischenmiete/ Short rent] - 2 ROOMS APARTMENT - Schön, Groß, Leise, Möbliert -",
         "price": 750.0,
-        "date": "2024-07-15"
-    },
-    {
-        "address": "1140 Wien, 14. Bezirk, Penzing, Tiefendorfergasse 9",
-        "lon": 16.3014074,
-        "lat": 48.1994732,
-        "link": "https://www.willhaben.at/iad/immobilien/d/mietwohnungen/wien/wien-1140-penzing/wohntraum-in-1140-mit-blick-auf-schrebergaerten-1650154349/",
-        "agency": "Privat",
-        "image": "https://cache.willhaben.at/mmo/9/165/015/4349_139974482_hoved.jpg",
-        "sqm": 48.0,
-        "title": "(reserviert) Wohntraum in 1140 mit Blick auf Schrebergärten",
-        "price": null,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1120 Wien, 12. Bezirk, Meidling, Schallergasse 31",
@@ -2265,7 +2284,8 @@
         "sqm": 45.0,
         "title": "Helle und moderne 2 Zimmer Wohnung in Top-Lage - Provisionsfrei",
         "price": 770.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1140 Wien, 14. Bezirk, Penzing, Hütteldorferstrasse",
@@ -2277,7 +2297,8 @@
         "sqm": 54.0,
         "title": "SOFORTBEZUG IN DER HÜTTELDORFERSTRASSE",
         "price": 767.81,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf, Ohmgasse",
@@ -2289,7 +2310,8 @@
         "sqm": 44.0,
         "title": "2 Zimmer Wohnung 1210 Wien ( nur mit Vormerkschein)",
         "price": 493.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1140 Wien, 14. Bezirk, Penzing, Linzer Straße 113",
@@ -2301,7 +2323,8 @@
         "sqm": 45.0,
         "title": "ERSTBEZUG nach Sanierung | tolle 2-Zimmer Wohnung | Bahnhof Penzing",
         "price": 790.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1170 Wien, 17. Bezirk, Hernals, Sandleitengasse 60",
@@ -2313,7 +2336,8 @@
         "sqm": 60.0,
         "title": "Geräumige 2-Zimmer -Wohnung",
         "price": 798.91,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1100 Wien, 10. Bezirk, Favoriten, Theodor-Sickel-Gasse 12/9/17",
@@ -2325,7 +2349,8 @@
         "sqm": 58.0,
         "title": "Voll möblierte 2-Zimmer-Wohnung mit günstiger Miete 500(Warm) ab 1. November 2024 - Eigenmittel 18 579& Ablöse 16 500€",
         "price": 500.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1110 Wien, 11. Bezirk, Simmering, Am Kanal 73A",
@@ -2337,7 +2362,8 @@
         "sqm": 56.0,
         "title": "Am Kanal 73A / Top A078",
         "price": 796.87,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1100 Wien, 10. Bezirk, Favoriten, Randhartingergasse 19 /Stiege 21 /Tür 37",
@@ -2349,19 +2375,8 @@
         "sqm": 41.0,
         "title": "Gemeindewohnung für eine Person nur mit Vormerkschein / Wohn Ticket von Wiener Wohnen (preregistration certificate is required!)",
         "price": 426.17,
-        "date": "2024-07-15"
-    },
-    {
-        "address": "1150 Wien, 15. Bezirk, Rudolfsheim-Fünfhaus, Schweglerstraße 15",
-        "lon": 16.3285312323,
-        "lat": 48.1973866,
-        "link": "https://www.willhaben.at/iad/immobilien/d/mietwohnungen/wien/wien-1150-rudolfsheim-fuenfhaus/top-saniertes-altbauobjekt-atelier-wohnen-1049571162/",
-        "agency": "Privat",
-        "image": "https://cache.willhaben.at/mmo/2/104/957/1162_-1139614352_hoved.jpg",
-        "sqm": 40.0,
-        "title": "(reserviert) Top saniertes Altbauobjekt - Atelier/ Wohnen",
-        "price": null,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1070 Wien, 07. Bezirk, Neubau, Kaiserstraße",
@@ -2373,7 +2388,8 @@
         "sqm": 50.0,
         "title": "Hauptmietwohnung neu Saniert/ Kaiserstraße",
         "price": 783.56,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1140 Wien, 14. Bezirk, Penzing, Seckendorfstraße",
@@ -2385,7 +2401,8 @@
         "sqm": 85.0,
         "title": "NUR AN SOZIALBAUMIETER ODER DEREN VERWANDTE ERSTEN GRADES Sozialbau-AG 3-Zimmer Genossenschaftswohnung",
         "price": 722.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf, Ruth-Brinkmann-Gasse1",
@@ -2397,7 +2414,8 @@
         "sqm": 46.0,
         "title": "Neubau in Wien - Stammersdorf",
         "price": 750.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1100 Wien, 10. Bezirk, Favoriten, Quellenstrasse",
@@ -2409,7 +2427,8 @@
         "sqm": 50.0,
         "title": "DIREKTVERGABE GEMEINDEWOHNUNG",
         "price": 485.63,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1100 Wien, 10. Bezirk, Favoriten, Erlachplatz",
@@ -2421,7 +2440,8 @@
         "sqm": 63.0,
         "title": "UNBEFRISTETE ALTBAUWOHNUNG AM ERLACHPLATZ",
         "price": 765.35,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1140 Wien, 14. Bezirk, Penzing, Märzstraße 158",
@@ -2433,7 +2453,8 @@
         "sqm": 40.0,
         "title": "Wunderschöne 1 Zimmer Wohnung im 14. Bezirk unbefristet",
         "price": 682.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt, Tietzestrasse",
@@ -2445,7 +2466,8 @@
         "sqm": 58.0,
         "title": "Gemeindewohnung - Direktvergabe",
         "price": 654.22,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1100 Wien, 10. Bezirk, Favoriten, Nielrosenweg 23",
@@ -2457,7 +2479,8 @@
         "sqm": 67.0,
         "title": "klimatisierte, barrierefreie Wohnung 67 m2 für 2 Personen befristet 6 Monate zu vermieten",
         "price": 179.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1150 Wien, 15. Bezirk, Rudolfsheim-Fünfhaus, Alliogasse 8-10",
@@ -2469,7 +2492,8 @@
         "sqm": 78.0,
         "title": "Gemeindewohnung Dachgeschoss 3 Zimmer, 1150",
         "price": 556.9,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1190 Wien, 19. Bezirk, Döbling, Heiligenstädter Straße 11-25",
@@ -2481,7 +2505,8 @@
         "sqm": 42.0,
         "title": "GEMEIDEWOHNUNG 2-Zimmer",
         "price": 430.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt, Erzherzog Karlstraße 92",
@@ -2493,7 +2518,8 @@
         "sqm": 40.0,
         "title": "Moderner Erstbezug! Ihre neue 2-Zimmer-Wohnung mit Balkon und Einbauküche",
         "price": 690.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1190 Wien, 19. Bezirk, Döbling, Weinberggasse 53",
@@ -2505,19 +2531,8 @@
         "sqm": 40.0,
         "title": "Privat, 1-Zimmerwohnung, 1190, unbefristete Hauptmiete, ab sofort",
         "price": 619.0,
-        "date": "2024-07-15"
-    },
-    {
-        "address": "1160 Wien, 16. Bezirk, Ottakring, Herbststraße 22",
-        "lon": 16.3323406,
-        "lat": 48.2056702,
-        "link": "https://www.willhaben.at/iad/immobilien/d/mietwohnungen/wien/wien-1160-ottakring/dachausbau-mit-ausblick-naehe-lugnercity-und-7-bezirk-1857093482/",
-        "agency": "Gewerblicher Anbieter",
-        "image": "https://cache.willhaben.at/mmo/2/185/709/3482_899797940_hoved.jpg",
-        "sqm": 53.0,
-        "title": "(reserviert) DACHAUSBAU mit AUSBLICK - Nähe LUGNERCITY und 7. BEZIRK!",
-        "price": null,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1100 Wien, 10. Bezirk, Favoriten, Bürgergasse 17-19",
@@ -2529,7 +2544,8 @@
         "sqm": 45.0,
         "title": "Direktvergabe 45m², 2-Zimmer-Wohnun, Wiener-Wohnen-Ticket 30.06",
         "price": 473.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1100 Wien, 10. Bezirk, Favoriten, Troststrasse",
@@ -2541,31 +2557,8 @@
         "sqm": 62.0,
         "title": "***BITTE LESEN***GENOSSENSCHAF WOHNUNG*** UNBEFRISTET***SOZIALBAU",
         "price": 614.0,
-        "date": "2024-07-15"
-    },
-    {
-        "address": "1040 Wien, 04. Bezirk, Wieden, Prinz-Eugen-Strasse",
-        "lon": 16.375576,
-        "lat": 48.196999,
-        "link": "https://www.willhaben.at/iad/immobilien/d/mietwohnungen/wien/wien-1040-wieden/toplage-ruhige-2-zimmer-wohnung-prinz-eugen-strasse-vis-a-vis-schloss-belvedere-1179013856/",
-        "agency": "Gewerblicher Anbieter",
-        "image": "https://cache.willhaben.at/mmo/6/117/901/3856_-350890832_hoved.jpg",
-        "sqm": 45.0,
-        "title": "(reserviert) TOPLAGE! RUHIGE 2-ZIMMER-WOHNUNG * PRINZ EUGEN STRASSE - vis à vis Schloss BELVEDERE",
-        "price": null,
-        "date": "2024-07-15"
-    },
-    {
-        "address": "1200 Wien, 20. Bezirk, Brigittenau, Dresdner Straße 15",
-        "lon": 16.3757554,
-        "lat": 48.2406743,
-        "link": "https://www.willhaben.at/iad/immobilien/d/mietwohnungen/wien/wien-1200-brigittenau/nachmieter-gesucht-fuer-2-zimmer-wohnung-1099533534/",
-        "agency": "Privat",
-        "image": "https://cache.willhaben.at/mmo/4/109/953/3534_928584130_hoved.jpg",
-        "sqm": 52.0,
-        "title": "(reserviert) Nachmieter gesucht für 2 Zimmer Wohnung",
-        "price": null,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1100 Wien, 10. Bezirk, Favoriten, Karplusgasse 1-39",
@@ -2577,19 +2570,8 @@
         "sqm": 45.0,
         "title": "Helle 2-Zimmer GEMEINDEWOHNUNG NUR mit Wiener Wohnen Ticket bis 30.06.2024!!!",
         "price": 510.0,
-        "date": "2024-07-15"
-    },
-    {
-        "address": "1110 Wien, 11. Bezirk, Simmering, Simmeringer Hauptstr. 147",
-        "lon": 16.4198231,
-        "lat": 48.1710619,
-        "link": "https://www.willhaben.at/iad/immobilien/d/mietwohnungen/wien/wien-1110-simmering/moeblierte-2-zimmer-wohnung-im-11-bezirk-zu-vermieten-2089598582/",
-        "agency": "Privat",
-        "image": "https://cache.willhaben.at/mmo/2/208/959/8582_-1139020513_hoved.jpg",
-        "sqm": 56.0,
-        "title": "(reserviert) Möblierte 2-Zimmer-Wohnung im 11. Bezirk zu vermieten",
-        "price": null,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf, Anna-Boschek-Platz 1",
@@ -2601,7 +2583,8 @@
         "sqm": 46.0,
         "title": "Provisionsfreies 2-Zimmer-Apartment in hervorragender Lage",
         "price": 699.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf, Anna-Boschek-Platz 1",
@@ -2613,7 +2596,8 @@
         "sqm": 46.0,
         "title": "Moders Wohnen im Herzen Floridsdorfs: 2-Zimmer-Wohnung mit Einbauküche!",
         "price": 699.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf, Anna-Boschek-Platz 1",
@@ -2625,7 +2609,8 @@
         "sqm": 46.0,
         "title": "Helle, provisionsfreie 2-Zimmer-Wohnung! In wunderschöner, grüner Lage!",
         "price": 699.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1150 Wien, 15. Bezirk, Rudolfsheim-Fünfhaus, Reindorfgasse",
@@ -2637,7 +2622,8 @@
         "sqm": 42.0,
         "title": "Gemütliche, gut eingeteilte 42 m² Wohnung Nähe U4",
         "price": 683.62,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1200 Wien, 20. Bezirk, Brigittenau, Stromstraße 18-20",
@@ -2649,7 +2635,8 @@
         "sqm": 50.0,
         "title": "Privat: Sonnige, ruhige 50m2 Wohnung nahe U6 Dresdner Straße",
         "price": 730.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1180 Wien, 18. Bezirk, Währing, Leitermayergasse 37",
@@ -2661,7 +2648,8 @@
         "sqm": 67.0,
         "title": "2 Zimmer, Kabinett, perfekte Lage - unbefristet",
         "price": 790.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1100 Wien, 10. Bezirk, Favoriten, Fernkorngasse 83",
@@ -2673,7 +2661,8 @@
         "sqm": 61.0,
         "title": "Mietwohnung, 1100 Wien, Nähe Erholungsgebiet Wienerberg - Nachmieter/ -in gesucht",
         "price": 716.17,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1030 Wien, 03. Bezirk, Landstraße, Mohsgasse",
@@ -2685,7 +2674,8 @@
         "sqm": 50.0,
         "title": "BELVEDERE-NÄHE: Zentrale 2-Zimmer Wohnung (saniert) in ruhiger Wohnlage - 3D Besichtigung",
         "price": 800.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1160 Wien, 16. Bezirk, Ottakring, Arnethgasse",
@@ -2697,19 +2687,8 @@
         "sqm": 50.0,
         "title": "Wohnung Nähe U 3- Ottakring.",
         "price": 760.02,
-        "date": "2024-07-15"
-    },
-    {
-        "address": "1120 Wien, 12. Bezirk, Meidling, Meidlinger Hauptstraße 67 Stiege 1",
-        "lon": 16.3304395,
-        "lat": 48.1758061,
-        "link": "https://www.willhaben.at/iad/immobilien/d/mietwohnungen/wien/wien-1120-meidling/raritaet-helle-2-zimmer-wohnung-2er-wg-geeignet-direkt-an-der-meidlinger-hauptstrasse-fussgaengerzone-3-gehminuten-zum-bahnhof-meidling-oebb-u-bahn-1285072623/",
-        "agency": "Privat",
-        "image": "https://cache.willhaben.at/mmo/3/128/507/2623_-76096684_hoved.jpg",
-        "sqm": 63.0,
-        "title": "(reserviert) Rarität, helle 2-Zimmer-Wohnung (2er-WG-geeignet) direkt an der Meidlinger Hauptstraße, Fußgängerzone,3 Gehminuten zum Bahnhof Meidling,ÖBB, U-Bahn",
-        "price": null,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1120 Wien, 12. Bezirk, Meidling, Rosastraße",
@@ -2721,19 +2700,8 @@
         "sqm": 50.0,
         "title": "20 qm Atelierplatz ab sofort",
         "price": 280.0,
-        "date": "2024-07-15"
-    },
-    {
-        "address": "1230 Wien, 23. Bezirk, Liesing, Meischlgasse",
-        "lon": 16.324755,
-        "lat": 48.141209,
-        "link": "https://www.willhaben.at/iad/immobilien/d/mietwohnungen/wien/wien-1230-liesing/helle-mietwohnung-in-ruhiger-lage-in-liesing-1882592350/",
-        "agency": "Privat",
-        "image": "https://cache.willhaben.at/mmo/0/188/259/2350_-1828522780_hoved.jpg",
-        "sqm": 58.0,
-        "title": "(reserviert) Helle Mietwohnung in ruhiger Lage in Liesing",
-        "price": null,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1100 Wien, 10. Bezirk, Favoriten, Graffgasse",
@@ -2745,7 +2713,8 @@
         "sqm": 42.0,
         "title": "WUNDERSCHÖNE SANIERTE ZWEI ZIMMER WOHNUNG IM 10TEN!",
         "price": 628.66,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt, Rennbahnweg27",
@@ -2757,7 +2726,8 @@
         "sqm": 75.0,
         "title": "Direktvergabe gemeinde wohnung",
         "price": 768.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1090 Wien, 09. Bezirk, Alsergrund, Alserstraße 30/4/58",
@@ -2769,19 +2739,8 @@
         "sqm": 51.0,
         "title": "Gemütliche 1-Zimmer-Wohnung in der Alser Straße 30/4/58 (ACHTUNG BESICHTIGUNG 08.07 UM 15 UHR)",
         "price": 723.21,
-        "date": "2024-07-15"
-    },
-    {
-        "address": "1190 Wien, 19. Bezirk, Döbling, Leidesdorfgasse",
-        "lon": 16.342984,
-        "lat": 48.243181,
-        "link": "https://www.willhaben.at/iad/immobilien/d/mietwohnungen/wien/wien-1190-doebling/direktvergabe-2-zimmer-gemeindewohnung-in-oberdoebling-1190-wien-1672350144/",
-        "agency": "Privat",
-        "image": "https://cache.willhaben.at/mmo/4/167/235/0144_-662773450_hoved.jpg",
-        "sqm": 47.0,
-        "title": "(reserviert) Direktvergabe 2-Zimmer Gemeindewohnung in Oberdöbling (1190 Wien)",
-        "price": null,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1050 Wien, 05. Bezirk, Margareten, Reinprechtsdorfer Str 1C",
@@ -2793,7 +2752,8 @@
         "sqm": 44.0,
         "title": "2-Zimmer Gemeindewohnung Direktvergabe VMD: vor dem 31.05.2024",
         "price": 484.26,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf, Holzmeistergasse",
@@ -2805,19 +2765,8 @@
         "sqm": 40.0,
         "title": "Neubauwohnung Singelhit / Floridsdorfer Spitznah/ Bahnhof Floridsdorfnah",
         "price": 670.34,
-        "date": "2024-07-15"
-    },
-    {
-        "address": "1030 Wien, 03. Bezirk, Landstraße, Adamsgasse 17/4",
-        "lon": 16.392947,
-        "lat": 48.209643,
-        "link": "https://www.willhaben.at/iad/immobilien/d/mietwohnungen/wien/wien-1030-landstrasse/wohnung-in-zentraler-lage-1148089197/",
-        "agency": "Privat",
-        "image": "https://cache.willhaben.at/mmo/7/114/808/9197_-218696038_hoved.jpg",
-        "sqm": 45.0,
-        "title": "(reserviert) Wohnung in Zentraler Lage",
-        "price": null,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1110 Wien, 11. Bezirk, Simmering, Pleischlgasse",
@@ -2829,7 +2778,8 @@
         "sqm": 52.0,
         "title": "52m2 Gemeindewohnung in Wien 11.",
         "price": 499.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1100 Wien, 10. Bezirk, Favoriten, Per Albin Hansson Straße",
@@ -2841,7 +2791,8 @@
         "sqm": 51.0,
         "title": "Garten Gemeinde wohnung 3 zimmer Nur Tauschen mit3- 4 Zimmer",
         "price": 596.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1170 Wien, 17. Bezirk, Hernals, Kalvarienberggasse",
@@ -2853,7 +2804,8 @@
         "sqm": 50.0,
         "title": "Nachmieter gesucht",
         "price": 545.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt, Ziegelhofstraße 36",
@@ -2865,19 +2817,8 @@
         "sqm": 68.0,
         "title": "Gemeindewohnung Direcktvergaben Nahe Badeteich",
         "price": 551.0,
-        "date": "2024-07-15"
-    },
-    {
-        "address": "1100 Wien, 10. Bezirk, Favoriten, Quellenstraße 4",
-        "lon": 14.199281,
-        "lat": 48.038886,
-        "link": "https://www.willhaben.at/iad/immobilien/d/mietwohnungen/wien/wien-1100-favoriten/2-5-zimmer-wg-faehig-unbefristet-1476231110/",
-        "agency": "Privat",
-        "image": "https://cache.willhaben.at/mmo/0/147/623/1110_-1048449387_hoved.jpg",
-        "sqm": 62.0,
-        "title": "(reserviert) 2,5 - Zimmer - WG fähig, unbefristet",
-        "price": null,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1140 Wien, 14. Bezirk, Penzing, Goldschlagstraße 148-158",
@@ -2889,7 +2830,8 @@
         "sqm": 44.0,
         "title": "GEMEINDEWOHNUNG DIREKTVERGABE NUR MIT Vormerkschein/ Wohnticket vor 30.06.2024 !!",
         "price": 480.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1190 Wien, 19. Bezirk, Döbling, Spittelau",
@@ -2901,7 +2843,8 @@
         "sqm": 60.0,
         "title": "Wiener Wohnen Direktvergabe 2 Zimmer nähe U4, U6 mit Loggia",
         "price": 622.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1050 Wien, 05. Bezirk, Margareten, Reinprechtsdorferstraße",
@@ -2913,7 +2856,8 @@
         "sqm": 40.0,
         "title": "Mietwohnung im 5. Bezirk",
         "price": 590.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1160 Wien, 16. Bezirk, Ottakring, Hasnerstraße 113",
@@ -2925,7 +2869,8 @@
         "sqm": 41.0,
         "title": "Direktvergabe Wr. Wohnen Einzimmerwohnung 41,37 + Balkon (2 Zimmer verfügbar) - NUR MIT Vormerkschein spätestens 30.6.2024 GEMEINDEWOHNUNG",
         "price": 431.85,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt, Buchsgasse",
@@ -2937,7 +2882,8 @@
         "sqm": 55.0,
         "title": "Souterrainwohnung mit Gartennutzung Nähe U2 Aspernstraße",
         "price": 570.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1200 Wien, 20. Bezirk, Brigittenau",
@@ -2949,7 +2895,8 @@
         "sqm": 48.0,
         "title": "PROVISIONSFREIE!! gepflegte Mietwohnung (zentral), bitte",
         "price": 780.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1190 Wien, 19. Bezirk, Döbling, Budinskygasse",
@@ -2961,7 +2908,8 @@
         "sqm": 52.0,
         "title": "Direktvergabe Gemeindewohnung",
         "price": 450.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1190 Wien, 19. Bezirk, Döbling, Börnergasse",
@@ -2973,7 +2921,8 @@
         "sqm": 52.0,
         "title": "Schöne Wohnung im Grünen (Nur mit gültigem Wiener Wohnticket bis 30.06.2024)",
         "price": 546.89,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1100 Wien, 10. Bezirk, Favoriten, Laxenburger Straße",
@@ -2985,19 +2934,8 @@
         "sqm": 120.0,
         "title": "Zimmer in 4er-WG ab Juni. Nähe U1 Reumannplatz in 120m² DG-Maisonette",
         "price": 520.0,
-        "date": "2024-07-15"
-    },
-    {
-        "address": "1220 Wien, 22. Bezirk, Donaustadt, Lenkgasse",
-        "lon": 16.437429,
-        "lat": 48.242796,
-        "link": "https://www.willhaben.at/iad/immobilien/d/mietwohnungen/wien/wien-1220-donaustadt/2-zimmer-gemeindewohnung-vms-vor-30-6-2024-1442184557/",
-        "agency": "Privat",
-        "image": "https://cache.willhaben.at/mmo/7/144/218/4557_778291763_hoved.jpg",
-        "sqm": 50.0,
-        "title": "(reserviert) 2-Zimmer Gemeindewohnung VMS vor 30.6.2024",
-        "price": null,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1230 Wien, 23. Bezirk, Liesing, Putzendoplergasse 3/63",
@@ -3009,19 +2947,8 @@
         "sqm": 49.0,
         "title": "2 Zimmer Gemeindewohnung",
         "price": 517.12,
-        "date": "2024-07-15"
-    },
-    {
-        "address": "1220 Wien, 22. Bezirk, Donaustadt, Saikogasse 6/37/5",
-        "lon": null,
-        "lat": null,
-        "link": "https://www.willhaben.at/iad/immobilien/d/mietwohnungen/wien/wien-1220-donaustadt/gemeindewohnung-in-wien-22-zu-vergeben-vms-vor-30-6-2024-1528417445/",
-        "agency": "Privat",
-        "image": "https://cache.willhaben.at/mmo/5/152/841/7445_-925902107_hoved.jpg",
-        "sqm": 56.0,
-        "title": "Gemeindewohnung in Wien 22 zu vergeben, VMS vor 30.6.2024",
-        "price": 583.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt, Edith Kramer Weg 11",
@@ -3033,7 +2960,8 @@
         "sqm": 51.0,
         "title": "Leo am Teich - jetzt mieten, später kaufen",
         "price": 775.4,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt, Edith Kramer Weg 11",
@@ -3045,7 +2973,8 @@
         "sqm": 53.0,
         "title": "Leo am Teich - jetzt mieten, später kaufen",
         "price": 791.17,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt, Edith Kramer Weg 11",
@@ -3057,19 +2986,8 @@
         "sqm": 51.0,
         "title": "Leo am Teich - jetzt mieten, später kaufen",
         "price": 785.81,
-        "date": "2024-07-15"
-    },
-    {
-        "address": "1020 Wien, 02. Bezirk, Leopoldstadt, Wohlmutstraße 14",
-        "lon": 16.4024076,
-        "lat": 48.2203137,
-        "link": "https://www.willhaben.at/iad/immobilien/d/mietwohnungen/wien/wien-1020-leopoldstadt/2-zimmer-gemeindewohnung-direktvergabe-1020-wien-vmd-bis-30-4-2024-1888595844/",
-        "agency": "Privat",
-        "image": "https://cache.willhaben.at/mmo/4/188/859/5844_512810646_hoved.jpg",
-        "sqm": 49.0,
-        "title": "(reserviert) 2-Zimmer Gemeindewohnung Direktvergabe 1020 Wien VMD bis 30.4.2024",
-        "price": null,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1220 Wien, 22. Bezirk, Donaustadt, Ziegelhofstraße 32",
@@ -3081,7 +2999,8 @@
         "sqm": 62.0,
         "title": "2-Zimmer 62m² für 640Gemeindewohnung Direktvergabe nahe Badeteich",
         "price": 642.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1200 Wien, 20. Bezirk, Brigittenau, Brigittaplatz 2",
@@ -3093,7 +3012,8 @@
         "sqm": 52.0,
         "title": "Direktvergabe Wiener Wohnen Mit Balkon 6. Stock",
         "price": 550.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1140 Wien, 14. Bezirk, Penzing, Hanakgasse",
@@ -3105,7 +3025,8 @@
         "sqm": 57.0,
         "title": "DIREKTVERGABE 3 ZIMMER 1140 WIEN",
         "price": 602.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf, Leopoldauer Straße",
@@ -3117,7 +3038,8 @@
         "sqm": 57.0,
         "title": "Direktvergabe Gemeindewohnung 1210",
         "price": 548.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1100 Wien, 10. Bezirk, Favoriten, Fernkorngasse 96/5",
@@ -3129,7 +3051,8 @@
         "sqm": 51.0,
         "title": "Nur mir Wiener Wohn Ticket! | Direktvergabe | Wiener Wohnen | 10. Bezirk",
         "price": 502.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf, Überfuhrstraße",
@@ -3141,19 +3064,8 @@
         "sqm": 65.0,
         "title": "Genossenschaft SOZIALBAU",
         "price": 760.4,
-        "date": "2024-07-15"
-    },
-    {
-        "address": "1020 Wien, 02. Bezirk, Leopoldstadt, Sturgasse",
-        "lon": 16.414736,
-        "lat": 48.216349,
-        "link": "https://www.willhaben.at/iad/immobilien/d/mietwohnungen/wien/wien-1020-leopoldstadt/gemeindewohnung-2-zimmer-wu-naehe-1147285733/",
-        "agency": "Privat",
-        "image": "https://cache.willhaben.at/mmo/3/114/728/5733_1848900522_hoved.jpg",
-        "sqm": 45.0,
-        "title": "(reserviert) Gemeindewohnung 2 Zimmer, WU-Nähe",
-        "price": null,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1100 Wien, 10. Bezirk, Favoriten, Gellertplatz",
@@ -3165,7 +3077,8 @@
         "sqm": 44.0,
         "title": "Gemeindewohnung (Direktvergabe)",
         "price": 475.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1100 Wien, 10. Bezirk, Favoriten, Laxenburgerstrasse",
@@ -3177,7 +3090,8 @@
         "sqm": 83.0,
         "title": "Ideale Studentenwohnung",
         "price": 800.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1030 Wien, 03. Bezirk, Landstraße, Grasbergergasse 4/7/13",
@@ -3189,7 +3103,8 @@
         "sqm": 50.0,
         "title": "2 Zimmer GEMEINDE WOHNUNG MIT VORMERKSCHEIN",
         "price": 556.94,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf, Brünnerstrasse 26-32",
@@ -3201,7 +3116,8 @@
         "sqm": 66.0,
         "title": "3-Zimmer Gemeinde Wohnung direktvergabe letzte chance",
         "price": 670.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf, Werndlgasse 14-18",
@@ -3213,31 +3129,8 @@
         "sqm": 58.0,
         "title": "Reserviert!! Keine Wohnungsvergabe ohne Vormerkschein von Wiener Wohnen!!! 2-Zimmer-Gemeindewohnung über Direktvergabe",
         "price": 589.0,
-        "date": "2024-07-15"
-    },
-    {
-        "address": "1220 Wien, 22. Bezirk, Donaustadt, Siebenbürgerstrasse 16-26",
-        "lon": 16.447482,
-        "lat": 48.235668,
-        "link": "https://www.willhaben.at/iad/immobilien/d/mietwohnungen/wien/wien-1220-donaustadt/3-zimmer-gemeindewohnung-per-direktvergabe-1004810679/",
-        "agency": "Privat",
-        "image": "https://cache.willhaben.at/mmo/9/100/481/0679_2009651491_hoved.jpg",
-        "sqm": 76.0,
-        "title": "(reserviert) 3 Zimmer Gemeindewohnung per Direktvergabe",
-        "price": null,
-        "date": "2024-07-15"
-    },
-    {
-        "address": "1100 Wien, 10. Bezirk, Favoriten, Sapphogasse",
-        "lon": 16.38365,
-        "lat": 48.154456,
-        "link": "https://www.willhaben.at/iad/immobilien/d/mietwohnungen/wien/wien-1100-favoriten/genossenschaftswohnung-3-zimmer-66-m2-1480324757/",
-        "agency": "Privat",
-        "image": "https://cache.willhaben.at/mmo/7/148/032/4757_790684424_hoved.jpg",
-        "sqm": 66.0,
-        "title": "(reserviert) Genossenschaftswohnung, 3 Zimmer, 66 m2",
-        "price": null,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1140 Wien, 14. Bezirk, Penzing, Ameisgasse",
@@ -3249,19 +3142,8 @@
         "sqm": 44.0,
         "title": "Single Eigentumsgarconniere mit Loggia, privat",
         "price": 740.0,
-        "date": "2024-07-15"
-    },
-    {
-        "address": "1190 Wien, 19. Bezirk, Döbling, Hardtgasse 16-30",
-        "lon": 16.3509061,
-        "lat": 48.2366804,
-        "link": "https://www.willhaben.at/iad/immobilien/d/mietwohnungen/wien/wien-1190-doebling/helle-2-zimmer-gemeindewohnung-mit-terrasse-wienblick-1369345346/",
-        "agency": "Privat",
-        "image": "https://cache.willhaben.at/mmo/6/136/934/5346_-1526341088_hoved.jpg",
-        "sqm": 45.0,
-        "title": "(reserviert) helle 2 Zimmer Gemeindewohnung mit Terrasse, Wienblick",
-        "price": null,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1100 Wien, 10. Bezirk, Favoriten, Arthaberplatz",
@@ -3273,7 +3155,8 @@
         "sqm": 45.0,
         "title": "Gemeinde Wohnung",
         "price": 450.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf, Mengergasse",
@@ -3285,7 +3168,8 @@
         "sqm": 40.0,
         "title": "NEUBAU - Erstbezug: 2 Zimmer Wohnung mit Balkon provisionsfrei zu vermieten",
         "price": 745.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1110 Wien, 11. Bezirk, Simmering, Trinkhausstraße 10",
@@ -3297,19 +3181,8 @@
         "sqm": 59.0,
         "title": "2-Zimmer Wohnung Nähe U3-Station Zippererstraße",
         "price": 790.0,
-        "date": "2024-07-15"
-    },
-    {
-        "address": "1130 Wien, 13. Bezirk, Hietzing, Testarellogasse 32",
-        "lon": 16.2744881078,
-        "lat": 48.19204745,
-        "link": "https://www.willhaben.at/iad/immobilien/d/mietwohnungen/wien/wien-1130-hietzing/einziehen-und-wohlfuehlen-moderne-2-zimmer-genossenschaftswohnung-im-idyllischen-hietzing-1699077155/",
-        "agency": "Privat",
-        "image": "https://cache.willhaben.at/mmo/5/169/907/7155_-287710380_hoved.jpg",
-        "sqm": 60.0,
-        "title": "(reserviert) Einziehen und Wohlfühlen: Moderne 2-Zimmer-Genossenschaftswohnung im idyllischen Hietzing",
-        "price": null,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1100 Wien, 10. Bezirk, Favoriten, Feuchterslebengasse 67",
@@ -3321,7 +3194,8 @@
         "sqm": 52.0,
         "title": "Direktvergabe Gemeindewohnung 2 Zimmer NUR mit WOHNTICKET / 31.05.2024",
         "price": 535.39,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1110 Wien, 11. Bezirk, Simmering, Widholzgasse 1/12",
@@ -3333,31 +3207,8 @@
         "sqm": 74.0,
         "title": "Gemeinde wohnung",
         "price": 650.0,
-        "date": "2024-07-15"
-    },
-    {
-        "address": "1100 Wien, 10. Bezirk, Favoriten, Inzersdorferstraße 60",
-        "lon": 16.364555,
-        "lat": 48.172719,
-        "link": "https://www.willhaben.at/iad/immobilien/d/mietwohnungen/wien/wien-1100-favoriten/whonung-804065011/",
-        "agency": "Privat",
-        "image": "https://cache.willhaben.at/mmo/1/804/065/011_342811204_hoved.jpg",
-        "sqm": 61.0,
-        "title": "(reserviert) Whonung",
-        "price": null,
-        "date": "2024-07-15"
-    },
-    {
-        "address": "1220 Wien, 22. Bezirk, Donaustadt, Am Langen Felde 59",
-        "lon": 16.4331208067,
-        "lat": 48.2461167,
-        "link": "https://www.willhaben.at/iad/immobilien/d/mietwohnungen/wien/wien-1220-donaustadt/neubauwohnung-zur-miete-im-22-bezirk-1034327355/",
-        "agency": "Privat",
-        "image": "https://cache.willhaben.at/mmo/5/103/432/7355_-847585540_hoved.jpg",
-        "sqm": 42.0,
-        "title": "(reserviert) Neubauwohnung zur Miete im 22. Bezirk",
-        "price": null,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1160 Wien, 16. Bezirk, Ottakring, Kreitnergasse",
@@ -3369,7 +3220,8 @@
         "sqm": 61.0,
         "title": "Wohnung in guter Ruhelage",
         "price": 710.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1140 Wien, 14. Bezirk, Penzing, Hütteldorfer Straße 349/9",
@@ -3381,7 +3233,8 @@
         "sqm": 40.0,
         "title": "Dachgeschoßwohnung mit Fernblick",
         "price": 740.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1100 Wien, 10. Bezirk, Favoriten, Siccardsburggasse",
@@ -3393,19 +3246,8 @@
         "sqm": 56.0,
         "title": "MIETWOHNUNG NÄHE QUELLENPLATZ!",
         "price": 663.69,
-        "date": "2024-07-15"
-    },
-    {
-        "address": "1090 Wien, 09. Bezirk, Alsergrund, Nußdorfer Straße",
-        "lon": 16.354958,
-        "lat": 48.227572,
-        "link": "https://www.willhaben.at/iad/immobilien/d/mietwohnungen/wien/wien-1090-alsergrund/nachmieter-gesucht-1090-dg-wohnung-799995465/",
-        "agency": "Privat",
-        "image": "https://cache.willhaben.at/mmo/5/799/995/465_-5978895_hoved.jpg",
-        "sqm": 44.0,
-        "title": "(reserviert) Nachmieter gesucht 1090 DG Wohnung",
-        "price": null,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1200 Wien, 20. Bezirk, Brigittenau, Bäuerlegasse",
@@ -3417,19 +3259,8 @@
         "sqm": 55.0,
         "title": "Pärchen- oder WG-geeignete Wohnung Nähe Augarten",
         "price": 742.0,
-        "date": "2024-07-15"
-    },
-    {
-        "address": "1110 Wien, 11. Bezirk, Simmering, Herbortgasse",
-        "lon": 16.412433,
-        "lat": 48.170091,
-        "link": "https://www.willhaben.at/iad/immobilien/d/mietwohnungen/wien/wien-1110-simmering/nachmieter-gesucht-2142768339/",
-        "agency": "Privat",
-        "image": "https://cache.willhaben.at/mmo/9/214/276/8339_-248585579_hoved.jpg",
-        "sqm": 61.0,
-        "title": "(reserviert) Nachmieter gesucht",
-        "price": null,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1190 Wien, 19. Bezirk, Döbling, Hofzeile",
@@ -3441,7 +3272,8 @@
         "sqm": 41.0,
         "title": "(vermietet) Perfekte 2-Zimmer Starterwohnung",
         "price": 735.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1170 Wien, 17. Bezirk, Hernals, Pezzlgasse 18/20",
@@ -3453,7 +3285,8 @@
         "sqm": 61.0,
         "title": "Provisionsfrei: Mitbewohner/ in gesucht 2er-WG Dachgeschosswohnung mit Balkon und Fernblick im 17 Wiener Bezirk ab 01.09.2024",
         "price": 695.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1030 Wien, 03. Bezirk, Landstraße, Rüdengasse",
@@ -3465,31 +3298,8 @@
         "sqm": 70.0,
         "title": "4 Zimmer Gemeinde Wohnung Wien 1030",
         "price": 635.0,
-        "date": "2024-07-15"
-    },
-    {
-        "address": "1140 Wien, 14. Bezirk, Penzing, Gurkgasse",
-        "lon": 16.310717,
-        "lat": 48.195359,
-        "link": "https://www.willhaben.at/iad/immobilien/d/mietwohnungen/wien/wien-1140-penzing/moeblierte-single-altbauwohnung-zur-zwischennutzung-1603507934/",
-        "agency": "Privat",
-        "image": "https://cache.willhaben.at/mmo/4/160/350/7934_-296696702_hoved.jpg",
-        "sqm": 42.0,
-        "title": "(reserviert) Möblierte Single-Altbauwohnung zur Zwischennutzung",
-        "price": null,
-        "date": "2024-07-15"
-    },
-    {
-        "address": "1100 Wien, 10. Bezirk, Favoriten, Raaber-Bahn-Gasse 4",
-        "lon": 16.378881,
-        "lat": 48.180824,
-        "link": "https://www.willhaben.at/iad/immobilien/d/mietwohnungen/wien/wien-1100-favoriten/top-lage-unbefristete-grosse-2-zimmer-wohnung-mitten-im-10-bezirk-2068850518/",
-        "agency": "Gewerblicher Anbieter",
-        "image": "https://cache.willhaben.at/mmo/8/206/885/0518_-611323253_hoved.jpg",
-        "sqm": 59.0,
-        "title": "(reserviert) Top Lage! Unbefristete große 2-Zimmer-Wohnung mitten im 10. Bezirk!",
-        "price": null,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1120 Wien, 12. Bezirk, Meidling, Pachmüllergasse 22",
@@ -3501,7 +3311,8 @@
         "sqm": 43.0,
         "title": "Schöne 2-Zimmer Wohnung im 12. Bezirk",
         "price": 755.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1150 Wien, 15. Bezirk, Rudolfsheim-Fünfhaus, Fenzlgasse",
@@ -3513,7 +3324,8 @@
         "sqm": 76.0,
         "title": "1150 Wien, Fenzlgasse: neu sanierte 2-Zimmer-ALTBAUWOHNUNG, ca. 76 m2 unbefristet und BARRIEREFREI zu vermieten",
         "price": 770.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1110 Wien, 11. Bezirk, Simmering, Paul Heysegasse",
@@ -3525,19 +3337,8 @@
         "sqm": 47.0,
         "title": "Zweizimmerwohnung im Neubau",
         "price": 600.0,
-        "date": "2024-07-15"
-    },
-    {
-        "address": "1020 Wien, 02. Bezirk, Leopoldstadt, Engerthstrasse",
-        "lon": 16.413154,
-        "lat": 48.217347,
-        "link": "https://www.willhaben.at/iad/immobilien/d/mietwohnungen/wien/wien-1020-leopoldstadt/zimmer-in-studenten-wg-naehe-campus-wu-1468047831/",
-        "agency": "Privat",
-        "image": "https://cache.willhaben.at/mmo/1/146/804/7831_2042885106_hoved.jpg",
-        "sqm": 51.0,
-        "title": "(reserviert) Zimmer in Studenten WG, nähe Campus WU",
-        "price": null,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1200 Wien, 20. Bezirk, Brigittenau, Friedrich-Engels-Platz",
@@ -3549,7 +3350,8 @@
         "sqm": 63.0,
         "title": "GEMEINDEWOHNUNG 1200 Wien",
         "price": 471.79,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1100 Wien, 10. Bezirk, Favoriten, Otto-Probst-Straße",
@@ -3561,19 +3363,8 @@
         "sqm": 62.0,
         "title": "NUR MIT WOHNTICKET - Gemeindewohnung - Direktvergabe - NUR MIT WOHNTICKET",
         "price": 550.0,
-        "date": "2024-07-15"
-    },
-    {
-        "address": "1060 Wien, 06. Bezirk, Mariahilf, Damböckgasse",
-        "lon": 16.350328,
-        "lat": 48.196936,
-        "link": "https://www.willhaben.at/iad/immobilien/d/mietwohnungen/wien/wien-1060-mariahilf/zentrale-2-zimmer-gemeindewohnung-abzugeben-826706565/",
-        "agency": "Privat",
-        "image": "https://cache.willhaben.at/mmo/5/826/706/565_614723509_hoved.jpg",
-        "sqm": 45.0,
-        "title": "(reserviert) Zentrale, 2-Zimmer Gemeindewohnung abzugeben",
-        "price": null,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf, Katsushikastrasse",
@@ -3585,7 +3376,8 @@
         "sqm": 50.0,
         "title": "Tiefgragen Platz",
         "price": 105.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1100 Wien, 10. Bezirk, Favoriten, Ada Christen Gasse 7",
@@ -3597,7 +3389,8 @@
         "sqm": 75.0,
         "title": "3 Zimmer Gemeindewohnung",
         "price": 800.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1160 Wien, 16. Bezirk, Ottakring, Hyrtlgasse 5-13",
@@ -3609,7 +3402,8 @@
         "sqm": 97.0,
         "title": "Wohnung von der Gemeinde Wien (Wiener Wohnen) nur mit gültigem Ticket!",
         "price": 768.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1200 Wien, 20. Bezirk, Brigittenau, Jägerstraße",
@@ -3621,7 +3415,8 @@
         "sqm": 72.0,
         "title": "+++ AUGARTEN | 3 Zimmer WG +++",
         "price": 549.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1140 Wien, 14. Bezirk, Penzing, Linzer Straße 374",
@@ -3633,7 +3428,8 @@
         "sqm": 69.0,
         "title": "Gemeinde Wohnung mit Vormerkschein vor 31.12.2023",
         "price": 732.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1100 Wien, 10. Bezirk, Favoriten, Leebgasse",
@@ -3645,19 +3441,8 @@
         "sqm": 53.0,
         "title": "2 Zimmer GEMEINDE - Wohnung",
         "price": 593.0,
-        "date": "2024-07-15"
-    },
-    {
-        "address": "1220 Wien, 22. Bezirk, Donaustadt, Seestadt",
-        "lon": 16.437429,
-        "lat": 48.242796,
-        "link": "https://www.willhaben.at/iad/immobilien/d/mietwohnungen/wien/wien-1220-donaustadt/2-zimmer-wohnung-zu-vergeben-1510398197/",
-        "agency": "Privat",
-        "image": "https://cache.willhaben.at/mmo/7/151/039/8197_-474421831_hoved.jpg",
-        "sqm": 40.0,
-        "title": "(reserviert) 2 Zimmer Wohnung zu vergeben",
-        "price": null,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1120 Wien, 12. Bezirk, Meidling, Aichhorngasse",
@@ -3669,19 +3454,8 @@
         "sqm": 65.0,
         "title": "SCHÖNE, HELLE WOHNUNG SUCHT NEUEN MIETER/U-BAHN UM´S ECK!!",
         "price": 792.0,
-        "date": "2024-07-15"
-    },
-    {
-        "address": "1160 Wien, 16. Bezirk, Ottakring, Lienfeldergasse",
-        "lon": 16.317931,
-        "lat": 48.222091,
-        "link": "https://www.willhaben.at/iad/immobilien/d/mietwohnungen/wien/wien-1160-ottakring/gemuetliche-2-zimmerwohnung-in-guter-lage-zu-vermieten-1922778700/",
-        "agency": "Privat",
-        "image": "https://cache.willhaben.at/mmo/0/192/277/8700_13298930_hoved.jpg",
-        "sqm": 53.0,
-        "title": "(reserviert) Gemütliche 2-Zimmerwohnung in guter Lage zu vermieten",
-        "price": null,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1100 Wien, 10. Bezirk, Favoriten, Columbusgasse 1-3/7",
@@ -3693,7 +3467,8 @@
         "sqm": 53.0,
         "title": "2 Zimmer Wohnung am Columbusplatz - nähe HBF und U1 Station",
         "price": 725.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1210 Wien, 21. Bezirk, Floridsdorf, Plankenbüchlergasse",
@@ -3705,7 +3480,8 @@
         "sqm": 45.0,
         "title": "provisionsfreie 2 Zimmer Wohnung im 21. Bezirk",
         "price": 629.26,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1190 Wien, 19. Bezirk, Döbling, Billrothstraße 57/2/1",
@@ -3717,7 +3493,8 @@
         "sqm": 55.0,
         "title": "Ruhige 2-Zimmerwohnung, Innenhoflage in umittelbarere Nähe zum Cottageviertel",
         "price": 800.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1230 Wien, 23. Bezirk, Liesing, Wagenmanngasss 4/26",
@@ -3729,7 +3506,8 @@
         "sqm": 76.0,
         "title": "Gemeinde Wohnung Direktvergabe",
         "price": 580.0,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1100 Wien, 10. Bezirk, Favoriten, Wendstattgasse 11/94",
@@ -3741,31 +3519,8 @@
         "sqm": 75.0,
         "title": "Direktvergabe 1100 Wien Vormerkschein bis 30.6.23 für 3 Zimmer !!!",
         "price": 769.0,
-        "date": "2024-07-15"
-    },
-    {
-        "address": "1200 Wien, 20. Bezirk, Brigittenau, Marchfeldstrasse 5",
-        "lon": 16.3774295,
-        "lat": 48.2407242,
-        "link": "https://www.willhaben.at/iad/immobilien/d/mietwohnungen/wien/wien-1200-brigittenau/wonhung-in-20-en-zu-vermieten-2063916791/",
-        "agency": "Privat",
-        "image": null,
-        "sqm": 45.0,
-        "title": "Wonhung in 20 en zu vermieten",
-        "price": 500.0,
-        "date": "2024-07-15"
-    },
-    {
-        "address": "1200 Wien, 20. Bezirk, Brigittenau, Engerthstraße 110-118",
-        "lon": 16.3878502,
-        "lat": 48.237283,
-        "link": "https://www.willhaben.at/iad/immobilien/d/mietwohnungen/wien/wien-1200-brigittenau/wiener-wohnen-direktvergabe-gemeindewohnung-1986729147/",
-        "agency": "Privat",
-        "image": "https://cache.willhaben.at/mmo/7/198/672/9147_56152870_hoved.jpg",
-        "sqm": 57.0,
-        "title": "(reserviert) WIENER WOHNEN DIREKTVERGABE Gemeindewohnung",
-        "price": null,
-        "date": "2024-07-15"
+        "date": "2024-07-15",
+        "displayed": true
     },
     {
         "address": "1110 Wien, 11. Bezirk, Simmering, Brambillagasse",
