@@ -3,6 +3,7 @@ import { createHashRouter } from "react-router-dom";
 import { Applayout } from "./components/layouts/AppLayout";
 import Houses from "./pages/Houses"; 
 import Mapwork from "./pages/Mapwork";
+import CommunityUpdated from "./pages/CommunityUpdated";
 
 
 // createBrowserRouter
@@ -16,12 +17,16 @@ export const router = createHashRouter([
                 element: <Mapwork />,
             },
             {
-                path: "/",
-                element: <Mapwork />,
-            },
-            {
                 path: "houses",
                 element: <Houses />,
+            },
+            {
+                path: "communutyupdated",
+                element: <CommunityUpdated />,
+            },
+            {
+                path: "/",
+                element: <Mapwork />,
             },
             // {
             //     path: "database",
