@@ -111,7 +111,13 @@ export const houselistingStore = create<HousesInStore>()(
 
     (set) => ({
       houseListings: [],
-      updateHouseListings: (newListings) => set({ houseListings: newListings }),
+      updateHouseListings: (newListings) => set((state) => ({
+        houseListings: newListings.map((listing) => ({
+          ...listing,
+          id: listing.id || nextId++, // Assign an id if it is absent
+          displayed: listing.displayed !== undefined ? listing.displayed : true, // Ensure displayed is set
+        })),
+      })),
       exampleHouseListing: houseListingsExample,
       uploadNewHouseListings: (newListings) => {
         set(() => ({

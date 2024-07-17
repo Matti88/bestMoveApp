@@ -69,6 +69,7 @@ export interface userSearch {
   activeFilters: ActiveFilters;
   updatePOIs: (newPOIs: POI[]) => void;
   updateActiveFilters: (newFilters: Partial<ActiveFilters>) => void;
+  resetFilters: () => void;
   addPOI: (newPOI: POI) => void;
   deletePOI: (poiId: number) => void;
   toggleSelectedPoi: (poiId: number) => void;
@@ -120,6 +121,18 @@ export const userSearchStore = create<userSearch>()(
       reset: () => {
         set({
           pois: [],
+          activeFilters: {
+            maxPrice: null,
+            minPrice: null,
+            maxSqm: null,
+            minSqm: null,
+            selectedPoiIds: [],
+          },
+        });
+      },
+
+      resetFilters: () => {
+        set({
           activeFilters: {
             maxPrice: null,
             minPrice: null,

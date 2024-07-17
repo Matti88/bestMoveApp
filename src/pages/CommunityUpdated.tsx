@@ -2,6 +2,13 @@ import CardDataComponent  from "@/components/ui/CardData";
 
 const cards_houses_proposed = [
   {
+    title: "Apartments for Rent in Vienna",
+    description: "A sample of 2000 apartments in Vienna that have been proposed for rent on the platform Willhabe.at",
+    substitle1: "Prices ranging from 1000€ to 2000€",
+    substitle2: "Areas from 50m2 to 100m2",
+    pathToFileURL: "/apartmnt_rent.json",
+  },
+  {
     title: "Apartments on Sale in Vienna",
     description: "A sample of 2000 apartments in Vienna that have been proposed for sale on the platform Willhabe.at",
     substitle1: "Prices ranging from 200K€ to 400K€",
@@ -14,13 +21,6 @@ const cards_houses_proposed = [
     substitle1: "Prices ranging from 200K€ to 400K€",
     substitle2: "Areas from 50m2 to 100m2",
     pathToFileURL: "/houses_buy.json",
-  },
-  {
-    title: "Apartments for Rent in Vienna",
-    description: "A sample of 2000 apartments in Vienna that have been proposed for rent on the platform Willhabe.at",
-    substitle1: "Prices ranging from 1000€ to 2000€",
-    substitle2: "Areas from 50m2 to 100m2",
-    pathToFileURL: "/apartmnt_rent.json",
   },
   {
     title: "Houses for Rent in Vienna",

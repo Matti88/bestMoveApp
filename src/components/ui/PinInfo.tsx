@@ -8,10 +8,11 @@ interface PinInfoProps {
   title: string;
   price_num: number;
   sqm_num: number;
+  linktoInsertion?: string;
   onClose: () => void;
 }
 
-const PinInfo: React.FC<PinInfoProps> = ({ thumbnail_image, title, price_num, sqm_num, onClose }) => {
+const PinInfo: React.FC<PinInfoProps> = ({ thumbnail_image, title, price_num, sqm_num, linktoInsertion, onClose }) => {
   return (
     <Card className="w-full max-w-md relative">
       <Button className="absolute top-2 right-2" variant="ghost" size="icon" onClick={onClose}>
@@ -20,11 +21,14 @@ const PinInfo: React.FC<PinInfoProps> = ({ thumbnail_image, title, price_num, sq
       <CardHeader>
         <CardTitle>{title}</CardTitle>
       </CardHeader>
-      <CardContent className="p-4 pt-0">
+
+      <a href={linktoInsertion}>
+        <CardContent className="p-4 pt-0">
         <img className="mb-4 rounded" width={240} src={thumbnail_image} alt={`${title} Image`} />
         <div className="text-lg font-semibold mb-2">Price: {price_num}</div>
         <div className="text-lg font-semibold">&#x33A1;: {sqm_num}</div>
-      </CardContent>
+        </CardContent>
+      </a>
     </Card>
   );
 };

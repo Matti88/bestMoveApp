@@ -12,7 +12,7 @@ const MapComponent: React.FC = () => {
   const [viewport, setViewport] = useState<ViewState>({
     latitude: 48.2121268,
     longitude: 16.3671307,
-    zoom: 14,
+    zoom: 10,
     bearing: 0,
     pitch: 0,
     padding: { top: 0, bottom: 0, left: 0, right: 0 },
@@ -25,7 +25,7 @@ const MapComponent: React.FC = () => {
   const superclusterIndex = useMemo(() => {
     const index = new supercluster({
       radius: 100,
-      minZoom: 13,
+      minZoom: 14,
       nodeSize: 256,
     });
 
@@ -46,13 +46,14 @@ const MapComponent: React.FC = () => {
 
   const clusters = useMemo(() => {
     const bounds: BBox = [
-      viewport.longitude - 360 / Math.pow(2, viewport.zoom + 1),
+      viewport.longitude - 360 / Math.pow(2, viewport.zoom ),
       viewport.latitude - 180 / Math.pow(2, viewport.zoom),
-      viewport.longitude + 360 / Math.pow(2, viewport.zoom + 1),
+      viewport.longitude + 360 / Math.pow(2, viewport.zoom ),
       viewport.latitude + 180 / Math.pow(2, viewport.zoom),
     ];
 
     return superclusterIndex.getClusters(bounds, Math.floor(viewport.zoom));
+
   }, [superclusterIndex, viewport]);
 
   const houseMarkers = clusters.map((cluster) => {
@@ -72,7 +73,7 @@ const MapComponent: React.FC = () => {
               justifyContent: 'center',
               alignItems: 'center',
               color: 'white',
-              fontSize: '40px',
+              fontSize: '33px',
               cursor: 'pointer',
             }}
             onClick={() => {
@@ -80,7 +81,7 @@ const MapComponent: React.FC = () => {
                 superclusterIndex.getClusterExpansionZoom(
                   typeof cluster.id === 'string' ? parseInt(cluster.id, 10) : cluster.id ?? 0
                 ),
-                20
+                16
               );
               setViewport({
                 ...viewport,
@@ -97,7 +98,7 @@ const MapComponent: React.FC = () => {
     }
 
     const house = houses.find((h) => h.id === cluster.properties.houseId);
-
+    
     return (
       <Marker
         key={`house-marker-${house?.id}`}
@@ -166,6 +167,7 @@ const MapComponent: React.FC = () => {
             title={selectedMarker.title}
             price_num={selectedMarker.price}
             sqm_num={selectedMarker.sqm}
+            linktoInsertion={selectedMarker.link}
             onClose={() => setSelectedMarker(null)}
           />
         </Popup>
