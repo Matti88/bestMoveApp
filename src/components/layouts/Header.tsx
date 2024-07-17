@@ -95,7 +95,6 @@ export function Header() {
                             to="/"
                             onClick={() => setOpen(false)}
                             className="flex items-center space-x-2">
-                            <Logo />
                         </NavLink>
                         <ScrollArea className="my-4 h-[calc(100vh-8rem)] pb-8 pl-8">
                             <Accordion
@@ -163,10 +162,6 @@ export function Header() {
                         </ScrollArea>
                     </SheetContent>
                 </Sheet>
-                <a href="/" className="mr-6 flex items-center space-x-2 md:hidden">
-                    <Icons.logo className="h-6 w-6" />
-                    <span className="font-bold inline-block">{appConfig.name}</span>
-                </a>
 
                 {/* Right Items */}
                 <div className="flex items-center space-x-2">
