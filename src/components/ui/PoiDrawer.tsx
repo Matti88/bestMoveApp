@@ -67,7 +67,7 @@ export function PoiDrawer() {
   return (
     <Drawer>
       <DrawerTrigger asChild>
-        <Button variant="secondary">POIs</Button>
+        <Button className="p-2" variant="secondary">POIs</Button>
       </DrawerTrigger>
       <DrawerContent>
         <div className="mx-auto w-full max-w-sm p-4">
@@ -82,9 +82,8 @@ export function PoiDrawer() {
             </div>
           </div>
           <DrawerFooter>
-            <Button>Submit</Button>
             <DrawerClose asChild>
-              <Button variant="outline">Cancel</Button>
+              <Button variant="outline">Back</Button>
             </DrawerClose>
           </DrawerFooter>
         </div>

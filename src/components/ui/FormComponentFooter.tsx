@@ -132,61 +132,68 @@ const FormComponentFooter: React.FC = () => {
   return (
     <Drawer>
       <DrawerTrigger asChild>
-        <Button variant="secondary">Create Point of Interest</Button>
+        <Button className="p-2" variant="secondary">Create Point of Interest</Button>
       </DrawerTrigger>
-      <DrawerContent>
-        <div className="mx-auto w-full max-w-sm p-4">
-          <DrawerHeader>
-            <DrawerTitle>Add Point of Interest Isochrone</DrawerTitle>
-            <DrawerDescription>Fill out the form below and generate isochrones around your Point of Interest.</DrawerDescription>
-          </DrawerHeader>
-          <div className="space-y-2">
-            <Label htmlFor="name">POI Title</Label>
-            <Input name="title" type='text' onChange={handleChange} placeholder="Enter title" />
-          </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="location">Address</Label>
-            <Input name="location" type="text" placeholder="Write here POI's address" onChange={handleChange} />
-          </div>
+      
+        <DrawerContent>
+          <div className="mx-auto w-full max-w-sm p-4">
+            <DrawerHeader>
+              <DrawerTitle>Add Point of Interest Isochrone</DrawerTitle>
+              <DrawerDescription>Fill out the form below and generate isochrones around your Point of Interest.</DrawerDescription>
+            </DrawerHeader>
 
-          <div className="grid grid-cols-2 gap-4">
+            <form onSubmit={handleSubmit}>
             <div className="space-y-2">
-              <Label htmlFor="time">Time</Label>
-              <Select name="time" onValueChange={(value) => setFormData({ ...formData, time: Number(value) })}>
-                <SelectTrigger>{formData.time} minutes</SelectTrigger>
-                <SelectContent>
-                  {[5, 10, 15, 20, 25, 30, 45, 60, 70, 80, 90, 120].map((minutes) => (
-                    <SelectItem key={minutes} value={minutes.toString()}>{minutes} minutes</SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
+              <Label htmlFor="name">POI Title</Label>
+              <Input name="title" type='text' onChange={handleChange} placeholder="Enter title" />
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="transportationMode">Trans Mode</Label>
-              <Select name="transportationMode" onValueChange={(value) => setFormData({ ...formData, transportationMode: value })}>
-                <SelectTrigger>{formData.transportationMode}</SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="walk">Walk</SelectItem>
-                  <SelectItem value="transit">Transit</SelectItem>
-                  <SelectItem value="drive">Car</SelectItem>
-                  <SelectItem value="bicycle">Bicycle</SelectItem>
-                </SelectContent>
-              </Select>
+              <Label htmlFor="location">Address</Label>
+              <Input name="location" type="text" placeholder="Write here POI's address" onChange={handleChange} />
             </div>
-          </div>
-          <DrawerFooter>
 
-            <DrawerClose asChild>
-              <Button type='submit' className="w-full">Add Poi</Button>
-            </DrawerClose>
-            <DrawerClose asChild>
-              <Button variant="outline">Cancel</Button>
-            </DrawerClose>
-          </DrawerFooter>
-        </div>
-      </DrawerContent>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="space-y-2">
+                <Label htmlFor="time">Time</Label>
+                <Select name="time" onValueChange={(value) => setFormData({ ...formData, time: Number(value) })}>
+                  <SelectTrigger>{formData.time} minutes</SelectTrigger>
+                  <SelectContent>
+                    {[5, 10, 15, 20, 25, 30, 45, 60, 70, 80, 90, 120].map((minutes) => (
+                      <SelectItem key={minutes} value={minutes.toString()}>{minutes} minutes</SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="transportationMode">Trans Mode</Label>
+                <Select name="transportationMode" onValueChange={(value) => setFormData({ ...formData, transportationMode: value })}>
+                  <SelectTrigger>{formData.transportationMode}</SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="walk">Walk</SelectItem>
+                    <SelectItem value="transit">Transit</SelectItem>
+                    <SelectItem value="drive">Car</SelectItem>
+                    <SelectItem value="bicycle">Bicycle</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+            </div>
+            <DrawerFooter>
+
+              <DrawerClose asChild>
+                <Button type='submit' className="w-full">Add Poi</Button>
+              </DrawerClose>
+              <DrawerClose asChild>
+                <Button variant="outline">Cancel</Button>
+              </DrawerClose>
+            </DrawerFooter>
+            </form>
+          </div>
+      
+        </DrawerContent>
+      
     </Drawer>
   )
 }
