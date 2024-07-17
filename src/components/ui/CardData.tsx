@@ -9,10 +9,12 @@ import {
   CardTitle,
 } from "@/components/ui/shadcn/card"
 import { useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 
 // Import your store or the method to update the store
 import { houselistingStore } from "@/store/houselistingStore";
-  
+import {userSearchStore} from "@/store/user-search";
+
 type CardDataProposed =
 {   title         : string,
     description   : string,
@@ -31,9 +33,12 @@ const CardDataComponent : React.FC<CardDataProposed> =  ({
 }) => {
 
    const updateHouseListings = houselistingStore((state) => state.updateHouseListings);
+   const resetFilters = userSearchStore((state) => state.resetFilters);
+
+   const navigate = useNavigate();
 
   // Function to handle the button click
-  const handleLoadData = useCallback(async () => {
+  const handleLoadData = useCallback(async () => { // TODO: add redirection to /mapwork page as result of this function
     try {
       const response = await fetch(pathToFileURL);
       if (!response.ok) {
@@ -41,6 +46,8 @@ const CardDataComponent : React.FC<CardDataProposed> =  ({
       }
       const data = await response.json();
       updateHouseListings(data); // Update the store with the fetched data
+      resetFilters(); // resets all the filteres 
+      navigate('/mapwork'); // Redirect to /mapwork page
     } catch (error) {
       console.error("Failed to load data:", error);
     }

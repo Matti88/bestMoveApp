@@ -69,6 +69,7 @@ export interface userSearch {
   activeFilters: ActiveFilters;
   updatePOIs: (newPOIs: POI[]) => void;
   updateActiveFilters: (newFilters: Partial<ActiveFilters>) => void;
+  resetFilters: () => void;
   addPOI: (newPOI: POI) => void;
   deletePOI: (poiId: number) => void;
   toggleSelectedPoi: (poiId: number) => void;
@@ -130,6 +131,18 @@ export const userSearchStore = create<userSearch>()(
         });
       },
 
+      resetFilters: () => {
+        set((state) => ({
+          activeFilters: {
+            maxPrice: null,
+            minPrice: null,
+            maxSqm: null,
+            minSqm: null,
+            selectedPoiIds: state.activeFilters.selectedPoiIds.map((poi) => ({ ...poi, isChecked: false })),
+          },
+        }));
+      },
+
       toggleSelectedPoi: (poiId: number) => set((state) => {
         const updatedSelectedPoiIds = state.activeFilters.selectedPoiIds.map((poi) =>
           poi.id === poiId ? { ...poi, isChecked: !poi.isChecked } : poi
@@ -155,7 +168,9 @@ export const userSearchStore = create<userSearch>()(
 
     }), 
     
-    { name: "user-search", storage: createJSONStorage(() => localStorage) })
-)
-  ;
+    { name: "user-search", storage: createJSONStorage(() => localStorage) }
+  )
+
+);
+
 
