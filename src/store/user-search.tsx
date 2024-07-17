@@ -132,15 +132,15 @@ export const userSearchStore = create<userSearch>()(
       },
 
       resetFilters: () => {
-        set({
+        set((state) => ({
           activeFilters: {
             maxPrice: null,
             minPrice: null,
             maxSqm: null,
             minSqm: null,
-            selectedPoiIds: [],
+            selectedPoiIds: state.activeFilters.selectedPoiIds.map((poi) => ({ ...poi, isChecked: false })),
           },
-        });
+        }));
       },
 
       toggleSelectedPoi: (poiId: number) => set((state) => {
@@ -168,7 +168,9 @@ export const userSearchStore = create<userSearch>()(
 
     }), 
     
-    { name: "user-search", storage: createJSONStorage(() => localStorage) })
-)
-  ;
+    { name: "user-search", storage: createJSONStorage(() => localStorage) }
+  )
+
+);
+
 

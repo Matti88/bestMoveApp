@@ -1,51 +1,54 @@
-import CardDataComponent  from "@/components/ui/CardData";
+import React, { useState, useEffect } from 'react';
+import CardDataComponent from "@/components/ui/CardData";
 
-const cards_houses_proposed = [
-  {
-    title: "Apartments for Rent in Vienna",
-    description: "A sample of 2000 apartments in Vienna that have been proposed for rent on the platform Willhabe.at",
-    substitle1: "Prices ranging from 1000€ to 2000€",
-    substitle2: "Areas from 50m2 to 100m2",
-    pathToFileURL: "/apartmnt_rent.json",
-  },
-  {
-    title: "Apartments on Sale in Vienna",
-    description: "A sample of 2000 apartments in Vienna that have been proposed for sale on the platform Willhabe.at",
-    substitle1: "Prices ranging from 200K€ to 400K€",
-    substitle2: "Areas from 50m2 to 100m2",
-    pathToFileURL: "/apartmnt_sale.json",
-  },
-  {
-    title: "Houses on Sale in Vienna",
-    description: "A sample of 2000 houses in Vienna that have been proposed for sale on the platform Willhabe.at",
-    substitle1: "Prices ranging from 200K€ to 400K€",
-    substitle2: "Areas from 50m2 to 100m2",
-    pathToFileURL: "/houses_buy.json",
-  },
-  {
-    title: "Houses for Rent in Vienna",
-    description: "A sample of 2000 apartments in Vienna that have been proposed for sale on the platform Willhabe.at",
-    substitle1: "Prices ranging from 1000€ to 2000€",
-    substitle2: "Areas from 50m2 to 100m2",
-    pathToFileURL: "/houses_rent.json",
-  },
-]
+type SummaryCard = {
+  title: string;
+  description: string;
+  substitle1: string;
+  substitle2: string;
+  pathToFileURL: string;
+};
 
+const fetchDatasetDescriptions = async () => {
+  const response = await fetch("/datasets_descriptions.json");
+  const data: SummaryCard[] = await response.json();
+  return data;
+};
 
 export default function CommunityUpdated() {
+  const [cardsHousesProposed, setCardsHousesProposed] = useState<SummaryCard[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const data = await fetchDatasetDescriptions();
+        setCardsHousesProposed(data);
+      } catch (error) {
+        console.error("Failed to fetch data", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    getData();
+  }, []);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <>
       <div className="container mx-50 mt-10">
         <div className="flex flex-wrap gap-8">
-        {cards_houses_proposed.map((dataset, index) => (
-          <div key={index} className="p-1">
-            <CardDataComponent {...dataset} />
-          </div>
-        ))}
+          {cardsHousesProposed.map((dataset, index) => (
+            <div key={index} className="p-1">
+              <CardDataComponent {...dataset} />
+            </div>
+          ))}
         </div>
       </div>
     </>
-
   );
 }
