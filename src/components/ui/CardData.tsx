@@ -54,7 +54,7 @@ const CardDataComponent : React.FC<CardDataProposed> =  ({
   }, [pathToFileURL]);
 
   return (
-    <Card className={"w-[380px]"}>
+    <Card className={"md:lg:w-[380px] sm:w-[280px]"}>
       <CardHeader>
         <CardTitle>{title}</CardTitle>
         <CardDescription>{description}</CardDescription>
