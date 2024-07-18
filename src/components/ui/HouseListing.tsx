@@ -13,6 +13,8 @@ interface HouseListingProps {
 
 const HouseListing: React.FC<HouseListingProps> = ({ image, title, price, sqm, listingUrl }) => {
 
+  const shortTitle = title.length > 30 ? `${title.slice(0, 27)}...` : title;
+
   return (
     <a href={listingUrl} target="_blank" rel="noopener noreferrer" className="no-underline">
       <Card className="w-full max-w-md p-4 mb-4">
@@ -22,7 +24,7 @@ const HouseListing: React.FC<HouseListingProps> = ({ image, title, price, sqm, l
           </div>
           <div className="flex-1 pl-4">
             <CardContent className="p-0">
-              <CardTitle>{title}</CardTitle>
+              <CardTitle>{shortTitle}</CardTitle>
               <div className="text-base">
                 <Label>Price: {price.toLocaleString()}</Label>
                 <br/>
@@ -36,3 +38,4 @@ const HouseListing: React.FC<HouseListingProps> = ({ image, title, price, sqm, l
 };
 
 export default HouseListing;
+

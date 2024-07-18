@@ -2,6 +2,7 @@ import { appConfig } from "@/config/app";
 import { ModeToggle } from "../mode-toggle";
 import { PoiDrawer } from '@/components/ui/PoiDrawer';
 import  FormComponentFooter  from '@/components/ui/FormComponentFooter';
+import  FiltersComponentFooter  from '@/components/ui/FiltersComponentFooter';
 
 export function Footer() {
     return (
@@ -13,6 +14,7 @@ export function Footer() {
             <div className="flex flex-row items-center gap-4 sm:hidden">
                 <FormComponentFooter />
                 <PoiDrawer />
+                <FiltersComponentFooter />
             </div>
         </footer>
     )

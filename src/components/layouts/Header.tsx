@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/shadcn/sheet";
+import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/shadcn/sheet";
 import { Icons } from "@/components/icons";
 import { appConfig } from "@/config/app";
 import { Button, buttonVariants } from "@/components/ui/shadcn/button";
@@ -20,6 +20,7 @@ import { ScrollArea } from "@radix-ui/react-scroll-area";
 import { Logo } from "../logo";
 import { Accordion } from "@radix-ui/react-accordion";
 import { AccordionContent, AccordionItem, AccordionTrigger } from "../ui/shadcn/accordion";
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden"; // Import VisuallyHidden
 
 export function Header() {
     const [open, setOpen] = useState(false);
@@ -91,6 +92,9 @@ export function Header() {
                         </Button>
                     </SheetTrigger>
                     <SheetContent side="left" className="pr-0 sm:max-w-xs">
+                        <VisuallyHidden>
+                            <SheetTitle>Menu</SheetTitle>
+                        </VisuallyHidden>
                         <NavLink
                             to="/"
                             onClick={() => setOpen(false)}
