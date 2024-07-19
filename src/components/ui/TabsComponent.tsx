@@ -33,14 +33,17 @@ function TabsComponent() {
               </TabsList>
             </div>
             <div className="flex items-center gap-20">
-              <div className="ml-auto flex items-center gap-20 hidden sm:block">
-                <Button className="h-8 gap-1" size="sm" variant="outline" onClick={() => exportToSpreadsheet(houses.filter((house) => house.displayed), "Search_Export")}>
+              <div className="ml-auto flex items-center gap-20">
+                <Button className="h-8 gap-1 hidden sm:block" size="sm" variant="outline" onClick={() => exportToSpreadsheet(houses.filter((house) => house.displayed), "Search_Export")}>
                   <ArrowUpIcon className="h-3.5 w-3.5" />
                   <span className="sr-only sm:not-sr-only sm:whitespace-nowrap">Export results of filtered houses</span>
                 </Button>
-                <Button className="h-8 gap-1" size="sm" variant="outline" onClick={() => updateHouseListings([])}>
+                <Button className="h-8 gap-1 hidden sm:block" size="sm" variant="outline" onClick={() => updateHouseListings([])}>
                   <ResetIcon className="h-3.5 w-3.5" />
                   <span className="sr-only sm:not-sr-only sm:whitespace-nowrap">Reset Houses</span>
+                </Button>
+                <Button className="h-8 gap-1 sm:hidden" size="sm" variant="outline" onClick={() => updateHouseListings([])}>
+                  <ResetIcon className="h-3.5 w-3.5" />
                 </Button>
               </div>
             </div>
