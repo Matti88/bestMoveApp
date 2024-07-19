@@ -15,7 +15,7 @@ const fetchDatasetDescriptions = async () => {
   return data;
 };
 
-export default function CommunityUpdated() {
+export default function CommunityDatabases() {
   const [cardsHousesProposed, setCardsHousesProposed] = useState<SummaryCard[]>([]);
   const [loading, setLoading] = useState(true);
 

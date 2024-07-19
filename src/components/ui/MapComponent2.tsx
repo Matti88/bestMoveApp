@@ -23,11 +23,7 @@ const MapComponent: React.FC = () => {
   const pois = userSearchStore((state) => state.pois);
 
   const superclusterIndex = useMemo(() => {
-    const index = new supercluster({
-      radius: 100,
-      minZoom: 14,
-      nodeSize: 256,
-    });
+    const index = new supercluster({radius: 40, maxZoom: 16});
 
     const points: Array<Supercluster.PointFeature<Point>> = houses
       .filter((house) => house.displayed)
@@ -146,7 +142,7 @@ const MapComponent: React.FC = () => {
     <MapGL
       {...viewport}
       onMove={(evt) => setViewport(evt.viewState)}
-      style={{ width: '100%', height: '85vh' }}
+      style={{ width: '100%', height: '100%' }}
       mapStyle="mapbox://styles/mapbox/streets-v9"
       mapboxAccessToken={TOKEN}
     >

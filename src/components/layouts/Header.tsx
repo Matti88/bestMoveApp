@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/shadcn/sheet";
+import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription } from "@/components/ui/shadcn/sheet";
 import { Icons } from "@/components/icons";
 import { appConfig } from "@/config/app";
 import { Button, buttonVariants } from "@/components/ui/shadcn/button";
@@ -15,11 +15,12 @@ import {
 } from "@/components/ui/shadcn/dropdown-menu";
 import { Avatar, AvatarFallback } from "@/components/ui/shadcn/avatar";
 import { mainMenu } from "@/config/menu";
-import { ChevronDownIcon, ViewVerticalIcon } from "@radix-ui/react-icons";
+import { ChevronDownIcon, HamburgerMenuIcon } from "@radix-ui/react-icons";
 import { ScrollArea } from "@radix-ui/react-scroll-area";
 import { Logo } from "../logo";
 import { Accordion } from "@radix-ui/react-accordion";
 import { AccordionContent, AccordionItem, AccordionTrigger } from "../ui/shadcn/accordion";
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden"; // Import VisuallyHidden
 
 export function Header() {
     const [open, setOpen] = useState(false);
@@ -86,16 +87,19 @@ export function Header() {
                         <Button
                             variant="ghost"
                             className="mr-4 px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden">
-                            <ViewVerticalIcon className="h-5 w-5" />
+                            <HamburgerMenuIcon className="h-5 w-5" />
                             <span className="sr-only">Toggle Menu</span>
                         </Button>
                     </SheetTrigger>
                     <SheetContent side="left" className="pr-0 sm:max-w-xs">
+                        <VisuallyHidden>
+                            <SheetTitle>Menu</SheetTitle>
+                        </VisuallyHidden>
+                        <SheetDescription>Menu navigation</SheetDescription> {/* Add description */}
                         <NavLink
                             to="/"
                             onClick={() => setOpen(false)}
                             className="flex items-center space-x-2">
-                            <Logo />
                         </NavLink>
                         <ScrollArea className="my-4 h-[calc(100vh-8rem)] pb-8 pl-8">
                             <Accordion
@@ -163,10 +167,6 @@ export function Header() {
                         </ScrollArea>
                     </SheetContent>
                 </Sheet>
-                <a href="/" className="mr-6 flex items-center space-x-2 md:hidden">
-                    <Icons.logo className="h-6 w-6" />
-                    <span className="font-bold inline-block">{appConfig.name}</span>
-                </a>
 
                 {/* Right Items */}
                 <div className="flex items-center space-x-2">

@@ -1,29 +1,29 @@
 [
   {
-    "title": "Apartments on Rental in Vienna",
-    "description": "A sample of 272 apartments on Rental in Vienna that have been proposed for sale on the platform Willhabe.at",
-    "substitle1": "Rents ranging from 59.99\u20ac to 800.0\u20ac",
+    "title": "Apartments on Rent in Vienna",
+    "description": "A sample of 272 apartments for Rent in Vienna that have been proposed for sale on the platform Willhabe.at",
+    "substitle1": "Rents ranging from 59\u20ac to 800\u20ac",
     "substitle2": "Areas from 40\u33a1 to 140\u33a1",
     "pathToFileURL": "/apartmnt_rent.json"
   },
   {
     "title": "Apartments on Sale in Vienna",
-    "description": "A sample of 936 apartments on Sale in Vienna that have been proposed for sale on the platform Willhabe.at",
-    "substitle1": "Prices ranging from 150000.0\u20ac to 360000.0\u20ac",
+    "description": "A sample of 936 apartments for Sale in Vienna that have been proposed for sale on the platform Willhabe.at",
+    "substitle1": "Prices ranging from 150000\u20ac to 360000\u20ac",
     "substitle2": "Areas from 50\u33a1 to 80\u33a1",
     "pathToFileURL": "/apartmnt_sale.json"
   },
   {
-    "title": "Houses on Rental in Vienna",
-    "description": "A sample of 156 houses on Rental in Vienna that have been proposed for sale on the platform Willhabe.at",
-    "substitle1": "Rents ranging from 550.0\u20ac to 20000.0\u20ac",
+    "title": "Houses on Rent in Vienna",
+    "description": "A sample of 156 houses for Rent in Vienna that have been proposed for sale on the platform Willhabe.at",
+    "substitle1": "Rents ranging from 550\u20ac to 20000\u20ac",
     "substitle2": "Areas from 1.65\u33a1 to 650.0\u33a1",
     "pathToFileURL": "/houses_rent.json"
   },
   {
     "title": "Houses on Sale in Vienna",
-    "description": "A sample of 419 houses on Sale in Vienna that have been proposed for sale on the platform Willhabe.at",
-    "substitle1": "Prices ranging from 59900.0\u20ac to 9950000.0\u20ac",
+    "description": "A sample of 419 houses for Sale in Vienna that have been proposed for sale on the platform Willhabe.at",
+    "substitle1": "Prices ranging from 59900\u20ac to 9950000\u20ac",
     "substitle2": "Areas from 1.043\u33a1 to 932.0\u33a1",
     "pathToFileURL": "/houses_sale.json"
   }
