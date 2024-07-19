@@ -8,7 +8,7 @@ import { Label } from "@/components/ui/shadcn/label"
 import { Input } from "@/components/ui/shadcn/input"
 import { Button } from "@/components/ui/shadcn/button"
 
-import { difference, featureCollection } from '@turf/turf';
+import { MixerHorizontalIcon } from "@radix-ui/react-icons";
 import { GeoJsonProperties, GeoJSON, MultiPolygon, Feature, Position, Polygon, GeoJsonObject } from 'geojson';
 
 import {
@@ -163,7 +163,7 @@ const FiltersComponentFooter: React.FC = () => {
   return (
     <Drawer>
       <DrawerTrigger asChild>
-        <Button className="p-2" variant="secondary">Filter Houses</Button>
+        <Button className="pr-7 pl-7 pt-3 pb-3" variant="secondary"><MixerHorizontalIcon/></Button>
       </DrawerTrigger>
     <DrawerContent>
       <div className="mx-auto w-full max-w-sm p-4">

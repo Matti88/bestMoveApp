@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MinusIcon, PlusIcon } from "@radix-ui/react-icons"
+import { Crosshair2Icon } from "@radix-ui/react-icons"
 import { Bar, BarChart, ResponsiveContainer } from "recharts"
 import POIList from '@/components/ui/POIList';
 
@@ -14,6 +14,7 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/shadcn/drawer"
+
 
 
 import { fetchGeoapifyData, fetchGeoapifyIsochrones } from '@/store/utilityFuncts';
@@ -132,7 +133,7 @@ const FormComponentFooter: React.FC = () => {
   return (
     <Drawer>
       <DrawerTrigger asChild>
-        <Button className="p-2" variant="secondary">Create Point of Interest</Button>
+        <Button className="pr-7 pl-7 pt-3 pb-3" variant="secondary"><Crosshair2Icon/></Button>
       </DrawerTrigger>
 
       

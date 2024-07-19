@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/shadcn/dropdown-menu";
 import { Avatar, AvatarFallback } from "@/components/ui/shadcn/avatar";
 import { mainMenu } from "@/config/menu";
-import { ChevronDownIcon, ViewVerticalIcon } from "@radix-ui/react-icons";
+import { ChevronDownIcon, HamburgerMenuIcon } from "@radix-ui/react-icons";
 import { ScrollArea } from "@radix-ui/react-scroll-area";
 import { Logo } from "../logo";
 import { Accordion } from "@radix-ui/react-accordion";
@@ -87,7 +87,7 @@ export function Header() {
                         <Button
                             variant="ghost"
                             className="mr-4 px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden">
-                            <ViewVerticalIcon className="h-5 w-5" />
+                            <HamburgerMenuIcon className="h-5 w-5" />
                             <span className="sr-only">Toggle Menu</span>
                         </Button>
                     </SheetTrigger>
