@@ -23,29 +23,28 @@ export function PoiDrawer() {
   }
 
   return (
-    <Drawer>
-      <DrawerTrigger asChild>
-        <Button className="pr-7 pl-7 pt-3 pb-3" variant="secondary"><TargetIcon/></Button>
-      </DrawerTrigger>
-      <DrawerContent>
-        <div className="mx-auto w-full max-w-sm p-4">
-          <DrawerHeader>
-            <DrawerTitle>Point of Interest</DrawerTitle>
-            <DrawerDescription>List of POIs, change or delete them</DrawerDescription>
-          </DrawerHeader>
-          <div className="p-4 pb-0">
- 
-            <div className="mt-3 h-[120px]">
-            <POIList/>
-            </div>
-          </div>
-          <DrawerFooter>
-            <DrawerClose asChild>
-              <Button variant="outline">Back</Button>
-            </DrawerClose>
-          </DrawerFooter>
+    <Drawer fullHeight={true}>
+    <DrawerTrigger asChild>
+      <Button className="pr-7 pl-7 pt-3 pb-3" variant="secondary">
+        <TargetIcon />
+      </Button>
+    </DrawerTrigger>
+    <DrawerContent>
+      <div className="mx-auto w-full max-w-sm p-4 h-screen flex flex-col">
+        <DrawerHeader>
+          <DrawerTitle>Point of Interest</DrawerTitle>
+          <DrawerDescription>List of POIs, change or delete them</DrawerDescription>
+        </DrawerHeader>
+        <div className="flex-grow overflow-y-auto">
+          <POIList />
         </div>
-      </DrawerContent>
-    </Drawer>
+        <DrawerFooter>
+          <DrawerClose asChild>
+            <Button variant="outline">Back</Button>
+          </DrawerClose>
+        </DrawerFooter>
+      </div>
+    </DrawerContent>
+  </Drawer>
   )
 }

@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
 import { Crosshair2Icon } from "@radix-ui/react-icons"
-import { Bar, BarChart, ResponsiveContainer } from "recharts"
-import POIList from '@/components/ui/POIList';
-
 import { Button } from "@/components/ui/shadcn/button"
 import {
   Drawer,
@@ -14,16 +11,10 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/shadcn/drawer"
-
-
-
 import { fetchGeoapifyData, fetchGeoapifyIsochrones } from '@/store/utilityFuncts';
 import { userSearchStore, POI } from '@/store/user-search';
-
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/shadcn/card";
 import { Label } from "@/components/ui/shadcn/label";
 import { Input } from "@/components/ui/shadcn/input";
-
 import {
   Select,
   SelectTrigger,
