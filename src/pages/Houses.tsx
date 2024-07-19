@@ -1,9 +1,9 @@
 import { Button } from "@/components/ui/shadcn/button";
 import { CardTitle, CardHeader, CardContent, Card } from "@/components/ui/shadcn/card";
-import { SVGProps } from "react";
 import TabsComponent from '@/components/ui/TabsComponent'
 import houselistingStore from '@/store/houselistingStore';
 import FileUploader from '@/components/ui/FileUploader2';
+import { FileIcon } from "@/components/ui/icons/iconsCollection";
 
 
 
@@ -43,24 +43,5 @@ const Houses: React.FC = () => {
   );
 }
 
-function FileIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
-      <polyline points="14 2 14 8 20 8" />
-    </svg>
-  );
-}
 
 export default Houses;

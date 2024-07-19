@@ -3,7 +3,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/shadcn
 import houselistingStore from '@/store/houselistingStore';
 import TableComponent from '@/components/ui/TableComponent'
 import HouseListing from "@/components/ui/HouseListing";
-
+import { ArrowUpIcon, ResetIcon } from "@/components/ui/icons/iconsCollection";
 
 
 
@@ -49,7 +49,7 @@ function TabsComponent() {
             <div className="hidden sm:block">
               <TableComponent houses={houses}></TableComponent>
             </div>
-            <div >
+            <div  className="sm:hidden">
               {houses.map((listing, index) => (
                 <HouseListing
                   key={index}
@@ -86,44 +86,5 @@ function TabsComponent() {
   );
 }
 
-function ArrowUpIcon(props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <circle cx="12" cy="12" r="10" />
-      <path d="M12 16v-8" />
-      <path d="M8 12l4-4 4 4" />
-    </svg>
-  );
-}
-
-function ResetIcon(props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg xmlns="http://www.w3.org/2000/svg"
-      height="21"
-      viewBox="0 0 21 21"
-      width="21">
-      <g fill="none"
-        fillRule="evenodd"
-        stroke="#2a2e3b"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        transform="matrix(-1 0 0 1 20 2)">
-        <path d="m5.5 1.5c-2.4138473 1.37729434-4 4.02194088-4 7 0 4.418278 3.581722 8 8 8s8-3.581722 8-8-3.581722-8-8-8" />
-        <path d="m5.5 1.5v5h-5" transform="matrix(1 0 0 -1 0 8)" />
-      </g>
-    </svg>
-  );
-}
 
 export default TabsComponent;

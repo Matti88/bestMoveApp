@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
-import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/shadcn/sheet";
+import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription } from "@/components/ui/shadcn/sheet";
 import { Icons } from "@/components/icons";
 import { appConfig } from "@/config/app";
 import { Button, buttonVariants } from "@/components/ui/shadcn/button";
@@ -95,6 +95,7 @@ export function Header() {
                         <VisuallyHidden>
                             <SheetTitle>Menu</SheetTitle>
                         </VisuallyHidden>
+                        <SheetDescription>Menu navigation</SheetDescription> {/* Add description */}
                         <NavLink
                             to="/"
                             onClick={() => setOpen(false)}
