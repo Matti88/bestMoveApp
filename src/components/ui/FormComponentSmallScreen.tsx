@@ -26,7 +26,7 @@ import {
 
 
 
-const FormComponentFooter: React.FC = () => {
+const FormComponentSmallScreen: React.FC = () => {
 
 
   const { pois, addPOI } = userSearchStore();
@@ -116,7 +116,7 @@ const FormComponentFooter: React.FC = () => {
     const { name, value } = event.target;
     setFormData((prevFormData) => ({
       ...prevFormData,
-      [name]: value,
+      [name]: value,  
     }));
   };
 
@@ -124,7 +124,7 @@ const FormComponentFooter: React.FC = () => {
   return (
     <Drawer>
       <DrawerTrigger asChild>
-        <Button className="pr-7 pl-7 pt-3 pb-3" variant="secondary"><Crosshair2Icon/></Button>
+        <Button className="pr-15 pl-15" variant="secondary">Add a Point of Interest</Button>
       </DrawerTrigger>
 
       
@@ -190,4 +190,4 @@ const FormComponentFooter: React.FC = () => {
   )
 }
 
-export default FormComponentFooter;
+export default FormComponentSmallScreen;

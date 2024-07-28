@@ -22,7 +22,7 @@ import {
   DrawerTrigger,
 } from "@/components/ui/shadcn/drawer"
 
-const FiltersComponentFooter: React.FC = () => {
+const FiltersComponentSmallScreen: React.FC = () => {
   const activeFilters = userSearchStore((state) => state.activeFilters);
   const list_selectionPoi = activeFilters.selectedPoiIds;
   const maximumPrice = activeFilters.maxPrice;
@@ -113,9 +113,6 @@ const FiltersComponentFooter: React.FC = () => {
     return shape && shape.type === "Feature" && shape.geometry && shape.geometry.type;
   }
  
-
-
-
 
   function rayTracingMethod(x: number, y: number, poly: number[][]): boolean {
     const n = poly.length;
@@ -209,4 +206,4 @@ const FiltersComponentFooter: React.FC = () => {
   );
 };
 
-export default FiltersComponentFooter;
+export default FiltersComponentSmallScreen;

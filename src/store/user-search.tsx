@@ -30,6 +30,7 @@ export interface PoiSelection {
   id: number;
   text: string;
   isChecked: boolean;
+  poiColor?: string;
 }
 
 export interface ActiveFilters {
