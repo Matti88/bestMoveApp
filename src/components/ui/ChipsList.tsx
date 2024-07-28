@@ -1,15 +1,16 @@
 import React from 'react';
 import { userSearchStore } from '@/store/user-search'
 import ChipWithCheckbox from '@/components/ui/ChipArray';
+import { CardContent } from "@/components/ui/shadcn/card"
 
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/shadcn/card"
-import exp from 'constants';
 
 const ChipList: React.FC = () => {
+    // const pois = userSearchStore((state) => state.pois);
+    const getPoi = userSearchStore((state) => state.getPoi);
     const activeFilters = userSearchStore((state) => state.activeFilters);
     const list_selectionPoi = activeFilters.selectedPoiIds;
     const toggleSelectedPoi = userSearchStore((state) => state.toggleSelectedPoi);
-
+    
     return (
         <>
             <CardContent className="space-y-4">
@@ -21,6 +22,7 @@ const ChipList: React.FC = () => {
                                 id={chip.id}
                                 text={chip.text}
                                 isChecked={chip.isChecked}
+                                color={ getPoi( chip.id)?.color || '#00bfff'}
                                 onToggle={() => toggleSelectedPoi(chip.id)}
                             />
                         ))}

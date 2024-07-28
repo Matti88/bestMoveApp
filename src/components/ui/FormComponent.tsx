@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { fetchGeoapifyData, fetchGeoapifyIsochrones } from '@/store/utilityFuncts';
+import { handleFormSubmit } from '@/api/api';
 import { userSearchStore, POI } from '@/store/user-search';
 
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/shadcn/card";
@@ -67,32 +67,7 @@ const FormComponent: React.FC = () => {
   }
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-
-    const indirizzi = await fetchGeoapifyData(formData.location);
-    const lat = indirizzi.results[0].lat;
-    const lon = indirizzi.results[0].lon;
-    const address_formatted = indirizzi.results[0].formatted;
-    const isochrone = await fetchGeoapifyIsochrones(lat, lon, formData.transportationMode, formData.time * 60);
-    const squaredCoordinates = await extractBoundingBox(isochrone);
-
-    const newPoiObject: POI = {
-      id: 0,
-      address: address_formatted,
-      lon: lon,
-      lat: lat,
-      modeOfTransportation: formData.transportationMode,
-      timeRange: formData.time,
-      isochrone: isochrone,
-      title: formData.title,
-      minmaxSquare: squaredCoordinates,
-    };
-
-    if (!isDuplicatePOI(newPoiObject)) {
-      addPOI(newPoiObject);
-    } else {
-      console.log("same POI present");
-    }
+    await handleFormSubmit(event, formData, pois, isDuplicatePOI, addPOI, extractBoundingBox);
   };
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -107,7 +82,7 @@ const FormComponent: React.FC = () => {
     <Card className="w-full max-w-md">
       <CardHeader>
         <CardTitle>Add Point of Interest Isochrone</CardTitle>
-        <CardDescription>Fill out the form below and generate isochrones around your Point of Interest.</CardDescription>
+        {/* <CardDescription>Fill out the form below and generate isochrones around your Point of Interest.</CardDescription> */}
       </CardHeader>
     
       <form onSubmit={handleSubmit}>

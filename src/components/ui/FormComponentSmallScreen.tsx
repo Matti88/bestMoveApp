@@ -11,7 +11,6 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/shadcn/drawer"
-import { fetchGeoapifyData, fetchGeoapifyIsochrones } from '@/store/utilityFuncts';
 import { userSearchStore, POI } from '@/store/user-search';
 import { Label } from "@/components/ui/shadcn/label";
 import { Input } from "@/components/ui/shadcn/input";
@@ -103,7 +102,7 @@ const FormComponentSmallScreen: React.FC = () => {
           <div className="mx-auto w-full max-w-sm p-4">
             <DrawerHeader>
               <DrawerTitle>Add Point of Interest Isochrone</DrawerTitle>
-              <DrawerDescription>Fill out the form below and generate isochrones around your Point of Interest.</DrawerDescription>
+              {/* <DrawerDescription>Fill out the form below and generate isochrones around your Point of Interest.</DrawerDescription> */}
             </DrawerHeader>
 
             <form onSubmit={handleSubmit}>

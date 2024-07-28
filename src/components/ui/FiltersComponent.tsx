@@ -36,24 +36,24 @@ const FiltersComponent: React.FC = () => {
     <Card className="w-full max-w-md">
       <CardHeader>
         <CardTitle>Search Filters</CardTitle>
-        <CardDescription>Refine here your search by apply filter by price, area and Point of Interest</CardDescription>
+        {/* <CardDescription>Refine here your search by apply filter by price, area and Point of Interest</CardDescription> */}
       </CardHeader>
       <form onSubmit={handleNewSearch}>
         <CardContent className="space-y-4">
           <div className="grid grid-cols-1">
-            <label className="block mb-2">POI Isochrones:</label>
-            <div className="flex mb-4">
-              <br/>
-              {list_selectionPoi?.map((chip) => (
-                <ChipWithCheckbox
-                  key={chip.id}
-                  id={chip.id}
-                  text={chip.text}
-                  isChecked={chip.isChecked}
-                  onToggle={() => toggleSelectedPoi(chip.id)}
-                />
-              ))}
-            </div>
+          {list_selectionPoi.length > 0 ? (
+            <><label className="block mb-2">POIs</label><div className="flex mb-4">
+                    <br />
+                    {list_selectionPoi?.map((chip) => (
+                      <ChipWithCheckbox
+                        key={chip.id}
+                        id={chip.id}
+                        text={chip.text}
+                        isChecked={chip.isChecked}
+                        onToggle={() => toggleSelectedPoi(chip.id)} />
+                    ))}
+                  </div></>
+          ) : null}
           </div>
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
