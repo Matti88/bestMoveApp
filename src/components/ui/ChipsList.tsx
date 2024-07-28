@@ -25,7 +25,6 @@ const ChipList: React.FC = () => {
                             />
                         ))}
                     </div>
-
             </CardContent>
         </>
     );

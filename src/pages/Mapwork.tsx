@@ -15,25 +15,24 @@ export default function Mapwork() {
         <div className="absolute inset-0 z-0">
           <MapComponent />
         </div>
-        <div className="absolute top-10 left-10 z-10 p-2 rounded max-w-md h-[80vh] w-[20vw] overflow-y-auto scaled-container hidden sm:block">
+
+        <div className="absolute top-10 left-10 z-10 p-2 rounded max-w-md h-[80vh] w-[20vw] overflow-y-auto scaled-container hidden md:block">
           <FormComponent />
-          <br />
-          <POIList />
         </div>
 
-        <div className="absolute top-10 right-10 z-10 p-2 rounded max-w-md h-[80vh] w-[20vw] overflow-y-auto scaled-container hidden sm:block">
+        <div className="absolute top-10 right-10 z-10 p-2 rounded max-w-md h-[80vh] w-[20vw] overflow-y-auto scaled-container hidden md:block">
           <FiltersComponent />
           <br />
         </div>
-        <div className="absolute top-5 right-5 z-10 sm:hidden">
+        <div className="absolute top-5 right-5 z-10 md:hidden">
           <FiltersComponentSmallScreen />
         </div>
         <div className="flex items-center justify-center">
-          <div className="absolute bottom-5 z-10 sm:hidden">
+          <div className="absolute bottom-5 z-10 md:hidden">
             <FormComponentSmallScreen />
           </div>
         </div>
-        <div className="absolute top-5 left-5 z-10 p-2 sm:hidden">
+        <div className="absolute top-5 left-5 z-10 p-2 md:hidden">
           <ChipList />
         </div>
       </div>

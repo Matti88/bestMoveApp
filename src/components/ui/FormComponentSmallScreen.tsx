@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Crosshair2Icon } from "@radix-ui/react-icons"
+import { handleFormSubmit } from '@/api/api';
 import { Button } from "@/components/ui/shadcn/button"
 import {
   Drawer,
@@ -28,7 +28,6 @@ import {
 
 const FormComponentSmallScreen: React.FC = () => {
 
-
   const { pois, addPOI } = userSearchStore();
 
   const [formData, setFormData] = useState({
@@ -37,7 +36,6 @@ const FormComponentSmallScreen: React.FC = () => {
     time: 5,
     transportationMode: 'walk',
   });
-
 
   const isDuplicatePOI = (newPOI: POI) => {
     return pois.some(
@@ -82,44 +80,17 @@ const FormComponentSmallScreen: React.FC = () => {
     };
   }
 
-
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-
-    const indirizzi = await fetchGeoapifyData(formData.location);
-    const lat = indirizzi.results[0].lat;
-    const lon = indirizzi.results[0].lon;
-    const address_formatted = indirizzi.results[0].formatted;
-    const isochrone = await fetchGeoapifyIsochrones(lat, lon, formData.transportationMode, formData.time * 60);
-    const squaredCoordinates = await extractBoundingBox(isochrone);
-
-    const newPoiObject: POI = {
-      id: 0,
-      address: address_formatted,
-      lon: lon,
-      lat: lat,
-      modeOfTransportation: formData.transportationMode,
-      timeRange: formData.time,
-      isochrone: isochrone,
-      title: formData.title,
-      minmaxSquare: squaredCoordinates,
-    };
-
-    if (!isDuplicatePOI(newPoiObject)) {
-      addPOI(newPoiObject);
-    } else {
-      console.log("same POI present");
-    }
+    await handleFormSubmit(event, formData, pois, isDuplicatePOI, addPOI, extractBoundingBox);
   };
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = event.target;
     setFormData((prevFormData) => ({
       ...prevFormData,
-      [name]: value,  
+      [name]: value,
     }));
   };
-
 
   return (
     <Drawer>
