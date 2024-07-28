@@ -6,7 +6,7 @@ import { CardContent } from "@/components/ui/shadcn/card"
 
 const ChipList: React.FC = () => {
     // const pois = userSearchStore((state) => state.pois);
-    const getPoi = userSearchStore((state) => state.getPoi);
+    const getPoiColor = userSearchStore((state) => state.getPoiColor);
     const activeFilters = userSearchStore((state) => state.activeFilters);
     const list_selectionPoi = activeFilters.selectedPoiIds;
     const toggleSelectedPoi = userSearchStore((state) => state.toggleSelectedPoi);
@@ -22,7 +22,7 @@ const ChipList: React.FC = () => {
                                 id={chip.id}
                                 text={chip.text}
                                 isChecked={chip.isChecked}
-                                color={ getPoi( chip.id)?.color || '#00bfff'}
+                                color={ getPoiColor(chip.id)}
                                 onToggle={() => toggleSelectedPoi(chip.id)}
                             />
                         ))}

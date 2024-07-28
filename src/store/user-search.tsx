@@ -70,7 +70,7 @@ export interface userSearch {
   pois: POI[];
   activeFilters: ActiveFilters;
   currentColorIndex: number;
-  getPoi: (poiId: number) => POI | null;  
+  getPoiColor: (poiId: number) => string;  
   updatePOIs: (newPOIs: POI[]) => void;
   updateActiveFilters: (newFilters: Partial<ActiveFilters>) => void;
   resetFilters: () => void;
@@ -178,10 +178,10 @@ export const userSearchStore = create<userSearch>()(
         };
       }),
 
-      getPoi: (poiId: number) => {
+      getPoiColor: (poiId: number) => {
         const state = get();
-        const poi = state.pois.find((poi) => poi.id === poiId);
-        return poi || null;
+        const poiColor = state.pois.find((poi) => poi.id === poiId)?.color;
+        return poiColor || '#00bfff';
       },
 
     }), 
