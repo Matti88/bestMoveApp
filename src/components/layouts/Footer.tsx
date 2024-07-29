@@ -18,12 +18,6 @@ export function Footer() {
             <div className="hidden md:block">
                 <ModeToggle />
             </div>
-            {isMapworkPage && (
-                <div className="flex flex-row items-center gap-4 sm:hidden">
-                    
-                    <PoiDrawer />
-                </div>
-            )}
         </footer>
     );
 }

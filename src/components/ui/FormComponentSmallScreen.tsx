@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
 import { handleFormSubmit } from '@/api/api';
-import { Button } from "@/components/ui/shadcn/button"
+import { Button } from "@/components/ui/shadcn/button";
 import {
   Drawer,
   DrawerClose,
   DrawerContent,
-  DrawerDescription,
   DrawerFooter,
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
-} from "@/components/ui/shadcn/drawer"
+} from "@/components/ui/shadcn/drawer";
 import { userSearchStore, POI } from '@/store/user-search';
 import { Label } from "@/components/ui/shadcn/label";
 import { Input } from "@/components/ui/shadcn/input";
@@ -21,12 +20,7 @@ import {
   SelectItem
 } from "@/components/ui/shadcn/select";
 
-
-
-
-
 const FormComponentSmallScreen: React.FC = () => {
-
   const { pois, addPOI } = userSearchStore();
 
   const [formData, setFormData] = useState({
@@ -94,18 +88,17 @@ const FormComponentSmallScreen: React.FC = () => {
   return (
     <Drawer>
       <DrawerTrigger asChild>
-        <Button className="pr-15 pl-15" variant="secondary">Add a Point of Interest</Button>
+        <Button className="w-full h-12 text-md" variant="secondary">Add a Point of Interest</Button>
       </DrawerTrigger>
 
-      
-        <DrawerContent>
-          <div className="mx-auto w-full max-w-sm p-4">
-            <DrawerHeader>
-              <DrawerTitle>Add Point of Interest Isochrone</DrawerTitle>
-              {/* <DrawerDescription>Fill out the form below and generate isochrones around your Point of Interest.</DrawerDescription> */}
-            </DrawerHeader>
+      <DrawerContent>
+        <div className="mx-auto w-full max-w-sm p-4">
+          <DrawerHeader>
+            <DrawerTitle>Add Point of Interest Isochrone</DrawerTitle>
+            {/* <DrawerDescription>Fill out the form below and generate isochrones around your Point of Interest.</DrawerDescription> */}
+          </DrawerHeader>
 
-            <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit}>
             <div className="space-y-2">
               <Label htmlFor="name">POI Title</Label>
               <Input name="title" type='text' onChange={handleChange} placeholder="Enter title" />
@@ -143,7 +136,6 @@ const FormComponentSmallScreen: React.FC = () => {
               </div>
             </div>
             <DrawerFooter>
-
               <DrawerClose asChild>
                 <Button type='submit' className="w-full">Add Poi</Button>
               </DrawerClose>
@@ -151,13 +143,11 @@ const FormComponentSmallScreen: React.FC = () => {
                 <Button variant="outline">Cancel</Button>
               </DrawerClose>
             </DrawerFooter>
-            </form>
-          </div>
-      
-        </DrawerContent>
-      
+          </form>
+        </div>
+      </DrawerContent>
     </Drawer>
-  )
+  );
 }
 
 export default FormComponentSmallScreen;

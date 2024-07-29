@@ -1,6 +1,6 @@
 import React from 'react';
 import { userSearchStore } from '@/store/user-search'
-import ChipWithCheckbox from '@/components/ui/ChipArray';
+import ChipArray from '@/components/ui/ChipArray';
 import { houselistingStore } from '@/store/houselistingStore';
 
 import {  CardContent, CardFooter } from "@/components/ui/shadcn/card"
@@ -50,7 +50,7 @@ const FiltersComponentSmallScreen: React.FC = () => {
       <div className="mx-auto w-full max-w-sm p-4">
       <DrawerHeader>
         <DrawerTitle>Search Filters</DrawerTitle>
-        {/* <DrawerDescription>Refine here your search by apply filter by price, area and Point of Interest</DrawerDescription> */}
+        <DrawerDescription></DrawerDescription>
       </DrawerHeader>
       <form onSubmit={handleNewSearch}>
         <CardContent className="space-y-4">
@@ -59,11 +59,12 @@ const FiltersComponentSmallScreen: React.FC = () => {
             <><label className="block mb-2">POIs</label><div className="flex mb-4">
                     <br />
                     {list_selectionPoi?.map((chip) => (
-                      <ChipWithCheckbox
+                      <ChipArray
                         key={chip.id}
                         id={chip.id}
                         text={chip.text}
                         isChecked={chip.isChecked}
+                        poiColor={chip.poiColor}
                         onToggle={() => toggleSelectedPoi(chip.id)} />
                     ))}
                   </div></>

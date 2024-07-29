@@ -7,12 +7,10 @@ const ChipList: React.FC = () => {
     const list_selectionPoi = userSearchStore((state) => state.activeFilters.selectedPoiIds);
     const toggleSelectedPoi = userSearchStore((state) => state.toggleSelectedPoi);
 
-    console.log("list_selectionPoi", list_selectionPoi);
-
     return (
         <>
             <CardContent className="space-y-4">
-                <div className="flex mb-4">
+                <div className="flex flex-wrap mb-4">
                     <br />
                     {list_selectionPoi?.map((chip, index) => (
                         <ChipArray
