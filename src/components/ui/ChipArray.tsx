@@ -3,27 +3,35 @@ import React from 'react';
 interface ChipWithCheckboxProps {
   id: number;
   text: string;
-  isChecked: boolean;
-  onToggle: (id: number) => void;
+  poiColor: string;
+  isChecked?: boolean;
+  onToggle?: (id: number) => void;
 }
 
-const ChipWithCheckbox: React.FC<ChipWithCheckboxProps> = ({ id, text, isChecked, onToggle }) => {
+const ChipWithCheckbox: React.FC<ChipWithCheckboxProps> = ({ id, text, isChecked, poiColor, onToggle }) => {
+  const handleChange = () => {
+    if (onToggle) {
+      onToggle(id);
+    }
+  };
+
   return (
     <label
-      className={`relative inline-flex ml-2 items-center select-none whitespace-nowrap rounded-lg py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none ${
-        isChecked ? 'bg-green-500 text-white' : 'bg-pink-500 text-white'
-      }`}
+      className={`relative inline-flex m-1 items-center select-none whitespace-nowrap rounded-lg py-2 px-3.5 font-sans text-xs font-bold uppercase leading-none text-white ${poiColor === '#00bfff' ? 'bg-customBlue' : ''}`}
+      style={poiColor !== '#00bfff' ? { backgroundColor: poiColor } : {}}
     >
       <input
         type="checkbox"
         className="absolute opacity-0 h-0 w-0"
         checked={isChecked}
-        onChange={() => onToggle(id)}
+        onChange={handleChange}
       />
       <span className="mr-2">{text}</span>
-      <span className="mr-2">{isChecked ? 'o' : 'x'}</span>
+      {isChecked && <span className="mr-2">o</span>}
+      {!isChecked && <span className="mr-2">x</span>}
     </label>
   );
 };
 
 export default ChipWithCheckbox;
+

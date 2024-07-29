@@ -30,6 +30,7 @@ export interface PoiSelection {
   id: number;
   text: string;
   isChecked: boolean;
+  poiColor: string;
 }
 
 export interface ActiveFilters {
@@ -62,11 +63,14 @@ export interface POI {
   title: string;
   minmaxSquare: cooSquares;
   dangerZone?: boolean;
+  color: string;
 }
 
 export interface userSearch {
   pois: POI[];
   activeFilters: ActiveFilters;
+  currentColorIndex: number;
+  getPoiColor: (poiId: number) => string;  
   updatePOIs: (newPOIs: POI[]) => void;
   updateActiveFilters: (newFilters: Partial<ActiveFilters>) => void;
   resetFilters: () => void;
@@ -75,13 +79,18 @@ export interface userSearch {
   toggleSelectedPoi: (poiId: number) => void;
   toggleDangerZone: (poiId: number) => void;
   reset: () => void;
+  
 
 }
+
+                
+const colors = ['#00ff0c','#8cff00','#00ff8c' ,'#ffd800', '#00ffa5', '#ff3f00', '#00bfff', '#0026ff', '#ff0059', '#7200ff', '#ff00f2', '#ff0059']
+
 
 export const userSearchStore = create<userSearch>()(
 
   persist(
-    (set) => ({
+    (set, get) => ({
       pois: [],
       activeFilters: {
         maxPrice: null,
@@ -90,19 +99,22 @@ export const userSearchStore = create<userSearch>()(
         minSqm: null,
         selectedPoiIds: [],
       },
+      currentColorIndex: 0,
       houseListings: [],
       updatePOIs: (newPOI) => set({ pois: newPOI }),
       updateActiveFilters: (newFilters) => set((state) => ({ activeFilters: { ...state.activeFilters, ...newFilters } })),
       addPOI: (newPOI) => set((state) => {
         const maxId = Math.max(...state.pois.map((poi) => poi.id), 0);
-        const updatedPOIs = [...state.pois, { ...newPOI, id: maxId + 1, dangerZone: false }];
+        const color = colors[state.currentColorIndex];
+        const updatedPOIs = [...state.pois, { ...newPOI, id: maxId + 1, dangerZone: false, color }];
 
         return {
           pois: updatedPOIs,
           activeFilters: {
             ...state.activeFilters,
-            selectedPoiIds: [...state.activeFilters.selectedPoiIds, { id: maxId + 1, text: newPOI.title.slice(0, 5), isChecked: false, dangerZone: false }],
+            selectedPoiIds: [...state.activeFilters.selectedPoiIds, { id: maxId + 1, text: newPOI.title.slice(0, 5), isChecked: false, poiColor: color }],
           },
+          currentColorIndex: (state.currentColorIndex + 1) % colors.length,
         };
       }),
       deletePOI: (poiId) => set((state) => {
@@ -165,6 +177,12 @@ export const userSearchStore = create<userSearch>()(
           pois: updatedPoiCharacteristics
         };
       }),
+
+      getPoiColor: (poiId: number) => {
+        const state = get();
+        const poiColor = state.pois.find((poi) => poi.id === poiId)?.color;
+        return poiColor || '#00bfff';
+      },
 
     }), 
     

@@ -1,8 +1,7 @@
 import { appConfig } from "@/config/app";
 import { ModeToggle } from "../mode-toggle";
 import { PoiDrawer } from '@/components/ui/PoiDrawer';
-import  FormComponentFooter  from '@/components/ui/FormComponentFooter';
-import  FiltersComponentFooter  from '@/components/ui/FiltersComponentFooter';
+
 import { useLocation } from "react-router-dom";
 
 export function Footer() {
@@ -19,13 +18,6 @@ export function Footer() {
             <div className="hidden md:block">
                 <ModeToggle />
             </div>
-            {isMapworkPage && (
-                <div className="flex flex-row items-center gap-4 sm:hidden">
-                    <FormComponentFooter />
-                    <PoiDrawer />
-                    <FiltersComponentFooter />
-                </div>
-            )}
         </footer>
     );
 }

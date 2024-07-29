@@ -1,17 +1,15 @@
 import React, { useState } from 'react';
-import { Crosshair2Icon } from "@radix-ui/react-icons"
-import { Button } from "@/components/ui/shadcn/button"
+import { handleFormSubmit } from '@/api/api';
+import { Button } from "@/components/ui/shadcn/button";
 import {
   Drawer,
   DrawerClose,
   DrawerContent,
-  DrawerDescription,
   DrawerFooter,
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
-} from "@/components/ui/shadcn/drawer"
-import { fetchGeoapifyData, fetchGeoapifyIsochrones } from '@/store/utilityFuncts';
+} from "@/components/ui/shadcn/drawer";
 import { userSearchStore, POI } from '@/store/user-search';
 import { Label } from "@/components/ui/shadcn/label";
 import { Input } from "@/components/ui/shadcn/input";
@@ -22,13 +20,7 @@ import {
   SelectItem
 } from "@/components/ui/shadcn/select";
 
-
-
-
-
-const FormComponentFooter: React.FC = () => {
-
-
+const FormComponentSmallScreen: React.FC = () => {
   const { pois, addPOI } = userSearchStore();
 
   const [formData, setFormData] = useState({
@@ -37,7 +29,6 @@ const FormComponentFooter: React.FC = () => {
     time: 5,
     transportationMode: 'walk',
   });
-
 
   const isDuplicatePOI = (newPOI: POI) => {
     return pois.some(
@@ -82,34 +73,8 @@ const FormComponentFooter: React.FC = () => {
     };
   }
 
-
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-
-    const indirizzi = await fetchGeoapifyData(formData.location);
-    const lat = indirizzi.results[0].lat;
-    const lon = indirizzi.results[0].lon;
-    const address_formatted = indirizzi.results[0].formatted;
-    const isochrone = await fetchGeoapifyIsochrones(lat, lon, formData.transportationMode, formData.time * 60);
-    const squaredCoordinates = await extractBoundingBox(isochrone);
-
-    const newPoiObject: POI = {
-      id: 0,
-      address: address_formatted,
-      lon: lon,
-      lat: lat,
-      modeOfTransportation: formData.transportationMode,
-      timeRange: formData.time,
-      isochrone: isochrone,
-      title: formData.title,
-      minmaxSquare: squaredCoordinates,
-    };
-
-    if (!isDuplicatePOI(newPoiObject)) {
-      addPOI(newPoiObject);
-    } else {
-      console.log("same POI present");
-    }
+    await handleFormSubmit(event, formData, pois, isDuplicatePOI, addPOI, extractBoundingBox);
   };
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -120,22 +85,20 @@ const FormComponentFooter: React.FC = () => {
     }));
   };
 
-
   return (
     <Drawer>
       <DrawerTrigger asChild>
-        <Button className="pr-7 pl-7 pt-3 pb-3" variant="secondary"><Crosshair2Icon/></Button>
+        <Button className="w-full h-12 text-md" variant="secondary">Add a Point of Interest</Button>
       </DrawerTrigger>
 
-      
-        <DrawerContent>
-          <div className="mx-auto w-full max-w-sm p-4">
-            <DrawerHeader>
-              <DrawerTitle>Add Point of Interest Isochrone</DrawerTitle>
-              <DrawerDescription>Fill out the form below and generate isochrones around your Point of Interest.</DrawerDescription>
-            </DrawerHeader>
+      <DrawerContent>
+        <div className="mx-auto w-full max-w-sm p-4">
+          <DrawerHeader>
+            <DrawerTitle>Add Point of Interest Isochrone</DrawerTitle>
+            {/* <DrawerDescription>Fill out the form below and generate isochrones around your Point of Interest.</DrawerDescription> */}
+          </DrawerHeader>
 
-            <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit}>
             <div className="space-y-2">
               <Label htmlFor="name">POI Title</Label>
               <Input name="title" type='text' onChange={handleChange} placeholder="Enter title" />
@@ -173,7 +136,6 @@ const FormComponentFooter: React.FC = () => {
               </div>
             </div>
             <DrawerFooter>
-
               <DrawerClose asChild>
                 <Button type='submit' className="w-full">Add Poi</Button>
               </DrawerClose>
@@ -181,13 +143,11 @@ const FormComponentFooter: React.FC = () => {
                 <Button variant="outline">Cancel</Button>
               </DrawerClose>
             </DrawerFooter>
-            </form>
-          </div>
-      
-        </DrawerContent>
-      
+          </form>
+        </div>
+      </DrawerContent>
     </Drawer>
-  )
+  );
 }
 
-export default FormComponentFooter;
+export default FormComponentSmallScreen;

@@ -108,7 +108,7 @@ const MapComponent: React.FC = () => {
     );
   });
 
-  const colorpalette = ['#AA573C', '#7B3D4F', '#0491E5', '#4862C5', '#3DF6D6'];
+  const colorpalette = ['#AA573C', '#7B3D4F', '#0491E5', '#4862C5', '#3DF6D6', '#d75ac5', '#d7e531', '#f58831'];
 
   const isochrones = useMemo(() => {
     return pois.map((poi) => (
@@ -119,7 +119,7 @@ const MapComponent: React.FC = () => {
           type="fill"
           source={`multipolygon-${poi.id}`}
           paint={{
-            'fill-color': colorpalette[poi.id],
+            'fill-color': poi.color ? poi.color : colorpalette[Math.floor(Math.random() * colorpalette.length)],
             'fill-opacity': 0.3,
           }}
         />

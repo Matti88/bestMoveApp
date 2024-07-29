@@ -70,7 +70,7 @@ function TabsComponent() {
             <div className="hidden sm:block">
               <TableComponent houses={filteredhouses}></TableComponent>
             </div>
-            <div >
+            <div className="sm:hidden">
               {houses.filter((house) => house.displayed).map((listing, index) => (
                 <HouseListing
                   key={index}

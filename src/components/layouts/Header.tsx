@@ -168,48 +168,6 @@ export function Header() {
                     </SheetContent>
                 </Sheet>
 
-                {/* Right Items */}
-                <div className="flex items-center space-x-2">
-                    <a
-                        href={appConfig.github.url}
-                        title={appConfig.github.title}
-                        target="_blank"
-                        rel="noreferrer">
-                        <div
-                            className={cn(
-                                buttonVariants({
-                                    variant: "ghost",
-                                }),
-                                "w-9 px-0"
-                            )}>
-                            <Icons.gitHub className="h-4 w-4" />
-                            <span className="sr-only">GitHub</span>
-                        </div>
-                    </a>
-                    <DropdownMenu>
-                        <DropdownMenuTrigger asChild>
-                            <Button
-                                variant='ghost'
-                                className='relative h-8 w-8 rounded-full'>
-                                <Avatar className='h-8 w-8'>
-                                    <AvatarFallback>SC</AvatarFallback>
-                                </Avatar>
-                            </Button>
-                        </DropdownMenuTrigger>
-                        <DropdownMenuContent className='w-56' align='end' forceMount>
-                            <DropdownMenuLabel className='font-normal'>
-                                <div className='flex flex-col space-y-1'>
-                                    <p className='text-sm font-medium leading-none'>shadcn</p>
-                                    <p className='text-xs leading-none text-muted-foreground'>
-                                        m@example.com
-                                    </p>
-                                </div>
-                            </DropdownMenuLabel>
-                            <DropdownMenuSeparator />
-                            <DropdownMenuItem>Log out</DropdownMenuItem>
-                        </DropdownMenuContent>
-                    </DropdownMenu>
-                </div>
             </div>
         </header>
     );

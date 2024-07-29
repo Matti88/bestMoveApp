@@ -1,57 +1,10 @@
-# Shadcn Sample
+# Sirotti project
 
-Project to try and explore shadcn components.
+## Changes suggested by boss
+1. Change the button for adding the POI as a macro button at the bottom. Always present during navigation ( think about to block it if Max pois are reached). Align the title and description of the Drawer of the poi to the left
+2. make of the poi list a list of chips on the top with transparent background + make the chip colors matching the poi colors. if enter THEN a modal (drawer to be opened)
+3. Filter to be a round button fixed on the top 
+4. hamburger menu to the right. Clickable for
 
-## Getting Started
 
-```
-git clone https://github.com/hayyi2/shadcn-sample.git new-project
-cd new-project
-npm install
-npm run dev
-```
 
-## Getting Done
-
-- [x] layouts
-  - [x] navbar
-  - [x] sidenav
-- [ ] elements
-  - [x] forms
-  - [x] tables
-  - [x] widgets
-  - [ ] components
-- [ ] examples
-  - [x] auth
-  - [x] empty
-  - [ ] dasboard
-
-## Docs
-
-### Forms
-Install command
-```bash
-npm install react-hook-form
-npm install zod
-npm install @hookform/resolvers
-npx shadcn-ui@latest add form
-npx shadcn-ui@latest add input
-```
-
-### Table
-Install command
-```bash
-npm install @tanstack/react-table
-npx shadcn-ui@latest add table
-npx shadcn-ui@latest add select
-```
-
-### Deploy `gh-pages`
-- change `basenameProd` in `/vite.config.ts`
-- create deploy key `GITHUB_TOKEN` in github `/settings/keys`
-- commit and push changes code
-- setup gihub pages to branch `gh-pages`
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](https://github.com/hayyi2/shadcn-sample/blob/main/LICENSE) file for details.
