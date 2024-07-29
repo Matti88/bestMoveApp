@@ -4,15 +4,16 @@ interface ChipWithCheckboxProps {
   id: number;
   text: string;
   isChecked: boolean;
-  color?: string; // make color optional
+  poiColor: string;
   onToggle: (id: number) => void;
 }
 
-const ChipWithCheckbox: React.FC<ChipWithCheckboxProps> = ({ id, text, isChecked, color = '#ff00f2', onToggle }) => {
+const ChipWithCheckbox: React.FC<ChipWithCheckboxProps> = ({ id, text, isChecked, poiColor, onToggle }) => {
+  console.log("color", poiColor); // Log the color prop
   return (
     <label
-      className="relative inline-flex ml-2 items-center select-none whitespace-nowrap rounded-lg py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white"
-      style={{ backgroundColor: color }}
+      className={`relative inline-flex ml-2 items-center select-none whitespace-nowrap rounded-lg py-2 px-3.5 font-sans text-xs font-bold uppercase leading-none text-white ${poiColor === '#00bfff' ? 'bg-customBlue' : ''}`}
+      style={poiColor !== '#00bfff' ? { backgroundColor: poiColor } : {}}
     >
       <input
         type="checkbox"

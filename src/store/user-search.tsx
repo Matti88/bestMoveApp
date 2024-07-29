@@ -30,7 +30,7 @@ export interface PoiSelection {
   id: number;
   text: string;
   isChecked: boolean;
-  poiColor?: string;
+  poiColor: string;
 }
 
 export interface ActiveFilters {
@@ -112,7 +112,7 @@ export const userSearchStore = create<userSearch>()(
           pois: updatedPOIs,
           activeFilters: {
             ...state.activeFilters,
-            selectedPoiIds: [...state.activeFilters.selectedPoiIds, { id: maxId + 1, text: newPOI.title.slice(0, 5), isChecked: false }],
+            selectedPoiIds: [...state.activeFilters.selectedPoiIds, { id: maxId + 1, text: newPOI.title.slice(0, 5), isChecked: false, poiColor: color }],
           },
           currentColorIndex: (state.currentColorIndex + 1) % colors.length,
         };

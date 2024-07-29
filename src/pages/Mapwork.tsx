@@ -14,6 +14,7 @@ export default function Mapwork() {
       <div className="relative w-full h-full">
         <div className="absolute inset-0 z-0">
           <MapComponent />
+          <POIList />
         </div>
 
         <div className="absolute top-10 left-10 z-10 p-2 rounded max-w-md h-[80vh] w-[20vw] overflow-y-auto scaled-container hidden md:block">
