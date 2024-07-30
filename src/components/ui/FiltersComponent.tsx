@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/shadcn/input";
 import { Button } from "@/components/ui/shadcn/button";
 
 import { triggerNewSearch } from '@/api/api';
-import { checkPropertiesAndSelection } from '@/utils/utils';
+import { PoiManager } from '@/components/ui/PoiManager'
 
 const FiltersComponent: React.FC = () => {
   const activeFilters = userSearchStore((state) => state.activeFilters);
@@ -37,6 +37,7 @@ const FiltersComponent: React.FC = () => {
         <CardTitle>Search Filters</CardTitle>
         <CardDescription></CardDescription>
       </CardHeader>
+      
       <form onSubmit={handleNewSearch}>
         <CardContent className="space-y-4">
           {/* First Row */}
@@ -44,6 +45,7 @@ const FiltersComponent: React.FC = () => {
             {list_selectionPoi.length > 0 && (
               <>
                 <Label className="block mb-2 w-full">POIs</Label>
+                
                 <div className="flex flex-wrap mb-4">
                   {list_selectionPoi.map((chip) => (
                     <ChipArray
@@ -56,6 +58,7 @@ const FiltersComponent: React.FC = () => {
                     />
                   ))}
                 </div>
+                <PoiManager />
               </>
             )}
           </div>

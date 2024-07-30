@@ -88,7 +88,7 @@ const FormComponentSmallScreen: React.FC = () => {
   return (
     <Drawer>
       <DrawerTrigger asChild>
-        <Button className="w-full h-12 text-md" variant="secondary">Add a Point of Interest</Button>
+        <Button className="w-full h-12 text-md" variant="default">Add a Point of Interest</Button>
       </DrawerTrigger>
 
       <DrawerContent>

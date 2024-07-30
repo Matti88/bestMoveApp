@@ -27,7 +27,7 @@ export default function Mapwork() {
           <FiltersComponentSmallScreen />
         </div>
 
-        <div className="absolute bottom-11 z-10 w-full flex justify-center">
+        <div className="absolute bottom-7 z-10 w-full flex justify-center">
           <div className="w-[90%] md:hidden">
             <FormComponentSmallScreen />
           </div>

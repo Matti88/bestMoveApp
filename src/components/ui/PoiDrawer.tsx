@@ -24,10 +24,10 @@ export function PoiDrawer() {
   return (
     <Drawer fullHeight={true}>
       <DrawerTrigger asChild>
-        <div className="flex flex-wrap">
+        <div className="flex flex-wrap rounded-md" style={{ backgroundColor: 'rgba(255, 255, 255, 0.85)' }} >
             {list_selectionPoi.length > 0 && (
               <>
-                <div className="flex flex-wrap mb-4">
+                <div className="flex flex-wrap m-2">
                   {list_selectionPoi.map((chip) => (
                     <ChipArray
                       key={chip.id}
@@ -42,7 +42,7 @@ export function PoiDrawer() {
           </div>
       </DrawerTrigger>
       <DrawerContent>
-        <div className="mx-auto w-full max-w-sm p-4 h-screen flex flex-col">
+        <div className="mx-auto w-full max-w-sm p-4 max-h-[90vh] flex flex-col">
           <DrawerHeader>
             <DrawerTitle>Point of Interest</DrawerTitle>
             <DrawerDescription>List of POIs, change or delete them</DrawerDescription>
