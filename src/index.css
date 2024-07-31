@@ -75,3 +75,20 @@
   }
 }
 
+.popup-content {
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+}
+
+.popup-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.popup-details {
+  margin-top: 10px;
+}

@@ -13,25 +13,35 @@ interface PinInfoProps {
 }
 
 const PinInfo: React.FC<PinInfoProps> = ({ thumbnail_image, title, price_num, sqm_num, linktoInsertion, onClose }) => {
-  return (
-    <Card className="w-full max-w-md relative">
-      <Button className="absolute top-2 right-2" variant="ghost" size="icon" onClick={onClose}>
-        <X />
-      </Button>
-      <CardHeader>
-        <CardTitle>{title}</CardTitle>
-      </CardHeader>
 
+  const cardTitle = title.substring(0, 30);
+
+  return (
+    <Card className="max-h-60 max-w-60 absolute bottom-7 right-10 z-10">
+      <CardHeader>
+        <CardTitle className='text-sm'>{cardTitle}</CardTitle>
+      </CardHeader>
       <a href={linktoInsertion}>
         <CardContent className="p-4 pt-0">
-        <img className="mb-4 rounded" width={240} src={thumbnail_image} alt={`${title} Image`} />
-        <div className="text-lg font-semibold mb-2">Price: {price_num}</div>
-        <div className="text-lg font-semibold">&#x33A1;: {sqm_num}</div>
+          <div className='grid grid-cols-2 gap-4 '>
+            <div className='max-w-[100px] max-h-[100px]  '>
+              <img className="mb-4 rounded" src={thumbnail_image} alt={`${title} Image`} />
+            </div>
+            <div>
+              <div className="text-sm font-semibold mb-2">Price: {price_num}</div>
+              <div className="text-sm font-semibold">&#x33A1;: {sqm_num}</div>
+            </div>
+          </div>
         </CardContent>
       </a>
+      <CardFooter className='p-2 pt-0'>
+        <Button className='h-8 w-full' onClick={onClose}>Close</Button>
+      </CardFooter>
     </Card>
   );
 };
+
+
 
 export default PinInfo;
 

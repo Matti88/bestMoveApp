@@ -152,12 +152,6 @@ const MapComponent: React.FC = () => {
       {isochronesPins}
 
       {selectedMarker && (
-        <Popup
-          longitude={selectedMarker.lon}
-          latitude={selectedMarker.lat}
-          closeOnClick={false}
-          onClose={() => setSelectedMarker(null)}
-        >
           <PinInfo
             thumbnail_image={selectedMarker.image}
             title={selectedMarker.title}
@@ -166,7 +160,6 @@ const MapComponent: React.FC = () => {
             linktoInsertion={selectedMarker.link}
             onClose={() => setSelectedMarker(null)}
           />
-        </Popup>
       )}
     </MapGL>
   );
