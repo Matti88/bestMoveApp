@@ -84,8 +84,8 @@ export interface userSearch {
 }
 
                 
-const colors = ['#00ff0c','#8cff00','#00ff8c' ,'#ffd800', '#00ffa5', '#ff3f00', '#00bfff', '#0026ff', '#ff0059', '#7200ff', '#ff00f2', '#ff0059']
-
+//const colors = ['#00ff0c','#8cff00','#00ff8c' ,'#ffd800', '#00ffa5', '#ff3f00', '#00bfff', '#0026ff', '#ff0059', '#7200ff', '#ff00f2', '#ff0059']
+const colors = ['#324499', '#6e3299', '#993276', '#993b32', '#998832', '#5d9932', '#329955', '#329099']
 
 export const userSearchStore = create<userSearch>()(
 

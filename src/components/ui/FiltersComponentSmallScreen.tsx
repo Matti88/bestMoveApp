@@ -82,7 +82,9 @@ const FiltersComponentSmallScreen: React.FC = () => {
           </div>
         </CardContent>
         <CardFooter>
-          <Button type='submit' className="w-full">Search</Button>
+          <DrawerClose asChild>
+            <Button type='submit' className="w-full">Search</Button>
+          </DrawerClose>
         </CardFooter>
       </form>
       </div>

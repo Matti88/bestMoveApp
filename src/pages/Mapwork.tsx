@@ -23,18 +23,21 @@ export default function Mapwork() {
           <FiltersComponent />
           <br />
         </div>
-        <div className="absolute top-5 right-5 z-10 md:hidden">
-          <FiltersComponentSmallScreen />
+        <div className="absolute top-3 left-5 z-10 p-2 w-[94vw] md:hidden">
+          <div className='flex flex-col '>
+            <div>
+              <PoiDrawer />
+            </div>
+            <div className='flex justify-end mt-3'>
+              <FiltersComponentSmallScreen/>
+            </div>
+            
+          </div>
         </div>
-
         <div className="absolute bottom-7 z-10 w-full flex justify-center">
           <div className="w-[90%] md:hidden">
             <FormComponentSmallScreen />
           </div>
-        </div>
-
-        <div className="absolute top-3 left-5 z-10 p-2 w-[60vw] md:hidden">
-          <PoiDrawer />
         </div>
       </div>
     </>

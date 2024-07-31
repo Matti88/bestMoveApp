@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaCheck, FaTimes } from 'react-icons/fa'; // Import Font Awesome icons
+import { Checkbox } from "@/components/ui/shadcn/checkbox";
 
 interface ChipWithCheckboxProps {
   id: number;
@@ -20,7 +20,7 @@ const ChipWithCheckbox: React.FC<ChipWithCheckboxProps> = ({ id, text, isChecked
   if (isChecked === undefined && onToggle === undefined) {
     return (
       <span
-        className={`inline-flex m-1 items-center select-none whitespace-nowrap rounded-lg py-2 px-3.5 font-sans text-xs font-bold uppercase leading-none text-white ${poiColor === '#00bfff' ? 'bg-customBlue' : ''}`}
+        className={`inline-flex m-1 items-center select-none whitespace-nowrap rounded-full py-2 px-3.5 font-sans text-xs font-bold uppercase leading-none text-white ${poiColor === '#00bfff' ? 'bg-customBlue' : ''}`}
         style={poiColor !== '#00bfff' ? { backgroundColor: poiColor } : {}}
       >
         {text}
@@ -30,7 +30,7 @@ const ChipWithCheckbox: React.FC<ChipWithCheckboxProps> = ({ id, text, isChecked
 
   return (
     <label
-      className={`relative inline-flex m-1 items-center select-none whitespace-nowrap rounded-lg py-2 px-3.5 font-sans text-xs font-bold uppercase leading-none text-white ${poiColor === '#00bfff' ? 'bg-customBlue' : ''}`}
+      className={`relative inline-flex m-1 items-center select-none whitespace-nowrap rounded-full py-2 px-3.5 font-sans text-xs font-bold uppercase leading-none text-white cursor-pointer ${poiColor === '#00bfff' ? 'bg-customBlue' : ''}`}
       style={poiColor !== '#00bfff' ? { backgroundColor: poiColor } : {}}
     >
       <input
@@ -40,11 +40,7 @@ const ChipWithCheckbox: React.FC<ChipWithCheckboxProps> = ({ id, text, isChecked
         onChange={handleChange}
       />
       <span className="mr-2">{text}</span>
-      {isChecked ? (
-        <FaCheck className="text-white mr-2" /> // Check icon for selected filters
-      ) : (
-        <FaTimes className="text-white mr-2" /> // Times icon for filters that can be removed
-      )}
+      <Checkbox onCheckedChange={() => handleChange()} checked={isChecked} id={`checkbox-${id}`} />
     </label>
   );
 };
