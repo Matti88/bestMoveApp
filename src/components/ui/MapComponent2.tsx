@@ -1,12 +1,14 @@
 import { useState, useMemo } from 'react';
 import MapGL, { Marker, ScaleControl, Source, Layer, Popup, ViewState } from 'react-map-gl';
 import supercluster from 'supercluster';
-import Pin from '@/components/ui/Pin';
 import PinInfo from '@/components/ui/PinInfo';
 import houselistingStore, { HouseListing } from '@/store/houselistingStore';
 import { userSearchStore } from '@/store/user-search';
 import Supercluster from 'supercluster';
 import { BBox, Point } from 'geojson';
+import { FaHouse } from "react-icons/fa6";
+import { IoIosPin } from "react-icons/io";
+import { FaMapPin } from "react-icons/fa";
 
 const MapComponent: React.FC = () => {
   const [viewport, setViewport] = useState<ViewState>({
@@ -103,7 +105,8 @@ const MapComponent: React.FC = () => {
         anchor="bottom"
         onClick={() => setSelectedMarker(house || null)}
       >
-        <Pin size={40} />
+        {/* <Pin size={40} /> */}
+        <FaHouse size={33} color={'#151633'}/>
       </Marker>
     );
   });
@@ -130,7 +133,7 @@ const MapComponent: React.FC = () => {
   const isochronesPins = useMemo(() => {
     return pois.map((poi) => (
       <Marker key={`poi-marker-${poi.id}`} longitude={poi.lon} latitude={poi.lat} anchor="bottom">
-        <Pin size={70} color="#008080" />
+        <FaMapPin size={70} color="#008080" />
       </Marker>
     ));
   }, [pois]);
