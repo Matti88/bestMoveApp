@@ -1,5 +1,5 @@
 import * as React from "react"
-import POIList from '@/components/ui/POIList';
+import POICard from '@/components/ui/POICard';
 import { userSearchStore } from '@/store/user-search';
 import { Label } from "@/components/ui/shadcn/label";
 import ChipArray from '@/components/ui/ChipArray';
@@ -15,7 +15,7 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/shadcn/drawer"
-import POICard from '@/components/ui/POICard';
+
 
 
 export function PoiManager() {
@@ -25,7 +25,7 @@ export function PoiManager() {
   return (
     <Drawer fullHeight={true}>
       <DrawerTrigger asChild>
-        <Button className="w-full h-5 m-1" variant="ghost">Manage Pois</Button>
+        <Button className="w-full h-5 m-1 border-2 p-1 flex items-center justify-center"  variant="ghost">Manage Pois</Button>
       </DrawerTrigger>
       <DrawerContent>
         <div className="mx-auto w-full max-w-[90vw] p-4 max-h-[90vh] flex flex-col">
@@ -45,6 +45,7 @@ export function PoiManager() {
                     title={poi.title}
                     customId={poi.id}
                     dangerZone={poi.dangerZone}
+                    color={poi.color}
                     onDelete={() => deletePOI(poi.id)}
                     onToggleDangerZone={() => toggleDangerZone(poi.id)}
                   />

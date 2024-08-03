@@ -1,7 +1,6 @@
 import * as React from "react"
 import POIList from '@/components/ui/POIList';
 import { userSearchStore } from '@/store/user-search';
-import { Label } from "@/components/ui/shadcn/label";
 import ChipArray from '@/components/ui/ChipArray';
 import { Button } from "@/components/ui/shadcn/button";
 

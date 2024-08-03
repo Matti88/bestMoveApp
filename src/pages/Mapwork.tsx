@@ -1,7 +1,6 @@
 import MapComponent from '@/components/ui/MapComponent2';
 import FiltersComponent from '@/components/ui/FiltersComponent';
 import FormComponent from "@/components/ui/FormComponent";
-import POIList from "@/components/ui/POIList";
 import FiltersComponentSmallScreen from '@/components/ui/FiltersComponentSmallScreen';
 import FormComponentSmallScreen from '@/components/ui/FormComponentSmallScreen';
 // import ChipList from '@/components/ui/ChipsList';
