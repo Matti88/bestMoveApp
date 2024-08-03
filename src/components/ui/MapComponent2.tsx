@@ -155,6 +155,7 @@ const MapComponent: React.FC = () => {
       {isochronesPins}
 
       {selectedMarker && (
+        
           <PinInfo
             thumbnail_image={selectedMarker.image}
             title={selectedMarker.title}
@@ -163,6 +164,7 @@ const MapComponent: React.FC = () => {
             linktoInsertion={selectedMarker.link}
             onClose={() => setSelectedMarker(null)}
           />
+        
       )}
     </MapGL>
   );

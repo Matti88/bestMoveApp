@@ -19,7 +19,7 @@ export default function Mapwork() {
           <FormComponent />
         </div>
 
-        <div className="absolute top-10 right-10 z-10 p-2 rounded max-w-md h-[80vh] w-[20vw] overflow-y-auto scaled-container hidden md:block">
+        <div className="absolute top-10 right-10 z-10 p-2 rounded max-w-md h-[55vh] w-[20vw] overflow-y-auto scaled-container hidden md:block">
           <FiltersComponent />
           <br />
         </div>
