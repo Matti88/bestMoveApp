@@ -3,8 +3,11 @@ import POICard from '@/components/ui/POICard';
 import { userSearchStore } from '@/store/user-search';
 
 const POIList: React.FC = () => {
-  const { pois, deletePOI, toggleDangerZone } = userSearchStore();
+  const { deletePOI, toggleDangerZone } = userSearchStore();
+  const pois = userSearchStore((state) => state.pois);
 
+  console.log(pois);
+   
   return (
     <div className="overflow-y-auto h-full">
       {pois.length > 0 ? (
@@ -18,6 +21,7 @@ const POIList: React.FC = () => {
               title={poi.title}
               customId={poi.id}
               dangerZone={poi.dangerZone}
+              color={poi.color}
               onDelete={() => deletePOI(poi.id)}
               onToggleDangerZone={() => toggleDangerZone(poi.id)}
             />
