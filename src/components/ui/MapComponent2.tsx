@@ -4,21 +4,22 @@ import supercluster from 'supercluster';
 import PinInfo from '@/components/ui/PinInfo';
 import houselistingStore, { HouseListing } from '@/store/houselistingStore';
 import { userSearchStore } from '@/store/user-search';
+import mapStore  from '@/store/mapPositioning';
 import Supercluster from 'supercluster';
 import { BBox, Point } from 'geojson';
 import { FaHouse } from "react-icons/fa6";
-import { IoIosPin } from "react-icons/io";
 import { FaMapPin } from "react-icons/fa";
 
 const MapComponent: React.FC = () => {
-  const [viewport, setViewport] = useState<ViewState>({
-    latitude: 48.2121268,
-    longitude: 16.3671307,
-    zoom: 10,
-    bearing: 0,
-    pitch: 0,
-    padding: { top: 0, bottom: 0, left: 0, right: 0 },
-  });
+
+  const { viewport, setLatitude, setLongitude, setZoom } = mapStore();
+
+  const handleViewportChange = (newViewport: ViewState) => {
+    setLatitude(newViewport.latitude);
+    setLongitude(newViewport.longitude);
+    setZoom(newViewport.zoom);
+  };
+
 
   const [selectedMarker, setSelectedMarker] = useState<HouseListing | null>(null);
   const houses = houselistingStore((state) => state.houseListings);
@@ -81,7 +82,7 @@ const MapComponent: React.FC = () => {
                 ),
                 16
               );
-              setViewport({
+              handleViewportChange({
                 ...viewport,
                 latitude,
                 longitude,
@@ -111,7 +112,7 @@ const MapComponent: React.FC = () => {
     );
   });
 
-  const colorpalette = ['#AA573C', '#7B3D4F', '#0491E5', '#4862C5', '#3DF6D6', '#d75ac5', '#d7e531', '#f58831'];
+  const colorpalette = ['#324499', '#ff6f00',  '#329955', '#f2d600' , '#993276','#769932']
 
   const isochrones = useMemo(() => {
     return pois.map((poi) => (
@@ -144,7 +145,7 @@ const MapComponent: React.FC = () => {
   return (
     <MapGL
       {...viewport}
-      onMove={(evt) => setViewport(evt.viewState)}
+      onMove={(evt) => handleViewportChange(evt.viewState)}
       style={{ width: '100%', height: '100%' }}
       mapStyle="mapbox://styles/mapbox/streets-v9"
       mapboxAccessToken={TOKEN}

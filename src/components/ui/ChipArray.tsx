@@ -40,7 +40,7 @@ const ChipWithCheckbox: React.FC<ChipWithCheckboxProps> = ({ id, text, isChecked
         onChange={handleChange}
       />
       <span className="mr-2">{text}</span>
-      <Checkbox onCheckedChange={() => handleChange()} checked={isChecked} id={`checkbox-${id}`} />
+      <Checkbox className='border-0' onCheckedChange={() => handleChange()} checked={isChecked} id={`checkbox-${id}`} />
     </label>
   );
 };
