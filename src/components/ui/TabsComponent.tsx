@@ -20,7 +20,7 @@ function TabsComponent() {
 
   return (
     <div>
-      <Button className="h-8 w-full gap-1 mb-2 sm:hidden"  variant="outline" onClick={() => exportToSpreadsheet(houses.filter((house) => house.displayed), "Search_Export")}>
+      <Button className="h-8 w-full gap-1 mb-2 sm:hidden" variant="outline" onClick={() => exportToSpreadsheet(houses.filter((house) => house.displayed), "Search_Export")}>
         <ArrowUpIcon className="h-3.5 w-3.5" />
         <span >Export results of filtered houses</span>
       </Button>
@@ -29,23 +29,24 @@ function TabsComponent() {
           <div className="grid grid-cols-2 gap-4">
             <div className="justify-self-start">
               <TabsList>
-                <TabsTrigger value="all">All houses</TabsTrigger>
                 <TabsTrigger value="filtered">Filtered Houses</TabsTrigger>
+                <TabsTrigger value="all">All houses</TabsTrigger>
+
               </TabsList>
             </div>
             <div className="flex items-center gap-20">
               <div className="ml-auto flex items-center gap-20">
                 <Button className="h-8 gap-1 hidden sm:block" size="sm" variant="outline" onClick={() => exportToSpreadsheet(houses.filter((house) => house.displayed), "Search_Export")}>
-                <div className="flex flex-row">
-                  <ArrowUpIcon className="h-3.5 w-3.5 mr-3" />
-                  <span className="sr-only sm:not-sr-only sm:whitespace-nowrap">Export results of filtered houses</span>
-                </div>
+                  <div className="flex flex-row">
+                    <ArrowUpIcon className="h-3.5 w-3.5 mr-3" />
+                    <span className="sr-only sm:not-sr-only sm:whitespace-nowrap">Export results of filtered houses</span>
+                  </div>
                 </Button>
                 <Button className="h-8 gap-1 hidden sm:block" size="sm" variant="outline" onClick={() => updateHouseListings([])}>
-                <div className="flex flex-row">
-                  <GrPowerReset className="h-3.5 w-3.5 mr-3" />
-                  <span className="sr-only sm:not-sr-only sm:whitespace-nowrap">Reset Houses</span>
-                </div>
+                  <div className="flex flex-row">
+                    <GrPowerReset className="h-3.5 w-3.5 mr-3" />
+                    <span className="sr-only sm:not-sr-only sm:whitespace-nowrap">Reset Houses</span>
+                  </div>
                 </Button>
                 <Button className="h-8 gap-1 sm:hidden" size="sm" variant="outline" onClick={() => updateHouseListings([])}>
                   <GrPowerReset className="h-3.5 w-3.5" />
@@ -57,7 +58,7 @@ function TabsComponent() {
             <div className="hidden sm:block">
               <TableComponent houses={houses}></TableComponent>
             </div>
-            <div  className="sm:hidden">
+            <div className="sm:hidden">
               {houses.map((listing, index) => (
                 <HouseListing
                   key={index}
