@@ -4,14 +4,14 @@ import supercluster from 'supercluster';
 import PinInfo from '@/components/ui/PinInfo';
 import houselistingStore, { HouseListing } from '@/store/houselistingStore';
 import { userSearchStore } from '@/store/user-search';
-import mapStore  from '@/store/mapPositioning';
+import mapStore from '@/store/mapPositioning';
 import Supercluster from 'supercluster';
 import { BBox, Point } from 'geojson';
 import { FaHouse } from "react-icons/fa6";
 import { FaMapPin } from "react-icons/fa";
+import PinInfoSmallScreen from "@/components/ui/PinInfoSmallScreen"; 
 
 const MapComponent: React.FC = () => {
-
   const { viewport, setLatitude, setLongitude, setZoom } = mapStore();
 
   const handleViewportChange = (newViewport: ViewState) => {
@@ -20,13 +20,13 @@ const MapComponent: React.FC = () => {
     setZoom(newViewport.zoom);
   };
 
-
   const [selectedMarker, setSelectedMarker] = useState<HouseListing | null>(null);
   const houses = houselistingStore((state) => state.houseListings);
   const pois = userSearchStore((state) => state.pois);
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   const superclusterIndex = useMemo(() => {
-    const index = new supercluster({radius: 40, maxZoom: 16});
+    const index = new supercluster({ radius: 40, maxZoom: 16 });
 
     const points: Array<Supercluster.PointFeature<Point>> = houses
       .filter((house) => house.displayed)
@@ -45,14 +45,13 @@ const MapComponent: React.FC = () => {
 
   const clusters = useMemo(() => {
     const bounds: BBox = [
-      viewport.longitude - 360 / Math.pow(2, viewport.zoom ),
+      viewport.longitude - 360 / Math.pow(2, viewport.zoom),
       viewport.latitude - 180 / Math.pow(2, viewport.zoom),
-      viewport.longitude + 360 / Math.pow(2, viewport.zoom ),
+      viewport.longitude + 360 / Math.pow(2, viewport.zoom),
       viewport.latitude + 180 / Math.pow(2, viewport.zoom),
     ];
 
     return superclusterIndex.getClusters(bounds, Math.floor(viewport.zoom));
-
   }, [superclusterIndex, viewport]);
 
   const houseMarkers = clusters.map((cluster) => {
@@ -97,22 +96,24 @@ const MapComponent: React.FC = () => {
     }
 
     const house = houses.find((h) => h.id === cluster.properties.houseId);
-    
+
     return (
       <Marker
         key={`house-marker-${house?.id}`}
         longitude={longitude}
         latitude={latitude}
         anchor="bottom"
-        onClick={() => setSelectedMarker(house || null)}
+        onClick={() => {
+          setSelectedMarker(house || null);
+          setIsDrawerOpen(true);
+        }}
       >
-        {/* <Pin size={40} /> */}
-        <FaHouse size={33} color={'#151633'}/>
+        <FaHouse size={33} color={'#151633'} />
       </Marker>
     );
   });
 
-  const colorpalette = ['#324499', '#ff6f00',  '#329955', '#f2d600' , '#993276','#769932']
+  const colorpalette = ['#324499', '#ff6f00', '#329955', '#f2d600', '#993276', '#769932'];
 
   const isochrones = useMemo(() => {
     return pois.map((poi) => (
@@ -139,7 +140,6 @@ const MapComponent: React.FC = () => {
     ));
   }, [pois]);
 
-  // token
   const TOKEN = import.meta.env.VITE_MAPBOX_API_KEY;
 
   return (
@@ -156,16 +156,22 @@ const MapComponent: React.FC = () => {
       {isochronesPins}
 
       {selectedMarker && (
-        
-          <PinInfo
-            thumbnail_image={selectedMarker.image}
-            title={selectedMarker.title}
-            price_num={selectedMarker.price}
-            sqm_num={selectedMarker.sqm}
-            linktoInsertion={selectedMarker.link}
-            onClose={() => setSelectedMarker(null)}
-          />
-        
+        <>
+          <div>
+            <PinInfoSmallScreen
+              thumbnail_image={selectedMarker.image}
+              title={selectedMarker.title}
+              price_num={selectedMarker.price}
+              sqm_num={selectedMarker.sqm}
+              linktoInsertion={selectedMarker.link}
+              isOpen={isDrawerOpen}
+              onClose={() => {
+                setSelectedMarker(null);
+                setIsDrawerOpen(false);
+              }}
+            />
+          </div>
+        </>
       )}
     </MapGL>
   );
