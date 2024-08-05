@@ -25,7 +25,7 @@ function TabsComponent() {
         <span >Export results of filtered houses</span>
       </Button>
       <div className="w-full">
-        <Tabs defaultValue="all">
+        <Tabs defaultValue="filtered">
           <div className="grid grid-cols-2 gap-4">
             <div className="justify-self-start">
               <TabsList>

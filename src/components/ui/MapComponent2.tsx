@@ -135,7 +135,7 @@ const MapComponent: React.FC = () => {
   const isochronesPins = useMemo(() => {
     return pois.map((poi) => (
       <Marker key={`poi-marker-${poi.id}`} longitude={poi.lon} latitude={poi.lat} anchor="bottom">
-        <FaMapPin size={70} color="#008080" />
+        <FaMapPin size={70} color={poi.color} />
       </Marker>
     ));
   }, [pois]);
