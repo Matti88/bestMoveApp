@@ -44,7 +44,10 @@ const FiltersComponentSmallScreen: React.FC = () => {
   return (
     <Drawer>
       <DrawerTrigger asChild>
-        <Button className="pr-7 pl-7 pt-3 pb-3" variant="secondary"><MixerHorizontalIcon/></Button>
+        {/* <Button className="pr-7 pl-7 pt-3 pb-3" variant="secondary"><MixerHorizontalIcon/></Button> */}
+        <Button className="p-3 bg-white rounded-full shadow-md" variant="secondary">
+      <MixerHorizontalIcon className="w-6 h-6 text-black" />
+    </Button>
       </DrawerTrigger>
     <DrawerContent>
       <div className="mx-auto w-full max-w-sm p-4">
