@@ -34,12 +34,12 @@ export default function Mapwork() {
           </>
         )}
 
-        <div className="absolute top-3 left-5 z-10 p-2 w-[94vw] md:hidden">
+        <div className="absolute top-3  z-10 p-2 w-[100vw]  md:hidden">
           <div className="flex flex-col">
-            <div>
+            <div className=''>
               <PoiDrawer />
             </div>
-            <div className="flex justify-end mt-3">
+            <div className="flex rounded-full justify-end mt-3">
               <FiltersComponentSmallScreen />
             </div>
           </div>
