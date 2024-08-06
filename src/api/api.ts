@@ -33,7 +33,8 @@ export const handleFormSubmit = async (
     isochrone: isochrone,
     title: formData.title,
     minmaxSquare: squaredCoordinates,
-    color: '' // This will be set in the store
+    color: '', // This will be set in the store
+    colorSwap: '', // This will be set in the store
   };
 
   if (!isDuplicatePOI(newPoiObject)) {
