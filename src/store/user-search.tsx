@@ -31,6 +31,7 @@ export interface PoiSelection {
   text: string;
   isChecked: boolean;
   poiColor: string;
+  poiSwapColor: string;
 }
 
 export interface ActiveFilters {
@@ -112,7 +113,7 @@ export const userSearchStore = create<userSearch>()(
           pois: updatedPOIs,
           activeFilters: {
             ...state.activeFilters,
-            selectedPoiIds: [...state.activeFilters.selectedPoiIds, { id: maxId + 1, text: newPOI.title.slice(0, 5), isChecked: false, poiColor: color }],
+            selectedPoiIds: [...state.activeFilters.selectedPoiIds, { id: maxId + 1, text: newPOI.title.slice(0, 5), isChecked: false, poiColor: color, poiSwapColor: '#171716'}],
           },
           currentColorIndex: (state.currentColorIndex + 1) % colors.length,
         };
@@ -173,8 +174,16 @@ export const userSearchStore = create<userSearch>()(
           poi.id === poiId ? { ...poi, dangerZone: !poi.dangerZone, color: poi.colorSwap, colorSwap: poi.color } : poi
         );
 
+        const updatedSelectedPoiIds = state.activeFilters.selectedPoiIds.map((poi) =>
+          poi.id === poiId ? { ...poi, poiColor: poi.poiSwapColor, poiSwapColor: poi.poiColor } : poi
+        );
+
         return {
-          pois: updatedPoiCharacteristics
+          pois: updatedPoiCharacteristics,
+          activeFilters: {
+            ...state.activeFilters,
+            selectedPoiIds: updatedSelectedPoiIds,
+          },
         };
       }),
 
