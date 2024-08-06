@@ -31,6 +31,7 @@ export interface PoiSelection {
   text: string;
   isChecked: boolean;
   poiColor: string;
+  poiSwapColor: string;
 }
 
 export interface ActiveFilters {
@@ -64,6 +65,7 @@ export interface POI {
   minmaxSquare: cooSquares;
   dangerZone?: boolean;
   color: string;
+  colorSwap: string;
 }
 
 export interface userSearch {
@@ -105,13 +107,13 @@ export const userSearchStore = create<userSearch>()(
       addPOI: (newPOI) => set((state) => {
         const maxId = Math.max(...state.pois.map((poi) => poi.id), 0);
         const color = colors[state.currentColorIndex];
-        const updatedPOIs = [...state.pois, { ...newPOI, id: maxId + 1, dangerZone: false, color }];
+        const updatedPOIs = [...state.pois, { ...newPOI, id: maxId + 1, dangerZone: false, color, colorSwap: '#171716' }];
 
         return {
           pois: updatedPOIs,
           activeFilters: {
             ...state.activeFilters,
-            selectedPoiIds: [...state.activeFilters.selectedPoiIds, { id: maxId + 1, text: newPOI.title.slice(0, 5), isChecked: false, poiColor: color }],
+            selectedPoiIds: [...state.activeFilters.selectedPoiIds, { id: maxId + 1, text: newPOI.title.slice(0, 5), isChecked: false, poiColor: color, poiSwapColor: '#171716'}],
           },
           currentColorIndex: (state.currentColorIndex + 1) % colors.length,
         };
@@ -169,11 +171,19 @@ export const userSearchStore = create<userSearch>()(
 
       toggleDangerZone: (poiId: number) => set((state) => {
         const updatedPoiCharacteristics = state.pois.map((poi) =>
-          poi.id === poiId ? { ...poi, dangerZone: !poi.dangerZone } : poi
+          poi.id === poiId ? { ...poi, dangerZone: !poi.dangerZone, color: poi.colorSwap, colorSwap: poi.color } : poi
+        );
+
+        const updatedSelectedPoiIds = state.activeFilters.selectedPoiIds.map((poi) =>
+          poi.id === poiId ? { ...poi, poiColor: poi.poiSwapColor, poiSwapColor: poi.poiColor } : poi
         );
 
         return {
-          pois: updatedPoiCharacteristics
+          pois: updatedPoiCharacteristics,
+          activeFilters: {
+            ...state.activeFilters,
+            selectedPoiIds: updatedSelectedPoiIds,
+          },
         };
       }),
 

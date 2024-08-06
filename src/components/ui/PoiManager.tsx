@@ -1,8 +1,5 @@
-import * as React from "react"
 import POICard from '@/components/ui/POICard';
 import { userSearchStore } from '@/store/user-search';
-import { Label } from "@/components/ui/shadcn/label";
-import ChipArray from '@/components/ui/ChipArray';
 import { Button } from "@/components/ui/shadcn/button";
 
 import {
