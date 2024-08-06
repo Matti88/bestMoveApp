@@ -64,6 +64,7 @@ export interface POI {
   minmaxSquare: cooSquares;
   dangerZone?: boolean;
   color: string;
+  colorSwap: string;
 }
 
 export interface userSearch {
@@ -105,7 +106,7 @@ export const userSearchStore = create<userSearch>()(
       addPOI: (newPOI) => set((state) => {
         const maxId = Math.max(...state.pois.map((poi) => poi.id), 0);
         const color = colors[state.currentColorIndex];
-        const updatedPOIs = [...state.pois, { ...newPOI, id: maxId + 1, dangerZone: false, color }];
+        const updatedPOIs = [...state.pois, { ...newPOI, id: maxId + 1, dangerZone: false, color, colorSwap: '#171716' }];
 
         return {
           pois: updatedPOIs,
@@ -169,7 +170,7 @@ export const userSearchStore = create<userSearch>()(
 
       toggleDangerZone: (poiId: number) => set((state) => {
         const updatedPoiCharacteristics = state.pois.map((poi) =>
-          poi.id === poiId ? { ...poi, dangerZone: !poi.dangerZone } : poi
+          poi.id === poiId ? { ...poi, dangerZone: !poi.dangerZone, color: poi.colorSwap, colorSwap: poi.color } : poi
         );
 
         return {
