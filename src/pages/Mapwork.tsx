@@ -4,11 +4,15 @@ import FiltersComponent from '@/components/ui/FiltersComponent';
 import FormComponent from "@/components/ui/FormComponent";
 import FiltersComponentSmallScreen from '@/components/ui/FiltersComponentSmallScreen';
 import FormComponentSmallScreen from '@/components/ui/FormComponentSmallScreen';
+import CardStats from '@/components/ui/CardStats';
 import { MdFullscreen, MdFullscreenExit } from "react-icons/md";
 import { PoiDrawer } from '@/components/ui/PoiDrawer';
 
+
+
 export default function Mapwork() {
   const [isVisible, setIsVisible] = useState(true);
+
 
   const toggleVisibility = () => {
     setIsVisible(!isVisible);
@@ -27,9 +31,10 @@ export default function Mapwork() {
               <FormComponent />
             </div>
 
-            <div className="absolute top-10 right-10 z-10 p-2 rounded max-w-md h-[55vh] w-[20vw] overflow-y-auto scaled-container hidden md:block">
+            <div className="absolute top-10 right-10 z-10 p-2 rounded max-w-md h-[55vh] w-[20vw]  scaled-container hidden md:block">
               <FiltersComponent />
               <br />
+              <CardStats title="Search Stats" count={100} median={50} max={100} min={10} />
             </div>
           </>
         )}

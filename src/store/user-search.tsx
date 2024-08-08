@@ -40,6 +40,17 @@ export interface ActiveFilters {
   maxSqm: number | null;
   minSqm: number | null;
   selectedPoiIds: PoiSelection[];
+  searchStats: { 
+    count: number;
+    averagePrice: number;
+    averageSqm: number;
+    medianPrice: number;
+    medianSqm: number;
+    maxPrice: number;
+    minPrice: number;
+    maxSqm: number;
+    minSqm: number;
+}
 }
 
 export interface cooSquares {
@@ -98,7 +109,18 @@ export const userSearchStore = create<userSearch>()(
         minPrice: null,
         maxSqm: null,
         minSqm: null,
-        selectedPoiIds: [],
+        selectedPoiIds: [], 
+        searchStats: {  
+          count: 0,
+          averagePrice: 0,
+          averageSqm: 0,
+          medianPrice: 0,
+          medianSqm: 0,
+          maxPrice: 0,
+          minPrice: 0,
+          maxSqm: 0,
+          minSqm: 0
+        }
       },
       currentColorIndex: 0,
       houseListings: [],
@@ -140,6 +162,17 @@ export const userSearchStore = create<userSearch>()(
             maxSqm: null,
             minSqm: null,
             selectedPoiIds: [],
+            searchStats: {  
+              count: 0,
+              averagePrice: 0,
+              averageSqm: 0,
+              medianPrice: 0,
+              medianSqm: 0,
+              maxPrice: 0,
+              minPrice: 0,
+              maxSqm: 0,
+              minSqm: 0
+            }
           },
         });
       },
@@ -152,6 +185,17 @@ export const userSearchStore = create<userSearch>()(
             maxSqm: null,
             minSqm: null,
             selectedPoiIds: state.activeFilters.selectedPoiIds.map((poi) => ({ ...poi, isChecked: false })),
+            searchStats: {  
+              count: 0,
+              averagePrice: 0,
+              averageSqm: 0,
+              medianPrice: 0,
+              medianSqm: 0,
+              maxPrice: 0,
+              minPrice: 0,
+              maxSqm: 0,
+              minSqm: 0
+            }
           },
         }));
       },

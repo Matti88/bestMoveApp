@@ -1,15 +1,12 @@
-import { houselistingStore } from '@/store/houselistingStore';
-import { userSearchStore, ActiveFilters } from '@/store/user-search';
+import { HouseListing, houselistingStore } from '@/store/houselistingStore';
+import { POI, ActiveFilters } from '@/store/user-search';
 import { checkHouseInReachableArea, checkPropertiesAndSelection } from '@/utils/utils';
-import { HouseListing} from '@/store/houselistingStore';
-import { POI } from '@/store/user-search';
 import { fetchGeoapifyData, fetchGeoapifyIsochrones } from '@/store/utilityFuncts';
 
 
 export const handleFormSubmit = async (
   event: React.FormEvent<HTMLFormElement>,
   formData: { title: string, location: string, time: number, transportationMode: string },
-  pois: POI[],
   isDuplicatePOI: (newPOI: POI) => boolean,
   addPOI: (poi: POI) => void,
   extractBoundingBox: (multipolygon: any) => Promise<any>
@@ -46,6 +43,7 @@ export const handleFormSubmit = async (
 
 
 export async function triggerNewSearch(activeFilters: ActiveFilters, houseListings: HouseListing[], pois: POI[]) {
+
   if (checkPropertiesAndSelection(activeFilters)) {
     try {
       let housesFilteredbyNumericFilters = houseListings.map(house  => {
@@ -87,9 +85,42 @@ export async function triggerNewSearch(activeFilters: ActiveFilters, houseListin
         });
       });
 
+      calculateStatistics(housesFilteredbyNumericFilters);
+
       await houselistingStore.getState().updateHouseListings(housesFilteredbyNumericFilters);
     } catch (error) {
       console.error('Error updating houses:', error);
     }
   }
 }
+
+function calculateStatistics(housesFilteredbyNumericFilters: HouseListing[]) {
+  const statistics = {
+    maxPrice: Math.max(...housesFilteredbyNumericFilters.filter(house => house.displayed).map(house => house.price)),
+    maxSqm: Math.max(...housesFilteredbyNumericFilters.filter(house => house.displayed).map(house => house.sqm)),
+    minPrice: Math.min(...housesFilteredbyNumericFilters.filter(house => house.displayed).map(house => house.price)),
+    minSqm: Math.min(...housesFilteredbyNumericFilters.filter(house => house.displayed).map(house => house.sqm)),
+    averagePrice: Math.round(housesFilteredbyNumericFilters.reduce((sum, house) => sum + (house.displayed ? house.price : 0), 0) / housesFilteredbyNumericFilters.filter(house => house.displayed).length),
+    averageSqm: Math.round(housesFilteredbyNumericFilters.reduce((sum, house) => sum + (house.displayed ? house.sqm : 0), 0) / housesFilteredbyNumericFilters.filter(house => house.displayed).length),
+    medianPrice: median(housesFilteredbyNumericFilters.filter(house => house.displayed).map(house => house.price).sort((a, b) => a - b)),
+    medianSqm: median(housesFilteredbyNumericFilters.filter(house => house.displayed).map(house => house.sqm).sort((a, b) => a - b)),
+  };
+
+  console.log(`Count: ${housesFilteredbyNumericFilters.length} - listings`);
+  console.log(`Max price: ${statistics.maxPrice}, Max sqm: ${statistics.maxSqm}, Min price: ${statistics.minPrice}, Min sqm: ${statistics.minSqm}`);
+  console.log(`Average price: ${statistics.averagePrice}, Average sqm: ${statistics.averageSqm}`);
+  console.log(`Median price: ${statistics.medianPrice}, Median sqm: ${statistics.medianSqm}`);
+}
+
+function median(values: number[]) {
+  if (values.length === 0) {
+    return 0;
+  }
+
+  values.sort((a, b) => a - b);
+
+  const half = Math.floor(values.length / 2);
+
+  return values.length % 2 === 0 ? (values[half - 1] + values[half]) / 2 : values[half];
+}
+
