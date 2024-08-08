@@ -71,7 +71,7 @@ const HeroTop = () => {
                         </div>
 
                         <div className="self-end lg:col-span-5">
-                            <img className="w-full mx-auto" src="/public/passing_keys.webp" alt="" />
+                            <img className="w-full mx-auto" src="/passing_keys.webp" alt="" />
                         </div>
                     </div>
                 </div>
