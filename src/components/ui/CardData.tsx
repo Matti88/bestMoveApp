@@ -15,6 +15,7 @@ import { useNavigate } from "react-router-dom";
 import { houselistingStore } from "@/store/houselistingStore";
 import {userSearchStore} from "@/store/user-search";
 
+
 type CardDataProposed =
 {   title         : string,
     description   : string,
@@ -34,6 +35,7 @@ const CardDataComponent : React.FC<CardDataProposed> =  ({
 
    const updateHouseListings = houselistingStore((state) => state.updateHouseListings);
    const resetFilters = userSearchStore((state) => state.resetFilters);
+   const updateSearchStats = userSearchStore((state) => state.updateSearchStats);
 
    const navigate = useNavigate();
 
@@ -47,6 +49,7 @@ const CardDataComponent : React.FC<CardDataProposed> =  ({
       const data = await response.json();
       updateHouseListings(data); // Update the store with the fetched data
       resetFilters(); // resets all the filteres 
+      updateSearchStats(data); // Calculate statistics at the first load
       navigate('/mapwork'); // Redirect to /mapwork page
     } catch (error) {
       console.error("Failed to load data:", error);

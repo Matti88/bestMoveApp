@@ -3,6 +3,7 @@
 import { create } from 'zustand';
 import { GeoJsonProperties, GeoJSON,MultiPolygon , Feature, Position ,FeatureCollection ,Polygon, GeoJsonObject  } from 'geojson';
 import { persist, createJSONStorage } from 'zustand/middleware'
+import { HouseListing } from '@/store/houselistingStore';
 
 interface GeoJSONFeatureCollection {
   type: "FeatureCollection";
@@ -80,6 +81,7 @@ export interface POI {
 }
 
 export interface userSearch {
+  updateSearchStats: (housesFilteredbyNumericFilters: HouseListing[]) => void;
   pois: POI[];
   activeFilters: ActiveFilters;
   currentColorIndex: number;
@@ -94,6 +96,48 @@ export interface userSearch {
   reset: () => void;
   
 
+}
+
+
+
+function median(numbers: number[]): number {
+  const sortedNumbers = numbers.sort((a, b) => a - b);
+  const middle = Math.floor(sortedNumbers.length / 2);
+
+  if (sortedNumbers.length % 2 === 0) {
+    return (sortedNumbers[middle - 1] + sortedNumbers[middle]) / 2;
+  }
+
+  return sortedNumbers[middle];
+}
+
+function calculateStatistics(housesFilteredbyNumericFilters: HouseListing[], updateSearchStats: (stats: ActiveFilters['searchStats']) => void) {
+  const filteredHouses = housesFilteredbyNumericFilters.filter(house => house.displayed);
+
+  if (filteredHouses.length === 0) return;
+
+  const statistics = {
+    maxPrice: Math.round(Math.max(...filteredHouses.map(house => house.price))),
+    maxSqm: Math.round(Math.max(...filteredHouses.map(house => house.sqm))),
+    minPrice: Math.round(Math.min(...filteredHouses.map(house => house.price))),
+    minSqm: Math.round(Math.min(...filteredHouses.map(house => house.sqm))),
+    averagePrice: Math.round(filteredHouses.reduce((sum, house) => sum + house.price, 0) / filteredHouses.length),
+    averageSqm: Math.round(filteredHouses.reduce((sum, house) => sum + house.sqm, 0) / filteredHouses.length),
+    medianPrice: Math.round(median(filteredHouses.map(house => house.price))),
+    medianSqm: Math.round(median(filteredHouses.map(house => house.sqm))),
+  };
+
+  updateSearchStats({
+    count: filteredHouses.length,
+    maxPrice: statistics.maxPrice,
+    maxSqm: statistics.maxSqm,
+    minPrice: statistics.minPrice,
+    minSqm: statistics.minSqm,
+    averagePrice: statistics.averagePrice,
+    averageSqm: statistics.averageSqm,
+    medianPrice: statistics.medianPrice,
+    medianSqm: statistics.medianSqm,
+  });
 }
 
                 
@@ -126,6 +170,16 @@ export const userSearchStore = create<userSearch>()(
       houseListings: [],
       updatePOIs: (newPOI) => set({ pois: newPOI }),
       updateActiveFilters: (newFilters) => set((state) => ({ activeFilters: { ...state.activeFilters, ...newFilters } })),
+      updateSearchStats: (housesFilteredbyNumericFilters: HouseListing[]) => {
+        calculateStatistics(housesFilteredbyNumericFilters, (stats) =>
+          set((state) => ({
+            activeFilters: {
+              ...state.activeFilters,
+              searchStats: stats,
+            },
+          }))
+        );
+      },
       addPOI: (newPOI) => set((state) => {
         const maxId = Math.max(...state.pois.map((poi) => poi.id), 0);
         const color = colors[state.currentColorIndex];

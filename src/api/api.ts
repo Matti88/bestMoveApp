@@ -3,14 +3,20 @@ import { POI, ActiveFilters } from '@/store/user-search';
 import { checkHouseInReachableArea, checkPropertiesAndSelection } from '@/utils/utils';
 import { fetchGeoapifyData, fetchGeoapifyIsochrones } from '@/store/utilityFuncts';
 
+import { userSearchStore } from '@/store/user-search'; // adjust import path as necessary
+
+const updateSearchStats = (newStats: Partial<ActiveFilters['searchStats']>) => {
+  console.log("triggered?")
+  userSearchStore.getState().updateActiveFilters({
+    searchStats: {
+      ...userSearchStore.getState().activeFilters.searchStats,
+      ...newStats,
+    },
+  });
+};
 
 export const handleFormSubmit = async (
-  event: React.FormEvent<HTMLFormElement>,
-  formData: { title: string, location: string, time: number, transportationMode: string },
-  isDuplicatePOI: (newPOI: POI) => boolean,
-  addPOI: (poi: POI) => void,
-  extractBoundingBox: (multipolygon: any) => Promise<any>
-) => {
+event: React.FormEvent<HTMLFormElement>, formData: { title: string; location: string; time: number; transportationMode: string; }, pois: POI[], isDuplicatePOI: (newPOI: POI) => boolean, addPOI: (poi: POI) => void, extractBoundingBox: (multipolygon: any) => Promise<any>) => {
   event.preventDefault();
 
   const indirizzi = await fetchGeoapifyData(formData.location);
@@ -95,21 +101,36 @@ export async function triggerNewSearch(activeFilters: ActiveFilters, houseListin
 }
 
 function calculateStatistics(housesFilteredbyNumericFilters: HouseListing[]) {
+  const filteredHouses = housesFilteredbyNumericFilters.filter(house => house.displayed);
+  
   const statistics = {
-    maxPrice: Math.max(...housesFilteredbyNumericFilters.filter(house => house.displayed).map(house => house.price)),
-    maxSqm: Math.max(...housesFilteredbyNumericFilters.filter(house => house.displayed).map(house => house.sqm)),
-    minPrice: Math.min(...housesFilteredbyNumericFilters.filter(house => house.displayed).map(house => house.price)),
-    minSqm: Math.min(...housesFilteredbyNumericFilters.filter(house => house.displayed).map(house => house.sqm)),
-    averagePrice: Math.round(housesFilteredbyNumericFilters.reduce((sum, house) => sum + (house.displayed ? house.price : 0), 0) / housesFilteredbyNumericFilters.filter(house => house.displayed).length),
-    averageSqm: Math.round(housesFilteredbyNumericFilters.reduce((sum, house) => sum + (house.displayed ? house.sqm : 0), 0) / housesFilteredbyNumericFilters.filter(house => house.displayed).length),
-    medianPrice: median(housesFilteredbyNumericFilters.filter(house => house.displayed).map(house => house.price).sort((a, b) => a - b)),
-    medianSqm: median(housesFilteredbyNumericFilters.filter(house => house.displayed).map(house => house.sqm).sort((a, b) => a - b)),
+    maxPrice: Math.round(Math.max(...filteredHouses.map(house => house.price))),
+    maxSqm: Math.round(Math.max(...filteredHouses.map(house => house.sqm))),
+    minPrice: Math.round(Math.min(...filteredHouses.map(house => house.price))),
+    minSqm: Math.round(Math.min(...filteredHouses.map(house => house.sqm))),
+    averagePrice: Math.round(filteredHouses.reduce((sum, house) => sum + house.price, 0) / filteredHouses.length),
+    averageSqm: Math.round(filteredHouses.reduce((sum, house) => sum + house.sqm, 0) / filteredHouses.length),
+    medianPrice: Math.round(median(filteredHouses.map(house => house.price).sort((a, b) => a - b))),
+    medianSqm: Math.round(median(filteredHouses.map(house => house.sqm).sort((a, b) => a - b))),
   };
 
-  console.log(`Count: ${housesFilteredbyNumericFilters.length} - listings`);
+  console.log(`Count: ${filteredHouses.length} - listings`);
   console.log(`Max price: ${statistics.maxPrice}, Max sqm: ${statistics.maxSqm}, Min price: ${statistics.minPrice}, Min sqm: ${statistics.minSqm}`);
   console.log(`Average price: ${statistics.averagePrice}, Average sqm: ${statistics.averageSqm}`);
   console.log(`Median price: ${statistics.medianPrice}, Median sqm: ${statistics.medianSqm}`);
+
+  // Update the searchStats in the activeFilters
+  updateSearchStats({
+    count: filteredHouses.length,
+    maxPrice: statistics.maxPrice,
+    maxSqm: statistics.maxSqm,
+    minPrice: statistics.minPrice,
+    minSqm: statistics.minSqm,
+    averagePrice: statistics.averagePrice,
+    averageSqm: statistics.averageSqm,
+    medianPrice: statistics.medianPrice,
+    medianSqm: statistics.medianSqm,
+  });
 }
 
 function median(values: number[]) {

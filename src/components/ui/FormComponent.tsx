@@ -34,6 +34,7 @@ const FormComponent: React.FC = () => {
     );
   };
 
+
   async function extractBoundingBox(multipolygon: any) {
     let minLatitude = 90;
     let maxLatitude = -90;

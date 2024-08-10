@@ -8,10 +8,18 @@ import CardStats from '@/components/ui/CardStats';
 import { MdFullscreen, MdFullscreenExit } from "react-icons/md";
 import { PoiDrawer } from '@/components/ui/PoiDrawer';
 
+import { userSearchStore } from '@/store/user-search';
+import { houselistingStore } from '@/store/houselistingStore';
+
 
 
 export default function Mapwork() {
   const [isVisible, setIsVisible] = useState(true);
+
+  // Retrieve the statistics from the store
+  const searchStats = userSearchStore((state) => state.activeFilters.searchStats);
+  const activeFilters = userSearchStore((state) => state.activeFilters);
+  const houseListings = houselistingStore((state) => state.houseListings);
 
 
   const toggleVisibility = () => {
@@ -34,7 +42,18 @@ export default function Mapwork() {
             <div className="absolute top-10 right-10 z-10 p-2 rounded max-w-md h-[55vh] w-[20vw]  scaled-container hidden md:block">
               <FiltersComponent />
               <br />
-              <CardStats title="Search Stats" count={100} median={50} max={100} min={10} />
+              {houseListings.map(house => (house.displayed == true)).length>0 ? 
+                <CardStats 
+                  title="Search Stats" 
+                  count={searchStats.count} 
+                  median={searchStats.medianSqm} 
+                  max={searchStats.maxSqm} 
+                  min={searchStats.minSqm} 
+                  medianPrice={searchStats.medianPrice} 
+                  maxPrice={searchStats.maxPrice} 
+                  minPrice={searchStats.minPrice} 
+                />
+              : null}
             </div>
           </>
         )}
