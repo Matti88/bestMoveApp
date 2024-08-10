@@ -1,6 +1,7 @@
 import React from 'react';
 import { userSearchStore } from '@/store/user-search'
 import ChipArray from '@/components/ui/ChipArray';
+import CardStats from '@/components/ui/CardStats';
 import { houselistingStore } from '@/store/houselistingStore';
 
 import {  CardContent, CardFooter } from "@/components/ui/shadcn/card"
@@ -31,6 +32,7 @@ const FiltersComponentSmallScreen: React.FC = () => {
   const toggleSelectedPoi = userSearchStore((state) => state.toggleSelectedPoi);
   const pois = userSearchStore((state) => state.pois);
   const { houseListings } = houselistingStore.getState();
+  const searchStats = userSearchStore((state) => state.activeFilters.searchStats);
 
   const handleNewSearch = async (event: React.FormEvent) => {
     event.preventDefault();
@@ -83,6 +85,20 @@ const FiltersComponentSmallScreen: React.FC = () => {
               <Input type="number" placeholder="Min Sq. Meters" name="minSqm" onChange={handleChange} value={minimumSqm || ''} />
             </div>
           </div>
+
+          <br />
+              {houseListings.map(house => (house.displayed == true)).length>0 ? 
+                <CardStats 
+                  title="Stats" 
+                  count={searchStats.count} 
+                  median={searchStats.medianSqm} 
+                  max={searchStats.maxSqm} 
+                  min={searchStats.minSqm} 
+                  medianPrice={searchStats.medianPrice} 
+                  maxPrice={searchStats.maxPrice} 
+                  minPrice={searchStats.minPrice} 
+                />
+              : null}
         </CardContent>
         <CardFooter>
           <DrawerClose asChild>

@@ -44,7 +44,7 @@ export default function Mapwork() {
               <br />
               {houseListings.map(house => (house.displayed == true)).length>0 ? 
                 <CardStats 
-                  title="Search Stats" 
+                  title="Stats" 
                   count={searchStats.count} 
                   median={searchStats.medianSqm} 
                   max={searchStats.maxSqm} 
