@@ -112,7 +112,7 @@ const FormComponent: React.FC = () => {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="transportationMode">Trans Mode</Label>
+              <Label htmlFor="transportationMode">Mobility Mode</Label>
               <Select name="transportationMode" onValueChange={(value) => setFormData({ ...formData, transportationMode: value })}>
                 <SelectTrigger>{formData.transportationMode}</SelectTrigger>
                 <SelectContent>

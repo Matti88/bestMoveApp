@@ -20,6 +20,8 @@ interface POICardProps {
 
 const POICard: React.FC<POICardProps> = ({ address, modeOfTransportation, timeRange, title, customId, color, dangerZone  , onDelete, onToggleDangerZone }) => {
 
+  const shortAddress = address.length > 30 ? `${address.slice(0, 27)}...` : address;
+  
 
   return (
     <Card className="w-full max-w-md">
@@ -42,7 +44,7 @@ const POICard: React.FC<POICardProps> = ({ address, modeOfTransportation, timeRa
       </div>
       <CardContent className="space-y-2">
         <div className="space-y-2">
-          <p className="text-gray-600 mb-2">{address}</p>
+          <p className="text-gray-600 mb-2">{shortAddress}</p>
         </div>
         <div className="grid grid-cols-2 gap-4">
           <div className="space-y-1">
