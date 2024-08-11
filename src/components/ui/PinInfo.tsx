@@ -38,8 +38,8 @@ const PinInfo: React.FC<PinInfoProps> = ({ thumbnail_image, title, price_num, sq
                   <img className="max-w-[100px] max-h-[100px] mb-4 rounded" src={thumbnail_image} alt={`${title} Image`} />
                 </div>
                 <div>
-                  <div className="text-sm font-semibold mb-2">Price: {price_num}</div>
-                  <div className="text-sm font-semibold">&#x33A1;: {sqm_num}</div>
+                <div className="text-sm font-semibold mb-2">Price:<br/>&#8364;{price_num.toLocaleString('de-DE')}</div>
+                <div className="text-sm font-semibold">Area:<br/>{sqm_num}&#x33A1;</div>
                 </div>
               </div>
             </CardContent>

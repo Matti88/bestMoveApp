@@ -32,8 +32,8 @@ const PinInfoSmallScreen: React.FC<PinInfoProps> = ({ thumbnail_image, title, pr
               <img className="w-full h-full object-cover rounded" src={thumbnail_image} alt={`${title} Image`} />
             </div>
             <div className="flex flex-col justify-start">
-              <div className="text-sm font-semibold mb-2">Price: {price_num}</div>
-              <div className="text-sm font-semibold">&#x33A1;: {sqm_num}</div>
+            <div className="text-sm font-semibold mb-2">Price:<br/>&#8364;{price_num.toLocaleString('de-DE')}</div>
+            <div className="text-sm font-semibold">Area:<br/>{sqm_num}&#x33A1;</div>
             </div>
           </div>
         </a>

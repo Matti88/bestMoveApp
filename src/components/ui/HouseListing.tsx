@@ -26,15 +26,15 @@ const HouseListing: React.FC<HouseListingProps> = ({ image, title, price, sqm, l
             <CardContent className="p-0">
               <CardTitle>{shortTitle}</CardTitle>
               <div className="text-base">
-                <Label>Price: {price.toLocaleString()}</Label>
-                <br/>
-                <Label>&#x33A1;: {sqm}</Label>
+                <Label>Price: &#8364; {price.toLocaleString()}</Label>
+                <br />
+                <Label>Area:{sqm} &#x33A1;</Label>
               </div>
             </CardContent>
           </div>
         </div>
       </Card>
-    </a>  );
+    </a>);
 };
 
 export default HouseListing;

@@ -40,15 +40,15 @@ const CardStats: React.FC<CardDataPropops> = ({
             <h3 className="text-sm font-semibold">Prices</h3>
             <div className="flex justify-between items-center mb-0.5">
               <Label className="text-xs">Min</Label>
-              <p className="text-xs">{minPrice.toLocaleString('de-DE')}</p>
+              <p className="text-xs">&#8364; {minPrice.toLocaleString('de-DE')}</p>
             </div>
             <div className="flex justify-between items-center mb-0.5">
               <Label className="text-xs">Median</Label>
-              <p className="text-xs">{medianPrice.toLocaleString('de-DE')}</p>
+              <p className="text-xs">&#8364; {medianPrice.toLocaleString('de-DE')}</p>
             </div>
             <div className="flex justify-between items-center">
               <Label className="text-xs">Max</Label>
-              <p className="text-xs">{maxPrice.toLocaleString('de-DE')}</p>
+              <p className="text-xs">&#8364; {maxPrice.toLocaleString('de-DE')}</p>
             </div>
           </div>
 
@@ -61,15 +61,15 @@ const CardStats: React.FC<CardDataPropops> = ({
             <h3 className="text-sm font-semibold">Areas</h3>
             <div className="flex justify-between items-center mb-0.5">
               <Label className="text-xs">Min</Label>
-              <p className="text-xs">{min.toLocaleString('de-DE')}</p>
+              <p className="text-xs">{min.toLocaleString('de-DE')} &#13217;</p>
             </div>
             <div className="flex justify-between items-center mb-0.5">
               <Label className="text-xs">Median</Label>
-              <p className="text-xs">{median.toLocaleString('de-DE')}</p>
+              <p className="text-xs">{median.toLocaleString('de-DE')} &#13217;</p>
             </div>
             <div className="flex justify-between items-center">
               <Label className="text-xs">Max</Label>
-              <p className="text-xs">{max.toLocaleString('de-DE')}</p>
+              <p className="text-xs">{max.toLocaleString('de-DE')} &#13217;</p>
             </div>
           </div>
         </div>
