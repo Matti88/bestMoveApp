@@ -2,9 +2,11 @@ import { createHashRouter } from "react-router-dom";
 
 import { Applayout } from "./components/layouts/AppLayout";
 import Houses from "./pages/Houses"; 
-import Mapwork from "./pages/Mapwork";
+//import Mapwork from "./pages/Mapwork";
+import Login from "./pages/Login";
 import CommunityUpdated from "./pages/CommunityDatabases";
 import Landing from "./pages/Landing";
+import MapworkRoute from "./pages/MapworkRoute";
 
 
 
@@ -16,7 +18,7 @@ export const router = createHashRouter([
         children: [
             {
                 path: "mapwork",
-                element: <Mapwork />,
+                element: <MapworkRoute />,
             },
             {
                 path: "houses",
@@ -25,6 +27,10 @@ export const router = createHashRouter([
             {
                 path: "communutyupdated",
                 element: <CommunityUpdated />,
+            },
+            {
+                path: "login",
+                element: <Login />,
             },
             {
                 path: "/",

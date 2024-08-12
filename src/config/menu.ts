@@ -21,16 +21,16 @@ export const mainMenu: NavItemWithChildren[] = [
         to: '/',
     },
     {
-        title: 'Mapwork',
-        to: '/mapwork',
-    },
-    {
         title: 'Houses',
         to: '/houses',
     },
     {
         title: 'Community Databases',
         to: '/communutyupdated',
+    },
+    {
+        title: 'Mapwork',
+        to: '/mapwork',
     },
 
 ]
