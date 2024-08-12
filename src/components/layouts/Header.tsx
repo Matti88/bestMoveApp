@@ -21,10 +21,13 @@ import { Logo } from "../logo";
 import { Accordion } from "@radix-ui/react-accordion";
 import { AccordionContent, AccordionItem, AccordionTrigger } from "../ui/shadcn/accordion";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden"; // Import VisuallyHidden
+import useAuthStore from '@/store/userLogin';
+import LogoutButton from '@/components/ui/LogoutButton'
 
 export function Header() {
     const [open, setOpen] = useState(false);
     const location = useLocation();
+    const { isLoggedIn } = useAuthStore();
 
     return (
         <header className="supports-backdrop-blur:bg-background/60 sticky top-0 z-50 w-full border-b bg-background/90 backdrop-blur">
@@ -78,6 +81,8 @@ export function Header() {
                                 </NavLink>
                             )
                         )}
+
+
                     </nav>
                 </div>
 
@@ -147,6 +152,7 @@ export function Header() {
                                                             )
                                                         ))}
                                                     </div>
+
                                                 </AccordionContent>
                                             </AccordionItem>
                                         ) : (
@@ -162,13 +168,19 @@ export function Header() {
                                             </NavLink>
                                         )
                                     )}
+
                                 </div>
                             </Accordion>
                         </ScrollArea>
                     </SheetContent>
                 </Sheet>
 
+                <div>
+                {isLoggedIn() ? <LogoutButton /> : null}
             </div>
+
+            </div>
+
         </header>
     );
 }
