@@ -111,12 +111,26 @@ function median(numbers: number[]): number {
   return sortedNumbers[middle];
 }
 
-function calculateStatistics(housesFilteredbyNumericFilters: HouseListing[], updateSearchStats: (stats: ActiveFilters['searchStats']) => void) {
+function calculateStatistics(housesFilteredbyNumericFilters: HouseListing[]) {
+  
   const filteredHouses = housesFilteredbyNumericFilters.filter(house => house.displayed);
 
-  if (filteredHouses.length === 0) return;
+  if (filteredHouses.length === 0) {
+    return {
+      count: 0,
+      averagePrice: 0,
+      averageSqm: 0,
+      medianPrice: 0,
+      medianSqm: 0,
+      maxPrice: 0,
+      minPrice: 0,
+      maxSqm: 0,
+      minSqm: 0,
+    };
+  }
 
-  const statistics = {
+  return {
+    count: filteredHouses.length,
     maxPrice: Math.round(Math.max(...filteredHouses.map(house => house.price))),
     maxSqm: Math.round(Math.max(...filteredHouses.map(house => house.sqm))),
     minPrice: Math.round(Math.min(...filteredHouses.map(house => house.price))),
@@ -126,18 +140,6 @@ function calculateStatistics(housesFilteredbyNumericFilters: HouseListing[], upd
     medianPrice: Math.round(median(filteredHouses.map(house => house.price))),
     medianSqm: Math.round(median(filteredHouses.map(house => house.sqm))),
   };
-
-  updateSearchStats({
-    count: filteredHouses.length,
-    maxPrice: statistics.maxPrice,
-    maxSqm: statistics.maxSqm,
-    minPrice: statistics.minPrice,
-    minSqm: statistics.minSqm,
-    averagePrice: statistics.averagePrice,
-    averageSqm: statistics.averageSqm,
-    medianPrice: statistics.medianPrice,
-    medianSqm: statistics.medianSqm,
-  });
 }
 
                 
@@ -171,28 +173,45 @@ export const userSearchStore = create<userSearch>()(
       updatePOIs: (newPOI) => set({ pois: newPOI }),
       updateActiveFilters: (newFilters) => set((state) => ({ activeFilters: { ...state.activeFilters, ...newFilters } })),
       updateSearchStats: (housesFilteredbyNumericFilters: HouseListing[]) => {
-        calculateStatistics(housesFilteredbyNumericFilters, (stats) =>
-          set((state) => ({
-            activeFilters: {
-              ...state.activeFilters,
-              searchStats: stats,
-            },
-          }))
-        );
+        const stats = calculateStatistics(housesFilteredbyNumericFilters);
+      console.log(stats);
+        set((state) => ({
+          activeFilters: {
+            ...state.activeFilters,
+            searchStats: stats,
+          },
+        }));  
       },
-      addPOI: (newPOI) => set((state) => {
+      addPOI: (newPOI: POI & {dangerZone?: boolean}) => set((state) => {
         const maxId = Math.max(...state.pois.map((poi) => poi.id), 0);
-        const color = colors[state.currentColorIndex];
-        const updatedPOIs = [...state.pois, { ...newPOI, id: maxId + 1, dangerZone: false, color, colorSwap: '#171716' }];
-
+        if (newPOI.dangerZone) {
+        const color =  '#171716' 
+        const colorSwap =  colors[state.currentColorIndex]  
+        const updatedPOIs = [...state.pois, { ...newPOI, id: maxId + 1, dangerZone: newPOI.dangerZone ?? false, color, colorSwap }];
         return {
           pois: updatedPOIs,
           activeFilters: {
             ...state.activeFilters,
-            selectedPoiIds: [...state.activeFilters.selectedPoiIds, { id: maxId + 1, text: newPOI.title.slice(0, 5), isChecked: false, poiColor: color, poiSwapColor: '#171716'}],
+            selectedPoiIds: [...state.activeFilters.selectedPoiIds, { id: maxId + 1, text: newPOI.title.slice(0, 5), isChecked: false, poiColor: color, poiSwapColor: colorSwap}],
           },
           currentColorIndex: (state.currentColorIndex + 1) % colors.length,
         };
+        } else {
+          const color =  colors[state.currentColorIndex] 
+          const colorSwap =  '#171716' 
+          const updatedPOIs = [...state.pois, { ...newPOI, id: maxId + 1, dangerZone: newPOI.dangerZone ?? false, color, colorSwap }];
+          return {
+            pois: updatedPOIs,
+            activeFilters: {
+              ...state.activeFilters,
+              selectedPoiIds: [...state.activeFilters.selectedPoiIds, { id: maxId + 1, text: newPOI.title.slice(0, 5), isChecked: false, poiColor: color, poiSwapColor: colorSwap}],
+            },
+            currentColorIndex: (state.currentColorIndex + 1) % colors.length,
+          };
+        }
+
+
+
       }),
       deletePOI: (poiId) => set((state) => {
         const updatedPOIs = state.pois.filter((poi) => poi.id !== poiId);

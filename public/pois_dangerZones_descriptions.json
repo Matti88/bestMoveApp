@@ -1,0 +1,9 @@
+[
+  {
+    "title": "Danger Zones in Vienna",
+    "description": "A sample of few areas that are known to be dangerous in Vienna",
+    "substitle1": "Sourced from Reddit and Google",
+    "substitle2": "Useful to know for security reasons",
+    "pathToFileURL": "/badArea.geojson"
+  }
+]
