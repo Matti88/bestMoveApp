@@ -7,7 +7,8 @@ import Login from "./pages/Login";
 import CommunityUpdated from "./pages/CommunityDatabases";
 import Landing from "./pages/Landing";
 import MapworkRoute from "./pages/MapworkRoute";
-
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfSerivice from "./pages/TermsOfSerivice";
 
 
 // createBrowserRouter
@@ -31,6 +32,14 @@ export const router = createHashRouter([
             {
                 path: "login",
                 element: <Login />,
+            },
+            {
+                path: "privacy-policy",
+                element: <PrivacyPolicy />,
+            },
+            {
+                path: "tos",
+                element: <TermsOfSerivice />,
             },
             {
                 path: "/",
