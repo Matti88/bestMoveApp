@@ -1,12 +1,9 @@
 import { appConfig } from "@/config/app";
 import { ModeToggle } from "../mode-toggle";
-import { PoiDrawer } from '@/components/ui/PoiDrawer';
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 export function Footer() {
-    const location = useLocation();
-    const isMapworkPage = (location.pathname === "/mapwork" || location.pathname === "/");
 
     return (
         <footer className="flex flex-col items-center justify-between gap-4 min-h-[3rem] md:h-10 py-2 md:flex-row ml-20 mr-20">

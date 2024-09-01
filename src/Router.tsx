@@ -2,11 +2,9 @@ import { createHashRouter } from "react-router-dom";
 
 import { Applayout } from "./components/layouts/AppLayout";
 import Houses from "./pages/Houses"; 
-//import Mapwork from "./pages/Mapwork";
-import Login from "./pages/Login";
 import CommunityUpdated from "./pages/CommunityDatabases";
 import Landing from "./pages/Landing";
-import MapworkRoute from "./pages/MapworkRoute";
+import Mapwork from "./pages/Mapwork";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfSerivice from "./pages/TermsOfSerivice";
 
@@ -19,7 +17,7 @@ export const router = createHashRouter([
         children: [
             {
                 path: "mapwork",
-                element: <MapworkRoute />,
+                element: <Mapwork />,
             },
             {
                 path: "houses",
@@ -28,10 +26,6 @@ export const router = createHashRouter([
             {
                 path: "communutyupdated",
                 element: <CommunityUpdated />,
-            },
-            {
-                path: "login",
-                element: <Login />,
             },
             {
                 path: "privacy-policy",
@@ -45,14 +39,6 @@ export const router = createHashRouter([
                 path: "/",
                 element: <Landing />,
             },
-            // {
-            //     path: "database",
-            //     element: <Database />,
-            // }, 
-            // {
-            //     path: "database/:id",
-            //     element: <Database />,
-            // },
         ],
     }
 ])

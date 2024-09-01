@@ -1,5 +1,5 @@
 import React from 'react';
-import { userSearchStore, ActiveFilters, POI } from '@/store/user-search';
+import { userSearchStore,  } from '@/store/user-search';
 import ChipArray from '@/components/ui/ChipArray';
 import { houselistingStore } from '@/store/houselistingStore';
 

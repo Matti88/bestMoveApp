@@ -1,6 +1,5 @@
 import React from 'react';
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/shadcn/card";
-//import { Button } from "@/components/ui/shadcn/button";
+import { Card, CardTitle, CardContent } from "@/components/ui/shadcn/card";
 import { Label } from "@/components/ui/shadcn/label";
 
 interface HouseListingProps {

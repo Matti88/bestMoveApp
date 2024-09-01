@@ -2,9 +2,7 @@ import { useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription } from "@/components/ui/shadcn/sheet";
-import { Icons } from "@/components/icons";
-import { appConfig } from "@/config/app";
-import { Button, buttonVariants } from "@/components/ui/shadcn/button";
+import { Button } from "@/components/ui/shadcn/button";
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -13,7 +11,6 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger
 } from "@/components/ui/shadcn/dropdown-menu";
-import { Avatar, AvatarFallback } from "@/components/ui/shadcn/avatar";
 import { mainMenu } from "@/config/menu";
 import { ChevronDownIcon, HamburgerMenuIcon } from "@radix-ui/react-icons";
 import { ScrollArea } from "@radix-ui/react-scroll-area";
@@ -21,13 +18,12 @@ import { Logo } from "../logo";
 import { Accordion } from "@radix-ui/react-accordion";
 import { AccordionContent, AccordionItem, AccordionTrigger } from "../ui/shadcn/accordion";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden"; // Import VisuallyHidden
-import useAuthStore from '@/store/userLogin';
-import LogoutButton from '@/components/ui/LogoutButton'
+
 
 export function Header() {
     const [open, setOpen] = useState(false);
     const location = useLocation();
-    const { isLoggedIn } = useAuthStore();
+
 
     return (
         <header className="supports-backdrop-blur:bg-background/60 sticky top-0 z-50 w-full border-b bg-background/90 backdrop-blur">
@@ -176,7 +172,7 @@ export function Header() {
                 </Sheet>
 
                 <div>
-                {isLoggedIn() ? <LogoutButton /> : null}
+                
             </div>
 
             </div>
