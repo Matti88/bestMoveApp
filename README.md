@@ -1,19 +1,25 @@
-# bestMove
+# bestMove 🏠📍
 
-Welcome to **bestMove**! This is an advanced React-based web application that helps users find their ideal home or apartment by leveraging isochrones and a variety of filters. With **bestMove**, you can search for properties within a specific travel time from a point of interest, apply price and area filters, and even upload your own datasets to work with.
+Welcome to **bestMove**! This is an advanced React-based web application that helps users find their ideal home or apartment by leveraging isochrones and a variety of filters. With **bestMove**, you can search for properties within a specific travel time from a point of interest, apply price and area filters, and even upload your own datasets to work with. 🗺️
 
-## Features
+## Features ✨
 
-- **Isochrones Search**: Filter properties based on travel time from any point of interest using MapBox and GeoApify APIs.
-- **Property Filters**: Refine your search with price and area filters to find the perfect match.
-- **Custom Datasets**: Upload your own dataset of houses or apartments with geo-locations and filter them using the app’s powerful tools.
-- **Interactive Map**: Visualize properties and isochrones directly on the map.
+- **Isochrones Search** ⏱️: Filter properties based on travel time from any point of interest using MapBox and GeoApify APIs.
+- **Property Filters** 🏡💰: Refine your search with price and area filters to find the perfect match.
+- **Custom Datasets** 📊: Upload your own dataset of houses or apartments with geo-locations and filter them using the app’s powerful tools.
+- **Interactive Map** 🌍: Visualize properties and isochrones directly on the map.
 
-## Demo
+## How It Looks Like 👀
+
+![Mapwork](mapwork_1.png)
+
+In this example, you can see houses highlighted that are within the intersection of two isochrones: one with a 15-minute travel time from a "Bank" (marked in orange 🟧) and another with a 20-minute travel time from "OPEC" (marked in purple 🟪). This makes it easier to find properties that are conveniently located between these key points of interest.
+
+## Demo 🎥
 
 Check out a video tutorial demonstrating the usage of the app on YouTube: [bestMove Tutorial](https://www.youtube.com/watch?v=your-video-id).
 
-## Installation
+## Installation 🛠️
 
 Follow these steps to set up **bestMove** on your local machine:
 
@@ -39,9 +45,9 @@ Follow these steps to set up **bestMove** on your local machine:
     yarn dev
     ```
 
-5. Open your browser and navigate to `http://localhost:3000` to start using **bestMove**.
+5. Open your browser and navigate to `http://localhost:5173` to start using **bestMove**.
 
-## Usage
+## Usage 🚀
 
 1. **Select a Point of Interest (POI)**: Choose a location on the map to center your search.
 2. **Adjust Isochrones**: Define the travel time radius around your POI to filter properties.
@@ -51,14 +57,18 @@ Follow these steps to set up **bestMove** on your local machine:
 
 For a step-by-step guide on how to use **bestMove**, please refer to the [tutorial video](https://www.youtube.com/watch?v=a4YysSHueHs).
 
-## Contributing
+### Preloaded Datasets 📅
+
+The app comes with preloaded datasets dated **July 2024**. By default, the map is centered on **Vienna**, the beautiful city where **bestMove** was developed! 🏙️
+
+## Contributing 🤝
 
 We welcome contributions to **bestMove**! If you have any ideas, feel free to submit a pull request or open an issue.
 
-## License
+## License 📜
 
 This project is licensed under the MIT License. See the [LICENSE](https://www.mit.edu/~amini/LICENSE.md) file for more details.
 
 ---
 
-We hope you find **bestMove** helpful in your search for the perfect home or apartment! If you have any questions or feedback, don't hesitate to reach out. Happy house hunting!
+We hope you find **bestMove** helpful in your search for the perfect home or apartment! 🏡 If you have any questions or feedback, don't hesitate to reach out. Happy house hunting! 🛋️🔑
